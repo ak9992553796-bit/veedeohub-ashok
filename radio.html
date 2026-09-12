@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Anant Radio - Voice Auto Pexels Pixabay Free - All Life</title>
+<style>
+body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:center}
+.box{max-width:460px;margin:auto;padding:6px}
+.top{border:4px solid gold;background:#000;padding:10px;margin:6px;border-radius:12px}
+.dabba{background:#fff;border:3px solid #ff9800;border-radius:16px;padding:10px;margin:12px 0;text-align:left;color:#000}
+.btnBlue{display:block;width:100%;background:#000;color:#FFD700;padding:11px 0;border-radius:10px;text-decoration:none;font-weight:700;margin:6px 0;border:2px solid #FFD700;text-align:center}
+.rowFlex{display:flex;align-items:center;gap:4px}
+.micBtn{background:#000;color:gold;border:2px solid gold;border-radius:8px;padding:6px 10px;margin-left:4px;font-weight:700}
+.sunoBtn{background:#fff8c4;border:1px solid #000;border-radius:6px;padding:3px 8px;font-size:12px;margin:2px}
+.labels{display:flex;gap:6px;overflow:auto;padding:6px}
+.labels button{background:#222;color:gold;border:1px solid gold;padding:6px 12px;border-radius:20px;white-space:nowrap}
+.labels button.active{background:gold;color:#000;font-weight:800}
+.rowItem{display:flex;align-items:center;background:#000;color:gold;border:2px solid gold;margin:6px 0;border-radius:10px;padding:8px}
+video{width:100%;border-radius:10px}
+</style></head><body><div class="box">
+
+<div class="top">
+<h2 style="color:gold;margin:4px">🪔 अनन्त ज्योति - सकारात्मक सोच जी</h2>
+<p style="color:gold;font-size:11px;margin:2px">आदत ही लाइफ है जी - अच्छी या खराब - फैसला आपके हाथ जी - All Life</p>
+<p style="color:#0f0;font-size:11px">🎙️ वॉइस बोलो जी - Pexels/Pixabay से फ्री वीडियो ऑटो - No Copyright जी</p>
+<div class="rowFlex"><input id="pexelsKey" placeholder="Pexels Key Free - pexels.com/api" style="width:55%;padding:8px;border-radius:8px"><input id="pixabayKey" placeholder="Pixabay Key Free" style="width:35%;padding:8px;border-radius:8px"><button class="micBtn" onclick="saveKeys()">Save</button></div>
+</div>
+
+<div class="dabba" style="text-align:center;background:#000;color:gold;border:3px solid gold">
+<div style="font-weight:800">📻 अनन्त रेडियो स्टेशन जी - TV जैसा ही जी</div>
+<div style="font-size:11px">वॉइस बोलो जी - तुलसी, गंगा, पहाड़, भजन - वीडियो अपने आप जी</div>
+<div class="rowFlex" style="justify-content:center"><button onclick="startVoice()" style="background:gold;color:#000;padding:10px 16px;border-radius:20px;font-weight:800">🎙️ बोलो जी</button><button class="sunoBtn" onclick="speakText('अनन्त रेडियो में आपका स्वागत है जी - बोलिए जी')">🔊 सुनो</button></div>
+<p id="voiceText" style="color:#0f0;font-weight:700"></p>
+<input id="searchBox" placeholder="या लिखो जी - ayodhya, tulsi, mountain, temple" style="width:94%;padding:10px;border:2px solid gold;border-radius:10px" oninput="autoSearch(this.value)">
+</div>
+
+<div class="dabba" style="border-color:gold;background:#000;color:gold">
+<div id="labels" class="labels"></div>
+<div id="list"></div>
+<audio id="player" controls autoplay style="width:100%;margin-top:8px"></audio>
+<div style="font-size:10px;color:#aaa;text-align:center">ऑटो अगला - बिना हाथ लगाए जी - TV जैसा जी</div>
+</div>
+
+<div class="dabba" id="videoBox" style="border-color:#0a7a0a">
+<div style="font-weight:800;color:#0a7a0a">🎥 Pexels / Pixabay Free Video - Voice जैसी जी - No Copyright जी</div>
+<div id="videos"></div>
+</div>
+
+<div class="dabba" style="text-align:center;background:#000;color:gold;border:2px solid gold">
+<div>🙏 सेवा सहयोग जी - सिस्टम चलता रहे जी</div>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=9992553796@ybl%26pn=Ashok%20Kumar%26cu=INR%26tn=Seva%20Sahyog%20Anant%20Jyoti" style="background:#fff;padding:6px;border-radius:10px">
+<div style="font-size:11px">UPI: 9992553796@ybl</div>
+</div>
+
+</div>
+<script>
+// जी पर्ची छुपी हुई जी - पब्लिक को नहीं दिखेगी जी
+const DATA=[
+{cat:"आरती",name:"हनुमान चालीसा",photo:"https://images.pexels.com/photos/11697529/pexels-photo-11697529.jpeg",link:"https://archive.org/download/hanuman-chalisa-full-audio-shankar-mahadevan-ajay-atul-song-2023-1080p/hanuman-chalisa-full-audio.mp3",q:"temple"},
+{cat:"आरती",name:"हनुमान आरती",photo:"https://images.pexels.com/photos/16120318/pexels-photo-16120318.jpeg",link:"https://archive.org/download/ShreeHanumanChalisa_201510/06%20Shree%20Hanuman%20Ji%20Ki%20Aarti.mp3",q:"hanuman"},
+{cat:"भजन",name:"गायत्री मंत्र",photo:"https://images.pexels.com/photos/1535244/pexels-photo-1535244.jpeg",link:"https://archive.org/download/gayatri-mantra-108-times/gayatri-mantra.mp3",q:"sunrise prayer"},
+{cat:"भजन",name:"ॐ जय जगदीश",photo:"https://images.pexels.com/photos/32605551/pexels-photo-32605551.jpeg",link:"https://archive.org/download/bhajan-sangrah/om-jai-jagdish.mp3",q:"diya temple"},
+{cat:"आयुर्वेद",name:"तुलसी के फायदे",photo:"https://images.pexels.com/photos/1080722/pexels-photo-1080722.jpeg",link:"https://archive.org/download/ayurveda-hindi/tulsi.mp3",q:"tulsi plant"},
+{cat:"आयुर्वेद",name:"गिलोय अमृता",photo:"https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg",link:"",q:"giloy ayurveda"},
+{cat:"नई कहानी",name:"तेनालीराम कहानी",photo:"https://images.pexels.com/photos/1112048/pexels-photo-1112048.jpeg",link:"",q:"village story"},
+{cat:"रामायण",name:"रामायण चौपाई",photo:"https://images.pexels.com/photos/15832191/pexels-photo-15832191.jpeg",link:"",q:"ayodhya ram temple"},
+{cat:"चाणक्य नीति",name:"चाणक्य नीति 1",photo:"https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg",link:"",q:"chanakya book"},
+];
+
+let curCat="सब",curIndex=0;const player=document.getElementById('player');
+function saveKeys(){localStorage.setItem('pexels_key',document.getElementById('pexelsKey').value);localStorage.setItem('pixabay_key',document.getElementById('pixabayKey').value);alert('Save हो गई जी');}
+document.getElementById('pexelsKey').value=localStorage.getItem('pexels_key')||"";document.getElementById('pixabayKey').value=localStorage.getItem('pixabay_key')||"";
+function makeLabels(){let cats=["सब",...new Set(DATA.map(x=>x.cat))];document.getElementById('labels').innerHTML=cats.map(c=>`<button onclick="filterCat('${c}')" id="lb-${c}">${c}</button>`).join('');}
+function filterCat(c){curCat=c;document.querySelectorAll('.labels button').forEach(b=>b.classList.remove('active'));document.getElementById('lb-'+c)?.classList.add('active');render();}
+function render(){let f=curCat==="सब"?DATA:DATA.filter(x=>x.cat===curCat);document.getElementById('list').innerHTML=f.map((x,i)=>`<div class="rowItem"><img src="${x.photo}" style="width:46px;height:46px;border-radius:6px;object-fit:cover;margin-right:6px"><b>${String(i+1).padStart(2,'0')}.</b>&nbsp;${x.name}<button onclick="speakText('${x.name}')" style="margin-left:auto;background:#222;color:gold;border:1px solid gold;border-radius:6px">🎙️</button><button onclick="playNow(${DATA.indexOf(x)});autoSearch('${x.q}')" style="margin-left:4px;background:gold;color:#000;border:0;border-radius:6px;padding:4px 8px">▶️</button></div>`).join('');}
+function playNow(idx){curIndex=idx;if(DATA[idx].link){player.src=DATA[idx].link;player.play();}autoSearch(DATA[idx].q);}
+player.onended=()=>{curIndex=(curIndex+1)%DATA.length;playNow(curIndex);}
+function speakText(t){speechSynthesis.speak(new SpeechSynthesisUtterance(t));}
+function startVoice(){let r=new(window.SpeechRecognition||window.webkitSpeechRecognition)();r.lang='hi-IN';r.start();r.onresult=e=>{let t=e.results[0][0].transcript;document.getElementById('voiceText').innerText="बोला: "+t+" जी";document.getElementById('searchBox').value=t;autoSearch(t);}}
+async function autoSearch(query){if(!query)return;let q=query.toLowerCase().replace("जी","").trim();let vbox=document.getElementById('videos');vbox.innerHTML=`<p style="color:green">🔍 ${q} की Free Video ला रहा हूँ जी - Pexels + Pixabay से जी - No Copyright</p>`;
+try{let k=localStorage.getItem('pexels_key');if(k){let res=await fetch(`https://api.pexels.com/videos/search?query=${encodeURIComponent(q)}&per_page=1`,{headers:{Authorization:k}});let d=await res.json();if(d.videos&&d.videos[0]){let url=d.videos[0].video_files.find(f=>f.quality=='sd')?.link||d.videos[0].video_files[0].link;vbox.innerHTML+=`<div><b>Pexels Free - ${q} जी</b><video controls autoplay muted loop src="${url}"></video></div>`;}}}catch(e){}
+try{let k2=localStorage.getItem('pixabay_key');if(k2){let res2=await fetch(`https://pixabay.com/api/videos/?key=${k2}&q=${encodeURIComponent(q)}&per_page=2`);let d2=await res2.json();if(d2.hits&&d2.hits[0]){let url2=d2.hits[0].videos.medium.url;vbox.innerHTML+=`<div style="margin-top:8px"><b>Pixabay Free - ${q} जी</b><video controls autoplay muted loop src="${url2}"></video></div>`;}}}catch(e){}
+vbox.innerHTML+=`<div style="font-size:10px;margin-top:6px"><a href="https://mixkit.co/free-stock-video/${q}" target="_blank" style="color:green">Mixkit ${q}</a> | <a href="https://coverr.co/s?q=${q}" target="_blank" style="color:green">Coverr ${q}</a> - Free No Copyright जी</div>`;
+}
+makeLabels();filterCat("सब");
+</script></body></html>
