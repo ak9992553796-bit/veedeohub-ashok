@@ -107,12 +107,24 @@ SolqIcBHhu4 - एक लिंक - सारा खेल - TV चैनल - Y
 <button onclick="speak('bottomFull')" style="background:#fff8c4;border-radius:20px;padding:6px 14px;margin-top:8px;color:#000">🔊 नीचे वाला पूरा बॉक्स सुनो जी - जरूरी जानकारी जी</button>
 </div>
 
+<!-- 🪔 अनन्त ज्योति - सेफ जी -->
+<div style="border:3px solid gold;background:#000;text-align:center;border-radius:12px;margin:10px 0;padding:8px;">
+<div style="color:gold;font-weight:900;font-size:15px;">ॐ नमः शिवाय: ये ज्योति सदा जलती रहे 🪔🙏</div>
+</div>
+
+<!-- 📻 अनन्त रेडियो स्टेशन - नया - पुराना सेफ जी -->
+<div style="border:3px solid gold;background:#000;text-align:center;border-radius:12px;margin:10px 0;padding:10px;">
+<a href="radio.html" target="_blank" style="text-decoration:none;color:gold;font-weight:900;display:block;padding:12px">📻 अनन्त रेडियो स्टेशन - Voice Auto Pexels Pixabay Free - क्लिक करो जी</a>
+<div style="font-size:11px;color:#0f0;padding-bottom:8px">No Copyright - फ्री सिस्टम - कमाई चालू जी</div>
+</div>
+
+<!-- 📦 अनन्त सुरक्षित स्टॉक | गुप्त सिस्टम | Ashok | 2026 Anant System | Pexels Pixabay गुप्त में है जी | ॐ नमः शिवाय -->
 </div>
 <script>
 function togglePass(id){let e=document.getElementById(id);e.type=e.type==='password'?'text':'password';}
 function mic(id){if(!('webkitSpeechRecognition' in window||'SpeechRecognition' in window)){alert('माइक नहीं चला जी - Chrome में खोलो जी');return}let r=new(window.SpeechRecognition||window.webkitSpeechRecognition)();r.lang='hi-IN';r.onresult=function(e){document.getElementById(id).value=e.results[0][0].transcript};r.start()}
-function speak(id){let t=document.getElementById(id).innerText;let u=new SpeechSynthesisUtterance(t);u.lang='hi-IN';u.rate=0.85;speechSynthesis.speak(u)}
-function speakText(txt){let u=new SpeechSynthesisUtterance(txt);u.lang='hi-IN';u.rate=0.9;speechSynthesis.speak(u)}
+function speakText(t){speechSynthesis.cancel();let m=new SpeechSynthesisUtterance(t);m.lang='hi-IN';m.rate=0.85;speechSynthesis.speak(m);}
+function speak(id){let el=document.getElementById(id);if(el){let txt=el.innerText.replace('🎤','').replace('▶️','');if(txt.length>5) speakText(txt);}else{speakText(id);}}
 function speakDouble(id){let t=document.getElementById(id).innerText;let u1=new SpeechSynthesisUtterance(t);u1.lang='hi-IN';u1.rate=0.9;speechSynthesis.speak(u1);u1.onend=function(){let u2=new SpeechSynthesisUtterance(t);u2.lang='hi-IN';u2.rate=0.9;speechSynthesis.speak(u2)}}
 function joinNow(){let m=jMob.value;if(m.length!=10||isNaN(m)){jMsg.innerText='10 अंक मोबाइल सही लिखो जी';return}if(!jAgree.checked){jMsg.innerText='शर्तें मानो जी';return}jMsg.innerText='Join OK जी - All Life - '+jName.value;speakText('एडमिन की मंजूरी मिलने के बाद लाभ उठाएं जी।');window.open('https://wa.me/919992553796?text=Join%20Hai%20Ji%20'+jName.value+'%20'+m,'_blank')}
 function getAdminPass(){return localStorage.getItem('veedeo_admin_pass')||'9992553796@2026'}
@@ -121,32 +133,5 @@ function saveNewPass(e){if(e){e.preventDefault();}let np=document.getElementById
 function autoFill(){let t=dabbaType.value;let mp={kirana:{s:'इस डब्बे में किराना लिंक डलेगा जी',ti:'किराना लिंक डब्बा जी',l:'लाभ: राशन घर बैठे जी'},dawai:{s:'इस डब्बे में दवाई लिंक डलेगा जी',ti:'दवाई लिंक डब्बा जी',l:'लाभ: दवाई घर पहुंचेगी जी'},kapda:{s:'इस डब्बे में कपड़ा लिंक डलेगा जी',ti:'कपड़ा लिंक डब्बा जी',l:'लाभ: कपड़े सस्ते में जी'},bhajan:{s:'इस डब्बे में भजन लिंक डलेगा जी',ti:'भजन लिंक डब्बा जी',l:'लाभ: भजन से मन पवित्र जी'},comedy:{s:'इस डब्बे में कॉमेडी लिंक डलेगा जी',ti:'कॉमेडी लिंक डब्बा जी',l:'लाभ: हंसी से दिल खुश जी'},book:{s:'इस डब्बे में किताब लिंक डलेगा जी',ti:'किताब लिंक डब्बा जी',l:'लाभ: ज्ञान मिलेगा जी'},shop:{s:'इस डब्बे में दुकान Ad लिंक डलेगा जी',ti:'दुकान Ad डब्बा जी',l:'लाभ: दुकान Google पर दिखेगी जी'}};if(mp[t]){nSmall.value=mp[t].s;nTitle.value=mp[t].ti;nLabh.value=mp[t].l}}
 let c=21;function addNew(){let s=nSmall.value;let ti=nTitle.value;let li=nLink.value||'https://96-bit.github.io/veedeohub-ashok/';let l=nLabh.value;let id='ln'+c;let ht=`<div class="dabba"><div style="color:#8B4513;font-size:11px">${s} - Admin से जी</div><div style="font-weight:800">${c}. ${ti}</div><a class="link" href="${li}" target="_blank">${li}</a><div style="color:#0a7a0a;font-weight:700" id="${id}">${l}</div><button class="sunoBtn" onclick="speak('${id}')">🔊 सुनो</button></div>`;newArea.insertAdjacentHTML('beforeend',ht);c++;speakText('डब्बा बन गया जी');}
 if(location.search.includes("reset=ashok")){localStorage.removeItem('veedeo_admin_pass');alert("रीसेट हो गया जी");location.href=location.pathname;}
-function speakText(t){
-  speechSynthesis.cancel();
-  let m=new SpeechSynthesisUtterance(t);
-  m.lang='hi-IN';
-  m.rate=0.85;
-  speechSynthesis.speak(m);
-}
-function speak(id){
-  let el=document.getElementById(id);
-  if(el){
-    let txt=el.innerText.replace('🎤','').replace('▶️','');
-    if(txt.length>5) speakText(txt);
-  } else {
-    speakText(id);
-  }
-}</script><!-- 📦 अनन्त सुरक्षित स्टॉक - गुप्त सिस्टम © Ashok -- © 2026 Anant System -- Pexels/Pixabay गुप्त में है जी -- ॐ नमः शिवाय: ये ज्योति सदा जलती रहे 🪔🙏 -->
-<!-- 🪔 अनन्त ज्योति -->
-<div class="box" style="border:3px solid gold;background:#000;text-align:center;border-radius:12px;margin:10px auto;max-width:460px;padding:8px;">
-<div style="color:gold;font-weight:900;font-size:15px;">ॐ नमः शिवाय: ये ज्योति सदा जलती रहे 🪔🙏</div>
-</div>
-
-<!-- 📻 अनन्त रेडियो स्टेशन - नया - पुराना सेफ जी -->
-<div class="box" style="border:3px solid gold;background:#000;text-align:center;border-radius:12px;margin:10px auto;max-width:460px">
-<a href="radio.html" target="_blank" style="text-decoration:none;color:gold;font-weight:900;display:block;padding:12px">📻 अनन्त रेडियो स्टेशन - Voice Auto Pexels/Pixabay Free - क्लिक करो जी</a>
-<div style="font-size:11px;color:#0f0;padding-bottom:8px">No Copyright - फ्री सिस्टम - कमाई चालू जी</div>
-</div>
-
-</div></div>
-</body></html>
+</script>
+</div></body></html>
