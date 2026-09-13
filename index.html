@@ -121,23 +121,18 @@ function saveNewPass(e){if(e){e.preventDefault();}let np=document.getElementById
 function autoFill(){let t=dabbaType.value;let mp={kirana:{s:'इस डब्बे में किराना लिंक डलेगा जी',ti:'किराना लिंक डब्बा जी',l:'लाभ: राशन घर बैठे जी'},dawai:{s:'इस डब्बे में दवाई लिंक डलेगा जी',ti:'दवाई लिंक डब्बा जी',l:'लाभ: दवाई घर पहुंचेगी जी'},kapda:{s:'इस डब्बे में कपड़ा लिंक डलेगा जी',ti:'कपड़ा लिंक डब्बा जी',l:'लाभ: कपड़े सस्ते में जी'},bhajan:{s:'इस डब्बे में भजन लिंक डलेगा जी',ti:'भजन लिंक डब्बा जी',l:'लाभ: भजन से मन पवित्र जी'},comedy:{s:'इस डब्बे में कॉमेडी लिंक डलेगा जी',ti:'कॉमेडी लिंक डब्बा जी',l:'लाभ: हंसी से दिल खुश जी'},book:{s:'इस डब्बे में किताब लिंक डलेगा जी',ti:'किताब लिंक डब्बा जी',l:'लाभ: ज्ञान मिलेगा जी'},shop:{s:'इस डब्बे में दुकान Ad लिंक डलेगा जी',ti:'दुकान Ad डब्बा जी',l:'लाभ: दुकान Google पर दिखेगी जी'}};if(mp[t]){nSmall.value=mp[t].s;nTitle.value=mp[t].ti;nLabh.value=mp[t].l}}
 let c=21;function addNew(){let s=nSmall.value;let ti=nTitle.value;let li=nLink.value||'https://96-bit.github.io/veedeohub-ashok/';let l=nLabh.value;let id='ln'+c;let ht=`<div class="dabba"><div style="color:#8B4513;font-size:11px">${s} - Admin से जी</div><div style="font-weight:800">${c}. ${ti}</div><a class="link" href="${li}" target="_blank">${li}</a><div style="color:#0a7a0a;font-weight:700" id="${id}">${l}</div><button class="sunoBtn" onclick="speak('${id}')">🔊 सुनो</button></div>`;newArea.insertAdjacentHTML('beforeend',ht);c++;speakText('डब्बा बन गया जी');}
 if(location.search.includes("reset=ashok")){localStorage.removeItem('veedeo_admin_pass');alert("रीसेट हो गया जी");location.href=location.pathname;}
-</script><!-- 📦 अनन्त सुरक्षित स्टॉक - गुप्त सिस्टम © Ashok -- Pexels / Pixabay गुप्त में है जी -- © 2026 Anant System -- ॐ नमः शिवाय: ये ज्योति सदा जलती रहे 🪔🙏 -->
+</script><!-- 📦 अनन्त सुरक्षित स्टॉक - गुप्त सिस्टम © Ashok -- © 2026 Anant System -- Pexels/Pixabay गुप्त में है जी -- ॐ नमः शिवाय: ये ज्योति सदा जलती रहे 🪔🙏 -->
 
-<!-- काली पट्टी वाला जानकारी बॉक्स जी -->
-<div class="box" style="border:3px solid gold;background:#000;padding:12px;border-radius:12px;margin-top:12px;">
-<div style="color:gold;font-size:13px;line-height:1.5;">
-<b>Veedeohub - Veedeo का Hub...</b> (आपका पुराना वाला टेक्स्ट वैसे ही रहेगा जी)
-</div>
-<div style="text-align:center;margin-top:8px;">
-<button onclick="document.getElementById('anantBottomBox').style.display='block';document.getElementById('anantBottomBox').scrollIntoView({behavior:'smooth'})" style="background:#fffbe6;border:2px solid gold;border-radius:20px;padding:6px 14px;font-weight:700;">🔊 नीचे वाला पूरा बॉक्स सुनो जी - जरूरी जानकारी जी</button>
-</div>
+<!-- 🪔 अनन्त ज्योति -->
+<div class="box" style="border:3px solid gold;background:#000;text-align:center;border-radius:12px;margin:10px auto;max-width:460px;padding:8px;">
+<div style="color:gold;font-weight:900;font-size:15px;">ॐ नमः शिवाय: ये ज्योति सदा जलती रहे 🪔🙏</div>
 </div>
 
-<!-- नीचे वाला अनन्त फ्री वीडियो बॉक्स - दबाने पर खुलने वाला जी -->
-<div id="anantBottomBox" class="box" style="border:3px solid gold !important;background:#000 !important;padding:12px !important;border-radius:12px !important;margin-top:12px !important;display:block !important;">
-<div style="font-weight:700;color:gold !important;text-align:center;font-size:16px !important;">ॐ नमः शिवाय: ये ज्योति सदा जलती रहे 🪔🙏</div>
-<div style="font-weight:700;color:gold !important;font-size:15px !important;margin-top:8px;">🎥 अनन्त फ्री वीडियो - Voice जैसी जी - No Copyright जी</div>
-<div style="font-size:13px !important;color:#ffeb7a !important;margin-top:5px;">🔍 <span id="bottomQuery" style="color:gold !important;font-weight:700;">temple</span> की Free Video ला रहा हूँ जी - अपने अनन्त सिस्टम से जी</div>
-<div id="bottomResults" style="display:grid !important;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-top:10px;background:#111;padding:6px;border-radius:8px;min-height:60px;"></div>
-<div style="font-size:11px !important;margin-top:8px;color:gold !important;text-align:center;border-top:1px solid gold;padding-top:5px;">© अनन्त सिस्टम - Ashok - Auto Anant - Protected जी - Free No Copyright जी</div>
+<!-- 📻 अनन्त रेडियो स्टेशन - नया - पुराना सेफ जी -->
+<div class="box" style="border:3px solid gold;background:#000;text-align:center;border-radius:12px;margin:10px auto;max-width:460px">
+<a href="radio.html" target="_blank" style="text-decoration:none;color:gold;font-weight:900;display:block;padding:12px">📻 अनन्त रेडियो स्टेशन - Voice Auto Pexels/Pixabay Free - क्लिक करो जी</a>
+<div style="font-size:11px;color:#0f0;padding-bottom:8px">No Copyright - फ्री सिस्टम - कमाई चालू जी</div>
 </div>
+
+</div></div>
+</body></html>
