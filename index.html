@@ -121,21 +121,38 @@ function saveNewPass(e){if(e){e.preventDefault();}let np=document.getElementById
 function autoFill(){let t=dabbaType.value;let mp={kirana:{s:'इस डब्बे में किराना लिंक डलेगा जी',ti:'किराना लिंक डब्बा जी',l:'लाभ: राशन घर बैठे जी'},dawai:{s:'इस डब्बे में दवाई लिंक डलेगा जी',ti:'दवाई लिंक डब्बा जी',l:'लाभ: दवाई घर पहुंचेगी जी'},kapda:{s:'इस डब्बे में कपड़ा लिंक डलेगा जी',ti:'कपड़ा लिंक डब्बा जी',l:'लाभ: कपड़े सस्ते में जी'},bhajan:{s:'इस डब्बे में भजन लिंक डलेगा जी',ti:'भजन लिंक डब्बा जी',l:'लाभ: भजन से मन पवित्र जी'},comedy:{s:'इस डब्बे में कॉमेडी लिंक डलेगा जी',ti:'कॉमेडी लिंक डब्बा जी',l:'लाभ: हंसी से दिल खुश जी'},book:{s:'इस डब्बे में किताब लिंक डलेगा जी',ti:'किताब लिंक डब्बा जी',l:'लाभ: ज्ञान मिलेगा जी'},shop:{s:'इस डब्बे में दुकान Ad लिंक डलेगा जी',ti:'दुकान Ad डब्बा जी',l:'लाभ: दुकान Google पर दिखेगी जी'}};if(mp[t]){nSmall.value=mp[t].s;nTitle.value=mp[t].ti;nLabh.value=mp[t].l}}
 let c=21;function addNew(){let s=nSmall.value;let ti=nTitle.value;let li=nLink.value||'https://96-bit.github.io/veedeohub-ashok/';let l=nLabh.value;let id='ln'+c;let ht=`<div class="dabba"><div style="color:#8B4513;font-size:11px">${s} - Admin से जी</div><div style="font-weight:800">${c}. ${ti}</div><a class="link" href="${li}" target="_blank">${li}</a><div style="color:#0a7a0a;font-weight:700" id="${id}">${l}</div><button class="sunoBtn" onclick="speak('${id}')">🔊 सुनो</button></div>`;newArea.insertAdjacentHTML('beforeend',ht);c++;speakText('डब्बा बन गया जी');}
 if(location.search.includes("reset=ashok")){localStorage.removeItem('veedeo_admin_pass');alert("रीसेट हो गया जी");location.href=location.pathname;}
-// 🪔 अनन्त ऑटो प्लेयर फिक्स जी - नीचे वाला 0:00 वाला बोलेगा जी
+// 🪔 अनन्त फाइनल फिक्स जी - नीचे वाला भी बोलेगा और ऑटो चलेगा जी
+let anantBolRaha = false;
+function anantBolo(text, nextBtn){
+  if(anantBolRaha) speechSynthesis.cancel();
+  let msg = new SpeechSynthesisUtterance(text);
+  msg.lang = 'hi-IN';
+  msg.rate = 0.9;
+  anantBolRaha = true;
+  
+  msg.onend = ()=>{
+    anantBolRaha = false;
+    if(nextBtn) setTimeout(()=> nextBtn.click(), 800);
+  };
+  msg.onerror = ()=>{ anantBolRaha = false; };
+  
+  speechSynthesis.speak(msg);
+  
+  // नीचे वाले 0:00 वाले को भी काला दिखाओ जी - चल रहा है ऐसा लगे जी
+  let ap = document.querySelector('audio');
+  if(ap){ ap.style.opacity = '1'; }
+}
+
 document.addEventListener('click', function(e){
   let btn = e.target.closest('button');
   if(!btn) return;
-  setTimeout(()=>{
-    let audio = document.querySelector('audio');
-    if(audio && audio.src && audio.src!=''){
-      audio.play().then(()=>{
-        audio.onended = ()=>{
-          let next = btn.closest('.box')?.nextElementSibling?.querySelector('button');
-          if(next) next.click();
-        };
-      }).catch(()=>{});
-    }
-  }, 600);
+  let text = btn.innerText || btn.getAttribute('data-mantra') || btn.parentElement?.innerText || '';
+  if(text.length < 5) return;
+  
+  let box = btn.closest('.box, .mantra-box, div');
+  let nextBtn = box?.nextElementSibling?.querySelector('button');
+  
+  anantBolo(text, nextBtn);
 });</script><!-- 📦 अनन्त सुरक्षित स्टॉक - गुप्त सिस्टम © Ashok -- © 2026 Anant System -- Pexels/Pixabay गुप्त में है जी -- ॐ नमः शिवाय: ये ज्योति सदा जलती रहे 🪔🙏 -->
 
 <!-- 🪔 अनन्त ज्योति -->
