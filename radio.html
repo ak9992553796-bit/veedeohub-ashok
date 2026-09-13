@@ -1,44 +1,55 @@
 <!DOCTYPE html>
-<html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Anant Radio - All Life</title>
+<html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anant Radio - No Copyright</title>
 <style>
-body{margin:0;background:#070e1f;color:#fff;font-family:system-ui;padding:6px}
-.header{background:#000;border-bottom:3px solid gold;padding:10px;display:flex;justify-content:space-between;position:sticky;top:0;z-index:10}
-.logo{color:gold;font-weight:bold}
-.card{background:#111;border:2px solid gold;border-radius:14px;padding:10px;margin:10px 0}
-.player{width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden}
-iframe{width:100%;height:100%;border:0}
-.btn{padding:13px;border-radius:12px;border:2px solid gold;font-weight:bold}
-.btn-gold{width:100%;background:gold;color:#000;font-size:17px}
-.btn-row{display:flex;gap:6px;margin:8px 0}
+body{margin:0;background:#070a1a;color:#fff;font-family:system-ui;padding:6px}
+.header{background:#000;border-bottom:3px solid gold;padding:12px;text-align:center;position:sticky;top:0}
+.logo{color:gold;font-weight:bold;font-size:20px}
+.card{background:#121528;border:2px solid gold;border-radius:16px;padding:14px;margin:12px 0}
+.player{width:100%;background:#000;border:2px solid gold;border-radius:14px;padding:16px;text-align:center;min-height:180px;display:flex;flex-direction:column;justify-content:center}
+.lyrics{font-size:18px;line-height:1.6;color:#ffe55c;white-space:pre-line;max-height:260px;overflow:auto}
+.btn{padding:14px;border-radius:12px;border:2px solid gold;font-weight:bold;font-size:16px;cursor:pointer}
+.btn-gold{width:100%;background:gold;color:#000}
+.btn-row{display:flex;gap:8px;margin:10px 0}
 .btn-dark{flex:1;background:#000;color:gold}
-.badge{background:#222;border:1px solid gold;color:gold;padding:6px 10px;border-radius:20px;font-size:12px}
-.row{display:flex;gap:10px;padding:10px;border-bottom:1px solid #222}
-.row img{width:80px;height:54px;border-radius:8px;object-fit:cover;border:2px solid gold}
+.badge{background:#000;border:1px solid gold;color:gold;padding:8px 12px;border-radius:20px;font-size:13px;margin:3px;display:inline-block;cursor:pointer}
+.active{background:gold;color:#000}
+.list-item{display:flex;gap:10px;padding:12px;border-bottom:1px solid #222;cursor:pointer;border-radius:10px}
 </style></head><body>
-<div class="header"><div class="logo">📻 Anant Radio - All Life</div><div>🔔 ⚙️</div></div>
+<div class="header"><div class="logo">📻 Anant Radio - All Life<br><span style="font-size:12px;color:#0f0">100% Free - No Copyright जी</span></div></div>
 <div class="card">
 <div id="now" style="color:#0f0;font-weight:bold">रेडी जी...</div>
-<div class="player"><iframe id="yt" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
-<div id="desc" style="font-size:12px;color:#ff0;margin-top:6px"></div>
-<button class="btn btn-gold" onclick="playAll()">▶️ सारा ऑटो चलाओ जी - All Life</button>
-<div class="btn-row"><button class="btn btn-dark" onclick="stop()">⏹️ बंद</button><button class="btn btn-dark" onclick="next()">⏭️ अगला</button><button class="btn btn-dark" onclick="alert('बोलो जी')">🎤 बोलो जी</button></div>
-<div id="cats" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+<div class="player">
+<div id="icon" style="font-size:50px">🪔</div>
+<div id="lyrics" class="lyrics">जी Start दबाओ जी - पूरा माइक बोलेगा जी</div>
+<div id="status" style="font-size:12px;color:#aaa;margin-top:8px">बंद है जी</div>
 </div>
-<div class="card"><b>🎬 Content Library - फ्री लाइब्रेरी जी</b><div id="list"></div></div>
+<button class="btn btn-gold" onclick="playAll()">▶️ सारा ऑटो चलाओ जी - All Life</button>
+<div class="btn-row">
+<button class="btn-dark" onclick="stop()">⏹️ बंद</button>
+<button class="btn-dark" onclick="next()">⏭️ अगला</button>
+<button class="btn-dark" onclick="toggleLoop()" id="loopBtn">🔁 लूप: चालू</button>
+</div>
+<div id="cats" style="margin-top:10px"></div>
+</div>
+<div class="card"><div style="color:gold;font-weight:bold">🎬 Library - फ्री वाली जी</div><div id="list"></div></div>
 <script>
 const lib=[
-{id:"QW2gMEmW7A4",t:"ॐ जय जगदीश हरे - 8 अंतरा पूरी आरती",d:"भक्तजनों के संकट क्षण में दूर करे",c:"आरती"},
-{id:"g2DO6n1m2rE",t:"हनुमान आरती",d:"दुष्ट दलन रघुनाथ कला की",c:"आरती"},
-{id:"m3A9aKqFv8M",t:"गायत्री मंत्र 108 बार",d:"ॐ भूर्भुवः स्वः",c:"आरती"},
-{id:"6R8bK4s5s8U",t:"तुलसी के लाभ",d:"सर्दी खांसी इम्यूनिटी अमृत जी",c:"जड़ी-बूटी"},
-{id:"u8XkLqYJ7nM",t:"चाणक्य नीति",d:"मीठा बोलो सच बोलो जी",c:"सुविचार"},
-{id:"3a5b7c9d1e2",t:"रामायण कथा",d:"14 साल वनवास की कथा जी",c:"कथा"},
-{id:"f4g6h8j0k1l",t:"रोज नया चुटकला",d:"हँसोगे तो दिल खुश रहेगा जी",c:"कॉमेडी"},
-{id:"kJQP7kiw5Fk",t:"Veedeohub TV",d:"आपका TV जी",c:"TV"}
+{t:"ॐ जय जगदीश हरे - पूरी आरती 8 अंतरा",c:"आरती",icon:"🪔",txt:`ॐ जय जगदीश हरे, स्वामी जय जगदीश हरे। भक्त जनों के संकट, क्षण में दूर करे। जो ध्यावे फल पावे, दुख बिनसे मन का। सुख सम्पति घर आवे, कष्ट मिटे तन का। मात पिता तुम मेरे, शरण गहूं किसकी। तुम बिन और न दूजा, आस करूं जिसकी। तुम पूरण परमात्मा, तुम अंतर्यामी। पारब्रह्म परमेश्वर, तुम सबके स्वामी। तुम करुणा के सागर, तुम पालन करता। मैं मूरख खल कामी, कृपा करो भर्ता। तुम हो एक अगोचर, सबके प्राण पति। किस विधि मिलूं दयामय, तुमको मैं कुमति। दीनबंधु दुखहर्ता, ठाकुर तुम मेरे। अपने हाथ उठाओ, द्वार पड़ा तेरे। विषय विकार मिटाओ, पाप हरो देवा। श्रद्धा भक्ति बढ़ाओ, संतन की सेवा। ॐ जय जगदीश हरे।`},
+{t:"हनुमान चालीसा - चौपाई",c:"आरती",icon:"🙏",txt:`श्री गुरु चरण सरोज रज, निज मन मुकुरु सुधारि। बुद्धिहीन तनु जानके, सुमिरौं पवन कुमार। जय हनुमान ज्ञान गुण सागर, जय कपीस तिहुं लोक उजागर। राम दूत अतुलित बल धामा, अंजनि पुत्र पवनसुत नामा। महावीर विक्रम बजरंगी, कुमति निवार सुमति के संगी।`},
+{t:"गायत्री मंत्र 108 बार",c:"आरती",icon:"🕉️",txt:`ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि धियो यो नः प्रचोदयात्। शांति शांति शांति। यह मंत्र बुद्धि को तेज करता है जी।`},
+{t:"तुलसी के 5 फायदे",c:"जड़ी-बूटी",icon:"🌿",txt:`तुलसी के 5 बड़े फायदे सुनो जी। एक, सर्दी खांसी में तुलसी की चाय अमृत है जी। दो, रोज सुबह तुलसी के 4 पत्ते खाने से इम्यूनिटी बढ़ती है जी। तीन, तुलसी तनाव कम करती है जी। चार, तुलसी घर में लगाओ तो मच्छर नहीं आते जी। पांच, तुलसी का पानी पीने से पेट साफ रहता है जी।`},
+{t:"आज का सुविचार",c:"सुविचार",icon:"💡",txt:`आज का अनमोल विचार सुनो जी। मीठा बोलो, सच बोलो, सबके दिल में बस जाओ जी। जो दूसरों को इज्जत देता है, उसकी इज्जत भगवान करता है जी।`},
+{t:"रामायण कथा - वनवास",c:"कथा",icon:"📖",txt:`रामायण कथा सुनो जी। राजा दशरथ ने राम को 14 साल वनवास दिया जी। सीता और लक्ष्मण भी साथ गए जी। वन में रावण ने सीता का हरण किया जी। हनुमान जी ने लंका जलाई और राम ने रावण को मारा जी।`},
+{t:"रोज नया चुटकला",c:"कॉमेडी",icon:"😂",txt:`एक चुटकला सुनो जी। पप्पू डॉक्टर के पास गया जी। डॉक्टर ने कहा, तुम्हें क्या बीमारी है जी? पप्पू बोला, सब लोग मुझे भूल जाते हैं जी। डॉक्टर बोला, आप कौन हो जी? हा हा हा, हँसते रहो जी।`}
 ];
-let cur=0;
-function load(i){cur=i;let v=lib[i];document.getElementById('now').innerText='🔊 अब बज रहा है जी: '+v.t;document.getElementById('desc').innerText=v.d+' जी';document.getElementById('yt').src='https://www.youtube-nocookie.com/embed/'+v.id+'?autoplay=1&rel=0';render();}
-function next(){load((cur+1)%lib.length)}function playAll(){load(0)}function stop(){document.getElementById('yt').src='';document.getElementById('now').innerText='बंद कर दिया जी'}
-function render(){let cats=[...new Set(lib.map(x=>x.c))];document.getElementById('cats').innerHTML=cats.map(c=>'<span class=badge onclick="load('+lib.findIndex(x=>x.c==c)+')">☑️ '+c+'</span>').join('');document.getElementById('list').innerHTML=lib.map((v,i)=>'<div class=row onclick="load('+i+')"><img src="https://img.youtube.com/vi/'+v.id+'/mqdefault.jpg"><div><b style="font-size:14px">'+v.t+'</b><div style="font-size:11px;color:#aaa">'+v.c+' • '+v.d+'</div></div></div>').join('');}
-window.onload=()=>{render();load(0);};
+let cur=0,loop=true,hindi=true;let synth=window.speechSynthesis;
+function getVoice(){let v=synth.getVoices();let hv=v.find(x=>x.lang.includes('hi'));return hindi?(hv||v[0]):v[0];}
+function speak(t){synth.cancel();let u=new SpeechSynthesisUtterance(t);u.voice=getVoice();u.lang=hindi?'hi-IN':'en-IN';u.rate=0.9;u.onstart=()=>{document.getElementById('status').innerText="🔊 बज रहा है जी...";document.getElementById('icon').innerText="🔊";};u.onend=()=>{document.getElementById('status').innerText="पूरा हुआ जी";document.getElementById('icon').innerText="✅";if(loop)setTimeout(()=>next(),1500);};synth.speak(u);}
+function load(i){cur=i;let v=lib[i];document.getElementById('now').innerText="🔊 अब बज रहा है जी: "+v.t;document.getElementById('lyrics').innerText=v.txt;document.getElementById('icon').innerText=v.icon;render();speak(v.txt);}
+function next(){load((cur+1)%lib.length)}function playAll(){load(0)}function stop(){synth.cancel();document.getElementById('status').innerText="बंद कर दिया जी";document.getElementById('icon').innerText="⏹️";}
+function toggleLoop(){loop=!loop;document.getElementById('loopBtn').innerText=loop?"🔁 लूप: चालू":"🔁 लूप: बंद";}
+function filterCat(c){let idx=lib.findIndex(x=>x.c==c);if(idx>=0)load(idx);}
+function render(){let cats=[...new Set(lib.map(x=>x.c))];document.getElementById('cats').innerHTML=cats.map(c=>`<span class="badge ${lib[cur].c==c?'active':''}" onclick="filterCat('${c}')">☑️ ${c}</span>`).join('');document.getElementById('list').innerHTML=lib.map((v,i)=>`<div class="list-item" onclick="load(${i})" style="${i==cur?'background:#1e2140;border:1px solid gold':''}"><div style="font-size:32px">${v.icon}</div><div><b style="font-size:14px">${v.t}</b><div style="font-size:11px;color:#aaa">${v.c} • ${v.txt.slice(0,40)}...</div></div></div>`).join('');}
+window.onload=()=>{setTimeout(()=>{synth.getVoices();render();document.getElementById('lyrics').innerText="जी Start दबाओ जी - सारा ऑटो बजेगा जी - कोई कॉपीराइट नहीं जी";},500);};
 </script></body></html>
