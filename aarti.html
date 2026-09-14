@@ -1,13 +1,13 @@
-<!-- 📦 FINAL - हल्का फोन + अनन्त खजाना + FB Save + 10-10 लोड | Ashok 2026 -->
+<!-- 📦 FINAL - हल्का फोन + अनन्त खजाना + FB Save + 10-10 लोड + खाली पिक्सल वीडियो | Ashok 2026 -->
 <!DOCTYPE html>
 <html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Anant Radio - 10-10 Load - All Life</title>
+<title>Anant Radio - Video Wala - All Life</title>
 <style>
 body{margin:0;background:#070a1a;color:#fff;font-family:system-ui;padding:6px}
 .header{background:#000;border-bottom:3px solid gold;padding:12px;text-align:center;position:sticky;top:0;z-index:10}
 .logo{color:gold;font-weight:bold;font-size:20px}
 .card{background:#121528;border:2px solid gold;border-radius:16px;padding:14px;margin:12px 0}
-.player{width:100%;background:#000;border:2px solid gold;border-radius:14px;padding:16px;text-align:center;min-height:160px}
+.player{width:100%;background:#000;border:2px solid gold;border-radius:14px;padding:10px;text-align:center;min-height:260px}
 .lyrics{font-size:18px;color:#ffe55c;white-space:pre-line;max-height:220px;overflow:auto}
 .btn{padding:14px;border-radius:12px;border:2px solid gold;font-weight:bold;cursor:pointer}
 .btn-gold{width:100%;background:gold;color:#000}
@@ -16,12 +16,21 @@ body{margin:0;background:#070a1a;color:#fff;font-family:system-ui;padding:6px}
 .badge{border:1px solid gold;padding:6px 10px;border-radius:20px;font-size:12px;margin:3px;display:inline-block}
 .list-item{display:flex;gap:8px;align-items:center;background:#0d1025;padding:8px;border-radius:10px;margin:6px 0}
 .searchBox{width:94%;padding:10px;border-radius:10px;border:2px solid gold;margin:8px 0}
+#fakeVideo{width:100%;height:150px;background:#000;border-radius:12px;border:1px solid gold;object-fit:cover}
 </style></head><body>
-<div class="header"><div class="logo">📻 Anant Radio - हल्का फोन - 10-10 लोड जी<br><span style="font-size:11px;color:#0f0">FB Save + नाम नंबर - All Life</span></div></div>
+<div class="header"><div class="logo">📻 Anant Radio - वीडियो वाला जी<br><span style="font-size:11px;color:#0f0">खाली पिक्सल = असली वीडियो - All Life</span></div></div>
 
 <div class="card">
 <div id="now" style="color:#0f0;font-weight:bold">रेडी जी...</div>
-<div class="player"><div id="icon" style="font-size:40px">🪔</div><div id="lyrics" class="lyrics">Start दबाओ जी</div><div id="status" style="font-size:11px;color:#aaa">बंद है जी</div></div>
+<div class="player">
+<!-- 📹 जी यही वो खाली पिक्सल वाला वीडियो है जी - असली लगेगा जी -->
+<video id="fakeVideo" autoplay loop muted playsinline poster="">
+<source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+</video>
+<div id="icon" style="font-size:40px;margin-top:6px">🪔</div>
+<div id="lyrics" class="lyrics">Start दबाओ जी</div>
+<div id="status" style="font-size:11px;color:#aaa">बंद है जी</div>
+</div>
 <button class="btn btn-gold" onclick="playAll()">▶️ सारा ऑटो चलाओ जी</button>
 <div class="btn-row"><button class="btn-dark" onclick="stop()">⏹️ बंद</button><button class="btn-dark" onclick="next()">⏭️ अगला</button><button class="btn-dark" onclick="loadMore()">📦 और 10 लोड जी</button></div>
 <input id="searchAarti" class="searchBox" placeholder="लिखो जी - गणेश, शिव, हनुमान...">
@@ -33,19 +42,30 @@ body{margin:0;background:#070a1a;color:#fff;font-family:system-ui;padding:6px}
 <script src="khazana.js"></script>
 <script>
 // ====== खजाना से सारा जोड़ो जी ======
-var BHAG_1_AARTI=[{t:"ॐ जय जगदीश हरे",c:"आरती",icon:"🪔",txt:`ॐ जय जगदीश हरे...`},{t:"जय गणेश देवा",c:"आरती",icon:"🪔",txt:`जय गणेश...`},{t:"लक्ष्मी आरती",c:"आरती",icon:"🪔",txt:`ॐ जय लक्ष्मी...`},{t:"दुर्गा आरती",c:"आरती",icon:"🪔",txt:`जय अम्बे...`},{t:"शिव आरती",c:"आरती",icon:"🪔",txt:`ॐ जय शिव...`}];
-var BHAG_2_BHAJAN=[{t:"गायत्री मंत्र",c:"भजन",icon:"🕉️",txt:`ॐ भूर्भुवः...`}];
-var BHAG_3_CHALISA=[{t:"हनुमान चालीसा",c:"चालीसा",icon:"🙏",txt:`श्री गुरु चरण...`}];
-var BHAG_4_TANDAV=[{t:"शिव तांडव",c:"तांडव",icon:"🔱",txt:`जटाटवी...`}];
-var BHAG_5_KABIR_GRANTH=[{t:"कबीर दोहे",c:"कबीर",icon:"📜",txt:`बुरा जो देखन...`}];
+var BHAG_1_AARTI=[{t:"ॐ जय जगदीश हरे",c:"आरती",icon:"🪔",txt:`ॐ जय जगदीश हरे...`,video:"https://www.w3schools.com/html/mov_bbb.mp4"},{t:"जय गणेश देवा",c:"आरती",icon:"🪔",txt:`जय गणेश...`,video:"https://www.w3schools.com/html/mov_bbb.mp4"},{t:"लक्ष्मी आरती",c:"आरती",icon:"🪔",txt:`ॐ जय लक्ष्मी...`,video:"https://www.w3schools.com/html/mov_bbb.mp4"},{t:"दुर्गा आरती",c:"आरती",icon:"🪔",txt:`जय अम्बे...`,video:"https://www.w3schools.com/html/mov_bbb.mp4"},{t:"शिव आरती",c:"आरती",icon:"🪔",txt:`ॐ जय शिव...`,video:"https://www.w3schools.com/html/mov_bbb.mp4"}];
+var BHAG_2_BHAJAN=[{t:"गायत्री मंत्र",c:"भजन",icon:"🕉️",txt:`ॐ भूर्भुवः...`,video:"https://www.w3schools.com/html/mov_bbb.mp4"}];
+var BHAG_3_CHALISA=[{t:"हनुमान चालीसा",c:"चालीसा",icon:"🙏",txt:`श्री गुरु चरण...`,video:"https://www.w3schools.com/html/mov_bbb.mp4"}];
+var BHAG_4_TANDAV=[{t:"शिव तांडव",c:"तांडव",icon:"🔱",txt:`जटाटवी...`,video:"https://www.w3schools.com/html/mov_bbb.mp4"}];
+var BHAG_5_KABIR_GRANTH=[{t:"कबीर दोहे",c:"कबीर",icon:"📜",txt:`बुरा जो देखन...`,video:"https://www.w3schools.com/html/mov_bbb.mp4"}];
 var lib=[...BHAG_1_AARTI,...BHAG_2_BHAJAN,...BHAG_3_CHALISA,...BHAG_4_TANDAV,...BHAG_5_KABIR_GRANTH];
-// अगर khazana.js में ज्यादा है तो जोड़ो जी
 if(typeof KHAZANA!=="undefined"){ try{ let k=[...KHAZANA.BHAG_1,...KHAZANA.BHAG_2,...KHAZANA.BHAG_3,...KHAZANA.BHAG_4,...KHAZANA.BHAG_5]; if(k.length>5) lib=k; }catch(e){} }
 
 let show=10,cur=0,loop=true,synth=window.speechSynthesis;
 function getVoice(){let v=synth.getVoices();return v.find(x=>x.lang.includes('hi'))||v[0];}
 function speak(t){synth.cancel();let u=new SpeechSynthesisUtterance(t);u.voice=getVoice();u.lang='hi-IN';u.rate=0.9;u.onend=()=>{if(loop)setTimeout(()=>next(),1000)};synth.speak(u);}
-function load(i){cur=i;let v=lib[i];document.getElementById('now').innerText="🔊 "+v.t;document.getElementById('lyrics').innerText=v.txt;document.getElementById('icon').innerText=v.icon;render();speak(v.txt);}
+
+// 📹 जी नया load - वीडियो बदलने वाला जी
+function load(i){
+  cur=i;let v=lib[i];
+  document.getElementById('now').innerText="🔊 "+v.t;
+  document.getElementById('lyrics').innerText=v.txt;
+  document.getElementById('icon').innerText=v.icon;
+  // वीडियो बदलो जी - कल्पना असली होगी जी
+  let vid=document.getElementById('fakeVideo');
+  if(v.video && v.video.length>5){ vid.src=v.video; vid.play(); }
+  render();speak(v.txt);
+}
+
 function next(){load((cur+1)%lib.length)}function playAll(){load(0)}function stop(){synth.cancel();}
 function loadMore(){show+=10;render();}
 function saveKaro(i){let s=JSON.parse(localStorage.getItem("VEED_SAVED")||"[]"); s=s.includes(i)?s.filter(x=>x!=i):[...s,i]; localStorage.setItem("VEED_SAVED",JSON.stringify(s)); render();}
