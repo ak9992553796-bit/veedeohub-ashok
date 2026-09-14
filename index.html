@@ -11,7 +11,6 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:cent
 .sunoBtn{background:#fff8c4;border:1px solid #000;border-radius:6px;padding:3px 8px;font-size:12px;margin:2px}
 .link{color:#0b57d0;word-break:break-all;display:block;margin:4px 0}
 .rowFlex{display:flex;align-items:center;gap:4px}
-/* खजाना स्टाइल जी */
 .khSearch{width:70%;padding:12px;border:3px solid gold;border-radius:10px;font-weight:700}
 .khBtn{padding:10px;border-radius:8px;background:gold;color:#000;font-weight:800;border:2px solid #000;margin:4px}
 .videoCard{background:#fff;color:#000;border-radius:12px;margin:10px 0;padding:8px;border:2px solid gold;display:flex;gap:8px;text-align:left}
@@ -27,7 +26,6 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:cent
 <div class="rowFlex"><a class="btnBlue" href="https://veedeohub-ashok.netlify.app" target="_blank" style="flex:1">🔗 Veedeohub Ashok 2 - Netlify साइट पर जाओ जी</a><button class="sunoBtn" onclick="speakText('यहाँ से Veedeohub Ashok साइट 2 पर Netlify पर जाएं जी।')">🔊 सुनो</button></div>
 </div>
 
-<!-- ****** नया खजाना सिस्टम जी - यहीं से सब चलेगा जी ****** -->
 <div class="dabba" style="background:#000;color:gold;border:4px solid gold;text-align:center">
 <div style="font-weight:900;font-size:18px">🎵 VeedeoHub Khazana - Free Bhajan Aarti - All Life जी</div>
 <div style="margin:8px 0" class="rowFlex"><input id="khInput" class="khSearch" placeholder="भजन लिखो जी - जैसे हनुमान जी" oninput="renderKh()"><button class="micBtn" onclick="mic('khInput')">🎤</button></div>
@@ -40,7 +38,6 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:cent
 <div id="khList" style="margin-top:10px"></div>
 <div id="khPlayer" style="display:none;background:#fff;border-radius:12px;padding:6px;margin-top:10px"><iframe id="khFrame" width="100%" height="200" frameborder="0" allowfullscreen></iframe><button onclick="closeKh()" style="background:red;color:#fff;padding:6px 10px;border-radius:6px;margin-top:6px">बंद करो जी</button></div>
 </div>
-<!-- ****** खजाना खत्म जी ****** -->
 
 <div style="background:#fff8e1;border:3px solid #ff9800;border-radius:16px;padding:10px;margin:10px 0;text-align:left">
 <div style="font-weight:800;color:#000;font-size:20px">🔴 LIVE Joining Form जी 🎤</div>
@@ -76,8 +73,8 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:cent
 </div>
 
 <div style="border:3px solid gold;background:#000;text-align:center;border-radius:12px;margin:10px 0;padding:10px;">
-<a href="radio.html" target="_blank" style="text-decoration:none;color:gold;font-weight:900;display:block;padding:12px">📻 अनन्त रेडियो स्टेशन - Voice Auto Pexels Pixabay Free - क्लिक करो जी</a>
-<div style="font-size:11px;color:#0f0;padding-bottom:8px">No Copyright - फ्री सिस्टम - कमाई चालू जी - 10 भजन ऑटो जी</div>
+<a href="radio.html" target="_blank" style="text-decoration:none;color:gold;font-weight:900;display:block;padding:12px">📻 अनन्त रेडियो स्टेशन - आपका भजन चैनल जी - क्लिक करो जी</a>
+<div style="font-size:11px;color:#0f0;padding-bottom:8px">No Copyright - आपका 188 वीडियो - कमाई चालू जी</div>
 </div>
 
 </div>
@@ -88,14 +85,13 @@ function speak(id){let el=document.getElementById(id);if(el){speakText(el.innerT
 function speakDouble(id){let t=document.getElementById(id).innerText;let u1=new SpeechSynthesisUtterance(t);u1.lang='hi-IN';u1.rate=0.9;speechSynthesis.speak(u1);u1.onend=function(){let u2=new SpeechSynthesisUtterance(t);u2.lang='hi-IN';u2.rate=0.9;speechSynthesis.speak(u2)}}
 function joinNow(){let m=jMob.value;if(m.length!=10||isNaN(m)){jMsg.innerText='10 अंक मोबाइल सही लिखो जी';return}if(!jAgree.checked){jMsg.innerText='शर्तें मानो जी';return}jMsg.innerText='Join OK जी - All Life - '+jName.value;speakText('एडमिन की मंजूरी मिलने के बाद लाभ उठाएं जी।');window.open('https://wa.me/919992553796?text=Join%20Hai%20Ji%20'+jName.value+'%20'+m,'_blank')}
 
-// खजाना DATA जी - फ्री नो कॉपीराइट वाले जी - आप 1000 तक बढ़ा सकते हैं जी
 var DATA = [
-  {id:"1", title:"हनुमान चालीसा - No Copyright", cat:"Bhajan", video:"AETFvQonf08", thumb:"https://img.youtube.com/vi/AETFvQonf08/mqdefault.jpg"},
-  {id:"2", title:"शिव तांडव स्तोत्र - Free", cat:"Aarti", video:"v5p4uQvX3v4", thumb:"https://img.youtube.com/vi/v5p4uQvX3v4/mqdefault.jpg"},
-  {id:"3", title:"भजन - हनुमान जी की आरती", cat:"Aarti", video:"0P0a2bL5v9c", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg"},
-  {id:"4", title:"गायत्री मंत्र - All Life", cat:"Bhajan", video:"W5gO7j4g4eQ", thumb:"https://img.youtube.com/vi/W5gO7j4g4eQ/mqdefault.jpg"},
-  {id:"5", title:"कृष्ण भजन - मधुर", cat:"Bhajan", video:"FjGAb2t5b6E", thumb:"https://img.youtube.com/vi/FjGAb2t5b6E/mqdefault.jpg"},
-  {id:"6", title:"Comedy - हंसी वाला - Free", cat:"Comedy", video:"SolqIcBHhu4", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg"}
+  {id:"1", title:"हनुमान चालीसा - Veedeohub TV 87", cat:"Bhajan", video:"SolqIcBHhu4", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg", idx:87},
+  {id:"2", title:"शिव आरती - ॐ नमः शिवाय - TV 88", cat:"Aarti", video:"SolqIcBHhu4", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg", idx:88},
+  {id:"3", title:"गायत्री मंत्र - सुबह वाला - TV 89", cat:"Bhajan", video:"SolqIcBHhu4", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg", idx:89},
+  {id:"4", title:"कृष्ण भजन - शाम वाला - TV 90", cat:"Bhajan", video:"SolqIcBHhu4", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg", idx:90},
+  {id:"5", title:"दुर्गा आरती - जय माता की - TV 91", cat:"Aarti", video:"SolqIcBHhu4", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg", idx:91},
+  {id:"6", title:"कॉमेडी - हँसी वाला - TV 92", cat:"Comedy", video:"SolqIcBHhu4", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg", idx:92}
 ];
 var curCat="All";
 function setCat(c){curCat=c;renderKh();}
@@ -111,17 +107,17 @@ function renderKh(){
   filtered.forEach(d=>{
     let saved = localStorage.getItem('save_'+d.id)? '❤️' : '🤍';
     list.innerHTML+=`<div class="videoCard">
-      <img class="thumb" src="${d.thumb}" onclick="playKh('${d.video}')">
+      <img class="thumb" src="${d.thumb}" onclick="playKh('${d.video}',${d.idx})">
       <div style="flex:1"><div style="font-weight:800">${d.title}</div><div style="font-size:11px">${d.cat} जी</div>
-      <button class="khBtn" onclick="playKh('${d.video}')">▶️ चलाओ जी</button>
+      <button class="khBtn" onclick="playKh('${d.video}',${d.idx})">▶️ चलाओ जी</button>
       <button class="khBtn" onclick="saveKh('${d.id}')">${saved} सेव जी</button>
       <button class="sunoBtn" onclick="speakText('${d.title}')">🔊 सुनो</button>
       </div></div>`;
   });
 }
-function playKh(vid){
+function playKh(vid, idx){
   document.getElementById('khPlayer').style.display='block';
-  document.getElementById('khFrame').src="https://www.youtube.com/embed/"+vid+"?autoplay=1";
+  document.getElementById('khFrame').src="https://www.youtube.com/embed/"+vid+"?list=PLF1nrtSu2Dd8IjpcDmTsr68e-nWic_Qd1&index="+idx+"&autoplay=1";
   window.scrollTo(0, document.getElementById('khPlayer').offsetTop-20);
 }
 function closeKh(){document.getElementById('khFrame').src='';document.getElementById('khPlayer').style.display='none'}
