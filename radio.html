@@ -1,15 +1,32 @@
 <!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Anant Radio - Veedeohub</title>
-<style>body{background:#000;color:gold;text-align:center;font-family:Arial;padding:20px} .box{border:3px solid gold;border-radius:12px;padding:15px;max-width:460px;margin:auto} audio{width:100%;margin:10px 0}</style>
+<title>Anant Radio - 10 Bhajan Auto</title>
+<style>body{background:#000;color:gold;text-align:center;font-family:Arial;padding:20px}.box{border:3px solid gold;border-radius:12px;padding:15px;max-width:460px;margin:auto} audio{width:100%;margin:10px 0}</style>
 </head><body>
 <div class="box">
-<h2>📻 अनन्त रेडियो स्टेशन जी</h2>
+<h2>📻 अनन्त रेडियो स्टेशन जी - 10 भजन ऑटो जी</h2>
 <p>Voice Auto - Pexels Pixabay Free - No Copyright जी</p>
-<audio controls autoplay loop>
-<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-</audio>
-<p style="color:#0f0">कमाई चालू जी - All Life जी</p>
+<p id="now" style="color:#0ff">अब बज रहा है जी: 1. SoundHelix 1 जी</p>
+<audio id="aud" controls autoplay></audio>
+<p style="color:#0f0">कमाई चालू जी - All Life जी - ऑटो Next जी</p>
 <a href="index.html" style="color:gold">⬅️ वापस जाओ जी</a>
 <div style="margin-top:12px">ॐ नमः शिवाय: ये ज्योति सदा जलती रहे 🪔🙏</div>
 </div>
+<script>
+var list=[
+ {t:"1. SoundHelix 1",u:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"},
+ {t:"2. SoundHelix 2",u:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"},
+ {t:"3. SoundHelix 3",u:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"},
+ {t:"4. SoundHelix 4",u:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"},
+ {t:"5. SoundHelix 5",u:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"},
+ {t:"6. Pixabay Free Bhajan Style 1",u:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"},
+ {t:"7. Free 7",u:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"},
+ {t:"8. Free 8",u:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"},
+ {t:"9. Free 9",u:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3"},
+ {t:"10. Free 10",u:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3"}
+];
+let i=0; let a=document.getElementById('aud'); let n=document.getElementById('now');
+function play(){ a.src=list[i].u; n.innerText="अब बज रहा है जी: "+list[i].t; a.play(); }
+a.onended=function(){ i=(i+1)%list.length; play(); }
+play();
+</script>
 </body></html>
