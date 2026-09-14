@@ -96,14 +96,13 @@ function speakText(t){speechSynthesis.cancel();let m=new SpeechSynthesisUtteranc
 function speak(id){let el=document.getElementById(id);if(el) speakText(el.innerText)}
 function speakDouble(id){let t=document.getElementById(id).innerText;let u1=new SpeechSynthesisUtterance(t);u1.lang='hi-IN';u1.rate=0.9;speechSynthesis.speak(u1);u1.onend=function(){let u2=new SpeechSynthesisUtterance(t);u2.lang='hi-IN';u2.rate=0.9;speechSynthesis.speak(u2)}}
 function joinNow(){let m=jMob.value;if(m.length!=10||isNaN(m)){jMsg.innerText='10 अंक सही लिखो जी';return}if(!jAgree.checked){jMsg.innerText='शर्तें मानो जी';return}jMsg.innerText='Join OK जी - '+jName.value;window.open('https://wa.me/919992553796?text=Join%20Hai%20Ji%20'+jName.value+'%20'+m,'_blank')}
-
 var DATA = [
-  {id:"1", title:"हनुमान चालीसा - Gulshan Kumar - 4 Billion Views", cat:"Bhajan", vid:"AETFvQonfV8", thumb:"https://img.youtube.com/vi/AETFvQonfV8/mqdefault.jpg"},
-  {id:"2", title:"ॐ जय जगदीश हरे - Anuradha Paudwal - विष्णु आरती", cat:"Aarti", vid:"3ucCEjXS9n8", thumb:"https://img.youtube.com/vi/3ucCEjXS9n8/mqdefault.jpg"},
-  {id:"3", title:"गायत्री मंत्र - 108 बार - All Life", cat:"Bhajan", vid:"AbV4W8k3YvA", thumb:"https://img.youtube.com/vi/AbV4W8k3YvA/mqdefault.jpg"},
-  {id:"4", title:"शिव तांडव स्तोत्र - ॐ नमः शिवाय", cat:"Aarti", vid:"v5p4uQvX3v4", thumb:"https://img.youtube.com/vi/v5p4uQvX3v4/mqdefault.jpg"},
-  {id:"5", title:"दुर्गा आरती - जय अम्बे गौरी", cat:"Aarti", vid:"W5gO7j4g4eQ", thumb:"https://img.youtube.com/vi/W5gO7j4g4eQ/mqdefault.jpg"},
-  {id:"6", title:"कृष्ण भजन - मधुर कॉमेडी नहीं जी - भजन जी", cat:"Bhajan", vid:"FjGAb2t5b6E", thumb:"https://img.youtube.com/vi/FjGAb2t5b6E/mqdefault.jpg"}
+  {id:"1", title:"हनुमान चालीसा - 1 नंबर जी", cat:"Bhajan", idx:0, thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg"},
+  {id:"2", title:"ॐ जय जगदीश हरे - आरती - 2 नंबर जी", cat:"Aarti", idx:1, thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg"},
+  {id:"3", title:"गायत्री मंत्र - 3 नंबर जी", cat:"Bhajan", idx:2, thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg"},
+  {id:"4", title:"शिव आरती - ॐ नमः शिवाय - 4 नंबर जी", cat:"Aarti", idx:3, thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg"},
+  {id:"5", title:"दुर्गा आरती - जय माता की - 5 नंबर जी", cat:"Aarti", idx:4, thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg"},
+  {id:"6", title:"कृष्ण भजन - 6 नंबर जी", cat:"Bhajan", idx:5, thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg"}
 ];
 var curCat="All";
 function setCat(c){curCat=c;renderKh();}
@@ -117,17 +116,15 @@ function renderKh(){
   });
   filtered.forEach(d=>{
     list.innerHTML+=`<div class="videoCard">
-      <img class="thumb" src="${d.thumb}" onclick="playKh('${d.vid}')">
+      <img class="thumb" src="${d.thumb}" onclick="playKh(${d.idx})">
       <div style="flex:1"><div style="font-weight:800">${d.title}</div><div style="font-size:11px">${d.cat} जी</div>
-      <button class="khBtn" onclick="playKh('${d.vid}')">▶️ चलाओ जी</button></div></div>`;
+      <button class="khBtn" onclick="playKh(${d.idx})">▶️ चलाओ जी - ${d.idx+1} नंबर</button></div></div>`;
   });
   if(filtered.length==0) list.innerHTML="<div style='color:#fff'>कुछ नहीं मिला जी</div>";
 }
-function playKh(vid){
+function playKh(idx){
   document.getElementById('khPlayer').style.display='block';
-  document.getElementById('khFrame').src="https://www.youtube.com/embed/"+vid+"?autoplay=1";
+  document.getElementById('khFrame').src="https://www.youtube.com/embed/videoseries?list=PLF1nrtSu2Dd8IjpcDmTsr68e-nWic_Qd1&index="+idx+"&autoplay=1";
 }
 function closeKh(){document.getElementById('khFrame').src='';document.getElementById('khPlayer').style.display='none'}
 renderKh();
-</script>
-</body></html>
