@@ -36,7 +36,7 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:cent
 <button class="khBtn" onclick="setCat('Comedy')">कॉमेडी जी</button>
 </div>
 <div id="khList" style="margin-top:10px"></div>
-<div id="khPlayer" style="display:none;background:#fff;border-radius:12px;padding:6px;margin-top:10px"><iframe id="khFrame" width="100%" height="200" frameborder="0" allowfullscreen></iframe><button onclick="closeKh()" style="background:red;color:#fff;padding:6px 10px;border-radius:6px;margin-top:6px">बंद करो जी</button></div>
+<div id="khPlayer" style="display:none;background:#fff;border-radius:12px;padding:6px;margin-top:10px"><iframe id="khFrame" width="100%" height="220" frameborder="0" allowfullscreen></iframe><button onclick="closeKh()" style="background:red;color:#fff;padding:6px 10px;border-radius:6px;margin-top:6px">बंद करो जी</button></div>
 </div>
 
 <div style="background:#fff8e1;border:3px solid #ff9800;border-radius:16px;padding:10px;margin:10px 0;text-align:left">
@@ -86,12 +86,12 @@ function speakDouble(id){let t=document.getElementById(id).innerText;let u1=new 
 function joinNow(){let m=jMob.value;if(m.length!=10||isNaN(m)){jMsg.innerText='10 अंक मोबाइल सही लिखो जी';return}if(!jAgree.checked){jMsg.innerText='शर्तें मानो जी';return}jMsg.innerText='Join OK जी - All Life - '+jName.value;speakText('एडमिन की मंजूरी मिलने के बाद लाभ उठाएं जी।');window.open('https://wa.me/919992553796?text=Join%20Hai%20Ji%20'+jName.value+'%20'+m,'_blank')}
 
 var DATA = [
-  {id:"1", title:"हनुमान चालीसा - Veedeohub TV 87", cat:"Bhajan", video:"SolqIcBHhu4", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg", idx:87},
-  {id:"2", title:"शिव आरती - ॐ नमः शिवाय - TV 88", cat:"Aarti", video:"SolqIcBHhu4", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg", idx:88},
-  {id:"3", title:"गायत्री मंत्र - सुबह वाला - TV 89", cat:"Bhajan", video:"SolqIcBHhu4", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg", idx:89},
-  {id:"4", title:"कृष्ण भजन - शाम वाला - TV 90", cat:"Bhajan", video:"SolqIcBHhu4", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg", idx:90},
-  {id:"5", title:"दुर्गा आरती - जय माता की - TV 91", cat:"Aarti", video:"SolqIcBHhu4", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg", idx:91},
-  {id:"6", title:"कॉमेडी - हँसी वाला - TV 92", cat:"Comedy", video:"SolqIcBHhu4", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg", idx:92}
+  {id:"1", title:"हनुमान चालीसा - TV 87", cat:"Bhajan", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg", idx:87},
+  {id:"2", title:"शिव आरती - ॐ नमः शिवाय - TV 88", cat:"Aarti", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg", idx:88},
+  {id:"3", title:"गायत्री मंत्र - TV 89", cat:"Bhajan", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg", idx:89},
+  {id:"4", title:"कृष्ण भजन - TV 90", cat:"Bhajan", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg", idx:90},
+  {id:"5", title:"दुर्गा आरती - TV 91", cat:"Aarti", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg", idx:91},
+  {id:"6", title:"कॉमेडी - हँसी वाला - TV 92", cat:"Comedy", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg", idx:92}
 ];
 var curCat="All";
 function setCat(c){curCat=c;renderKh();}
@@ -107,17 +107,17 @@ function renderKh(){
   filtered.forEach(d=>{
     let saved = localStorage.getItem('save_'+d.id)? '❤️' : '🤍';
     list.innerHTML+=`<div class="videoCard">
-      <img class="thumb" src="${d.thumb}" onclick="playKh('${d.video}',${d.idx})">
-      <div style="flex:1"><div style="font-weight:800">${d.title}</div><div style="font-size:11px">${d.cat} जी</div>
-      <button class="khBtn" onclick="playKh('${d.video}',${d.idx})">▶️ चलाओ जी</button>
+      <img class="thumb" src="${d.thumb}" onclick="playKh(${d.idx})">
+      <div style="flex:1"><div style="font-weight:800">${d.title}</div><div style="font-size:11px">${d.cat} जी - ${d.idx} नंबर जी</div>
+      <button class="khBtn" onclick="playKh(${d.idx})">▶️ चलाओ जी</button>
       <button class="khBtn" onclick="saveKh('${d.id}')">${saved} सेव जी</button>
       <button class="sunoBtn" onclick="speakText('${d.title}')">🔊 सुनो</button>
       </div></div>`;
   });
 }
-function playKh(vid, idx){
+function playKh(idx){
   document.getElementById('khPlayer').style.display='block';
-  document.getElementById('khFrame').src="https://www.youtube.com/embed/"+vid+"?list=PLF1nrtSu2Dd8IjpcDmTsr68e-nWic_Qd1&index="+idx+"&autoplay=1";
+  document.getElementById('khFrame').src="https://www.youtube.com/embed/videoseries?list=PLF1nrtSu2Dd8IjpcDmTsr68e-nWic_Qd1&index="+idx+"&autoplay=1";
   window.scrollTo(0, document.getElementById('khPlayer').offsetTop-20);
 }
 function closeKh(){document.getElementById('khFrame').src='';document.getElementById('khPlayer').style.display='none'}
