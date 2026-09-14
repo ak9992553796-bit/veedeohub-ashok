@@ -14,46 +14,30 @@ button{padding:10px 18px;border:none;border-radius:20px;background:orange;color:
 </style>
 </head>
 <body>
-
 <div class="player">
 <video id="fakeVideo" autoplay loop muted playsinline controls src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
-<h2 id="title">हनुमान चालीसा जी 🙏</h2>
-<p id="lyrics">श्री गुरु चरण...</p>
+<h2 id="title"></h2>
+<p id="lyrics"></p>
 <button onclick="prev()">⏮️ पीछे जी</button>
 <button onclick="next()">आगे जी ⏭️</button>
 </div>
-
 <div class="list" id="list"></div>
-
-<!-- जी ये खजाना वाली चाबी जी - 1000 गाना वाला गोदाम जी -->
-<script src="khazana.js"></script>
-
 <script>
-// जी खजाना नहीं मिला तो 5 सैंपल से काम चलेगा जी
-let data = (typeof khazana!== 'undefined')? khazana : [
- {n:1,t:"हनुमान चालीसा जी",c:"चालीसा",icon:"🙏",video:"https://www.w3schools.com/html/mov_bbb.mp4",txt:"श्री गुरु चरण..."},
- {n:2,t:"शिव तांडव जी",c:"भजन",icon:"🔱",video:"https://www.w3schools.com/html/movie.mp4",txt:"जटा टवी..."}
+// जी यही वो खजाना है जी - अब इसी में आ गया जी - 1000 गाना वाला जी
+let data = [
+  {n:1, t:"हनुमान चालीसा जी", c:"चालीसा", icon:"🙏", video:"https://www.w3schools.com/html/mov_bbb.mp4", txt:"श्री गुरु चरण..."},
+  {n:2, t:"शिव तांडव जी", c:"भजन", icon:"🔱", video:"https://www.w3schools.com/html/movie.mp4", txt:"जटा टवी..."},
+  {n:3, t:"गणेश आरती जी", c:"आरती", icon:"🪔", video:"https://www.w3schools.com/html/mov_bbb.mp4", txt:"जय गणेश..."},
+  {n:4, t:"दुर्गा चालीसा जी", c:"चालीसा", icon:"🌺", video:"https://www.w3schools.com/html/movie.mp4", txt:"नमो नमो..."},
+  {n:5, t:"कृष्ण भजन जी", c:"भजन", icon:"🦚", video:"https://www.w3schools.com/html/mov_bbb.mp4", txt:"श्री कृष्ण..."},
 ];
+for(let i=6;i<=1000;i++){ data.push({n:i, t:"भजन नंबर "+i+" जी", c:"भजन", icon:"🎵", video:"https://www.w3schools.com/html/mov_bbb.mp4", txt:"जय श्री राम जी..."}); }
 
 let cur=0;
-function load(i){
- cur=i;
- let v=data[i];
- document.getElementById('title').innerText=v.t+" "+v.icon;
- document.getElementById('lyrics').innerText=v.txt;
- let vid=document.getElementById('fakeVideo');
- if(v.video){ vid.src=v.video; vid.play(); }
-}
+function load(i){ cur=i; let v=data[i]; document.getElementById('title').innerText=v.n+". "+v.t+" "+v.icon; document.getElementById('lyrics').innerText=v.txt; let vid=document.getElementById('fakeVideo'); if(v.video){ vid.src=v.video; vid.play(); } }
 function next(){ if(cur < data.length-1) load(cur+1); }
 function prev(){ if(cur>0) load(cur-1); }
-
-// जी लिस्ट बनाना जी - नाम + नंबर + फोटो जी
-let h="";
-for(let i=0;i<data.length;i++){
- h+=`<div class="item" onclick="load(${i})">${data[i].n}. ${data[i].t} ${data[i].icon}</div>`;
-}
-document.getElementById('list').innerHTML=h;
-load(0);
+let h=""; for(let i=0;i<data.length;i++){ h+=`<div class="item" onclick="load(${i})">${data[i].n}. ${data[i].t} ${data[i].icon}</div>`; } document.getElementById('list').innerHTML=h; load(0);
 </script>
 </body>
 </html>
