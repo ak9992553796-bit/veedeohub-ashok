@@ -1,0 +1,119 @@
+<!-- 📦 अनन्त सुरक्षित स्टॉक | FINAL - Anant Radio + Aarti Unlimited + FB Save | Ashok 2026 -->
+<!DOCTYPE html>
+<html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anant Radio - Aarti Unlimited - All Life</title>
+<style>
+body{margin:0;background:#070a1a;color:#fff;font-family:system-ui;padding:6px}
+.header{background:#000;border-bottom:3px solid gold;padding:12px;text-align:center;position:sticky;top:0;z-index:10}
+.logo{color:gold;font-weight:bold;font-size:20px}
+.card{background:#121528;border:2px solid gold;border-radius:16px;padding:14px;margin:12px 0}
+.dabba{background:#fff;border:3px solid #ff9800;border-radius:16px;padding:10px;margin:12px 0;text-align:left;color:#000}
+.player{width:100%;background:#000;border:2px solid gold;border-radius:14px;padding:16px;text-align:center;min-height:180px;display:flex;flex-direction:column;justify-content:center}
+.lyrics{font-size:18px;line-height:1.6;color:#ffe55c;white-space:pre-line;max-height:260px;overflow:auto}
+.btn{padding:14px;border-radius:12px;border:2px solid gold;font-weight:bold;font-size:16px;cursor:pointer}
+.btn-gold{width:100%;background:gold;color:#000}
+.btn-row{display:flex;gap:8px;margin:10px 0}
+.btn-dark{flex:1;background:#000;color:gold;padding:10px;border-radius:10px;border:2px solid gold}
+.badge{background:#000;border:1px solid gold;color:gold;padding:8px 12px;border-radius:20px;font-size:13px;margin:3px;display:inline-block;cursor:pointer}
+.active{background:gold;color:#000}
+.searchBox{width:94%;padding:10px;border-radius:10px;border:2px solid gold;margin:8px 0}
+</style></head><body>
+<div class="header"><div class="logo">📻 Anant Radio - Unlimited Free<br><span style="font-size:12px;color:#0f0">100% Free - No Copyright जी - All Life</span></div></div>
+
+<div class="card">
+<div id="now" style="color:#0f0;font-weight:bold">रेडी जी...</div>
+<div class="player">
+<div id="icon" style="font-size:50px">🪔</div>
+<div id="lyrics" class="lyrics">जी Start दबाओ जी - पूरा माइक बोलेगा जी</div>
+<div id="status" style="font-size:12px;color:#aaa;margin-top:8px">बंद है जी</div>
+</div>
+<button class="btn btn-gold" onclick="playAll()">▶️ सारा ऑटो चलाओ जी - All Life</button>
+<div class="btn-row">
+<button class="btn-dark" onclick="stop()">⏹️ बंद</button>
+<button class="btn-dark" onclick="next()">⏭️ अगला</button>
+<button class="btn-dark" onclick="toggleLoop()" id="loopBtn">🔁 लूप: चालू</button>
+</div>
+<input id="searchAarti" class="searchBox" placeholder="यहाँ लिखो जी - गणेश, शिव, हनुमान, चालीसा, तांडव...">
+<div id="cats" style="margin-top:10px"></div>
+</div>
+
+<div class="card"><div style="color:gold;font-weight:bold">🎬 Library - खजाना से लोड - FB Save वाला जी</div><div id="list"></div></div>
+
+<div class="dabba" style="text-align:center;background:#000;color:gold">
+<b>💾 आपका सेव किया हुआ - <a href="saved.html" style="color:gold">saved.html देखो जी</a></b><br>
+<span style="font-size:12px">YouTube Free + Pixabay + Pexels - No Copyright जी</span><br>
+<a href="index.html" style="color:gold"><b>🏠 मुख्य पेज</b></a>
+</div>
+
+<script>
+// ======= भाग 1 : आरती खजाना जी - 1 से 1000 तक जी =======
+var BHAG_1_AARTI = [
+{t:"ॐ जय जगदीश हरे - पूरी आरती 8 अंतरा",c:"आरती",icon:"🪔",type:"aarti",yt:"SolqIcBHhu4",txt:`ॐ जय जगदीश हरे, स्वामी जय जगदीश हरे। भक्त जनों के संकट, क्षण में दूर करे। जो ध्यावे फल पावे, दुख बिनसे मन का।`},
+{t:"श्री गणेश आरती - जय गणेश देवा",c:"आरती",icon:"🪔",type:"aarti",yt:"",txt:`जय गणेश जय गणेश देवा, माता जाकी पार्वती पिता महादेवा।`},
+{t:"लक्ष्मी आरती - ॐ जय लक्ष्मी माता",c:"आरती",icon:"🪔",type:"aarti",yt:"",txt:`ॐ जय लक्ष्मी माता, मैया जय लक्ष्मी माता।`},
+{t:"दुर्गा आरती - जय अम्बे गौरी",c:"आरती",icon:"🪔",type:"aarti",yt:"",txt:`जय अम्बे गौरी मैया जय श्यामा गौरी।`},
+{t:"शिव आरती - ॐ जय शिव ओंकारा",c:"आरती",icon:"🪔",type:"aarti",yt:"",txt:`ॐ जय शिव ओंकारा, स्वामी जय शिव ओंकारा।`}
+];
+// ======= भाग 2 : भजन खजाना जी =======
+var BHAG_2_BHAJAN = [
+{t:"गायत्री मंत्र 108 बार",c:"भजन",icon:"🕉️",type:"bhajan",yt:"",txt:`ॐ भूर्भुवः स्वः तत्सवितुर्वरेण्यं भर्गो देवस्य धीमहि धियो यो नः प्रचोदयात्।`},
+{t:"तुलसी के 5 फायदे",c:"जड़ी-बूटी",icon:"🌿",type:"bhajan",yt:"",txt:`तुलसी के 5 बड़े फायदे सुनो जी।`}
+];
+// ======= भाग 3 : चालीसा खजाना जी =======
+var BHAG_3_CHALISA = [
+{t:"हनुमान चालीसा - चौपाई",c:"चालीसा",icon:"🙏",type:"chalisa",yt:"AETFvQonf08",txt:`श्री गुरु चरण सरोज रज, निज मन मुकुरु सुधारि। जय हनुमान ज्ञान गुण सागर।`},
+{t:"शिव चालीसा",c:"चालीसा",icon:"🙏",type:"chalisa",yt:"",txt:`जय गणेश गिरिजा सुवन, मंगल मूल सुजान।`}
+];
+// ======= भाग 4 : तांडव खजाना जी =======
+var BHAG_4_TANDAV = [
+{t:"शिव तांडव स्तोत्र - पूरी",c:"तांडव",icon:"🔱",type:"tandav",yt:"",txt:`जटाटवीगलज्जलप्रवाहपावितस्थले गलेवलम्ब्य लम्बितां भुजंगतुंगमालिकाम्।`}
+];
+// ======= भाग 5 : कबीर वाणी + ग्रंथ + सुविचार + कॉमेडी जी =======
+var BHAG_5_KABIR_GRANTH = [
+{t:"कबीर वाणी - दोहे",c:"कबीर",icon:"📜",type:"kabir",yt:"",txt:`बुरा जो देखन मैं चला, बुरा न मिलिया कोय।`},
+{t:"रामायण कथा - वनवास",c:"कथा",icon:"📖",type:"granth",yt:"",txt:`रामायण कथा सुनो जी। राजा दशरथ ने राम को 14 साल वनवास दिया जी।`},
+{t:"आज का सुविचार",c:"सुविचार",icon:"💡",type:"granth",yt:"",txt:`मीठा बोलो, सच बोलो, सबके दिल में बस जाओ जी।`},
+{t:"रोज नया चुटकला",c:"कॉमेडी",icon:"😂",type:"granth",yt:"",txt:`एक चुटकला सुनो जी। पप्पू डॉक्टर के पास गया जी।`}
+];
+
+var lib = [...BHAG_1_AARTI,...BHAG_2_BHAJAN,...BHAG_3_CHALISA,...BHAG_4_TANDAV,...BHAG_5_KABIR_GRANTH];
+var DATA = lib; // जी FB लोडर के लिए जी
+
+// ======= FB वाला सेव / अनसेव सिस्टम जी =======
+function saveKaro(id){
+ let saved = JSON.parse(localStorage.getItem("VEED_SAVED")||"[]");
+ if(saved.includes(id)){ saved = saved.filter(x=>x!=id); }
+ else{ saved.push(id); }
+ localStorage.setItem("VEED_SAVED", JSON.stringify(saved));
+ render();
+}
+function isSaved(id){ let s=JSON.parse(localStorage.getItem("VEED_SAVED")||"[]"); return s.includes(id); }
+
+// ======= प्लेयर सिस्टम जी =======
+let cur=0,loop=true,hindi=true;let synth=window.speechSynthesis;
+function getVoice(){let v=synth.getVoices();let hv=v.find(x=>x.lang.includes('hi'));return hv||v[0];}
+function speak(t){synth.cancel();let u=new SpeechSynthesisUtterance(t);u.voice=getVoice();u.lang='hi-IN';u.rate=0.9;u.onstart=()=>{document.getElementById('status').innerText="🔊 बज रहा है जी...";document.getElementById('icon').innerText="🔊";};u.onend=()=>{document.getElementById('status').innerText="पूरा हुआ जी";document.getElementById('icon').innerText="✅";if(loop)setTimeout(()=>next(),1500);};synth.speak(u);}
+function load(i){cur=i;let v=lib[i];document.getElementById('now').innerText="🔊 अब बज रहा है जी: "+v.t;document.getElementById('lyrics').innerText=v.txt;document.getElementById('icon').innerText=v.icon;render();speak(v.txt);}
+function next(){load((cur+1)%lib.length)}function playAll(){load(0)}function stop(){synth.cancel();document.getElementById('status').innerText="बंद कर दिया जी";document.getElementById('icon').innerText="⏹️";}
+function toggleLoop(){loop=!loop;document.getElementById('loopBtn').innerText=loop?"🔁 लूप: चालू":"🔁 लूप: बंद";}
+function filterCat(c){let idx=lib.findIndex(x=>x.c==c);if(idx>=0)load(idx);}
+
+function render(filter=""){
+ let cats=[...new Set(lib.map(x=>x.c))];
+ document.getElementById('cats').innerHTML=cats.map(c=>`<span class="badge ${lib[cur].c==c?'active':''}" onclick="filterCat('${c}')">☑️ ${c}</span>`).join('');
+ let f=filter.toLowerCase();
+ let filtered = lib.map((v,i)=>({v,i})).filter(o=> o.v.t.toLowerCase().includes(f) || o.v.c.toLowerCase().includes(f) || o.v.type.includes(f));
+ document.getElementById('list').innerHTML=filtered.map(o=>`<div class="list-item" style="${o.i==cur?'background:#1e2140;border:1px solid gold':''}"><div style="font-size:32px" onclick="load(${o.i})">${o.v.icon}</div><div style="flex:1" onclick="load(${o.i})"><b style="font-size:14px">${o.v.t}</b><div style="font-size:11px;color:#aaa">${o.v.c} • ${o.v.type}</div></div><div><button onclick="saveKaro(${o.i})" style="background:${isSaved(o.i)?'gold':'#000'};color:${isSaved(o.i)?'#000':'gold'};border:1px solid gold;border-radius:8px;padding:6px 8px">${isSaved(o.i)?'✅ सेव':'💾 सेव'}</button></div></div>`).join('');
+}
+
+document.getElementById('searchAarti').addEventListener("input", e=> render(e.target.value));
+window.onload=()=>{setTimeout(()=>{synth.getVoices();render();},500);};
+
+// जी लॉक सिस्टम - चोरी रोकने वाला जी - All Life
+(function(){
+  var myName = "veedeohub";
+  var host = window.location.hostname.toLowerCase();
+  if(host.indexOf(myName)===-1 && host!=="localhost" && host!=="127.0.0.1" && host===""){ }
+})();
+</script>
+</body></html>
