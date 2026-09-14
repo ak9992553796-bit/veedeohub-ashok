@@ -1,11 +1,4 @@
-<script>
-var myName = "veedeohub"; 
-var host = window.location.hostname.toLowerCase();
-if(host.indexOf(myName)===-1 && host!=="localhost" && host!=="127.0.0.1"){
-  document.body.innerHTML = "<div style='background:#000;color:gold;text-align:center;padding:50px;'><h1>⛔ चोरी का कोड है जी</h1><p>Original - VeedeoHub<br>हर प्लेटफॉर्म पर VeedeoHub</p></div>";
-  throw new Error("VeedeoHub Locked");
-}
-</script><!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Veedeohub All Life Final - Full System</title>
 <style>
 body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:center}
@@ -140,17 +133,22 @@ function saveNewPass(e){if(e){e.preventDefault();}let np=document.getElementById
 function autoFill(){let t=dabbaType.value;let mp={kirana:{s:'इस डब्बे में किराना लिंक डलेगा जी',ti:'किराना लिंक डब्बा जी',l:'लाभ: राशन घर बैठे जी'},dawai:{s:'इस डब्बे में दवाई लिंक डलेगा जी',ti:'दवाई लिंक डब्बा जी',l:'लाभ: दवाई घर पहुंचेगी जी'},kapda:{s:'इस डब्बे में कपड़ा लिंक डलेगा जी',ti:'कपड़ा लिंक डब्बा जी',l:'लाभ: कपड़े सस्ते में जी'},bhajan:{s:'इस डब्बे में भजन लिंक डलेगा जी',ti:'भजन लिंक डब्बा जी',l:'लाभ: भजन से मन पवित्र जी'},comedy:{s:'इस डब्बे में कॉमेडी लिंक डलेगा जी',ti:'कॉमेडी लिंक डब्बा जी',l:'लाभ: हंसी से दिल खुश जी'},book:{s:'इस डब्बे में किताब लिंक डलेगा जी',ti:'किताब लिंक डब्बा जी',l:'लाभ: ज्ञान मिलेगा जी'},shop:{s:'इस डब्बे में दुकान Ad लिंक डलेगा जी',ti:'दुकान Ad डब्बा जी',l:'लाभ: दुकान Google पर दिखेगी जी'}};if(mp[t]){nSmall.value=mp[t].s;nTitle.value=mp[t].ti;nLabh.value=mp[t].l}}
 let c=21;function addNew(){let s=nSmall.value;let ti=nTitle.value;let li=nLink.value||'https://96-bit.github.io/veedeohub-ashok/';let l=nLabh.value;let id='ln'+c;let ht=`<div class="dabba"><div style="color:#8B4513;font-size:11px">${s} - Admin से जी</div><div style="font-weight:800">${c}. ${ti}</div><a class="link" href="${li}" target="_blank">${li}</a><div style="color:#0a7a0a;font-weight:700" id="${id}">${l}</div><button class="sunoBtn" onclick="speak('${id}')">🔊 सुनो</button></div>`;newArea.insertAdjacentHTML('beforeend',ht);c++;speakText('डब्बा बन गया जी');}
 if(location.search.includes("reset=ashok")){localStorage.removeItem('veedeo_admin_pass');alert("रीसेट हो गया जी");location.href=location.pathname;}
-</script><script>
+</script>
+  <script>
 var DATA = [
   {id:"1", title:"VeedeoHub Original Video 1", thumb:"", video:"", cat:"Original"},
   {id:"2", title:"VeedeoHub Original Video 2", thumb:"", video:"", cat:"Original"}
 ];
 var API = "YOUR_API_KEY";
-
+console.log("VeedeoHub System Loaded - " + DATA.length + " Videos");
+</script>
+</div></body></html><script>
 (function(){
-  if(!location.hostname.includes("veedeohub") && location.hostname!=="localhost"){ return; }
-  console.log("VeedeoHub System Loaded - " + DATA.length + " Videos");
-  // आपका सर्च + वीडियो सिस्टम यहाँ चलेगा जी
+  var myName = "veedeohub";
+  var host = window.location.hostname.toLowerCase();
+  if(host.indexOf(myName)===-1 && host!=="localhost" && host!=="127.0.0.1" && host!==""){
+    document.body.innerHTML = "<div style='background:#000;color:gold;text-align:center;padding:100px 20px;'><h1>⛔ चोरी का कोड है जी</h1><p>Original - VeedeoHub</p></div>";
+    throw new Error("VeedeoHub Locked");
+  }
 })();
 </script>
-</div></body></html>
