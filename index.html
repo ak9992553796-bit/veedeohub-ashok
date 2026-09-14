@@ -107,18 +107,15 @@ SolqIcBHhu4 - एक लिंक - सारा खेल - TV चैनल - Y
 <button onclick="speak('bottomFull')" style="background:#fff8c4;border-radius:20px;padding:6px 14px;margin-top:8px;color:#000">🔊 नीचे वाला पूरा बॉक्स सुनो जी - जरूरी जानकारी जी</button>
 </div>
 
-<!-- 🪔 अनन्त ज्योति - सेफ जी -->
 <div style="border:3px solid gold;background:#000;text-align:center;border-radius:12px;margin:10px 0;padding:8px;">
 <div style="color:gold;font-weight:900;font-size:15px;">ॐ नमः शिवाय: ये ज्योति सदा जलती रहे 🪔🙏</div>
 </div>
 
-<!-- 📻 अनन्त रेडियो स्टेशन - नया - पुराना सेफ जी -->
 <div style="border:3px solid gold;background:#000;text-align:center;border-radius:12px;margin:10px 0;padding:10px;">
 <a href="radio.html" target="_blank" style="text-decoration:none;color:gold;font-weight:900;display:block;padding:12px">📻 अनन्त रेडियो स्टेशन - Voice Auto Pexels Pixabay Free - क्लिक करो जी</a>
 <div style="font-size:11px;color:#0f0;padding-bottom:8px">No Copyright - फ्री सिस्टम - कमाई चालू जी</div>
 </div>
 
-<!-- 📦 अनन्त सुरक्षित स्टॉक | गुप्त सिस्टम | Ashok | 2026 Anant System | Pexels Pixabay गुप्त में है जी | ॐ नमः शिवाय -->
 </div>
 <script>
 function togglePass(id){let e=document.getElementById(id);e.type=e.type==='password'?'text':'password';}
@@ -134,18 +131,21 @@ function autoFill(){let t=dabbaType.value;let mp={kirana:{s:'इस डब्ब
 let c=21;function addNew(){let s=nSmall.value;let ti=nTitle.value;let li=nLink.value||'https://96-bit.github.io/veedeohub-ashok/';let l=nLabh.value;let id='ln'+c;let ht=`<div class="dabba"><div style="color:#8B4513;font-size:11px">${s} - Admin से जी</div><div style="font-weight:800">${c}. ${ti}</div><a class="link" href="${li}" target="_blank">${li}</a><div style="color:#0a7a0a;font-weight:700" id="${id}">${l}</div><button class="sunoBtn" onclick="speak('${id}')">🔊 सुनो</button></div>`;newArea.insertAdjacentHTML('beforeend',ht);c++;speakText('डब्बा बन गया जी');}
 if(location.search.includes("reset=ashok")){localStorage.removeItem('veedeo_admin_pass');alert("रीसेट हो गया जी");location.href=location.pathname;}
 </script>
-  <script>
+<script>
 var DATA = [
   {id:"1", title:"VeedeoHub Original Video 1", thumb:"", video:"", cat:"Original"},
   {id:"2", title:"VeedeoHub Original Video 2", thumb:"", video:"", cat:"Original"}
 ];
 var API = "YOUR_API_KEY";
 console.log("VeedeoHub System Loaded - " + DATA.length + " Videos");
-</script><script>
+</script>
+<script>
 (function(){
   var myName = "veedeohub";
   var host = window.location.hostname.toLowerCase();
-  if(host.indexOf(myName)===-1 && host!=="localhost" && host!=="127.0.0.1" && host!==""){
+  var allowed = ["veedeohub-ashok.vercel.app", "veedeohub-ashok.netlify.app", "ak9992553796-bit.github.io", "96-bit.github.io", "localhost", "127.0.0.1"];
+  var isAllowed = allowed.some(a => host.includes(a)) || host.indexOf(myName)!== -1;
+  if(!isAllowed && host!== ""){
     document.body.innerHTML = "<div style='background:#000;color:gold;text-align:center;padding:100px 20px;'><h1>⛔ चोरी का कोड है जी</h1><p>Original - VeedeoHub</p></div>";
     throw new Error("VeedeoHub Locked");
   }
