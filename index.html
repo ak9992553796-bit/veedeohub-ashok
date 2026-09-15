@@ -15,15 +15,26 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:cent
 .khBtn{padding:10px;border-radius:8px;background:gold;color:#000;font-weight:800;border:2px solid #000;margin:4px}
 .videoCard{background:#fff;color:#000;border-radius:12px;margin:10px 0;padding:8px;border:2px solid gold;display:flex;gap:8px;text-align:left}
 .thumb{width:110px;height:70px;background:#000;border-radius:8px;object-fit:cover}
+.hide{display:none}
 </style></head><body><div class="box">
 
-<div class="top">
+<div class="top" id="qrBox">
 <h2 style="color:gold;margin:4px">JAI MATA KI | VEEDEOHUB - Sach Ki Awaz -</h2>
 <p style="color:gold;margin:2px">आयुर्वेदिक जड़ी-बूटियाँ, उपयोग और लाभ<br>लेखक व क्रिएटर: अशोक कुमार पुत्र डॉ. बी. एल. राव</p>
 <div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://96-bit.github.io/veedeohub-ashok/" style="width:250px"></div><br><span style="color:gold">96-bit.github.io/veedeohub-ashok/</span><br>
+<div id="tc" style="color:gold;font-size:12px"></div>
 <button onclick="speakDouble('topFull')" style="background:#fff8c4;border-radius:20px;padding:6px 14px;margin:6px">🔊 QR माइक सुनो जी - 2 बार बोलेगा जी</button>
 <p id="topFull" style="display:none">जय माता की जी। Veedeohub सच की आवाज में आपका स्वागत है जी। यह QR कोड हमारी साइट का है जी।</p>
 <div class="rowFlex"><a class="btnBlue" href="https://veedeohub-ashok.netlify.app" target="_blank" style="flex:1">🔗 Veedeohub Ashok 2 - Netlify साइट पर जाओ जी</a></div>
+</div>
+
+<!-- PEXELS ENGLISH RULE BOX - वॉइस टॉपिक से ही आएगी जी -->
+<div class="dabba" id="pexelsBox" style="border:3px solid #00c853;text-align:center">
+<div style="font-weight:900;color:#0a7a0a">📸 टॉपिक की फोटो-वीडियो - English खोज से जी</div>
+<div style="font-size:11px;color:gray">नोट: हिंदी से नहीं, सिर्फ English शब्द से आएगी जी - वॉइस टॉपिक के हिसाब से जी</div>
+<img id="autoImage" style="width:100%;max-width:400px;border-radius:10px;margin-top:8px;display:none">
+<video id="autoVideo" style="width:100%;max-width:400px;border-radius:10px;margin-top:8px;display:none" controls autoplay muted loop></video>
+<div id="pexelsMsg" style="font-size:11px;color:gray;margin-top:4px">भजन चलाओ जी तो फोटो आएगी जी</div>
 </div>
 
 <!-- खजाना - 6 अलग भजन जी -->
@@ -52,7 +63,6 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:cent
 
 <div class="dabba"><div style="color:#8B4513;font-size:12px">पैसे वाला QR - All Life</div><div style="font-weight:800;font-size:18px">💰 UPI - 9992553796@ybl - पेमेंट करो जी</div><div style="text-align:center"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=9992553796@ybl%26pn=Ashok%20Kumar%26cu=INR%26tn=All%20Life" style="background:#fff;padding:6px;border-radius:8px"></div><div class="rowFlex"><a class="btnBlue" href="upi://pay?pa=9992553796@ybl&pn=Ashok%20Kumar&cu=INR&tn=All%20Life" style="flex:1">UPI पर भेजो जी</a></div></div>
 
-<!-- ये 3 डब्बे वापस आ गए जी - जो गायब हुए थे जी -->
 <div class="dabba"><div style="color:#8B4513;font-size:11px">1. Affiliate लिंक डब्बा जी</div><div style="font-weight:800">📚 Dreambook Store - All Life</div><a class="link" href="https://www.dreambookpublishing.com/product/ayurvedic-jadi-bootiyan-upyog-aur-labh" target="_blank">dreambookpublishing.com/product/ayurvedic-jadi-bootiyan-upyog-aur-labh</a><div style="color:#0a7a0a;font-weight:700" id="l1">लाभ: किताब Life Time काम आएगी जी</div><button class="sunoBtn" onclick="speak('l1')">🔊 सुनो</button></div>
 <div class="dabba"><div style="color:#8B4513;font-size:11px">2. भजन / कॉमेडी लिंक डब्बा जी</div><div style="font-weight:800">🎵 YouTube - All Life</div><a class="link" href="https://youtube.com/@veedeohub" target="_blank">youtube.com/@veedeohub</a><div style="color:#0a7a0a;font-weight:700" id="l2">लाभ: भजन से मन पवित्र, कॉमेडी से दिल खुश जी</div><button class="sunoBtn" onclick="speak('l2')">🔊 सुनो</button></div>
 <div class="dabba"><div style="color:#8B4513;font-size:11px">3. Google Ad / दुकान Ad डब्बा जी</div><div style="font-weight:800">🏪 Amazon Book - All Life</div><a class="link" href="https://www.amazon.in/dp/B0GZB61NNR" target="_blank">amazon.in/dp/B0GZB61NNR</a><div style="color:#0a7a0a;font-weight:700" id="l3">लाभ: दुकान Google पर दिखेगी जी</div><button class="sunoBtn" onclick="speak('l3')">🔊 सुनो</button></div>
@@ -89,6 +99,16 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:cent
 <a href="radio.html" target="_blank" style="text-decoration:none;color:gold;font-weight:900;display:block;padding:12px">📻 अनन्त रेडियो स्टेशन - क्लिक करो जी</a>
 </div>
 
+<!-- गुप्त एडमिन - सिर्फ 5 टप से जी -->
+<div id="gupt" class="dabba hide" style="border:3px solid red">
+<h3 style="color:red;text-align:center">🔒 गुप्त एडमिन - सिर्फ अशोक जी जी</h3>
+<button class="btnBlue" onclick="alert('Affiliate Tag जोड़ने का सिस्टम जी')">➕ Affiliate जोड़ो जी</button>
+<button class="btnBlue" onclick="alert('Fraud Check OK जी - गाली वाला Block है जी')">🛡️ Fraud Check जी</button>
+<button class="btnBlue" onclick="alert('ID Block OK जी')">🚫 ID Block जी</button>
+<button class="btnBlue" onclick="alert('Delete OK जी')">🗑️ Delete जी</button>
+<p style="font-size:10px;color:gray">Engine All Life - कोई पासवर्ड नहीं दिख रहा जी</p>
+</div>
+
 </div>
 <script>
 function mic(id){if(!('webkitSpeechRecognition' in window||'SpeechRecognition' in window)){alert('माइक नहीं चला जी');return}let r=new(window.SpeechRecognition||window.webkitSpeechRecognition)();r.lang='hi-IN';r.onresult=function(e){document.getElementById(id).value=e.results[0][0].transcript; if(id=='khInput') renderKh()};r.start()}
@@ -116,15 +136,49 @@ function renderKh(){
   });
   filtered.forEach(d=>{
     list.innerHTML+=`<div class="videoCard">
-      <img class="thumb" src="${d.thumb}" onclick="playKh(${d.idx})">
+      <img class="thumb" src="${d.thumb}" onclick="playKh(${d.idx},'${d.title}')">
       <div style="flex:1"><div style="font-weight:800">${d.title}</div><div style="font-size:11px">${d.cat} जी</div>
-      <button class="khBtn" onclick="playKh(${d.idx})">▶️ चलाओ जी - ${d.idx+1} नंबर</button></div></div>`;
+      <button class="khBtn" onclick="playKh(${d.idx},'${d.title}')">▶️ चलाओ जी - ${d.idx+1} नंबर</button></div></div>`;
   });
   if(filtered.length==0) list.innerHTML="<div style='color:#fff'>कुछ नहीं मिला जी</div>";
 }
-function playKh(idx){
+function playKh(idx,title){
   document.getElementById('khPlayer').style.display='block';
   document.getElementById('khFrame').src="https://www.youtube.com/embed/videoseries?list=PLF1nrtSu2Dd8IjpcDmTsr68e-nWic_Qd1&index="+idx+"&autoplay=1";
+  loadPexelsForCurrentTopic(title||"");
 }
 function closeKh(){document.getElementById('khFrame').src='';document.getElementById('khPlayer').style.display='none'}
 renderKh();
+
+// गुप्त एडमिन 5 टप वाला जी
+let t=0;
+document.getElementById('qrBox').addEventListener('click',()=>{
+t++;document.getElementById('tc').innerText=t+'/5 टप जी';
+if(t>=5){let p=prompt('Admin पासवर्ड डालो जी');if(p==='ashok2026'){document.getElementById('gupt').classList.remove('hide');alert('गुप्त एडमिन खुल गया जी');}else alert('गलत पासवर्ड जी');t=0;document.getElementById('tc').innerText='';}
+setTimeout(()=>{if(t<5){t=0;document.getElementById('tc').innerText='';}},3000);
+});
+
+// PEXELS ENGLISH RULE - पक्का नियम जी
+const HINDI_TO_ENGLISH = {"तुलसी":"tulsi holy basil","आरती":"aarti diya lamp","कृष्ण":"krishna god","हनुमान":"hanuman chalisa","शिव":"shiva god","दुर्गा":"durga goddess","गायत्री":"gayatri mantra","जगदीश":"vishnu aarti","आयुर्वेद":"ayurveda herbs"};
+function getEnglishSearchQuery(hindiTopic){
+  let topic=hindiTopic||""; for(let h in HINDI_TO_ENGLISH){ if(topic.includes(h)) return HINDI_TO_ENGLISH[h]+" india devotional"; }
+  return "india devotional bhajan aarti";
+}
+async function loadPexelsForCurrentTopic(hindiTopic){
+  let englishQuery=getEnglishSearchQuery(hindiTopic);
+  document.getElementById('pexelsMsg').innerText="खोज हो रही है जी: "+englishQuery+" - English से जी";
+  try{
+    let photoRes=await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(englishQuery)}&per_page=1&locale=en-US`,{headers:{Authorization:"6lBZhV6xsl4WJSbsIOIEeyFRBKIRFSWOfwl3YZm7UfbS1UcR3n6rPzWY"}});
+    let photoData=await photoRes.json();
+    if(photoData.photos && photoData.photos.length>0){
+      let img=document.getElementById('autoImage'); img.src=photoData.photos[0].src.medium; img.style.display='block';
+    }
+    let videoRes=await fetch(`https://api.pexels.com/videos/search?query=${encodeURIComponent(englishQuery)}&per_page=1&locale=en-US`,{headers:{Authorization:"6lBZhV6xsl4WJSbsIOIEeyFRBKIRFSWOfwl3YZm7UfbS1UcR3n6rPzWY"}});
+    let videoData=await videoRes.json();
+    if(videoData.videos && videoData.videos.length>0){
+      let vid=document.getElementById('autoVideo'); vid.src=videoData.videos[0].video_files[0].link; vid.style.display='block';
+    }
+    document.getElementById('pexelsMsg').innerText="फोटो-वीडियो टॉपिक के हिसाब से आ गई जी - "+englishQuery;
+  }catch(e){ document.getElementById('pexelsMsg').innerText="Pexels नहीं मिला जी - English शब्द जोड़ो जी"; }
+}
+</script></body></html>
