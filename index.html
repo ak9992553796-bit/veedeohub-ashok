@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Veedeohub All Life - Free Khazana</title>
+<title>Veedeohub All Life Final - Full Khazana</title>
 <style>
 body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:center}
 .top{border:4px solid gold;background:#000;padding:10px;margin:6px;border-radius:6px}
@@ -7,76 +7,56 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:cent
 .box{max-width:460px;margin:auto;padding:6px}
 .dabba{background:#fff;border:3px solid #ff9800;border-radius:16px;padding:10px;margin:12px 0;text-align:left;color:#000}
 .btnBlue{display:block;width:100%;background:#000;color:#FFD700;padding:11px 0;border-radius:10px;text-decoration:none;font-weight:700;margin:6px 0;border:2px solid #FFD700;text-align:center}
-.link{color:#0b57d0;word-break:break-all;display:block;margin:4px 0}
+.micBtn{background:#000;color:gold;border:2px solid gold;border-radius:8px;padding:6px 10px;margin-left:4px;font-weight:700}
 .sunoBtn{background:#fff8c4;border:1px solid #000;border-radius:6px;padding:3px 8px;font-size:12px;margin:2px}
-.khTitle{font-weight:900;font-size:17px;color:#8B4513;margin-bottom:6px}
-.khText{font-size:14px;white-space:pre-wrap;color:#000;line-height:1.5}
+.link{color:#0b57d0;word-break:break-all;display:block;margin:4px 0}
+.rowFlex{display:flex;align-items:center;gap:4px}
+/* खजाना स्टाइल जी */
+.khSearch{width:70%;padding:12px;border:3px solid gold;border-radius:10px;font-weight:700}
+.khBtn{padding:10px;border-radius:8px;background:gold;color:#000;font-weight:800;border:2px solid #000;margin:4px}
+.videoCard{background:#fff;color:#000;border-radius:12px;margin:10px 0;padding:8px;border:2px solid gold;display:flex;gap:8px;text-align:left}
+.thumb{width:110px;height:70px;background:#000;border-radius:8px;object-fit:cover}
 </style></head><body><div class="box">
 
 <div class="top">
 <h2 style="color:gold;margin:4px">JAI MATA KI | VEEDEOHUB - Sach Ki Awaz -</h2>
 <p style="color:gold;margin:2px">आयुर्वेदिक जड़ी-बूटियाँ, उपयोग और लाभ<br>लेखक व क्रिएटर: अशोक कुमार पुत्र डॉ. बी. एल. राव</p>
-<div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://96-bit.github.io/veedeohub-ashok/" style="width:250px"></div><br><span style="color:gold">96-bit.github.io/veedeohub-ashok/</span>
+<div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://96-bit.github.io/veedeohub-ashok/" style="width:250px"></div><br><span style="color:gold">96-bit.github.io/veedeohub-ashok/</span><br>
+<button onclick="speakDouble('topFull')" style="background:#fff8c4;border-radius:20px;padding:6px 14px;margin:6px">🔊 QR माइक सुनो जी - 2 बार बोलेगा जी</button>
+<p id="topFull" style="display:none">जय माता की जी। Veedeohub सच की आवाज में आपका स्वागत है जी। यह QR कोड हमारी साइट का है जी। यहाँ से veedeohub Ashok साइट 2 पर netlify पर जाएं जी। ये हमारी दूसरी साइट है जी। यहाँ से भी ऑल लाइफ लाभ ले सकते हैं जी। ऑल लाइफ।</p>
+<div class="rowFlex"><a class="btnBlue" href="https://veedeohub-ashok.netlify.app" target="_blank" style="flex:1">🔗 Veedeohub Ashok 2 - Netlify साइट पर जाओ जी</a><button class="sunoBtn" onclick="speakText('यहाँ से Veedeohub Ashok साइट 2 पर Netlify पर जाएं जी।')">🔊 सुनो</button></div>
 </div>
 
-<div class="dabba"><div style="color:#8B4513;font-size:11px">1. Affiliate लिंक डब्बा जी</div><div style="font-weight:800">📚 Dreambook Store - All Life</div><a class="link" href="https://www.dreambookpublishing.com/product/ayurvedic-jadi-bootiyan-upyog-aur-labh" target="_blank">Dreambook Link</a><div style="color:#0a7a0a;font-weight:700" id="l1">लाभ: किताब Life Time काम आएगी जी</div><button class="sunoBtn" onclick="speak('l1')">🔊 सुनो</button></div>
-<div class="dabba"><div style="color:#8B4513;font-size:11px">2. भजन लिंक डब्बा जी</div><div style="font-weight:800">🎵 YouTube - All Life</div><a class="link" href="https://youtube.com/@veedeohub" target="_blank">youtube.com/@veedeohub</a></div>
-<div class="dabba"><div style="color:#8B4513;font-size:11px">3. Google Ad डब्बा जी</div><div style="font-weight:800">🏪 Amazon Book - All Life</div><a class="link" href="https://www.amazon.in/dp/B0GZB61NNR" target="_blank">amazon.in/dp/B0GZB61NNR</a></div>
+<!-- ****** नया खजाना सिस्टम जी - यहीं से सब चलेगा जी ****** -->
+<div class="dabba" style="background:#000;color:gold;border:4px solid gold;text-align:center">
+<div style="font-weight:900;font-size:18px">🎵 VeedeoHub Khazana - Free Bhajan Aarti - All Life जी</div>
+<div style="margin:8px 0" class="rowFlex"><input id="khInput" class="khSearch" placeholder="भजन लिखो जी - जैसे हनुमान जी" oninput="renderKh()"><button class="micBtn" onclick="mic('khInput')">🎤</button></div>
+<div>
+<button class="khBtn" onclick="setCat('All')">सब जी</button>
+<button class="khBtn" onclick="setCat('Bhajan')">भजन जी</button>
+<button class="khBtn" onclick="setCat('Aarti')">आरती जी</button>
+<button class="khBtn" onclick="setCat('Comedy')">कॉमेडी जी</button>
+</div>
+<div id="khList" style="margin-top:10px"></div>
+<div id="khPlayer" style="display:none;background:#fff;border-radius:12px;padding:6px;margin-top:10px"><iframe id="khFrame" width="100%" height="200" frameborder="0" allowfullscreen></iframe><button onclick="closeKh()" style="background:red;color:#fff;padding:6px 10px;border-radius:6px;margin-top:6px">बंद करो जी</button></div>
+</div>
+<!-- ****** खजाना खत्म जी ****** -->
 
-<!-- अब असली खजाना जी - बिना YouTube - बिना कॉपीराइट - फ्री डोमेन जी -->
-<div class="dabba"><div class="khTitle">1. 🪔 आरती संग्रह जी - फ्री डोमेन</div><div class="khText" id="aarti">ॐ जय जगदीश हरे, स्वामी जय जगदीश हरे।
-भक्त जनों के संकट, दास जनों के संकट, क्षण में दूर करे।
-जो ध्यावे फल पावे, दुख बिनसे मन का।
-सुख संपत्ति घर आवे, कष्ट मिटे तन का।</div><button class="sunoBtn" onclick="speak('aarti')">🔊 सुनो जी</button></div>
-
-<div class="dabba"><div class="khTitle">2. 📖 चालीसा पाठ जी - हनुमान चालीसा</div><div class="khText" id="chalisa">श्रीगुरु चरन सरोज रज निज मनु मुकुरु सुधारि।
-बरनउँ रघुबर बिमल जसु जो दायकु फल चारि।
-बुद्धिहीन तनु जानिके सुमिरौं पवन-कुमार।
-बल बुद्धि बिद्या देहु मोहिं हरहु कलेस बिकार।</div><button class="sunoBtn" onclick="speak('chalisa')">🔊 सुनो जी</button></div>
-
-<div class="dabba"><div class="khTitle">3. 🏹 रामायण चौपाई जी - फ्री</div><div class="khText" id="ramayan">मंगल भवन अमंगल हारी। द्रवहु सुदसरथ अजिर बिहारी।
-राम सिया राम सिया राम जय जय राम।
-होइहि सोइ जो राम रचि राखा। को करि तर्क बढ़ावै साखा।</div><button class="sunoBtn" onclick="speak('ramayan')">🔊 सुनो जी</button></div>
-
-<div class="dabba"><div class="khTitle">4. ⚔️ महाभारत / गीता सार जी</div><div class="khText" id="geeta">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।
-मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि।
-यदा यदा हि धर्मस्य ग्लानिर्भवति भारत। अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम्।</div><button class="sunoBtn" onclick="speak('geeta')">🔊 सुनो जी</button></div>
-
-<div class="dabba"><div class="khTitle">5. 🧠 चाणक्य नीति जी - फ्री डोमेन</div><div class="khText" id="chanakya">मूर्ख शिष्योपदेशेन दुष्टस्त्रीभरणेन च।
-दुःखितैः सम्प्रयोगेण पण्डितोऽप्यवसीदति।
-विद्या मित्रं प्रवासे, भार्या मित्रं गृहेषु च। व्याधितस्यौषधं मित्रं, धर्मो मित्रं मृतस्य च।</div><button class="sunoBtn" onclick="speak('chanakya')">🔊 सुनो जी</button></div>
-
-<div class="dabba"><div class="khTitle">6. 🕊️ कबीर वाणी जी - फ्री</div><div class="khText" id="kabir">बुरा जो देखन मैं चला, बुरा न मिलिया कोय।
-जो दिल खोजा आपना, मुझसे बुरा न कोय।
-काल करे सो आज कर, आज करे सो अब।
-पल में परलय होएगी, बहुरि करेगा कब।</div><button class="sunoBtn" onclick="speak('kabir')">🔊 सुनो जी</button></div>
-
-<div class="dabba"><div class="khTitle">7. 🌿 आयुर्वेद जड़ी-बूटियाँ जी - फ्री</div><div class="khText" id="jadi">1. तुलसी - सर्दी-खांसी में लाभ जी।
-2. गिलोय - इम्युनिटी बढ़ावे जी।
-3. अश्वगंधा - बल-बुद्धि बढ़ावे जी।
-4. आंवला - विटामिन C का खजाना जी।
-5. हल्दी - घाव भरने में लाभ जी।</div><button class="sunoBtn" onclick="speak('jadi')">🔊 सुनो जी</button></div>
-
-<div class="dabba"><div class="khTitle">8. 😂 कॉमेडी / हँसी खजाना जी - फ्री</div><div class="khText" id="comedy">टीचर - बताओ 2+2 कितना?
-पप्पू - आज 5 है जी, कल 4 था, परसों 3 था जी!
-हँसी सेहत के लिए दवा है जी। रोज हँसो जी।</div><button class="sunoBtn" onclick="speak('comedy')">🔊 सुनो जी</button></div>
-
-<div class="dabba"><div class="khTitle">9. 💭 सुविचार / शुभ वाणी जी</div><div class="khText" id="suvichar">सत्य परेशान हो सकता है जी, पर पराजित नहीं जी।
-कर्म करो, फल की चिंता मत करो जी।
-जहाँ चाह वहाँ राह जी।</div><button class="sunoBtn" onclick="speak('suvichar')">🔊 सुनो जी</button></div>
-
-<div class="dabba"><div class="khTitle">10. 🎙️ प्रवचन / FB संगीत खजाना जी - फ्री टेक्स्ट</div><div class="khText" id="pravachan">जीवन में 3 चीजें जरूरी हैं जी - सच्चाई, सेवा, सादगी जी।
-संगीत मन को शांत करता है जी। भजन से मन पवित्र होता है जी।
-सबका मंगल हो जी - जय माता की जी।</div><button class="sunoBtn" onclick="speak('pravachan')">🔊 सुनो जी</button></div>
-
-<div class="dabba"><div style="color:#8B4513;font-size:12px">पैसे वाला QR - All Life</div><div style="font-weight:800;font-size:18px">💰 UPI - 9992553796@ybl</div><div style="text-align:center"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=9992553796@ybl%26pn=Ashok%20Kumar%26cu=INR%26tn=All%20Life" style="background:#fff;padding:6px;border-radius:8px"></div></div>
-
-<div class="dabba" style="border:4px solid gold;background:#000;color:gold;text-align:center">
-<div style="font-weight:800;color:gold">📺 Veedeohub TV - सिर्फ यहीं YouTube जी - 188 Video वाला जी</div>
-<iframe width="100%" height="250" src="https://www.youtube.com/embed?listType=playlist&list=PLF1nrtSu2Dd8IjpcDmTsr68e-nWic_Qd1" allowfullscreen style="border-radius:10px;border:2px solid gold"></iframe>
+<div style="background:#fff8e1;border:3px solid #ff9800;border-radius:16px;padding:10px;margin:10px 0;text-align:left">
+<div style="font-weight:800;color:#000;font-size:20px">🔴 LIVE Joining Form जी 🎤</div>
+<div class="rowFlex"><input id="jName" placeholder="आपका नाम जी" style="width:60%;padding:10px;margin:6px;border:2px solid gold;border-radius:10px"><button class="micBtn" onclick="mic('jName')">🎤 भरो</button></div>
+<div class="rowFlex"><input id="jMob" placeholder="10 अंक मोबाइल नंबर जी" maxlength="10" style="width:60%;padding:10px;margin:6px;border:2px solid gold;border-radius:10px"><button class="micBtn" onclick="mic('jMob')">🎤 भरो</button></div>
+<div class="rowFlex"><input id="jCity" placeholder="आपका शहर जी" style="width:60%;padding:10px;margin:6px;border:2px solid gold;border-radius:10px"><button class="micBtn" onclick="mic('jCity')">🎤 भरो</button></div>
+<div class="rowFlex"><label style="font-size:12px;color:#000"><input type="checkbox" id="jAgree"> मैं अपनी जिम्मेदारी पर सारी शर्तें मानता हूँ जी - All Life</label></div>
+<div class="rowFlex"><button onclick="joinNow()" style="background:#000;color:#FFD700;width:85%;padding:12px;border-radius:10px;font-weight:700;margin-top:6px;border:2px solid #FFD700">Join करो जी - All Life - फ्री में जॉइनिंग करो जी</button></div>
+<p id="jMsg" style="color:red;font-size:12px"></p>
+<div class="rowFlex"><a class="btnBlue" href="https://wa.me/919992553796?text=Jai%20Mata%20Ki%20Join%20Hai%20Ji" target="_blank" style="flex:1">WhatsApp Join - All Life</a></div>
+<div class="rowFlex"><a class="btnBlue" href="mailto:ak9992553796@gmail.com" target="_blank" style="flex:1">Email Join - All Life</a></div>
 </div>
 
-<div class="dabba" style="text-align:center"><div style="font-weight:800;color:#000">🛒 बाकी सारे लिंक - सेम 20 जी</div>
+<div class="dabba"><div style="color:#8B4513;font-size:12px">पैसे वाला QR - All Life</div><div style="font-weight:800;font-size:18px">💰 UPI - 9992553796@ybl - पेमेंट करो जी</div><div style="text-align:center"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=9992553796@ybl%26pn=Ashok%20Kumar%26cu=INR%26tn=All%20Life" style="background:#fff;padding:6px;border-radius:8px"></div><div class="rowFlex"><a class="btnBlue" href="upi://pay?pa=9992553796@ybl&pn=Ashok%20Kumar&cu=INR&tn=All%20Life" style="flex:1">UPI पर भेजो जी</a></div><div style="color:#8B4513;font-weight:700;margin-top:6px">⚠️ शर्तें + फ्रॉड चेतावनी</div><div style="color:#0a7a0a;font-weight:700;font-size:13px" id="fraud">पैसा भेजने से पहले 9992553796 पर कॉल कन्फर्म करो जी - फ्रॉड से बचो जी</div><button class="sunoBtn" onclick="speak('fraud')">🔊 सुनो</button></div>
+
+<div class="dabba" style="text-align:center"><div style="font-weight:800;color:#000">🛒 बाकी सारे लिंक - क्रम वाइज जी - सेम 20 जी</div>
 <a class="btnBlue" href="https://www.flipkart.com/product/p/itme?pid=9789362494184" target="_blank">5. Flipkart Book</a>
 <a class="btnBlue" href="https://cx.ctml.in/mxGetyaYkab?teamLeaderId=TPL_CMO" target="_blank">6. CityMall</a>
 <a class="btnBlue" href="https://www.amazon.in" target="_blank">7. Amazon Main</a>
@@ -90,17 +70,66 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:cent
 <a class="btnBlue" href="https://facebook.com/veedeohub" target="_blank">15. Facebook Page</a>
 <a class="btnBlue" href="https://instagram.com/veedeohub" target="_blank">16. Instagram</a>
 <a class="btnBlue" href="https://threads.net/@veedeohub" target="_blank">17. Threads</a>
-<a class="btnBlue" href="https://www.textdoc.co" target="_blank">18. TextDoc Google</a>
-<a class="btnBlue" href="https://textdoc.co" target="_blank">19. TextDoc Private</a>
-<a class="btnBlue" href="https://www.dreambookpublishing.com/" target="_blank">20. Dreambook Main</a>
+<a class="btnBlue" href="https://www.textdoc.co" target="_blank">18. TextDoc Google - All Life</a>
+<a class="btnBlue" href="https://textdoc.co" target="_blank">19. TextDoc Private - All Life</a>
+<a class="btnBlue" href="https://www.dreambookpublishing.com/" target="_blank">20. Dreambook Main - All Life</a>
 </div>
 
 <div style="border:3px solid gold;background:#000;text-align:center;border-radius:12px;margin:10px 0;padding:10px;">
-<a href="radio.html" target="_blank" style="text-decoration:none;color:gold;font-weight:900;display:block;padding:12px">📻 अनन्त रेडियो स्टेशन - सिर्फ रेडियो जी - नई टैब में खुलेगा जी</a>
+<a href="radio.html" target="_blank" style="text-decoration:none;color:gold;font-weight:900;display:block;padding:12px">📻 अनन्त रेडियो स्टेशन - Voice Auto Pexels Pixabay Free - क्लिक करो जी</a>
+<div style="font-size:11px;color:#0f0;padding-bottom:8px">No Copyright - फ्री सिस्टम - कमाई चालू जी - 10 भजन ऑटो जी</div>
 </div>
 
 </div>
 <script>
-function speak(id){let t=document.getElementById(id).innerText;speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang='hi-IN';u.rate=0.85;speechSynthesis.speak(u);}
+function mic(id){if(!('webkitSpeechRecognition' in window||'SpeechRecognition' in window)){alert('माइक नहीं चला जी - Chrome में खोलो जी');return}let r=new(window.SpeechRecognition||window.webkitSpeechRecognition)();r.lang='hi-IN';r.onresult=function(e){document.getElementById(id).value=e.results[0][0].transcript; if(id=='khInput') renderKh()};r.start()}
+function speakText(t){speechSynthesis.cancel();let m=new SpeechSynthesisUtterance(t);m.lang='hi-IN';m.rate=0.85;speechSynthesis.speak(m);}
+function speak(id){let el=document.getElementById(id);if(el){speakText(el.innerText)}}
+function speakDouble(id){let t=document.getElementById(id).innerText;let u1=new SpeechSynthesisUtterance(t);u1.lang='hi-IN';u1.rate=0.9;speechSynthesis.speak(u1);u1.onend=function(){let u2=new SpeechSynthesisUtterance(t);u2.lang='hi-IN';u2.rate=0.9;speechSynthesis.speak(u2)}}
+function joinNow(){let m=jMob.value;if(m.length!=10||isNaN(m)){jMsg.innerText='10 अंक मोबाइल सही लिखो जी';return}if(!jAgree.checked){jMsg.innerText='शर्तें मानो जी';return}jMsg.innerText='Join OK जी - All Life - '+jName.value;speakText('एडमिन की मंजूरी मिलने के बाद लाभ उठाएं जी।');window.open('https://wa.me/919992553796?text=Join%20Hai%20Ji%20'+jName.value+'%20'+m,'_blank')}
+
+// खजाना DATA जी - फ्री नो कॉपीराइट वाले जी - आप 1000 तक बढ़ा सकते हैं जी
+var DATA = [
+  {id:"1", title:"हनुमान चालीसा - No Copyright", cat:"Bhajan", video:"AETFvQonf08", thumb:"https://img.youtube.com/vi/AETFvQonf08/mqdefault.jpg"},
+  {id:"2", title:"शिव तांडव स्तोत्र - Free", cat:"Aarti", video:"v5p4uQvX3v4", thumb:"https://img.youtube.com/vi/v5p4uQvX3v4/mqdefault.jpg"},
+  {id:"3", title:"भजन - हनुमान जी की आरती", cat:"Aarti", video:"0P0a2bL5v9c", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg"},
+  {id:"4", title:"गायत्री मंत्र - All Life", cat:"Bhajan", video:"W5gO7j4g4eQ", thumb:"https://img.youtube.com/vi/W5gO7j4g4eQ/mqdefault.jpg"},
+  {id:"5", title:"कृष्ण भजन - मधुर", cat:"Bhajan", video:"FjGAb2t5b6E", thumb:"https://img.youtube.com/vi/FjGAb2t5b6E/mqdefault.jpg"},
+  {id:"6", title:"Comedy - हंसी वाला - Free", cat:"Comedy", video:"SolqIcBHhu4", thumb:"https://img.youtube.com/vi/SolqIcBHhu4/mqdefault.jpg"}
+];
+var curCat="All";
+function setCat(c){curCat=c;renderKh();}
+function renderKh(){
+  let q=(document.getElementById('khInput').value||'').toLowerCase();
+  let list=document.getElementById('khList'); list.innerHTML='';
+  let filtered=DATA.filter(d=>{
+    let okCat = curCat=='All' || d.cat==curCat;
+    let okQ = d.title.toLowerCase().includes(q);
+    return okCat && okQ;
+  });
+  if(filtered.length==0){list.innerHTML="<div style='color:#fff'>कुछ नहीं मिला जी - दूसरा शब्द लिखो जी</div>";return}
+  filtered.forEach(d=>{
+    let saved = localStorage.getItem('save_'+d.id)? '❤️' : '🤍';
+    list.innerHTML+=`<div class="videoCard">
+      <img class="thumb" src="${d.thumb}" onclick="playKh('${d.video}')">
+      <div style="flex:1"><div style="font-weight:800">${d.title}</div><div style="font-size:11px">${d.cat} जी</div>
+      <button class="khBtn" onclick="playKh('${d.video}')">▶️ चलाओ जी</button>
+      <button class="khBtn" onclick="saveKh('${d.id}')">${saved} सेव जी</button>
+      <button class="sunoBtn" onclick="speakText('${d.title}')">🔊 सुनो</button>
+      </div></div>`;
+  });
+}
+function playKh(vid){
+  document.getElementById('khPlayer').style.display='block';
+  document.getElementById('khFrame').src="https://www.youtube.com/embed/"+vid+"?autoplay=1";
+  window.scrollTo(0, document.getElementById('khPlayer').offsetTop-20);
+}
+function closeKh(){document.getElementById('khFrame').src='';document.getElementById('khPlayer').style.display='none'}
+function saveKh(id){
+  if(localStorage.getItem('save_'+id)){localStorage.removeItem('save_'+id); alert('अनसेव हो गया जी');}
+  else{localStorage.setItem('save_'+id,'1'); alert('सेव हो गया जी - फोन पर लोड नहीं जी');}
+  renderKh();
+}
+renderKh();
 </script>
 </body></html>
