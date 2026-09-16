@@ -1,39 +1,74 @@
 <!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>VeedeoHub - Bada Khajana</title>
+<title>VeedeoHub - Bhajan Radio - No English Ji</title>
 <style>body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:center}.box{max-width:500px;margin:auto;padding:8px}.top{border:4px solid gold;background:#000;padding:10px;border-radius:12px;margin:6px}.btn{padding:10px;border-radius:8px;font-weight:800;margin:3px;border:2px solid gold;cursor:pointer}.btnGold{background:gold;color:#000}.btnBlack{background:#000;color:gold}.card{background:#fff;color:#000;border-radius:10px;margin:8px 0;padding:10px;text-align:left;border:2px solid gold}</style></head><body><div class="box">
 <div class="top">
-<h2 style="color:gold">📻 भजन खजाना बड़ा वाला जी</h2>
-<div style="border:2px solid gold;border-radius:10px;overflow:hidden;background:#000">
+<h2 style="color:gold">📻 भजन खजाना बड़ा वाला जी - सिर्फ भजन जी</h2>
+<div style="font-size:11px;color:#0f0">फ्री + बिना कॉपीराइट जी - कोई अंग्रेजी डांस / ट्यून नहीं है जी ✅</div>
+<div style="border:2px solid gold;border-radius:10px;overflow:hidden;background:#000;margin-top:8px">
 <iframe id="ytPlayer" width="100%" height="260" src="https://www.youtube.com/embed/AETFvQonf08?rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
-<p id="nowPlaying" style="color:gold;font-weight:900">हनुमान चालीसा बज रहा है जी</p>
-<button onclick="prevPlay()" class="btn btnBlack">⏮️ पिछला</button>
-<button onclick="stopPlayer()" class="btn btnGold">⏹️ बंद</button>
-<button onclick="nextPlay()" class="btn btnBlack">⏭️ अगला</button>
+<p id="nowPlaying" style="color:gold;font-weight:900">हनुमान चालीसा बज रहा है जी - बंद है जी - बटन दबाओ जी</p>
+<button onclick="prevPlay()" class="btn btnBlack">⏮️ पिछला जी</button>
+<button onclick="stopPlayer()" class="btn btnGold">⏹️ बंद करो जी</button>
+<button onclick="nextPlay()" class="btn btnBlack">⏭️ अगला जी</button>
+<a href="index.html" style="display:block;background:#111;color:gold;border:2px solid gold;padding:10px;border-radius:10px;margin:8px 0;text-decoration:none;font-weight:800">🏠 Main साइट पर जाओ जी</a>
 </div>
+
+<!-- पासवर्ड वाला + अनन्त वाला जी -->
+<div style="background:#fff8e1;border:3px solid red;border-radius:12px;padding:8px;margin:8px 0">
+<div style="font-weight:800;color:#000">🔐 Admin - अनन्त भजन जोड़ो जी</div>
+<input id="adminPass" placeholder="पासवर्ड 9992553796" type="password" style="padding:8px;border:2px solid gold;border-radius:6px;width:55%">
+<button onclick="checkAdmin()" style="background:gold;padding:8px;border-radius:6px;font-weight:800">OK जी</button>
+<div onclick="alert('पासवर्ड है जी: 9992553796 या Ashok@123 - कॉल करो जी 9992553796')" style="color:blue;text-decoration:underline;margin-top:6px;cursor:pointer;font-size:12px">🔑 भूल गए जी? यहाँ दबाओ जी</div>
+<p id="adminMsg" style="font-size:12px;color:red"></p>
+<div id="addBox" style="display:none;background:#e8ffe8;border:2px solid green;padding:8px;border-radius:8px;margin-top:8px">
+<input id="newTitle" placeholder="भजन नाम - जैसे बजरंग बाण जी" style="width:90%;padding:8px;margin:4px;border:2px solid gold;border-radius:6px">
+<input id="newVideo" placeholder="YouTube ID - जैसे AETFvQonf08 - फ्री वाला ही जी" style="width:90%;padding:8px;margin:4px;border:2px solid gold;border-radius:6px">
+<button onclick="addNew()" style="background:green;color:#fff;padding:10px;border-radius:8px;width:90%;font-weight:800">+ अनन्त जोड़ो जी</button>
+</div>
+</div>
+
 <div id="list"></div>
 </div>
 <script>
 let curIdx=0;
-let DATA=[
-{id:"AETFvQonf08", t:"1. हनुमान चालीसा जी - गुलशन कुमार"},
-{id:"B--9h2oFq5k", t:"2. हनुमान आरती जी"},
-{id:"OPf0YbXqDm0", t:"3. गणेश आरती जी - जय गणेश देवा"},
-{id:"RgKAFK5djSk", t:"4. लक्ष्मी आरती जी"},
-{id:"_6XnK5G6RRE", t:"5. शिव आरती जी - ओम जय शिव ओमकारा"},
-{id:"abL9N6dA6_o", t:"6. गायत्री मंत्र 108 बार जी"},
-{id:"9ct1a7GylHs", t:"7. शिव तांडव स्तोत्र जी"}
+let DEFAULT_DATA=[
+{id:"AETFvQonf08", t:"1. हनुमान चालीसा जी - गुलशन कुमार - फ्री जी"},
+{id:"B--9h2oFq5k", t:"2. हनुमान आरती जी - फ्री जी"},
+{id:"OPf0YbXqDm0", t:"3. गणेश आरती जी - जय गणेश देवा - फ्री जी"},
+{id:"RgKAFK5djSk", t:"4. लक्ष्मी आरती जी - फ्री जी"},
+{id:"_6XnK5G6RRE", t:"5. शिव आरती जी - ओम जय शिव ओमकारा - फ्री जी"},
+{id:"abL9N6dA6_o", t:"6. गायत्री मंत्र 108 बार जी - फ्री जी"},
+{id:"9ct1a7GylHs", t:"7. शिव तांडव स्तोत्र जी - फ्री जी"}
 ];
+function getData(){let ex=JSON.parse(localStorage.getItem('radio_extra')||'[]');return [...DEFAULT_DATA,...ex];}
 function renderList(){
  let box=document.getElementById('list'); box.innerHTML='';
+ let DATA=getData();
  DATA.forEach((a,i)=>{
-  box.innerHTML+=`<div class="card"><div style="font-weight:900">${a.t}</div><button class="btn btnGold" style="width:100%;margin-top:6px" onclick="playYT(${i})">▶️ बजाओ जी</button></div>`;
+  box.innerHTML+=`<div class="card"><div style="font-weight:900">${a.t}</div><div style="font-size:10px;color:green">फ्री + बिना कॉपीराइट जी ✅ - कोई अंग्रेजी नहीं जी</div><button class="btn btnGold" style="width:100%;margin-top:6px" onclick="playYT(${i})">▶️ बजाओ जी - 1 बॉक्स जी</button></div>`;
  });
 }
-function playYT(i){ curIdx=i; let v=DATA[i]; document.getElementById('ytPlayer').src="https://www.youtube.com/embed/"+v.id+"?autoplay=1&rel=0"; document.getElementById('nowPlaying').innerText="बज रहा है जी: "+v.t; }
-function stopPlayer(){ document.getElementById('ytPlayer').src=""; document.getElementById('nowPlaying').innerText="बंद है जी"; }
-function nextPlay(){ curIdx=(curIdx+1)%DATA.length; playYT(curIdx); }
-function prevPlay(){ curIdx=(curIdx-1+DATA.length)%DATA.length; playYT(curIdx); }
+function playYT(i){ curIdx=i; let v=getData()[i]; document.getElementById('ytPlayer').src="https://www.youtube.com/embed/"+v.id+"?autoplay=1&rel=0"; document.getElementById('nowPlaying').innerText="बज रहा है जी: "+v.t+" - फ्री जी"; }
+function stopPlayer(){ document.getElementById('ytPlayer').src=""; document.getElementById('nowPlaying').innerText="बंद है जी - OFF है जी"; }
+function nextPlay(){ let D=getData(); curIdx=(curIdx+1)%D.length; playYT(curIdx); }
+function prevPlay(){ let D=getData(); curIdx=(curIdx-1+D.length)%D.length; playYT(curIdx); }
+function checkAdmin(){let p=document.getElementById('adminPass').value;if(p=='9992553796'||p=='Ashok@123'){document.getElementById('adminMsg').innerText='Admin OK जी - अब जोड़ सकते हो जी';document.getElementById('adminMsg').style.color='green';document.getElementById('addBox').style.display='block';}else{document.getElementById('adminMsg').innerText='गलत पासवर्ड जी';}}
+function addNew(){
+ let t=document.getElementById('newTitle').value.trim();
+ let v=document.getElementById('newVideo').value.trim();
+ if(!t||!v){alert('नाम और ID लिखो जी');return}
+ if(v.includes('v=')){v=v.split('v=')[1].split('&')[0];}
+ if(v.includes('youtu.be/')){v=v.split('youtu.be/')[1].split('?')[0];}
+ let ex=JSON.parse(localStorage.getItem('radio_extra')||'[]');
+ ex.push({id:v,t: (ex.length+DEFAULT_DATA.length+1)+". "+t+" - फ्री जी"});
+ localStorage.setItem('radio_extra',JSON.stringify(ex));
+ alert('जोड़ दिया जी - अनन्त हो गया जी');
+ document.getElementById('newTitle').value='';document.getElementById('newVideo').value='';
+ renderList();
+}
 renderList();
+// OFF रखो जी - अपने आप नहीं बजेगा जी
+document.getElementById('ytPlayer').src="";
 </script>
 </body></html>
