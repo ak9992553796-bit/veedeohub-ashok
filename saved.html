@@ -1,39 +1,60 @@
 <!DOCTYPE html>
 <html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>💾 Saved - FB जैसा जी</title>
+<title>💾 Saved - FB जैसा जी - arti.html वाला जी</title>
 <style>
 body{margin:0;background:#070a1a;color:#fff;font-family:system-ui;padding:10px}
-.top{background:#000;border-bottom:3px solid gold;padding:12px;text-align:center;position:sticky;top:0}
+.top{background:#000;border-bottom:3px solid gold;padding:12px;text-align:center;position:sticky;top:0;z-index:10}
 .card{background:#121528;border:2px solid gold;border-radius:16px;padding:14px;margin:12px 0;display:flex;gap:10px;align-items:center}
 .btn{padding:10px 14px;background:gold;color:#000;border-radius:10px;font-weight:bold;text-decoration:none;display:inline-block;margin:5px}
 </style></head><body>
 <div class="top">
 <div style="color:gold;font-weight:bold;font-size:18px">💾 आपका सेव किया हुआ खजाना - FB जैसा जी</div>
-<a class="btn" href="aarti.html">🔙 aarti.html पर वापस</a>
-<a class="btn" href="index.html" style="background:#000;color:gold;border:2px solid gold">🏠 मुख्य पेज</a>
+<a class="btn" href="arti.html">🔙 arti.html पर वापस - एक a वाला जी</a>
+<a class="btn" href="radio.html" style="background:#000;color:gold;border:2px solid gold">📻 रेडियो जी</a>
+<button class="btn" onclick="clearSaved()" style="background:red;color:#fff">🗑️ सब साफ करो जी</button>
 </div>
 
 <div id="savedBox" style="margin-top:10px"></div>
 
-<script src="khazana.js"></script>
 <script>
-// aarti.html वाला पूरा लिब
-var BHAG_1_AARTI=[{t:"ॐ जय जगदीश हरे",c:"आरती",icon:"🪔"},{t:"जय गणेश देवा",c:"आरती",icon:"🪔"},{t:"लक्ष्मी आरती",c:"आरती",icon:"🪔"},{t:"दुर्गा आरती",c:"आरती",icon:"🪔"},{t:"शिव आरती",c:"आरती",icon:"🪔"}];
-var BHAG_2_BHAJAN=[{t:"गायत्री मंत्र",c:"भजन",icon:"🕉️"},{t:"तुलसी फायदे",c:"जड़ी-बूटी",icon:"🌿"}];
-var BHAG_3_CHALISA=[{t:"हनुमान चालीसा",c:"चालीसा",icon:"🙏"},{t:"शिव चालीसा",c:"चालीसा",icon:"🙏"}];
-var BHAG_4_TANDAV=[{t:"शिव तांडव",c:"तांडव",icon:"🔱"}];
-var BHAG_5_KABIR_GRANTH=[{t:"कबीर दोहे",c:"कबीर",icon:"📜"},{t:"रामायण कथा",c:"कथा",icon:"📖"},{t:"सुविचार",c:"सुविचार",icon:"💡"},{t:"चुटकला",c:"कॉमेडी",icon:"😂"}];
-var lib=[...BHAG_1_AARTI,...BHAG_2_BHAJAN,...BHAG_3_CHALISA,...BHAG_4_TANDAV,...BHAG_5_KABIR_GRANTH];
+// 📦 खजाना यहीं है जी - khazana.js की जरूरत नहीं जी
+var KHAZANA = {
+ BHAG_1: [
+  {n:1, t:"ॐ जय जगदीश हरे जी", c:"आरती", icon:"🪔", video:"AETFvQonf08"},
+  {n:2, t:"जय गणेश देवा जी", c:"आरती", icon:"🪔", video:"O4M5a4Uej1Q"},
+  {n:3, t:"लक्ष्मी आरती जी", c:"आरती", icon:"🪔", video:"Yq2NvvRg4Rc"},
+  {n:4, t:"हनुमान चालीसा जी", c:"चालीसा", icon:"🙏", video:"AETFvQonf08"},
+  {n:5, t:"शिव तांडव जी", c:"तांडव", icon:"🔱", video:"vQpA_NwEc2U"}
+ ]
+};
+var lib = KHAZANA.BHAG_1;
 
 let saved=JSON.parse(localStorage.getItem("VEED_SAVED")||"[]");
 let box=document.getElementById("savedBox");
 
-if(saved.length==0){
- box.innerHTML=`<div class="card" style="justify-content:center">जी अभी कुछ सेव नहीं किया जी - aarti.html में जाकर 💾 सेव दबाओ जी</div>`;
-}else{
- box.innerHTML=saved.map(i=>{
-  let v=lib[i]; if(!v) return "";
-  return `<div class="card"><div style="font-size:32px">${v.icon}</div><div style="flex:1"><b>${v.t}</b><div style="font-size:12px;color:#aaa">${v.c}</div></div><div style="color:gold">✅</div></div>`;
- }).join('');
+function renderSaved(){
+ saved=JSON.parse(localStorage.getItem("VEED_SAVED")||"[]");
+ if(saved.length==0){
+  box.innerHTML=`<div class="card" style="justify-content:center;flex-direction:column;text-align:center"><div style="font-size:40px">📭</div><div>जी अभी कुछ सेव नहीं किया जी<br>arti.html में जाकर ⭐ सेव दबाओ जी</div></div>`;
+ }else{
+  box.innerHTML=saved.map(i=>{
+   let v=lib[i]; if(!v) return "";
+   return `<div class="card">
+   <div style="font-size:32px">${v.icon}</div>
+   <div style="flex:1"><b>${v.n}. ${v.t}</b><div style="font-size:12px;color:#aaa">${v.c} - ${v.video}</div></div>
+   <a href="https://www.youtube.com/watch?v=${v.video}" target="_blank" style="background:green;color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:800">▶️</a>
+   <div style="color:gold">✅</div>
+   </div>`;
+  }).join('');
+ }
 }
+function clearSaved(){
+ if(confirm("सब सेव हटाऊँ जी?")){
+  localStorage.removeItem("VEED_SAVED");
+  renderSaved();
+ }
+}
+renderSaved();
+// फ्रॉड साफ जी
+try{ localStorage.removeItem('veedeo_extra'); }catch(e){}
 </script></body></html>
