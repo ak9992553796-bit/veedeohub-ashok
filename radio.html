@@ -1,77 +1,71 @@
 <!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Radio Bolne Wala - All Life</title>
+<title>Radio Gane Wala - All Life Final</title>
 <style>
 body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:center}
-.box{max-width:460px;margin:auto;padding:8px}
-.top{border:4px solid gold;background:#000;padding:12px;border-radius:12px;margin:6px}
-.btn{padding:10px;border-radius:8px;font-weight:800;margin:4px;border:2px solid gold}
+.box{max-width:480px;margin:auto;padding:8px}
+.top{border:4px solid gold;background:#000;padding:10px;border-radius:12px;margin:6px}
+.btn{padding:10px;border-radius:8px;font-weight:800;margin:3px;border:2px solid gold;cursor:pointer}
 .btnGold{background:gold;color:#000}.btnBlack{background:#000;color:gold}
-.audioCard{background:#fff;color:#000;border-radius:10px;margin:8px 0;padding:8px;text-align:left;border:2px solid gold}
-.search{width:70%;padding:12px;border:3px solid gold;border-radius:10px;font-weight:700}
-.input{width:90%;padding:10px;border:2px solid gold;border-radius:8px;margin:4px}
+.card{background:#fff;color:#000;border-radius:10px;margin:8px 0;padding:8px;text-align:left;border:2px solid gold}
+.search{width:80%;padding:12px;border:3px solid gold;border-radius:10px;font-weight:700}
 </style></head><body><div class="box">
 <div class="top">
-<h3 style="color:gold">📻 अब बोलेगा जी - पूरी आरती बोलेगी जी</h3>
-<p style="color:#0f0;font-size:11px">OFF है जी - बटन से बोलेगा जी - अंग्रेजी धुन हट गई जी</p>
-<p id="nowPlaying" style="color:gold;font-weight:900;background:#222;padding:8px;border-radius:8px">बंद है जी - OFF है जी</p>
-<button onclick="stopAll()" class="btn btnGold" style="width:90%">⏹️ बंद करो जी - STOP जी</button><br>
-<button onclick="nextAudio()" class="btn btnBlack">⏭️ अगला जी</button>
-<button onclick="prevAudio()" class="btn btnBlack">⏮️ पिछला जी</button><br>
-<input id="aSearch" class="search" placeholder="हनुमान, आरती लिखो जी" oninput="render()"><br>
-<button class="btn btnBlack" onclick="filterCat('All')">सभी जी</button>
-<button class="btn btnBlack" onclick="filterCat('Aarti')">आरती जी</button>
-<button class="btn btnBlack" onclick="filterCat('Chalisa')">चालीसा जी</button>
-<button class="btn btnBlack" onclick="filterCat('Tandav')">तांडव जी</button>
-<button class="btn btnBlack" onclick="filterCat('Bhajan')">भजन जी</button>
-<button class="btn btnBlack" onclick="filterCat('Kabir')">कबीर जी</button>
+<h3 style="color:gold">📻 गाने वाला खजाना जी - अब गाएगा जी</h3>
+<p style="color:#0f0;font-size:11px">OFF है जी - गाना बजेगा जी - बात नहीं करेगा जी</p>
+<div style="background:#000;border:2px solid gold;border-radius:10px;overflow:hidden">
+<iframe id="ytPlayer" width="100%" height="220" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
-<div id="aList"></div>
-<div style="background:#fff8e1;color:#000;padding:10px;border-radius:10px;margin:10px 0;text-align:left">
-<b>➕ नया जोड़ो जी - पेन ड्राइव जैसा</b><br>
-<input id="newTitle" class="input" placeholder="नाम जी">
-<textarea id="newText" class="input" placeholder="पूरा पाठ लिखो जी - यही बोलेगा जी" rows="3"></textarea>
-<select id="newCat" class="input"><option>Aarti</option><option>Chalisa</option><option>Tandav</option><option>Bhajan</option><option>Kabir</option></select>
-<button onclick="addNew()" class="btn btnGold" style="width:92%">💾 सेव करो जी</button>
+<p id="nowPlaying" style="color:gold;font-weight:900;margin:8px">बंद है जी - OFF है जी</p>
+<button onclick="stopPlayer()" class="btn btnGold" style="width:90%">⏹️ बंद करो जी</button><br>
+<button onclick="prevPlay()" class="btn btnBlack">⏮️ पिछला जी</button>
+<button onclick="nextPlay()" class="btn btnBlack">⏭️ अगला जी</button>
+<div style="margin-top:8px">
+<input id="aSearch" class="search" placeholder="हनुमान, शिव, आरती लिखो जी" onkeyup="renderList()">
 </div>
+<div style="margin-top:6px">
+<button class="btn btnBlack" onclick="setCat('All')">सभी जी</button>
+<button class="btn btnBlack" onclick="setCat('Aarti')">आरती जी</button>
+<button class="btn btnBlack" onclick="setCat('Chalisa')">चालीसा जी</button>
+<button class="btn btnBlack" onclick="setCat('Tandav')">तांडव जी</button>
+<button class="btn btnBlack" onclick="setCat('Bhajan')">भजन जी</button>
+<button class="btn btnBlack" onclick="setCat('Kabir')">कबीर जी</button>
+</div>
+</div>
+<div id="list"></div>
 </div>
 <script>
-let curCat='All'; let curIndex=0;
-let DATA_KEY='ALL_LIFE_BOLNE_WALA';
-let DEFAULT=[
-{t:"हनुमान आरती - आरती कीजै हनुमान लला की - पूरी",c:"Aarti",txt:"जय हनुमान जी - आरती कीजै हनुमान लला की। दुष्ट दलन रघुनाथ कला की। जाके बल से गिरिवर कांपे। रोग दोष जाके निकट ना झांके। अंजनि पुत्र महा बलदायी। संतान के प्रभु सदा सहाई। दे बीरा रघुनाथ पठाए। लंका जारि सिया सुधि लाए। लंका सो कोट समुद्र सी खाई। जात पवनसुत बार न लाई। लंका जारि असुर संहारे। सियाराम जी के काज संवारे। लक्ष्मण मूर्छित पड़े सकारे। आनि सजीवन प्राण उबारे। पैठि पाताल तोरि जमकारे। अहिरावण की भुजा उखारे। बाएं भुजा असुर दल मारे। दाहिने भुजा संत जन तारे। सुर नर मुनि आरती उतारे। जय जय जय हनुमान उचारे। कंचन थार कपूर लौ छाई। आरती करत अंजना माई। जो हनुमान जी की आरती गावे। बसि बैकुंठ परम पद पावे।"},
-{t:"हनुमान चालीसा - पूरी - जय हनुमान ज्ञान गुण सागर",c:"Chalisa",txt:"श्री गुरु चरण सरोज रज, निज मन मुकुर सुधारि। बरनऊं रघुबर बिमल जसु, जो दायक फल चारि। बुद्धिहीन तनु जानिके, सुमिरौं पवन कुमार। बल बुद्धि विद्या देहु मोहि, हरहु कलेश विकार। जय हनुमान ज्ञान गुण सागर, जय कपीस तिहुं लोक उजागर। रामदूत अतुलित बल धामा, अंजनि पुत्र पवनसुत नामा। महाबीर बिक्रम बजरंगी, कुमति निवार सुमति के संगी। कंचन बरन बिराज सुबेसा, कानन कुंडल कुंचित केसा। हाथ बज्र और ध्वजा बिराजे, कांधे मूंज जनेऊ साजे। शंकर सुवन केसरी नंदन, तेज प्रताप महा जग वंदन। विद्यावान गुणी अति चातुर, राम काज करिबे को आतुर। प्रभु चरित्र सुनिबे को रसिया, राम लखन सीता मन बसिया। सूक्ष्म रूप धरि सियहिं दिखावा, बिकट रूप धरि लंक जरावा। भीम रूप धरि असुर संहारे, रामचंद्र के काज संवारे। लाय सजीवन लखन जियाए, श्री रघुबीर हरषि उर लाए। रघुपति कीन्ही बहुत बड़ाई, तुम मम प्रिय भरतहि सम भाई। सहस बदन तुम्हरो जस गावैं, अस कहि श्रीपति कंठ लगावैं। सनकादिक ब्रह्मादि मुनीसा, नारद सारद सहित अहीसा। जम कुबेर दिगपाल जहां ते, कवि कोबिद कहि सके कहां ते। तुम उपकार सुग्रीवहिं कीन्हा, राम मिलाय राज पद दीन्हा। तुम्हरो मंत्र बिभीषन माना, लंकेश्वर भए सब जग जाना। जुग सहस्र जोजन पर भानू, लील्यो ताहि मधुर फल जानू। प्रभु मुद्रिका मेलि मुख माही, जलधि लांघि गए अचरज नाहीं। दुर्गम काज जगत के जेते, सुगम अनुग्रह तुम्हरे तेते। राम दुआरे तुम रखवारे, होत न आज्ञा बिनु पैसारे। सब सुख लहै तुम्हारी सरना, तुम रक्षक काहू को डरना। आपन तेज सम्हारो आपै, तीनों लोक हांक ते कांपै। भूत पिशाच निकट नहिं आवै, महाबीर जब नाम सुनावै। नासै रोग हरै सब पीरा, जपत निरंतर हनुमत बीरा। संकट ते हनुमान छुड़ावै, मन क्रम बचन ध्यान जो लावै। सब पर राम तपस्वी राजा, तिनके काज सकल तुम साजा। और मनोरथ जो कोई लावै, सोइ अमित जीवन फल पावै। चारों जुग परताप तुम्हारा, है परसिद्ध जगत उजियारा। साधु संत के तुम रखवारे, असुर निकंदन राम दुलारे। अष्ट सिद्धि नौ निधि के दाता, अस बर दीन जानकी माता। राम रसायन तुम्हरे पासा, सदा रहो रघुपति के दासा। तुम्हरे भजन राम को पावै, जनम जनम के दुख बिसरावै। अंत काल रघुबर पुर जाई, जहां जन्म हरि भक्त कहाई। और देवता चित्त न धरई, हनुमत सेइ सर्ब सुख करई। संकट कटै मिटै सब पीरा, जो सुमिरै हनुमत बलबीरा। जय जय जय हनुमान गोसाईं, कृपा करहु गुरुदेव की नाई। जो सत बार पाठ कर कोई, छूटहि बंदि महा सुख होई। जो यह पढ़ै हनुमान चालीसा, होय सिद्धि साखी गौरीसा। तुलसीदास सदा हरि चेरा, कीजै नाथ हृदय महं डेरा। पवन तनय संकट हरन, मंगल मूरति रूप। राम लखन सीता सहित, हृदय बसहु सुर भूप।"},
-{t:"शिव तांडव स्तोत्र - जटाटवीगलज्जल",c:"Tandav",txt:"जटाटवीगलज्जल प्रवाहपावितस्थले, गलेऽवलम्ब्य लम्बितां भुजंगतुंगमालिकाम्। डमड्डमड्डमड्डमन्निनादवड्डमर्वयं, चकार चंडतांडवं तनोतु नः शिवः शिवम्। जटा कटा हसंभ्रम भ्रमन्निलिम्पनिर्झरी, विलोलवीचिवल्लरी विराजमानमूर्धनि। धगद्धगज्ज्वलल्ललाटपट्टपावके, किशोरचंद्रशेखरे रतिः प्रतिक्षणं मम।"},
-{t:"गणेश आरती - जय गणेश जय गणेश देवा",c:"Aarti",txt:"जय गणेश जय गणेश जय गणेश देवा। माता जाकी पार्वती पिता महादेवा। एकदंत दयावंत चार भुजाधारी। माथे पर सिंदूर सोहे मूसे की सवारी। पान चढ़े फूल चढ़े और चढ़े मेवा। लड्डूअन का भोग लगे संत करे सेवा। अंधन को आंख देत कोढ़िन को काया। बांझन को पुत्र देत निर्धन को माया। सूर श्याम शरण आए सफल कीजे सेवा। जय गणेश जय गणेश जय गणेश देवा।"},
-{t:"कबीर वाणी - दोहा - बुरा जो देखन मैं चला",c:"Kabir",txt:"कबीर दास जी कहते हैं जी। बुरा जो देखन मैं चला, बुरा न मिलिया कोय। जो दिल खोजा आपना, मुझसे बुरा न कोय। माया मरी न मन मरा, मर मर गए शरीर। आशा तृष्णा न मरी, कह गए दास कबीर।"},
-{t:"गायत्री मंत्र - ओम भूर्भुवः स्वः",c:"Bhajan",txt:"ओम भूर्भुवः स्वः, तत्सवितुर्वरेण्यं। भर्गो देवस्य धीमहि, धियो यो नः प्रचोयात्। ओम भूर्भुवः स्वः, तत्सवितुर्वरेण्यं। भर्गो देवस्य धीमहि, धियो यो नः प्रचोयात्।"}
+let curCat='All'; let curIdx=0;
+let DATA=[
+{id:"AETFvQonf08", t:"हनुमान चालीसा - गुलशन कुमार - पूरी - गाने वाली", c:"Chalisa"},
+{id:"Lya2G9YpF0g", t:"हनुमान आरती - आरती कीजै हनुमान लला की - गाने वाली", c:"Aarti"},
+{id:"eZQx3h3h5Z0", t:"शिव तांडव स्तोत्र - रावण रचित - गाने वाला", c:"Tandav"},
+{id:"O0h0-7Qk6bU", t:"गणेश आरती - जय गणेश जय गणेश देवा - गाने वाली", c:"Aarti"},
+{id:"n1blR2rOym4", t:"लक्ष्मी आरती - ओम जय लक्ष्मी माता - गाने वाली", c:"Aarti"},
+{id:"5Is2R7Y6b6Y", t:"शिव आरती - ओम जय शिव ओंकारा - गाने वाली", c:"Aarti"},
+{id:"6K8Xq2cX1aU", t:"कृष्ण भजन - श्री कृष्ण गोविंद हरे मुरारी - गाने वाला", c:"Bhajan"},
+{id:"4p5_Ma4z1yI", t:"गायत्री मंत्र - 108 बार - गाने वाला", c:"Bhajan"},
+{id:"Q5d0v3o7w2A", t:"कबीर वाणी - दोहे - गाने वाले", c:"Kabir"}
 ];
-function load(){ let s=localStorage.getItem(DATA_KEY); if(s){try{return JSON.parse(s)}catch(e){return DEFAULT}} return DEFAULT; }
-let LIST=load();
-function save(){localStorage.setItem(DATA_KEY,JSON.stringify(LIST))}
-function filterCat(c){curCat=c;render()}
-function render(){
- let q=(aSearch.value||'').toLowerCase();
- let d=document.getElementById('aList'); d.innerHTML='';
- LIST.forEach((a,i)=>{
-  if(curCat!='All'&&a.c!=curCat)return;
-  if(q&&!a.t.toLowerCase().includes(q))return;
-  d.innerHTML+=`<div class="audioCard"><div style="font-weight:900">${a.t}</div><div style="font-size:11px">${a.c} जी</div><button class="btn btnGold" onclick="playIndex(${i})">▶️ बोलो जी - बजाओ जी</button><button class="btn btnBlack" onclick="del(${i})">हटाओ जी</button></div>`;
+function setCat(c){curCat=c; renderList();}
+function renderList(){
+ let q=(document.getElementById('aSearch').value||'').toLowerCase().trim();
+ let box=document.getElementById('list'); box.innerHTML='';
+ DATA.forEach((a,i)=>{
+  if(curCat!='All' && a.c!=curCat) return;
+  if(q && a.t.toLowerCase().indexOf(q)==-1) return;
+  box.innerHTML+=`<div class="card"><div style="font-weight:900">${a.t}</div><div style="font-size:11px;color:#666">${a.c} जी | ${i+1}</div><button class="btn btnGold" onclick="playYT(${i})">▶️ गाना बजाओ जी - गाएगा जी</button></div>`;
  });
+ if(box.innerHTML==''){ box.innerHTML='<div style="color:gold;padding:10px">कुछ नहीं मिला जी - दूसरा शब्द लिखो जी</div>'; }
 }
-function speakText(txt,title){
-  speechSynthesis.cancel();
-  let u=new SpeechSynthesisUtterance(txt);
-  u.lang='hi-IN'; u.rate=0.85; u.pitch=1;
-  document.getElementById('nowPlaying').innerText='बोल रहा है जी: '+title;
-  u.onend=function(){ nextAudio(); }
-  speechSynthesis.speak(u);
+function playYT(i){
+ curIdx=i;
+ let v=DATA[i];
+ document.getElementById('ytPlayer').src="https://www.youtube.com/embed/"+v.id+"?autoplay=1&rel=0";
+ document.getElementById('nowPlaying').innerText="गाना बज रहा है जी: "+v.t;
 }
-function playIndex(i){ curIndex=i; speakText(LIST[i].txt, LIST[i].t); }
-function stopAll(){ speechSynthesis.cancel(); nowPlaying.innerText='बंद है जी - OFF है जी'; }
-function nextAudio(){ curIndex=(curIndex+1)%LIST.length; playIndex(curIndex); }
-function prevAudio(){ curIndex=(curIndex-1+LIST.length)%LIST.length; playIndex(curIndex); }
-function addNew(){ let t=newTitle.value.trim(); let txt=newText.value.trim(); let c=newCat.value; if(!t||!txt){alert('नाम और पाठ लिखो जी');return} LIST.push({t:t,c:c,txt:txt}); save(); newTitle.value=''; newText.value=''; render(); alert('जुड़ गया जी - अब बोलेगा जी'); }
-function del(i){ if(confirm('हटाना है जी?')){ LIST.splice(i,1); save(); render(); } }
-render();
+function stopPlayer(){ document.getElementById('ytPlayer').src=""; document.getElementById('nowPlaying').innerText="बंद है जी - OFF है जी"; }
+function nextPlay(){ curIdx=(curIdx+1)%DATA.length; playYT(curIdx); }
+function prevPlay(){ curIdx=(curIdx-1+DATA.length)%DATA.length; playYT(curIdx); }
+renderList();
 </script>
 </body></html>
