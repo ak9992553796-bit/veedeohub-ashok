@@ -2,27 +2,10 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
 <title>VeedeoHub - Bhajan Radio - Final Clean - No English</title>
 <style>body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:center}.box{max-width:500px;margin:auto;padding:8px}.top{border:4px solid gold;background:#000;padding:10px;border-radius:12px;margin:6px}.btn{padding:10px;border-radius:8px;font-weight:800;margin:3px;border:2px solid gold;cursor:pointer}.btnGold{background:gold;color:#000}.btnBlack{background:#000;color:gold}.card{background:#fff;color:#000;border-radius:10px;margin:8px 0;padding:10px;text-align:left;border:2px solid gold}</style>
-<script>
-// ★ FINAL ENGLISH DELETE - खुलते ही हट जाएगा जी - दोनों स्थान से जी
-(function(){
-  try{
-    // सारा radio_extra साफ जी - क्योंकि इसमें ही अंग्रेजी फँसी है जी
-    localStorage.removeItem('radio_extra');
-    localStorage.removeItem('veedeo_extra');
-    // save_ वाला भी साफ जी
-    for(let k in localStorage){
-      if(k.startsWith('save_') && (localStorage[k].includes('dQw4w9WgXcQ') || k.includes('dQw4w9WgXcQ'))){
-        localStorage.removeItem(k);
-      }
-    }
-    console.log('साफ हो गया जी');
-  }catch(e){}
-})();
-</script>
 </head><body><div class="box">
 <div class="top">
 <h2 style="color:gold">📻 भजन खजाना - FINAL CLEAN जी - सिर्फ भजन जी</h2>
-<div style="font-size:11px;color:#0f0">फ्री + बिना कॉपीराइट जी - अंग्रेजी 100% हटा दी जी ✅</div>
+<div style="font-size:11px;color:#0f0">फ्री + बिना कॉपीराइट जी - अंग्रेजी 100% हटा दी जी ✅ - हिस्ट्री ऑटो साफ ON है जी</div>
 <div style="border:2px solid gold;border-radius:10px;overflow:hidden;background:#000;margin-top:8px">
 <iframe id="ytPlayer" width="100%" height="260" src="about:blank" frameborder="0" allowfullscreen></iframe>
 </div>
@@ -30,7 +13,7 @@
 <button onclick="prevPlay()" class="btn btnBlack">⏮️ पिछला जी</button>
 <button onclick="stopPlayer()" class="btn btnGold">⏹️ बंद करो जी</button>
 <button onclick="nextPlay()" class="btn btnBlack">⏭️ अगला जी</button>
-<a href="index.html?v=final999" style="display:block;background:#111;color:gold;border:2px solid gold;padding:10px;border-radius:10px;margin:8px 0;text-decoration:none;font-weight:800">🏠 Main साइट पर जाओ जी - साफ वाली जी</a>
+<a href="index.html" style="display:block;background:#111;color:gold;border:2px solid gold;padding:10px;border-radius:10px;margin:8px 0;text-decoration:none;font-weight:800">🏠 Main साइट पर जाओ जी</a>
 </div>
 
 <div style="background:#fff8e1;border:3px solid red;border-radius:12px;padding:8px;margin:8px 0">
@@ -43,6 +26,7 @@
 <input id="newTitle" placeholder="भजन नाम - जैसे बजरंग बाण जी" style="width:90%;padding:8px;margin:4px;border:2px solid gold;border-radius:6px">
 <input id="newVideo" placeholder="YouTube ID - जैसे AETFvQonf08 - फ्री वाला ही जी" style="width:90%;padding:8px;margin:4px;border:2px solid gold;border-radius:6px">
 <button onclick="addNew()" style="background:green;color:#fff;padding:10px;border-radius:8px;width:90%;font-weight:800">+ अनन्त जोड़ो जी</button>
+<button onclick="clearAllRadioHistory()" style="background:red;color:#fff;padding:10px;border-radius:8px;width:90%;font-weight:800;margin-top:10px">🗑️ रेडियो हिस्ट्री साफ करो जी</button>
 </div>
 </div>
 
@@ -50,7 +34,7 @@
 </div>
 <script>
 let curIdx=0;
-// ★ सिर्फ 7 भजन - कोई अंग्रेजी नहीं जी - सब फ्री जी
+// ★ सिर्फ 7 भजन - पक्का वाला - कभी नहीं हटेगा जी
 let DEFAULT_DATA=[
 {id:"AETFvQonf08", t:"1. हनुमान चालीसा जी - गुलशन कुमार - फ्री जी"},
 {id:"B--9h2oFq5k", t:"2. हनुमान आरती जी - फ्री जी"},
@@ -60,17 +44,35 @@ let DEFAULT_DATA=[
 {id:"abL9N6dA6_o", t:"6. गायत्री मंत्र 108 बार जी - फ्री जी"},
 {id:"9ct1a7GylHs", t:"7. शिव तांडव स्तोत्र जी - फ्री जी"}
 ];
-function getData(){let ex=JSON.parse(localStorage.getItem('radio_extra')||'[]');return [...DEFAULT_DATA,...ex];}
+
+function getData(){
+  const BAD = ["dQw4w9WgXcQ","jNQXAC9IVRw","doh","english","xxx","sexy","rickroll"];
+  let ex=JSON.parse(localStorage.getItem('radio_extra')||'[]');
+  let filtered = ex.filter(x=>{
+    if(!x.id) return false;
+    return!BAD.some(b=> x.id.toLowerCase().includes(b.toLowerCase()));
+  });
+  if(filtered.length!== ex.length){
+    localStorage.setItem('radio_extra', JSON.stringify(filtered));
+    console.log('रेडियो गंदा हटा दिया जी');
+  }
+  // main site की भी सफाई साथ में जी
+  try{
+    let ex2=JSON.parse(localStorage.getItem('veedeo_extra')||'[]');
+    let f2 = ex2.filter(x=>!BAD.some(b=> (x.video||'').toLowerCase().includes(b.toLowerCase())));
+    if(f2.length!== ex2.length) localStorage.setItem('veedeo_extra', JSON.stringify(f2));
+  }catch(e){}
+  return [...DEFAULT_DATA,...filtered];
+}
+
 function renderList(){
  let box=document.getElementById('list'); box.innerHTML='';
  let DATA=getData();
  DATA.forEach((a,i)=>{
-  // ★ अगर गलती से भी अंग्रेजी ID है जी - तो दिखेगा ही नहीं जी
-  if(a.id.toLowerCase()=='dqw4w9wgxcq') return;
   box.innerHTML+=`<div class="card"><div style="font-weight:900">${a.t}</div><div style="font-size:10px;color:green">फ्री + बिना कॉपीराइट जी ✅</div><button class="btn btnGold" style="width:100%;margin-top:6px" onclick="playYT(${i})">▶️ बजाओ जी</button></div>`;
  });
 }
-function playYT(i){ curIdx=i; let v=getData()[i]; if(v.id=='dQw4w9WgXcQ'){alert('ये अंग्रेजी हट गई जी');return;} document.getElementById('ytPlayer').src="https://www.youtube.com/embed/"+v.id+"?autoplay=1&rel=0"; document.getElementById('nowPlaying').innerText="बज रहा है जी: "+v.t; }
+function playYT(i){ curIdx=i; let v=getData()[i]; document.getElementById('ytPlayer').src="https://www.youtube.com/embed/"+v.id+"?autoplay=1&rel=0"; document.getElementById('nowPlaying').innerText="बज रहा है जी: "+v.t; }
 function stopPlayer(){ document.getElementById('ytPlayer').src="about:blank"; document.getElementById('nowPlaying').innerText="बंद है जी - OFF है जी"; }
 function nextPlay(){ let D=getData(); curIdx=(curIdx+1)%D.length; playYT(curIdx); }
 function prevPlay(){ let D=getData(); curIdx=(curIdx-1+D.length)%D.length; playYT(curIdx); }
@@ -81,11 +83,20 @@ function addNew(){
  if(!t||!v){alert('नाम और ID लिखो जी');return}
  if(v.includes('v=')){v=v.split('v=')[1].split('&')[0];}
  if(v.includes('youtu.be/')){v=v.split('youtu.be/')[1].split('?')[0];}
- if(v.toLowerCase()=='dqw4w9wgxcq'){alert('ये अंग्रेजी ID नहीं जोड़ सकते जी');return;}
+ const BAD = ["dQw4w9WgXcQ","jNQXAC9IVRw","doh","english","xxx"];
+ if(BAD.some(b=>v.toLowerCase().includes(b.toLowerCase()))){alert('ये अंग्रेजी/गंदा ID नहीं जोड़ सकते जी');return;}
  let ex=JSON.parse(localStorage.getItem('radio_extra')||'[]');
  ex.push({id:v,t: (ex.length+DEFAULT_DATA.length+1)+". "+t+" - फ्री जी"});
  localStorage.setItem('radio_extra',JSON.stringify(ex));
- alert('जोड़ दिया जी'); renderList();
+ alert('जोड़ दिया जी'); document.getElementById('newTitle').value=''; document.getElementById('newVideo').value=''; renderList();
+}
+function clearAllRadioHistory(){
+  if(confirm('रेडियो हिस्ट्री साफ कर दूँ जी?')){
+    localStorage.removeItem('radio_extra');
+    localStorage.removeItem('veedeo_extra');
+    alert('रेडियो हिस्ट्री साफ हो गई जी');
+    renderList();
+  }
 }
 renderList();
 </script>
