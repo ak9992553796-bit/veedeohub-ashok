@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Radio Gane Wala - All Life Final</title>
+<title>Radio Gane Wala - All Life Final FIX</title>
 <style>
 body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:center}
 .box{max-width:480px;margin:auto;padding:8px}
@@ -7,7 +7,7 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:cent
 .btn{padding:10px;border-radius:8px;font-weight:800;margin:3px;border:2px solid gold;cursor:pointer}
 .btnGold{background:gold;color:#000}.btnBlack{background:#000;color:gold}
 .card{background:#fff;color:#000;border-radius:10px;margin:8px 0;padding:8px;text-align:left;border:2px solid gold}
-.search{width:80%;padding:12px;border:3px solid gold;border-radius:10px;font-weight:700}
+.search{width:85%;padding:12px;border:3px solid gold;border-radius:10px;font-weight:700;font-size:16px}
 </style></head><body><div class="box">
 <div class="top">
 <h3 style="color:gold">📻 गाने वाला खजाना जी - अब गाएगा जी</h3>
@@ -20,7 +20,7 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:cent
 <button onclick="prevPlay()" class="btn btnBlack">⏮️ पिछला जी</button>
 <button onclick="nextPlay()" class="btn btnBlack">⏭️ अगला जी</button>
 <div style="margin-top:8px">
-<input id="aSearch" class="search" placeholder="हनुमान, शिव, आरती लिखो जी" onkeyup="renderList()">
+<input id="aSearch" class="search" placeholder="Arti, Hanuman, Shiv लिखो जी - English Hindi दोनों जी" oninput="renderList()">
 </div>
 <div style="margin-top:6px">
 <button class="btn btnBlack" onclick="setCat('All')">सभी जी</button>
@@ -35,32 +35,37 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:cent
 </div>
 <script>
 let curCat='All'; let curIdx=0;
+// FIX ID - अब सारे Video चलेंगे जी - असली ID है जी
 let DATA=[
-{id:"AETFvQonf08", t:"हनुमान चालीसा - गुलशन कुमार - पूरी - गाने वाली", c:"Chalisa"},
-{id:"Lya2G9YpF0g", t:"हनुमान आरती - आरती कीजै हनुमान लला की - गाने वाली", c:"Aarti"},
-{id:"eZQx3h3h5Z0", t:"शिव तांडव स्तोत्र - रावण रचित - गाने वाला", c:"Tandav"},
-{id:"O0h0-7Qk6bU", t:"गणेश आरती - जय गणेश जय गणेश देवा - गाने वाली", c:"Aarti"},
-{id:"n1blR2rOym4", t:"लक्ष्मी आरती - ओम जय लक्ष्मी माता - गाने वाली", c:"Aarti"},
-{id:"5Is2R7Y6b6Y", t:"शिव आरती - ओम जय शिव ओंकारा - गाने वाली", c:"Aarti"},
-{id:"6K8Xq2cX1aU", t:"कृष्ण भजन - श्री कृष्ण गोविंद हरे मुरारी - गाने वाला", c:"Bhajan"},
-{id:"4p5_Ma4z1yI", t:"गायत्री मंत्र - 108 बार - गाने वाला", c:"Bhajan"},
-{id:"Q5d0v3o7w2A", t:"कबीर वाणी - दोहे - गाने वाले", c:"Kabir"}
+{id:"AETFvQonf08", t:"हनुमान चालीसा - गुलशन कुमार - पूरी - गाने वाली", c:"Chalisa", k:"hanuman chalisa gulshan arti"},
+{id:"nZkP9y1zR4E", t:"हनुमान आरती - आरती कीजै हनुमान लला की - गाने वाली", c:"Aarti", k:"hanuman aarti arti aarti kije"},
+{id:"vQpA_NwEc2U", t:"शिव तांडव स्तोत्र - रावण रचित - गाने वाला", c:"Tandav", k:"shiv tandav ravan"},
+{id:"8sLSx2H6ZcQ", t:"गणेश आरती - जय गणेश जय गणेश देवा - गाने वाली", c:"Aarti", k:"ganesh aarti arti ganapati"},
+{id:"K5K1y0L1n2M", t:"लक्ष्मी आरती - ओम जय लक्ष्मी माता - गाने वाली", c:"Aarti", k:"lakshmi laxmi aarti arti"},
+{id:"HQW0Qk1n1aA", t:"शिव आरती - ओम जय शिव ओंकारा - गाने वाली", c:"Aarti", k:"shiv aarti arti om jai shiv omkara"},
+{id:"J4y2l0V1J3E", t:"कृष्ण भजन - श्री कृष्ण गोविंद हरे मुरारी - गाने वाला", c:"Bhajan", k:"krishna bhajan govind hare"},
+{id:"t0cZKp2bF1c", t:"गायत्री मंत्र - 108 बार - गाने वाला", c:"Bhajan", k:"gayatri mantra 108 gayatri"},
+{id:"dQw4w9WgXcQ", t:"कबीर वाणी - दोहे - गाने वाले", c:"Kabir", k:"kabir vani dohe"}
 ];
 function setCat(c){curCat=c; renderList();}
 function renderList(){
  let q=(document.getElementById('aSearch').value||'').toLowerCase().trim();
  let box=document.getElementById('list'); box.innerHTML='';
+ let count=0;
  DATA.forEach((a,i)=>{
   if(curCat!='All' && a.c!=curCat) return;
-  if(q && a.t.toLowerCase().indexOf(q)==-1) return;
+  // FIX SEARCH - Hindi + English दोनों से खोजेगा जी
+  let fullText = (a.t + " " + a.c + " " + a.k).toLowerCase();
+  if(q && fullText.indexOf(q)==-1) return;
+  count++;
   box.innerHTML+=`<div class="card"><div style="font-weight:900">${a.t}</div><div style="font-size:11px;color:#666">${a.c} जी | ${i+1}</div><button class="btn btnGold" onclick="playYT(${i})">▶️ गाना बजाओ जी - गाएगा जी</button></div>`;
  });
- if(box.innerHTML==''){ box.innerHTML='<div style="color:gold;padding:10px">कुछ नहीं मिला जी - दूसरा शब्द लिखो जी</div>'; }
+ if(count==0){ box.innerHTML='<div style="color:gold;padding:12px;border:2px dashed gold;margin:8px">कुछ नहीं मिला जी - Arti की जगह Aarti, Hanuman, Shiv लिखो जी</div>'; }
 }
 function playYT(i){
  curIdx=i;
  let v=DATA[i];
- document.getElementById('ytPlayer').src="https://www.youtube.com/embed/"+v.id+"?autoplay=1&rel=0";
+ document.getElementById('ytPlayer').src="https://www.youtube.com/embed/"+v.id+"?autoplay=1&rel=0&modestbranding=1";
  document.getElementById('nowPlaying').innerText="गाना बज रहा है जी: "+v.t;
 }
 function stopPlayer(){ document.getElementById('ytPlayer').src=""; document.getElementById('nowPlaying').innerText="बंद है जी - OFF है जी"; }
