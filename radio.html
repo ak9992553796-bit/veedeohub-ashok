@@ -1,96 +1,40 @@
 <!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
-<title>VeedeoHub - Bhajan Radio - FINAL CLEAN - No English</title>
-<style>body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:center}.box{max-width:500px;margin:auto;padding:8px}.top{border:4px solid gold;background:#000;padding:10px;border-radius:12px;margin:6px}.btn{padding:10px;border-radius:8px;font-weight:800;margin:3px;border:2px solid gold;cursor:pointer}.btnGold{background:gold;color:#000}.btnBlack{background:#000;color:gold}.card{background:#fff;color:#000;border-radius:10px;margin:8px 0;padding:10px;text-align:left;border:2px solid gold}</style>
-</head><body><div class="box">
-<div class="top">
-<h2 style="color:gold">📻 भजन खजाना - FINAL CLEAN जी - सिर्फ भजन जी</h2>
-<div style="font-size:11px;color:#0f0">फ्री + बिना कॉपीराइट जी - Uptown Funk 100% हटा दिया जी ✅</div>
-<div style="border:2px solid gold;border-radius:10px;overflow:hidden;background:#000;margin-top:8px">
-<iframe id="ytPlayer" width="100%" height="260" src="about:blank" frameborder="0" allowfullscreen></iframe>
+<title>Radio Final - Sahi Bhajan Only</title>
+<style>body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:center}.box{max-width:500px;margin:auto;padding:8px}.top{border:4px solid gold;background:#000;padding:10px;border-radius:12px}.btn{padding:10px;border-radius:8px;font-weight:800;margin:3px;border:2px solid gold;cursor:pointer}.btnGold{background:gold;color:#000}.btnBlack{background:#000;color:gold}.card{background:#fff;color:#000;border-radius:10px;margin:8px 0;padding:10px;text-align:left;border:2px solid gold}</style>
+</head><body><div class="box"><div class="top">
+<h2 style="color:gold">📻 भजन खजाना - FINAL जी</h2>
+<div style="border:2px solid gold;border-radius:10px;overflow:hidden;background:#000"><iframe id="ytPlayer" width="100%" height="260" src="about:blank" frameborder="0" allowfullscreen></iframe></div>
+<p id="nowPlaying" style="color:gold;font-weight:900">बंद है जी</p>
+<button onclick="prevPlay()" class="btn btnBlack">⏮️ पिछला</button>
+<button onclick="stopPlayer()" class="btn btnGold">⏹️ बंद</button>
+<button onclick="nextPlay()" class="btn btnBlack">⏭️ अगला</button>
+<a href="arti.html" style="display:block;background:#111;color:gold;border:2px solid gold;padding:10px;border-radius:10px;margin:8px 0;text-decoration:none;font-weight:800">🪔 आरती वाली पर जाओ जी</a>
 </div>
-<p id="nowPlaying" style="color:gold;font-weight:900">बंद है जी - OFF है जी - बटन दबाओ जी तो भजन बजेगा जी</p>
-<button onclick="prevPlay()" class="btn btnBlack">⏮️ पिछला जी</button>
-<button onclick="stopPlayer()" class="btn btnGold">⏹️ बंद करो जी</button>
-<button onclick="nextPlay()" class="btn btnBlack">⏭️ अगला जी</button>
-<a href="arti.html" style="display:block;background:#111;color:gold;border:2px solid gold;padding:10px;border-radius:10px;margin:8px 0;text-decoration:none;font-weight:800">🪔 आरती वाली arti.html पर जाओ जी</a>
-</div>
-
-<div style="background:#fff8e1;border:3px solid red;border-radius:12px;padding:8px;margin:8px 0">
-<div style="font-weight:800;color:#000">🔐 Admin - अनन्त भजन जोड़ो जी</div>
-<input id="adminPass" placeholder="पासवर्ड 9992553796" type="password" style="padding:8px;border:2px solid gold;border-radius:6px;width:55%">
-<button onclick="checkAdmin()" style="background:gold;padding:8px;border-radius:6px;font-weight:800">OK जी</button>
-<div onclick="alert('पासवर्ड है जी: 9992553796 या Ashok@123')" style="color:blue;text-decoration:underline;margin-top:6px;cursor:pointer;font-size:12px">🔑 भूल गए जी? यहाँ दबाओ जी</div>
-<p id="adminMsg" style="font-size:12px;color:red"></p>
-<div id="addBox" style="display:none;background:#e8ffe8;border:2px solid green;padding:8px;border-radius:8px;margin-top:8px">
-<input id="newTitle" placeholder="भजन नाम - जैसे बजरंग बाण जी" style="width:90%;padding:8px;margin:4px;border:2px solid gold;border-radius:6px">
-<input id="newVideo" placeholder="YouTube ID - जैसे AETFvQonf08 - फ्री वाला ही जी" style="width:90%;padding:8px;margin:4px;border:2px solid gold;border-radius:6px">
-<button onclick="addNew()" style="background:green;color:#fff;padding:10px;border-radius:8px;width:90%;font-weight:800">+ अनन्त जोड़ो जी</button>
-<button onclick="clearAllRadioHistory()" style="background:red;color:#fff;padding:10px;border-radius:8px;width:90%;font-weight:800;margin-top:10px">🗑️ रेडियो हिस्ट्री साफ करो जी</button>
-</div>
-</div>
-
 <div id="list"></div>
+
+<!-- पैसे आने वाला सही QR जी - आपका वाला -->
+<div style="text-align:center;border:3px solid gold;padding:12px;border-radius:12px;background:#000;margin-top:12px">
+<div style="color:gold;font-weight:900">🙏 सहयोग के लिए - सही QR जी</div>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=9992553796@ybl%26pn=Ashok%20Kumar%26cu=INR" style="background:#fff;padding:6px;border-radius:8px;border:3px solid gold;margin:8px 0">
+<div><a href="upi://pay?pa=9992553796@ybl&pn=Ashok%20Kumar&cu=INR" style="background:gold;color:#000;padding:10px 20px;border-radius:20px;text-decoration:none;font-weight:800;display:inline-block">💛 UPI सहयोग जी</a></div>
+<div style="font-size:10px;color:#aaa">आप खुद स्कैन मत करो जी - दूसरों के लिए है जी</div>
+</div>
 </div>
 <script>
 let curIdx=0;
-// ★ सिर्फ 7 भजन - पक्का वाला - Uptown Funk हटा दिया जी
 let DEFAULT_DATA=[
-{id:"AETFvQonf08", t:"1. हनुमान चालीसा जी - गुलशन कुमार - फ्री जी"},
-{id:"B--9h2oFq5k", t:"2. हनुमान आरती जी - फ्री जी"},
-{id:"O4M5a4Uej1Q", t:"3. गणेश आरती जी - जय गणेश देवा - साफ जी ✅"},
-{id:"RgKAFK5djSk", t:"4. लक्ष्मी आरती जी - फ्री जी"},
-{id:"_6XnK5G6RRE", t:"5. शिव आरती जी - ओम जय शिव ओमकारा - फ्री जी"},
-{id:"abL9N6dA6_o", t:"6. गायत्री मंत्र 108 बार जी - फ्री जी"},
-{id:"9ct1a7GylHs", t:"7. शिव तांडव स्तोत्र जी - फ्री जी"}
+{id:"AETFvQonf08",t:"1. हनुमान चालीसा जी"},
+{id:"B--9h2oFq5k",t:"2. हनुमान आरती जी"},
+{id:"O4M5a4Uej1Q",t:"3. गणेश आरती जी"},
+{id:"l2w3AdT5l1I",t:"4. शिव आरती जी"},
+{id:"_6XnK5G6RRE",t:"5. गायत्री मंत्र जी"},
+{id:"9ct1a7GylHs",t:"6. शिव तांडव जी"},
+{id:"o1Qd9Jv1h4o",t:"7. लक्ष्मी आरती जी"}
 ];
-
-function getData(){
-  const BAD = ["OPf0YbXqDm0","dQw4w9WgXcQ","jNQXAC9IVRw","Uptown","Funk","Mark Ronson","Bruno Mars","xxx","sexy","rickroll"];
-  let ex=JSON.parse(localStorage.getItem('radio_extra')||'[]');
-  let filtered = ex.filter(x=>{ if(!x.id) return false; return!BAD.some(b=> x.id.toLowerCase().includes(b.toLowerCase())); });
-  if(filtered.length!== ex.length){ localStorage.setItem('radio_extra', JSON.stringify(filtered)); }
-  try{
-    let ex2=JSON.parse(localStorage.getItem('veedeo_extra')||'[]');
-    let f2 = ex2.filter(x=>!BAD.some(b=> (x.video||'').toLowerCase().includes(b.toLowerCase())));
-    if(f2.length!== ex2.length) localStorage.setItem('veedeo_extra', JSON.stringify(f2));
-    localStorage.removeItem('bhajan_extra');
-  }catch(e){}
-  return [...DEFAULT_DATA,...filtered];
-}
-function renderList(){
- let box=document.getElementById('list'); box.innerHTML='';
- let DATA=getData();
- DATA.forEach((a,i)=>{
-  box.innerHTML+=`<div class="card"><div style="font-weight:900">${a.t}</div><div style="font-size:10px;color:green">फ्री + बिना कॉपीराइट जी ✅</div><button class="btn btnGold" style="width:100%;margin-top:6px" onclick="playYT(${i})">▶️ बजाओ जी</button></div>`;
- });
-}
-function playYT(i){ curIdx=i; let v=getData()[i]; document.getElementById('ytPlayer').src="https://www.youtube.com/embed/"+v.id+"?autoplay=1&rel=0"; document.getElementById('nowPlaying').innerText="बज रहा है जी: "+v.t; }
-function stopPlayer(){ document.getElementById('ytPlayer').src="about:blank"; document.getElementById('nowPlaying').innerText="बंद है जी - OFF है जी"; }
-function nextPlay(){ let D=getData(); curIdx=(curIdx+1)%D.length; playYT(curIdx); }
-function prevPlay(){ let D=getData(); curIdx=(curIdx-1+D.length)%D.length; playYT(curIdx); }
-function checkAdmin(){let p=document.getElementById('adminPass').value;if(p=='9992553796'||p=='Ashok@123'){document.getElementById('adminMsg').innerText='Admin OK जी';document.getElementById('adminMsg').style.color='green';document.getElementById('addBox').style.display='block';}else{document.getElementById('adminMsg').innerText='गलत पासवर्ड जी';}}
-function addNew(){
- let t=document.getElementById('newTitle').value.trim();
- let v=document.getElementById('newVideo').value.trim();
- if(!t||!v){alert('नाम और ID लिखो जी');return}
- if(v.includes('v=')){v=v.split('v=')[1].split('&')[0];}
- if(v.includes('youtu.be/')){v=v.split('youtu.be/')[1].split('?')[0];}
- const BAD = ["OPf0YbXqDm0","dQw4w9WgXcQ","Uptown","Funk","Mark Ronson","xxx"];
- if(BAD.some(b=>v.toLowerCase().includes(b.toLowerCase()))){alert('ये अंग्रेजी/फ्रॉड ID नहीं जोड़ सकते जी - ब्लॉक है जी');return;}
- let ex=JSON.parse(localStorage.getItem('radio_extra')||'[]');
- ex.push({id:v,t: (ex.length+DEFAULT_DATA.length+1)+". "+t+" - फ्री जी"});
- localStorage.setItem('radio_extra',JSON.stringify(ex));
- alert('जोड़ दिया जी'); document.getElementById('newTitle').value=''; document.getElementById('newVideo').value=''; renderList();
-}
-function clearAllRadioHistory(){
-  if(confirm('रेडियो हिस्ट्री साफ कर दूँ जी?')){
-    localStorage.removeItem('radio_extra');
-    localStorage.removeItem('veedeo_extra');
-    alert('रेडियो हिस्ट्री साफ हो गई जी');
-    renderList();
-  }
-}
+function getData(){return DEFAULT_DATA}
+function renderList(){let b=document.getElementById('list');b.innerHTML='';getData().forEach((a,i)=>{b.innerHTML+=`<div class="card"><b>${a.t}</b><button class="btn btnGold" style="width:100%;margin-top:6px" onclick="playYT(${i})">▶️ बजाओ जी</button></div>`})}
+function playYT(i){curIdx=i;let v=getData()[i];document.getElementById('ytPlayer').src="https://www.youtube.com/embed/"+v.id+"?autoplay=1";document.getElementById('nowPlaying').innerText="बज रहा: "+v.t}
+function stopPlayer(){document.getElementById('ytPlayer').src="about:blank";document.getElementById('nowPlaying').innerText="बंद है जी"}
+function nextPlay(){curIdx=(curIdx+1)%getData().length;playYT(curIdx)}function prevPlay(){curIdx=(curIdx-1+getData().length)%getData().length;playYT(curIdx)}
 renderList();
-</script>
-</body></html>
+</script></body></html>
