@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>अशोक जी की आरती जी - arti.html</title>
+<style>
+body{margin:0;background:#FFF8E7;font-family:sans-serif;text-align:center}
+.player{background:#fff;margin:10px;padding:15px;border-radius:15px;box-shadow:0 4px 10px #0002}
+#fakeVideo{width:100%;height:200px;background:#000;border-radius:12px;margin-bottom:10px;border:3px solid gold}
+button{padding:10px 18px;border:none;border-radius:20px;background:#000;color:gold;font-weight:bold;margin:3px;border:2px solid gold}
+.list{padding:10px;text-align:left}
+.item{background:#fff;padding:12px;margin:6px 0;border-radius:10px;box-shadow:0 2px 5px #0001;border-left:4px solid gold}
+.fraudBar{background:#ffe6e6;border:2px solid red;padding:6px;border-radius:8px;font-size:12px;color:red;font-weight:700;margin:6px}
+</style>
+</head>
+<body>
+<div class="player">
+<div class="fraudBar">🛡️ arti.html - फ्रॉड ब्लॉक ON जी ✅</div>
+<img id="fakeVideo" src="https://img.youtube.com/vi/AETFvQonf08/mqdefault.jpg" onclick="openYT()" style="cursor:pointer">
+<h2 id="title"></h2>
+<p id="lyrics"></p>
+<button onclick="prev()">⏮️ पीछे जी</button>
+<button onclick="next()">आगे जी ⏭️</button>
+<button onclick="openYT()" style="background:green;color:#fff">▶️ YouTube पर चलाओ जी</button>
+</div>
+<div class="list" id="list"></div>
+<script>
+let data = [
+  {n:1, t:"हनुमान चालीसा जी", icon:"🙏", video:"AETFvQonf08", txt:"श्री गुरु चरण सरोज रज..."},
+  {n:2, t:"शिव तांडव जी", icon:"🔱", video:"vQpA_NwEc2U", txt:"जटा टवी गलज्जल..."},
+  {n:3, t:"गणेश आरती जी", icon:"🪔", video:"O4M5a4Uej1Q", txt:"जय गणेश देवा जी"},
+  {n:4, t:"दुर्गा चालीसा जी", icon:"🌺", video:"Yq2NvvRg4Rc", txt:"नमो नमो दुर्गे..."},
+  {n:5, t:"कृष्ण भजन जी", icon:"🦚", video:"FjF4gRbl4dE", txt:"श्री कृष्ण गोविन्द..."},
+];
+const BAD=["OPf0YbXqDm0","dQw4w9WgXcQ","Uptown","Funk","mov_bbb"];
+let cur=0;
+function openYT(){ window.open("https://www.youtube.com/watch?v="+data[cur].video,"_blank"); }
+function load(i){ cur=i; let v=data[i]; if(BAD.some(b=>v.video.includes(b))){return} document.getElementById('title').innerText=v.n+". "+v.t+" "+v.icon; document.getElementById('lyrics').innerText=v.txt; document.getElementById('fakeVideo').src="https://img.youtube.com/vi/"+v.video+"/mqdefault.jpg"; }
+function next(){ if(cur<4) load(cur+1); } function prev(){ if(cur>0) load(cur-1); }
+let h=""; for(let i=0;i<data.length;i++){ h+=`<div class="item" onclick="load(${i})">${data[i].n}. ${data[i].t} ${data[i].icon}</div>`; }
+document.getElementById('list').innerHTML=h; load(0);
+</script>
+</body>
+</html>
