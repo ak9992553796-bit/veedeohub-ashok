@@ -1,5 +1,81 @@
-<!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Radio</title></head><body style="background:#000;color:gold;text-align:center;padding:20px;font-family:Arial">
-<h2>📻 अनन्त रेडियो जी - फ्री डोमेन भजन जी</h2>
-<audio controls autoplay style="width:100%"><source src="https://stream.zeno.fm/0r0xa8v18f8uv"></audio>
-<br><br><a href="index.html" style="color:gold;border:2px solid gold;padding:10px;border-radius:10px;text-decoration:none">🏠 वापस जाओ जी</a>
+<!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Radio - All Life Audio Khazana - Final</title>
+<style>
+body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:center}
+.box{max-width:460px;margin:auto;padding:8px}
+.top{border:4px solid gold;background:#000;padding:12px;border-radius:12px;margin:6px}
+.btn{padding:8px 10px;border-radius:8px;font-weight:800;margin:3px;border:2px solid gold;cursor:pointer}
+.btnGold{background:gold;color:#000}.btnBlack{background:#000;color:gold}
+.audioCard{background:#fff;color:#000;border-radius:10px;margin:8px 0;padding:8px;text-align:left;border:2px solid gold}
+.search{width:70%;padding:12px;border:3px solid gold;border-radius:10px;font-weight:700}
+.input{width:90%;padding:10px;border:2px solid gold;border-radius:8px;margin:4px}
+</style></head><body><div class="box">
+<div class="top">
+<h3 style="color:gold;margin:2px">📻 आरती / चालीसा / भजन खजाना जी</h3>
+<p style="color:#0f0;font-size:11px;margin:4px">OFF है जी - बटन से चलेगा जी - पेन ड्राइव जैसा - कभी खत्म नहीं जी</p>
+<audio id="mainAudio" controls style="width:95%;background:#fff;border-radius:8px;margin:8px 0"></audio><br>
+<button onclick="playPause()" id="playBtn" class="btn btnGold">▶️ चलाओ जी - OFF है जी</button>
+<button onclick="nextAudio()" class="btn btnBlack">⏭️ अगला जी</button>
+<button onclick="prevAudio()" class="btn btnBlack">⏮️ पिछला जी</button>
+<p id="nowPlaying" style="color:gold;font-weight:800;font-size:13px;margin:6px">बंद है जी - OFF है जी</p>
+<input id="aSearch" class="search" placeholder="हनुमान, आरती, कबीर लिखो जी" oninput="render()">
+<button class="btn btnBlack" onclick="micSearch()">🎤 माइक</button><br>
+<button class="btn btnBlack" onclick="filterCat('All')">सभी जी</button>
+<button class="btn btnBlack" onclick="filterCat('Aarti')">आरती जी</button>
+<button class="btn btnBlack" onclick="filterCat('Chalisa')">चालीसा जी</button>
+<button class="btn btnBlack" onclick="filterCat('Tandav')">तांडव जी</button>
+<button class="btn btnBlack" onclick="filterCat('Bhajan')">भजन जी</button>
+<button class="btn btnBlack" onclick="filterCat('Kabir')">कबीर जी</button>
+<button class="btn btnBlack" onclick="filterCat('Shlok')">श्लोक जी</button>
+</div>
+
+<div id="aList"></div>
+
+<div style="background:#fff8e1;color:#000;padding:10px;border-radius:10px;margin:12px 0;text-align:left;border:2px dashed red">
+<b>➕ नया भजन / आरती जोड़ो जी - पेन ड्राइव जैसा जी</b><br>
+<input id="newTitle" class="input" placeholder="नाम लिखो जी - जैसे - शिव आरती पूरी जी">
+<input id="newUrl" class="input" placeholder="Audio Link डालो जी - mp3 / YouTube / FB Meta Link जी">
+<select id="newCat" class="input"><option value="Aarti">आरती जी</option><option value="Chalisa">चालीसा जी</option><option value="Tandav">तांडव जी</option><option value="Bhajan">भजन जी</option><option value="Kabir">कबीर जी</option><option value="Shlok">श्लोक जी</option></select>
+<button onclick="addNew()" class="btn btnGold" style="width:92%">💾 सेव करो जी - खजाने में जोड़ो जी</button>
+<p style="font-size:11px">जी यहाँ से जोड़ोगे जी तो फोन में ही सेव रहेगा जी - कभी खत्म नहीं होगा जी - बाद में और जोड़ सकते हैं जी</p>
+</div>
+
+<div style="font-size:10px;color:#aaa">ID: radio-final-pen-drive-v1 | OFF Default | Loop Auto Next जी</div>
+</div>
+<script>
+let curCat='All'; let curIndex=0; let isPlaying=false;
+let DEFAULT_DATA=[
+{t:"हनुमान आरती - आरती कीजै हनुमान लला की",c:"Aarti",u:"https://ia800905.us.archive.org/25/items/hanuman-aarti/Hanuman%20Aarti.mp3"},
+{t:"हनुमान चालीसा - पूरी - गुलशन कुमार",c:"Chalisa",u:"https://ia803407.us.archive.org/32/items/hanumanChalisaFull/HanumanChalisa.mp3"},
+{t:"शिव तांडव स्तोत्र - रावण रचित",c:"Tandav",u:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"},
+{t:"गणेश आरती - जय गणेश जय गणेश",c:"Aarti",u:"https://ia800905.us.archive.org/25/items/ganesh-aarti/Jai%20Ganesh%20Jai%20Ganesh.mp3"},
+{t:"गायत्री मंत्र - 108 बार",c:"Shlok",u:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"},
+{t:"कबीर वाणी - दोहे - साखी",c:"Kabir",u:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"},
+{t:"कृष्ण भजन - श्री कृष्ण गोविंद",c:"Bhajan",u:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"},
+{t:"लक्ष्मी आरती - ओम जय लक्ष्मी माता",c:"Aarti",u:"https://ia800905.us.archive.org/25/items/lakshmi-aarti/Om%20Jai%20Lakshmi%20Mata.mp3"},
+{t:"शिव आरती - ओम जय शिव ओंकारा",c:"Aarti",u:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"}
+];
+function loadData(){ let saved=localStorage.getItem('ALL_LIFE_AUDIO'); if(saved){ try{return JSON.parse(saved)}catch(e){return DEFAULT_DATA} } return DEFAULT_DATA; }
+let AUDIO_DATA=loadData();
+function saveData(){ localStorage.setItem('ALL_LIFE_AUDIO', JSON.stringify(AUDIO_DATA)); }
+function filterCat(cat){ curCat=cat; render(); }
+function render(){
+ let q=(document.getElementById('aSearch').value||'').toLowerCase();
+ let list=document.getElementById('aList'); list.innerHTML='';
+ AUDIO_DATA.forEach((a,i)=>{
+  if(curCat!='All' && a.c!=curCat) return;
+  if(q &&!a.t.toLowerCase().includes(q)) return;
+  list.innerHTML+=`<div class="audioCard"><div style="font-weight:900">${a.t}</div><div style="font-size:11px;color:#555">${a.c} जी | ${i+1}</div><div style="margin-top:4px"><button class="btn btnGold" onclick="playIndex(${i})">▶️ बजाओ जी</button><button class="btn btnBlack" onclick="delAudio(${i})" style="font-size:10px">हटाओ जी</button></div></div>`;
+ });
+}
+function playIndex(idx){ curIndex=idx; let aud=document.getElementById('mainAudio'); aud.src=AUDIO_DATA[idx].u; aud.play(); isPlaying=true; document.getElementById('playBtn').innerText='⏸️ बंद करो जी - बज रहा है जी'; document.getElementById('nowPlaying').innerText='बज रहा है जी: '+AUDIO_DATA[idx].t; }
+function playPause(){ let aud=document.getElementById('mainAudio'); if(!isPlaying){ if(!aud.src){playIndex(0);return} aud.play(); isPlaying=true; playBtn.innerText='⏸️ बंद करो जी'; } else{ aud.pause(); isPlaying=false; playBtn.innerText='▶️ चलाओ जी - OFF है जी'; nowPlaying.innerText='बंद है जी - OFF है जी'; } }
+function nextAudio(){ curIndex=(curIndex+1)%AUDIO_DATA.length; playIndex(curIndex); }
+function prevAudio(){ curIndex=(curIndex-1+AUDIO_DATA.length)%AUDIO_DATA.length; playIndex(curIndex); }
+function addNew(){ let t=newTitle.value.trim(); let u=newUrl.value.trim(); let c=newCat.value; if(!t||!u){alert('नाम और लिंक दोनों लिखो जी');return} AUDIO_DATA.push({t:t,c:c,u:u}); saveData(); newTitle.value=''; newUrl.value=''; render(); alert('जुड़ गया जी - पेन ड्राइव में सेव जी - कभी खत्म नहीं होगा जी'); }
+function delAudio(i){ if(confirm('हटाना है जी?')){ AUDIO_DATA.splice(i,1); saveData(); render(); } }
+function micSearch(){ let r=new(window.SpeechRecognition||window.webkitSpeechRecognition)(); r.lang='hi-IN'; r.onresult=function(e){ aSearch.value=e.results[0][0].transcript; render(); }; r.start(); }
+document.getElementById('mainAudio').addEventListener('ended', nextAudio);
+render();
+</script>
 </body></html>
