@@ -10,6 +10,19 @@
 <button onclick="nextPlay()" class="btn btnBlack">⏭️ अगला</button>
 <a href="arti.html" style="display:block;background:#111;color:gold;border:2px solid gold;padding:10px;border-radius:10px;margin:8px 0;text-decoration:none;font-weight:800">🪔 आरती वाली पर जाओ जी</a>
 </div>
+
+<!-- जी नया CANVA FREE वाला BOX जी - यही लाईन जुड़ने के लिए बोलेगी जी -->
+<div style="background:#f0fff4;border:3px solid #22c55e;border-radius:16px;padding:14px;margin:12px 0;text-align:center">
+<div style="font-weight:900;color:#14532d;font-size:16px">🎬 यहाँ बिना Copyright, बिना Watermark FREE Video बनाओ जी</div>
+<p style="font-size:14px;color:#000;margin:8px 0;line-height:1.6;font-weight:700">
+आप यहाँ <span style="color:#e11d48;">बिना कॉपीराइट और बिना वाटरमार्क</span> के <span style="color:#2563eb;">बिल्कुल FREE में वीडियो बना सकते हैं और कमाई कर सकते हैं जी</span> - इसलिए हमारे से जुड़ना सही है जी!
+</p>
+<p style="font-size:13px;color:#333;margin:6px 0;">
+<b>वीडियो बनाना स्वयं सीख सकते हैं जी - जुड़ना भी FREE है - मेरा क्या जा रहा है? सब फ्री है जी!</b>
+</p>
+<a href="https://www.canva.com/" target="_blank" style="padding:12px 18px;background:#00C4CC;color:#fff;text-decoration:none;border-radius:10px;font-weight:900;border:2px solid #000;display:inline-block;margin-top:8px">🎬 Canva से FREE Video बनाओ जी</a>
+</div>
+
 <div id="list"></div>
 
 <!-- पैसे आने वाला सही QR जी - आपका वाला -->
@@ -19,6 +32,11 @@
 <div><a href="upi://pay?pa=9992553796@ybl&pn=Ashok%20Kumar&cu=INR" style="background:gold;color:#000;padding:10px 20px;border-radius:20px;text-decoration:none;font-weight:800;display:inline-block">💛 UPI सहयोग जी</a></div>
 <div style="font-size:10px;color:#aaa">आप खुद स्कैन मत करो जी - दूसरों के लिए है जी</div>
 </div>
+
+<div style="margin:12px 0">
+<a href="index.html" style="display:block;background:gold;color:#000;border:2px solid #fff;padding:12px;border-radius:10px;text-decoration:none;font-weight:900">🏠 मुख्य पेज पर जाओ जी</a>
+</div>
+
 </div>
 <script>
 let curIdx=0;
@@ -33,7 +51,7 @@ let DEFAULT_DATA=[
 ];
 function getData(){return DEFAULT_DATA}
 function renderList(){let b=document.getElementById('list');b.innerHTML='';getData().forEach((a,i)=>{b.innerHTML+=`<div class="card"><b>${a.t}</b><button class="btn btnGold" style="width:100%;margin-top:6px" onclick="playYT(${i})">▶️ बजाओ जी</button></div>`})}
-function playYT(i){curIdx=i;let v=getData()[i];document.getElementById('ytPlayer').src="https://www.youtube.com/embed/"+v.id+"?autoplay=1";document.getElementById('nowPlaying').innerText="बज रहा: "+v.t}
+function playYT(i){curIdx=i;let v=getData()[i];document.getElementById('ytPlayer').src="https://www.youtube.com/embed/"+v.id+"?autoplay=1&rel=0";document.getElementById('nowPlaying').innerText="बज रहा: "+v.t}
 function stopPlayer(){document.getElementById('ytPlayer').src="about:blank";document.getElementById('nowPlaying').innerText="बंद है जी"}
 function nextPlay(){curIdx=(curIdx+1)%getData().length;playYT(curIdx)}function prevPlay(){curIdx=(curIdx-1+getData().length)%getData().length;playYT(curIdx)}
 renderList();
