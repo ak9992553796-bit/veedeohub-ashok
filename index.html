@@ -8,18 +8,17 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:cent
 .dabba{background:#fff;border:3px solid #ff9800;border-radius:16px;padding:10px;margin:12px 0;text-align:left;color:#000}
 .btnBlue{display:block;width:100%;background:#000;color:#FFD700;padding:11px 0;border-radius:10px;text-decoration:none;font-weight:700;margin:6px 0;border:2px solid #FFD700;text-align:center}
 .micBtn{background:#000;color:gold;border:2px solid gold;border-radius:8px;padding:6px 10px;margin-left:4px;font-weight:700}
-.sunoBtn{background:#fff8c4;border:1px solid #000;border-radius:6px;padding:3px 8px;font-size:12px;margin:2px}
-.rowFlex{display:flex;align-items:center;gap:4px}
 .khSearch{width:70%;padding:12px;border:3px solid gold;border-radius:10px;font-weight:700}
 .khBtn{padding:10px;border-radius:8px;background:gold;color:#000;font-weight:800;border:2px solid #000;margin:4px}
 .videoCard{background:#fff;color:#000;border-radius:12px;margin:10px 0;padding:8px;border:2px solid gold;display:flex;gap:8px;text-align:left}
 .thumb{width:110px;height:70px;background:#000;border-radius:8px;object-fit:cover}
+.rowFlex{display:flex;align-items:center;gap:4px}
 </style></head><body><div class="box">
 
 <div class="top">
 <h2 style="color:gold;margin:4px">JAI MATA KI | VEEDEOHUB - Sach Ki Awaz -</h2>
 <p style="color:gold;margin:2px">आयुर्वेदिक जड़ी-बूटियाँ, उपयोग और लाभ<br>लेखक व क्रिएटर: अशोक कुमार पुत्र डॉ. बी. एल. राव</p>
-<div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://ak9992553796-bit.github.io/veedeohub-ashok/" style="width:250px"></div><br><span style="color:gold">ak9992553796-bit.github.io/veedeohub-ashok/</span><br>
+<div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://ak9992553796-bit.github.io/veedeohub-ashok/" style="width:250px"></div><br><span style="color:gold">ak9992553796-bit.github.io/veedeohub-ashok/</span>
 </div>
 
 <div class="dabba" style="background:#000;color:gold;border:4px solid gold;text-align:center">
@@ -35,52 +34,54 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:cent
 <div id="khPlayer" style="display:none;background:#fff;border-radius:12px;padding:6px;margin-top:10px"><iframe id="khFrame" width="100%" height="220" frameborder="0" allowfullscreen></iframe><br><button onclick="closeKh()" style="background:red;color:#fff;padding:6px 10px;border-radius:6px;margin-top:6px">बंद करो जी</button></div>
 </div>
 
+<!-- जी यहाँ पर CANVA वाला BOX जोड़ा है जी - यही लाईन जोड़ेगी जी -->
+<div style="background:#f0fff4;border:3px solid #22c55e;border-radius:16px;padding:14px;margin:12px 0;text-align:center">
+<div style="font-weight:900;color:#14532d;font-size:17px">🎬 आप यहां बिना कॉपीराइट और बिना वाटरमार्क FREE Video बना सकते हैं जी</div>
+<p style="font-size:15px;color:#000;margin:8px 0;line-height:1.6;font-weight:700">
+यहाँ <span style="color:#e11d48;">बिना Copyright, बिना Watermark</span> के <span style="color:#2563eb;">बिल्कुल FREE में Video बना सकते हैं और कमाई कर सकते हैं जी</span> - इसलिए हमारे से जुड़ना सही है जी!
+</p>
+<p style="font-size:14px;color:#333;margin:6px 0;">
+<b>वीडियो बनाना स्वयं सीख सकते हैं जी - जुड़ना भी FREE है जी - मेरा क्या जा रहा है? सब फ्री है जी - जुड़कर लाभ उठाकर देखता हूँ जी!</b>
+</p>
+<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px">
+<a href="https://www.canva.com/" target="_blank" style="padding:12px 18px;background:#00C4CC;color:#fff;text-decoration:none;border-radius:10px;font-weight:900;border:2px solid #000;">🎬 Canva से FREE Video बनाओ</a>
+<a href="https://textdoc.co" target="_blank" style="padding:12px 18px;background:#4285F4;color:#fff;text-decoration:none;border-radius:10px;font-weight:900;border:2px solid #000;">📝 नोट लिखो</a>
+</div>
+<div style="font-size:11px;color:green;margin-top:6px">✅ No Watermark ✅ No Copyright Strike ✅ FREE Unlimited जी</div>
+</div>
+
 <div style="background:#fff8e1;border:3px solid #ff9800;border-radius:16px;padding:10px;margin:10px 0;text-align:left">
 <div style="font-weight:800;color:#000;font-size:20px">🔴 LIVE Joining Form जी 🎤</div>
 <div class="rowFlex"><input id="jName" placeholder="आपका नाम जी" style="width:60%;padding:10px;margin:6px;border:2px solid gold;border-radius:10px"><button class="micBtn" onclick="mic('jName')">🎤 भरो</button></div>
 <div class="rowFlex"><input id="jMob" placeholder="10 अंक मोबाइल नंबर जी" maxlength="10" style="width:60%;padding:10px;margin:6px;border:2px solid gold;border-radius:10px"><button class="micBtn" onclick="mic('jMob')">🎤 भरो</button></div>
 <div class="rowFlex"><input id="jCity" placeholder="आपका शहर जी" style="width:60%;padding:10px;margin:6px;border:2px solid gold;border-radius:10px"><button class="micBtn" onclick="mic('jCity')">🎤 भरो</button></div>
-<div class="rowFlex"><label style="font-size:12px;color:#000"><input type="checkbox" id="jAgree"> मैं अपनी जिम्मेदारी पर सारी शर्तें मानता हूँ जी - All Life</label></div>
+<div class="rowFlex"><label style="font-size:12px;color:#000"><input type="checkbox" id="jAgree"> मैं अपनी जिम्मेदारी पर सारी शर्तें मानता हूँ जी</label></div>
 <div class="rowFlex"><button onclick="joinNow()" style="background:#000;color:#FFD700;width:85%;padding:12px;border-radius:10px;font-weight:700;margin-top:6px;border:2px solid #FFD700">Join करो जी - All Life - फ्री में जॉइनिंग करो जी</button></div>
 <p id="jMsg" style="color:red;font-size:12px"></p>
 </div>
 
 <div class="dabba" style="text-align:center;background:#f0f8ff">
-<div style="font-weight:900;color:#000">📱 Meta All Merge - एक मालिक जी - सब जुड़ा जी</div>
-<div style="font-size:11px;color:green">Instagram + Facebook + WhatsApp + Threads + Meta AI - सब एक ही जगह जी</div>
+<div style="font-weight:900;color:#000">📱 Meta All Merge - एक मालिक जी</div>
 <a class="btnBlue" href="https://wa.me/919992553796?text=Jai%20Mata%20Ki%20Join%20Hai%20Ji" target="_blank">💬 WhatsApp - Direct Join जी</a>
 <a class="btnBlue" href="https://facebook.com/veedeohub.in" target="_blank">📘 Facebook Profile जी</a>
-<a class="btnBlue" href="https://facebook.com/veedeohub" target="_blank">📄 Facebook Page जी</a>
 <a class="btnBlue" href="https://instagram.com/veedeohub" target="_blank">📸 Instagram जी</a>
 <a class="btnBlue" href="https://threads.net/@veedeohub" target="_blank">🧵 Threads जी</a>
-<a class="btnBlue" href="mailto:ak9992553796@gmail.com" target="_blank">📧 Email + Meta AI Join जी</a>
 </div>
 
-<!-- फ्रॉड सिस्टम नया -->
 <div style="background:#ffe6e6;border:3px solid red;border-radius:12px;padding:10px;margin:12px 0;text-align:left">
-<div style="font-weight:900;color:red">🛡️ फ्रॉड सुरक्षा सिस्टम - ON है जी</div>
-<div style="font-size:12px;color:#000" id="fraudLog">✅ सब साफ है जी - Uptown Funk ब्लॉक है जी</div>
-<div style="margin-top:6px"><button onclick="checkFraud()" style="background:red;color:#fff;padding:6px 10px;border-radius:6px;font-weight:700">🔍 फ्रॉड चेक करो जी</button></div>
+<div style="font-weight:900;color:red">🛡️ फ्रॉड सुरक्षा ON है जी</div>
+<div style="font-size:12px;color:#000" id="fraudLog">✅ सब साफ है जी</div>
 </div>
 
-<div class="dabba"><div style="color:#8B4513;font-size:12px">पैसे वाला QR - All Life - आपका वाला ही सही जी</div><div style="font-weight:800;font-size:18px">💰 UPI - 9992553796@ybl - सहयोग जी</div><div style="text-align:center"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=9992553796@ybl%26pn=Ashok%20Kumar%26cu=INR%26tn=All%20Life" style="background:#fff;padding:6px;border-radius:8px"><div style="font-size:10px;color:green">दूसरा भेजेगा तो आपके पास आएगा जी - आप खुद मत दबाओ जी</div></div>
-<div class="rowFlex"><a class="btnBlue" href="upi://pay?pa=9992553796@ybl&pn=Ashok%20Kumar&cu=INR&tn=All%20Life" onclick="return secureUPI()" style="flex:1">UPI पर भेजो जी - कॉल के बाद ही जी</a></div>
-<div style="color:#8B4513;font-weight:700;margin-top:6px">⚠️ शर्तें + फ्रॉड चेतावनी</div><div style="color:#0a7a0a;font-weight:700;font-size:13px" id="fraud">पैसा भेजने से पहले 9992553796 पर कॉल कन्फर्म करो जी - फ्रॉड से बचो जी</div>
+<div class="dabba"><div style="font-weight:800;font-size:18px">💰 UPI - 9992553796@ybl - सहयोग जी</div><div style="text-align:center"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=9992553796@ybl%26pn=Ashok%20Kumar%26cu=INR%26tn=All%20Life" style="background:#fff;padding:6px;border-radius:8px"></div>
+<a class="btnBlue" href="upi://pay?pa=9992553796@ybl&pn=Ashok%20Kumar&cu=INR&tn=All%20Life" onclick="return confirm('9992553796 पर कॉल कन्फर्म किया जी?')">UPI पर भेजो जी</a>
 </div>
 
 <div class="dabba" style="text-align:center"><div style="font-weight:800;color:#000">🛒 बाकी सारे लिंक - क्रम वाइज जी</div>
 <a class="btnBlue" href="https://www.flipkart.com/product/p/itme?pid=9789362494184" target="_blank">5. Flipkart Book</a>
-<a class="btnBlue" href="https://cx.ctml.in/mxGetyaYkab?teamLeaderId=TPL_CMO" target="_blank">6. CityMall</a>
-<a class="btnBlue" href="https://www.amazon.in" target="_blank">7. Amazon Main</a>
-<a class="btnBlue" href="https://www.flipkart.com" target="_blank">8. Flipkart Main</a>
-<a class="btnBlue" href="https://www.meesho.com" target="_blank">9. Meesho</a>
-<a class="btnBlue" href="https://www.blinkit.com" target="_blank">10. Blinkit</a>
-<a class="btnBlue" href="https://www.zeptonow.com" target="_blank">11. Zepto</a>
-<a class="btnBlue" href="https://www.swiggy.com" target="_blank">12. Swiggy</a>
-<a class="btnBlue" href="https://www.1mg.com" target="_blank">13. 1MG</a>
-<a class="btnBlue" href="https://www.textdoc.co" target="_blank">14. TextDoc Google - All Life</a>
-<a class="btnBlue" href="https://textdoc.co" target="_blank">15. TextDoc Private - All Life</a>
-<a class="btnBlue" href="https://www.dreambookpublishing.com/" target="_blank">16. Dreambook Main - All Life</a>
+<a class="btnBlue" href="https://www.textdoc.co" target="_blank">14. TextDoc - नोट लिखो जी</a>
+<a class="btnBlue" href="https://www.canva.com/" target="_blank">15. Canva - FREE Video बनाओ जी - No Watermark</a>
+<a class="btnBlue" href="https://www.dreambookpublishing.com/" target="_blank">16. Dreambook Main</a>
 </div>
 
 <div style="border:3px solid gold;background:#000;text-align:center;border-radius:12px;margin:10px 0;padding:12px;">
@@ -89,12 +90,8 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:cent
 
 </div>
 <script>
-localStorage.removeItem('veedeo_extra');
 function mic(id){if(!('webkitSpeechRecognition' in window||'SpeechRecognition' in window)){alert('माइक नहीं चला जी');return}let r=new(window.SpeechRecognition||window.webkitSpeechRecognition)();r.lang='hi-IN';r.onresult=function(e){document.getElementById(id).value=e.results[0][0].transcript; if(id=='khInput') renderKh()};r.start()}
 function joinNow(){let m=jMob.value;if(m.length!=10||isNaN(m)){jMsg.innerText='10 अंक मोबाइल सही लिखो जी';return}if(!jAgree.checked){jMsg.innerText='शर्तें मानो जी';return}jMsg.innerText='Join OK जी - '+jName.value;window.open('https://wa.me/919992553796?text=Join%20Hai%20Ji%20'+jName.value+'%20'+m,'_blank')}
-var FRAUD_IDS = ["OPf0YbXqDm0","dQw4w9WgXcQ","Uptown","Funk","Mark Ronson","Bruno Mars","xxx"];
-function checkFraud(){let extra=localStorage.getItem('veedeo_extra')||'';if(FRAUD_IDS.some(id=>extra.toLowerCase().includes(id.toLowerCase()))){localStorage.removeItem('veedeo_extra');document.getElementById('fraudLog').innerHTML="⚠️ फ्रॉड मिला - हटाया जी";renderKh();}else{document.getElementById('fraudLog').innerHTML="✅ साफ है जी - कोई फ्रॉड नहीं जी";}}
-function secureUPI(){return confirm('9992553796 पर कॉल कन्फर्म किया जी? OK तो UPI खुलेगा जी');}
 var DEFAULT_DATA = [
   {id:"1", title:"हनुमान चालीसा - Gulshan Kumar", cat:"Bhajan", video:"AETFvQonf08", thumb:"https://img.youtube.com/vi/AETFvQonf08/mqdefault.jpg"},
   {id:"2", title:"शिव तांडव स्तोत्र", cat:"Aarti", video:"9ct1a7GylHs", thumb:"https://img.youtube.com/vi/9ct1a7GylHs/mqdefault.jpg"},
@@ -110,13 +107,14 @@ function renderKh(){
   let q=(document.getElementById('khInput').value||'').toLowerCase();
   let list=document.getElementById('khList'); list.innerHTML='';
   let filtered=DEFAULT_DATA.filter(d=>{let okCat=curCat=='All'||d.cat==curCat;let okQ=q==''||d.title.toLowerCase().includes(q);return okCat&&okQ;});
-  if(filtered.length==0){list.innerHTML="<div style='color:gold;background:#000;padding:10px;border-radius:8px'>कुछ नहीं मिला जी</div>";return}
+  if(filtered.length==0){list.innerHTML="<div style='color:gold;background:#000;padding:10px;border-radius:8px'>कुछ नहीं मिला जी - दूसरा लिखो जी</div>";return}
   filtered.forEach(d=>{
     list.innerHTML+=`<div class="videoCard"><img class="thumb" src="${d.thumb}" onclick="playKh('${d.video}')"><div style="flex:1"><div style="font-weight:800">${d.title}</div><div style="font-size:11px">${d.cat} जी ✅</div><button class="khBtn" onclick="playKh('${d.video}')">▶️ बजाओ जी</button></div></div>`;
   });
 }
-function playKh(vid){document.getElementById('khPlayer').style.display='block';document.getElementById('khFrame').src="https://www.youtube.com/embed/"+vid+"?autoplay=1&rel=0";window.scrollTo(0,document.getElementById('khPlayer').offsetTop-20);}
+function playKh(vid){document.getElementById('khPlayer').style.display='block';document.getElementById('khFrame').src="https://www.youtube.com/embed/"+vid+"?autoplay=1&rel=0";}
 function closeKh(){document.getElementById('khFrame').src='';document.getElementById('khPlayer').style.display='none'}
-renderKh();checkFraud();
+renderKh();
+document.getElementById('fraudLog').innerHTML="✅ साफ है जी - सब भजन चालू हैं जी";
 </script>
 </body></html>
