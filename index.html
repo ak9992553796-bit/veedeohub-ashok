@@ -1,111 +1,44 @@
 <!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VeedeoHub Ashok - Panipat</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
-body{background:#0f0f0f;color:#fff;padding:12px}
-.box{background:#1e1e1e;border-radius:12px;padding:14px;margin:10px 0;border:1px solid #333}
-button{background:#ff0000;color:#fff;border:0;padding:10px 18px;border-radius:8px;font-weight:bold;cursor:pointer;margin:5px}
-button:active{transform:scale(0.95)}
-select{width:100%;padding:10px;border-radius:8px;margin:8px 0}
-iframe{width:100%;height:220px;border-radius:10px;border:0}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.app{background:#2a2a2a;padding:12px;border-radius:10px;text-align:center;cursor:pointer}
-.app:hover{background:#333}
-</style>
-</head>
-<body>
-
-<h2 style="text-align:center">🙏 VeedeoHub Ashok - Panipat 🙏</h2>
-
-<!-- 1. YOUTUBE PLAYLIST OPTION - जो नहीं खुल रहा था जी -->
-<div class="box">
-<h3>🎵 YouTube Playlist - यहाँ से चुनो जी</h3>
-<select id="playlistSelect" onchange="changePlaylist()">
-<option value="PLQ9z4_qROo6vYb0Gv3v1rQ8K0K">भजन - Bhajan 1</option>
-<option value="PLQ9z4_qROo6vYb0Gv3v1rQ8K1">भजन - Bhajan 2</option>
-<option value="PLFgquLnL59alCl_2TQvOiD5Vgm1h">Tulsi Bhajan</option>
-</select>
-<iframe id="ytPlayer" src="https://www.youtube.com/embed/videoseries?list=PLQ9z4_qROo6vYb0Gv3v1rQ8K0K" allowfullscreen></iframe>
-<div style="margin-top:8px">
-<button onclick="playYT('PLQ9z4_qROo6vYb0Gv3v1rQ8K0K')">▶️ Bhajan Play</button>
-<button onclick="playYT('PLFgquLnL59alCl_2TQvOiD5Vgm1h')">🌿 Tulsi Bhajan</button>
+<html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Veedeohub FINAL LOCKED - Ashok Kumar</title>
+<style>body{background:#0a1628;color:gold;text-align:center;font-family:Arial;margin:0}.box{max-width:480px;margin:auto;padding:10px}
+.btn{display:block;width:100%;background:#000;color:gold;padding:14px;border:2px solid gold;border-radius:12px;margin:8px 0;font-weight:900;text-decoration:none;text-align:left}
+.dabba{background:#fff;color:#000;border-radius:14px;padding:12px;margin:12px 0;text-align:left;border:3px solid gold}</style>
+</head><body><div class="box">
+<div style="border:4px solid gold;background:#000;padding:12px;border-radius:14px;font-weight:900">JAI MATA KI - VEEDEOHUB - FINAL LOCKED - ONE FILE</div>
+<div id="btnArea"></div>
+<div style="margin:12px"><button onclick="prevPage()" style="padding:12px 20px;background:gold;font-weight:900;border-radius:10px">⬅️ पीछे जी</button>
+<button onclick="nextPage()" style="padding:12px 20px;background:gold;font-weight:900;border-radius:10px">आगे जी ➡️</button></div>
+<div class="dabba"><b>🔗 अनन्त डब्बा - नया लिंक जोड़ो जी</b><br><input id="newName" placeholder="नाम लिखो जी" style="width:58%;padding:10px;border:2px solid gold;border-radius:8px">
+<input id="newUrl" placeholder="लिंक https://" style="width:58%;padding:10px;border:2px solid gold;border-radius:8px;margin-top:6px"><br><br>
+<button style="width:100%;padding:12px;background:gold;font-weight:900;border-radius:10px" onclick="addLink()">💾 जोड़ो जी - क्रम में आएगा जी 🔊</button></div>
 </div>
-</div>
-
-<!-- 2. TULSI NEEM BOX -->
-<div class="box" style="border-color:#2e7d32">
-<h3>🌿 Tulsi / Neem - औषधि खजाना जी</h3>
-<p id="tulsiText">तुलसी - सर्दी खांसी में रामबाण जी - रोज 4 पत्ते जी</p>
-<button onclick="toggleTulsi()">हिंदी / English</button>
-<button onclick="speakTulsi()">🔊 बोल के सुनाओ जी</button>
-</div>
-
-<!-- 3. 8 APPS - सब बटन चलेंगे जी -->
-<div class="box">
-<h3>🎬 8 Video Apps जी</h3>
-<div class="grid">
-<div class="app" onclick="openApp('inshot')">InShot</div>
-<div class="app" onclick="openApp('fotoplay')">FotoPlay</div>
-<div class="app" onclick="openApp('canva')">Canva</div>
-<div class="app" onclick="openApp('kinemaster')">KineMaster</div>
-<div class="app" onclick="openApp('capcut')">CapCut</div>
-<div class="app" onclick="openApp('vn')">VN App</div>
-<div class="app" onclick="openApp('youtube')">YouTube Studio</div>
-<div class="app" onclick="openApp('picsart')">PicsArt</div>
-</div>
-</div>
-
-<!-- 4. KHAZANA + RADIO + SEARCH -->
-<div class="box">
-<h3>📻 Radio + 🔍 Search जी</h3>
-<button onclick="openLink('https://www.youtube.com/results?search_query=bhajan')">🔍 Image Video Search</button>
-<button onclick="openLink('https://onlineradiobox.com/in/vividhbharati')">📻 Vividh Bharati Radio</button>
-<button onclick="openLink('https://ak9992553796-bit.github.io/veedeohub-ashok/')">🔗 GitHub वाला लिंक</button>
-</div>
-
-<div class="box" style="text-align:center;font-size:12px;opacity:0.7">
-🔒 API Key: •••• गुप्त है जी | All Life Free | Vercel + GitHub<br>
-Panipat, Haryana
-</div>
-
 <script>
-function changePlaylist(){
- let id=document.getElementById('playlistSelect').value;
- document.getElementById('ytPlayer').src='https://www.youtube.com/embed/videoseries?list='+id;
-}
-function playYT(id){
- document.getElementById('ytPlayer').src='https://www.youtube.com/embed/videoseries?list='+id;
-}
-let hindi=true;
-function toggleTulsi(){
- hindi=!hindi;
- document.getElementById('tulsiText').innerText = hindi? 'तुलसी - सर्दी खांसी में रामबाण जी - रोज 4 पत्ते जी' : 'Tulsi - Best for cold & cough - 4 leaves daily - Neem purifies blood';
-}
-function speakTulsi(){
- let t=document.getElementById('tulsiText').innerText;
- let u=new SpeechSynthesisUtterance(t);
- u.lang='hi-IN';
- speechSynthesis.speak(u);
-}
-function openApp(name){
- let links={
-  inshot:'https://play.google.com/store/apps/details?id=com.camerasideas.instashot',
-  fotoplay:'https://play.google.com/store/apps/details?id=com.fotoplay.slideshow',
-  canva:'https://www.canva.com',
-  kinemaster:'https://play.google.com/store/apps/details?id=com.nexstreaming.app.kinemasterfree',
-  capcut:'https://www.capcut.com',
-  vn:'https://play.google.com/store/apps/details?id=com.frontrow.vlog',
-  youtube:'https://studio.youtube.com',
-  picsart:'https://picsart.com'
- };
- window.open(links[name],'_blank');
-}
-function openLink(url){ window.open(url,'_blank'); }
-console.log('VeedeoHub All Buttons Working - Final');
-</script>
-</body>
-</html>
+let allLinks=[
+{name:"1. मेरी किताब - Flipkart Book - Ashok Kumar जी",url:"https://www.flipkart.com/product/p/itme?pid=9789362494184"},
+{name:"2. Amazon Main - Affiliate जी",url:"https://www.amazon.in"},
+{name:"3. Flipkart Main - Shopping जी",url:"https://www.flipkart.com"},
+{name:"4. Meesho - सस्ता बाजार जी",url:"https://www.meesho.com"},
+{name:"5. InShot - Video Editor - No Watermark जी",url:"https://play.google.com/store/apps/details?id=com.camerasideas.instashot"},
+{name:"6. FotoPlay - Slideshow जी",url:"https://play.google.com/store/apps/details?id=videoeditor.videomaker.slideshow.fotoplay"},
+{name:"7. VN Vlog - No Logo जी",url:"https://play.google.com/store/apps/details?id=com.frontrow.vlog"},
+{name:"8. Canva - FREE Video जी",url:"https://play.google.com/store/apps/details?id=com.canva.editor"},
+{name:"9. Text to Audio - वॉइस से वीडियो बनाओ जी",url:"https://play.google.com/store/apps/details?id=text.to.audio.app"},
+{name:"10. Pixabay - FREE Image + Silent Video जी",url:"https://play.google.com/store/apps/details?id=com.pixabay.pixabayapp"},
+{name:"11. Pexels - FREE HD Video जी",url:"https://play.google.com/store/apps/details?id=com.pexels.app"},
+{name:"12. WordPress - veedeohub.wordpress.com - Main Site जी",url:"https://veedeohub.wordpress.com"},
+{name:"13. YouTube Playlist - veedeohub - सारे भजन जी - PLF1nrtSu2Dd8IjpcDmTsr68e",url:"https://youtube.com/playlist?list=PLF1nrtSu2Dd8IjpcDmTsr68e-nWic_Qd1&si=L1HD02XV48Z0sLf9"},
+{name:"14. YouTube Shorts - कल वाला वीडियो जी",url:"https://youtube.com/shorts/_G2k-9ZP4iI?si=ETApf0nJfXLjSAHq"},
+{name:"15. Netlify - हर हालत खुलेगा जी - बंद नहीं होगा जी",url:"https://app.netlify.com/start/deploy?repository=https://github.com/ak9992553796-bit/veedeohub-ashok"},
+{name:"16. WhatsApp - 9992553796 जी",url:"https://wa.me/919992553796"},
+{name:"17. Facebook Profile जी",url:"https://facebook.com/veedeohub.in"},
+{name:"18. Instagram जी",url:"https://instagram.com/veedeohub"}
+];
+let page=0, perPage=10;
+function bol(t){let u=new SpeechSynthesisUtterance(t);u.lang='hi-IN';speechSynthesis.speak(u);}
+function render(){let s=page*perPage,e=s+perPage,h='';allLinks.slice(s,e).forEach(l=>{h+=`<a class="btn" href="${l.url}" target="_blank" onclick="bol('${l.name} खोल रहा हूँ जी')">${l.name} 🔊</a>`});document.getElementById('btnArea').innerHTML=h;}
+function nextPage(){if((page+1)*perPage<allLinks.length){page++;render();bol('अगले दस बटन जी')}else{bol('आखिरी पेज है जी')}}
+function prevPage(){if(page>0){page--;render();bol('पिछले दस बटन जी')}else{bol('पहला पेज है जी')}}
+function addLink(){let n=document.getElementById('newName').value,u=document.getElementById('newUrl').value;if(n.length<2||u.length<5){bol('नाम और लिंक लिखो जी');return;}allLinks.push({name:n,url:u});render();bol(n+' जुड़ गया जी');}
+render();
+</script></body></html>
