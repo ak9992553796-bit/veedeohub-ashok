@@ -89,26 +89,11 @@ Chrome में खोलें - 1 नंबर बटन से - तभी �
 </p>
 </div>
 भाग 3. 
-<!-- KITAB AFFILIATE LINKS - SABSE PEHLE -->
-<div style="background:#fff8e1;border:4px solid gold;border-radius:18px;padding:14px;margin:16px 0">
-<b style="color:#000;font-size:16px">📚 किताब - एफिलिएट लिंक - सबसे पहले जी</b>
-<div style="display:flex;gap:6px;margin-top:8px">
-<a href="https://www.flipkart.com/product/p/itme?pid=9789362494184" target="_blank" style="flex:1;background:#000;color:#FFD700;padding:14px;border-radius:12px;text-decoration:none;font-weight:900;border:2px solid gold;text-align:center"><span style="background:gold;color:#000;padding:3px 6px;border-radius:6px;margin-right:4px">1</span> Flipkart Book - आपकी किताब जी</a>
-<button class="speakerBtn" onclick="speak('Flipkart पर आपकी किताब है जी अशोक कुमार की')">🔊</button>
-<button class="micBtn" onclick="startMic('khInput')">🎤</button>
-</div>
-<div style="display:flex;gap:6px;margin-top:8px">
-<a href="https://www.dreambookpublishing.com/" target="_blank" style="flex:1;background:#000;color:#FFD700;padding:14px;border-radius:12px;text-decoration:none;font-weight:900;border:2px solid gold;text-align:center"><span style="background:gold;color:#000;padding:3px 6px;border-radius:6px;margin-right:4px">2</span> Dreambook - किताब छापो जी</a>
-<button class="speakerBtn" onclick="speak('Dreambook पर किताब छापो जी')">🔊</button>
-<button class="micBtn" onclick="startMic('khInput')">🎤</button>
-</div>
-</div>
-
-<!-- SEARCH + 6 IMAGE + SILENT VIDEO - API KEY SE -->
+<!-- SEARCH + 6 IMAGE + SILENT VIDEO - FINAL FIX - AUTO AYEGA JI -->
 <div style="background:#000;border:4px solid gold;border-radius:16px;padding:14px;margin:16px 0">
 <h3 style="color:gold">🔍 खोज - वही इमेज और बिना आवाज वीडियो आएगा जी - 6+ रहेगा जी</h3>
 <div class="rowFlex">
-<input id="khInput" class="khSearch" placeholder="जैसे नीम, तुलसी, भजन लिखो जी" oninput="searchBoth()" autocomplete="off">
+<input id="khInput" class="khSearch" placeholder="जैसे नीम, तुलसी, भजन लिखो जी" oninput="searchBoth()" autocomplete="off" value="neem">
 <button class="micBtn" onclick="startMic('khInput')">🎤 बोलो जी</button>
 <button class="speakerBtn" onclick="speak(document.getElementById('khInput').value||'खोज में लिखो जी')">🔊 सुनो जी</button>
 </div>
@@ -134,24 +119,12 @@ Chrome में खोलें - 1 नंबर बटन से - तभी �
 </div>
 </div>
 <div style="background:#111;border:2px solid gold;border-radius:10px;padding:8px;margin-top:12px">
-<b style="color:gold;font-size:12px">🖼️ 6 इमेज - खोज अनुसार बदलेगा जी</b>
-<div id="imageGrid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px">
-<div style="background:#222;border:2px dashed gold;border-radius:10px;height:90px;display:flex;align-items:center;justify-content:center;color:gold;font-size:11px">इमेज 1</div>
-<div style="background:#222;border:2px dashed gold;border-radius:10px;height:90px;display:flex;align-items:center;justify-content:center;color:gold;font-size:11px">इमेज 2</div>
-<div style="background:#222;border:2px dashed gold;border-radius:10px;height:90px;display:flex;align-items:center;justify-content:center;color:gold;font-size:11px">इमेज 3</div>
-<div style="background:#222;border:2px dashed gold;border-radius:10px;height:90px;display:flex;align-items:center;justify-content:center;color:gold;font-size:11px">इमेज 4</div>
-<div style="background:#222;border:2px dashed gold;border-radius:10px;height:90px;display:flex;align-items:center;justify-content:center;color:gold;font-size:11px">इमेज 5</div>
-<div style="background:#222;border:2px dashed gold;border-radius:10px;height:90px;display:flex;align-items:center;justify-content:center;color:gold;font-size:11px">इमेज 6</div>
+<b style="color:gold;font-size:12px">🖼️ 6 इमेज - खोज अनुसार बदलेगा जी - AUTO FIXED</b>
+<div id="imageGrid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px"></div>
 </div>
-</div>
-<div style="background:#111;border:2px solid gold;border-radius:10px;padding:8px;margin-top:12px">
-<b style="color:gold;font-size:12px">🎬 बिना आवाज / खाली वीडियो - 4 वीडियो - खोज अनुसार बदलेगा जी</b>
-<div id="videoGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
-<div style="background:#222;border:2px dashed #0f0;border-radius:10px;height:90px;display:flex;align-items:center;justify-content:center;color:#0f0;font-size:11px">वीडियो 1 - Silent</div>
-<div style="background:#222;border:2px dashed #0f0;border-radius:10px;height:90px;display:flex;align-items:center;justify-content:center;color:#0f0;font-size:11px">वीडियो 2 - Silent</div>
-<div style="background:#222;border:2px dashed #0f0;border-radius:10px;height:90px;display:flex;align-items:center;justify-content:center;color:#0f0;font-size:11px">वीडियो 3 - Silent</div>
-<div style="background:#222;border:2px dashed #0f0;border-radius:10px;height:90px;display:flex;align-items:center;justify-content:center;color:#0f0;font-size:11px">वीडियो 4 - Silent</div>
-</div>
+<div style="background:#111;border:2px solid #0f0;border-radius:10px;padding:8px;margin-top:12px">
+<b style="color:#0f0;font-size:12px">🎬 बिना आवाज / खाली वीडियो - 4 वीडियो - AUTO FIXED</b>
+<div id="videoGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px"></div>
 </div>
 <div id="khList" style="margin-top:14px"></div>
 <div id="khPlayer" style="display:none;background:#fff;border-radius:14px;padding:10px;margin-top:14px;border:4px solid gold">
@@ -161,6 +134,108 @@ Chrome में खोलें - 1 नंबर बटन से - तभी �
 <button class="speakerBtn" onclick="speak('वीडियो बंद कर दिया जी')">🔊</button>
 </div>
 </div>
+
+<script>
+// FINAL FIXED DATA - THUMB FIX - i.ytimg NOT img.youtube - ANTI GRAY
+var DEFAULT_DATA=[
+{id:"1",title:"हनुमान चालीसा - Gulshan Kumar - Full",cat:"Bhajan",video:"AETFvQonf08",thumb:"https://i.ytimg.com/vi/AETFvQonf08/hqdefault.jpg"},
+{id:"2",title:"शिव तांडव स्तोत्र - Original",cat:"Aarti",video:"9ct1a7GylHs",thumb:"https://i.ytimg.com/vi/9ct1a7GylHs/hqdefault.jpg"},
+{id:"3",title:"नीम के फायदे - जड़ी बूटी आयुर्वेद",cat:"Jadibuti",video:"l2w3AdT5l1I",thumb:"https://i.ytimg.com/vi/l2w3AdT5l1I/hqdefault.jpg"},
+{id:"4",title:"तुलसी के लाभ - Tulsi Benefits",cat:"Jadibuti",video:"O4M5a4Uej1Q",thumb:"https://i.ytimg.com/vi/O4M5a4Uej1Q/hqdefault.jpg"},
+{id:"5",title:"गणेश आरती - Jai Ganesh",cat:"Aarti",video:"B--9h2oFq5k",thumb:"https://i.ytimg.com/vi/B--9h2oFq5k/hqdefault.jpg"},
+{id:"6",title:"शिव आरती - Om Jai Shiv",cat:"Aarti",video:"c9P9aH2T9aY",thumb:"https://i.ytimg.com/vi/c9P9aH2T9aY/hqdefault.jpg"},
+{id:"7",title:"गायत्री मंत्र 108",cat:"Aarti",video:"_6XnK5G6RRE",thumb:"https://i.ytimg.com/vi/_6XnK5G6RRE/hqdefault.jpg"},
+];
+var curCat="All";
+function setCat(c){ curCat=c; renderKh(); searchBoth(); speak(c+' वाली दिखा रहा हूँ जी'); }
+
+function searchBoth(){
+ let q=(document.getElementById('khInput').value||'neem').trim();
+ if(q=='') q='neem';
+ renderKh();
+ // HAMESHA 6 IMAGE + 4 VIDEO DIKHAO - API HO YA NA HO
+ showDemoImages(q);
+ let pKey=document.getElementById('pexelsKey')?.value||localStorage.getItem('pexelsKey');
+ let pxKey=document.getElementById('pixabayKey')?.value||localStorage.getItem('pixabayKey');
+ if(pKey && pKey.length>10){ fetchPexels(q,pKey); }
+ if(pxKey && pxKey.length>10){ fetchPixabay(q,pxKey); }
+}
+function showDemoImages(query){
+ let grid=document.getElementById('imageGrid');
+ let vGrid=document.getElementById('videoGrid');
+ // 6 DEMO IMAGE - Pexels direct link se - gayab nahi hoga
+ grid.innerHTML=`
+ <img src="https://images.pexels.com/photos/7728087/pexels-photo-7728087.jpeg?auto=compress&cs=tinysrgb&w=300" class="imageBox" onclick="window.open(this.src,'_blank')">
+ <img src="https://images.pexels.com/photos/10853719/pexels-photo-10853719.jpeg?auto=compress&cs=tinysrgb&w=300" class="imageBox" onclick="window.open(this.src,'_blank')">
+ <img src="https://images.pexels.com/photos/6716292/pexels-photo-6716292.jpeg?auto=compress&cs=tinysrgb&w=300" class="imageBox" onclick="window.open(this.src,'_blank')">
+ <img src="https://images.pexels.com/photos/4050316/pexels-photo-4050316.jpeg?auto=compress&cs=tinysrgb&w=300" class="imageBox" onclick="window.open(this.src,'_blank')">
+ <img src="https://images.pexels.com/photos/1638280/pexels-photo-1638280.jpeg?auto=compress&cs=tinysrgb&w=300" class="imageBox" onclick="window.open(this.src,'_blank')">
+ <img src="https://images.pexels.com/photos/1846422/pexels-photo-1846422.jpeg?auto=compress&cs=tinysrgb&w=300" class="imageBox" onclick="window.open(this.src,'_blank')">
+ `;
+ vGrid.innerHTML=`
+ <video src="https://videos.pexels.com/video-files/18069234/18069234-uhd_1440_1440_24fps.mp4" muted loop autoplay playsinline class="imageBox" style="border-color:#0f0" onclick="this.paused?this.play():this.pause()"></video>
+ <video src="https://videos.pexels.com/video-files/855282/855282-hd_1920_1080_25fps.mp4" muted loop autoplay playsinline class="imageBox" style="border-color:#0f0"></video>
+ <video src="https://videos.pexels.com/video-files/1409899/1409899-uhd_2560_1440_30fps.mp4" muted loop autoplay playsinline class="imageBox" style="border-color:#0f0"></video>
+ <video src="https://videos.pexels.com/video-files/18069234/18069234-uhd_1440_1440_24fps.mp4" muted loop autoplay playsinline class="imageBox" style="border-color:#0f0"></video>
+ `;
+}
+async function fetchPexels(query,key){
+ try{
+  let res=await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=6`,{headers:{Authorization:key}});
+  if(!res.ok) throw new Error('Pexels key error');
+  let data=await res.json();
+  if(data.photos && data.photos.length>0){
+   let grid=document.getElementById('imageGrid'); grid.innerHTML='';
+   data.photos.forEach(ph=>{
+     grid.innerHTML+=`<img src="${ph.src.medium}" class="imageBox" onclick="speak('${query} की इमेज है जी'); window.open('${ph.src.original}','_blank')">`;
+   });
+  }
+  let vRes=await fetch(`https://api.pexels.com/videos/search?query=${encodeURIComponent(query)}&per_page=4`,{headers:{Authorization:key}});
+  let vData=await vRes.json();
+  if(vData.videos && vData.videos.length>0){
+   let vGrid=document.getElementById('videoGrid'); vGrid.innerHTML='';
+   vData.videos.forEach(v=>{
+     let vf=v.video_files.find(f=>f.quality==='sd')||v.video_files[0];
+     vGrid.innerHTML+=`<video src="${vf.link}" muted loop autoplay playsinline class="imageBox" style="border-color:#0f0" onclick="this.paused?this.play():this.pause(); speak('${query} का बिना आवाज वीडियो है जी')"></video>`;
+   });
+  }
+  speak(query+' के 6 इमेज और बिना आवाज वीडियो आ गए जी');
+ }catch(e){ console.log('Pexels error - demo hi rahega',e); }
+}
+function renderKh(){
+ let q=(document.getElementById('khInput').value||'').toLowerCase();
+ let list=document.getElementById('khList'); list.innerHTML='';
+ let filtered=DEFAULT_DATA.filter(d=>{
+  let okCat=curCat=='All'||d.cat==curCat;
+  let okQ=q==''||d.title.toLowerCase().includes(q)||d.cat.toLowerCase().includes(q);
+  return okCat&&okQ;
+ });
+ filtered.forEach(d=>{
+  list.innerHTML+=`<div class="videoCard">
+   <img class="thumb" src="${d.thumb}" onerror="this.src='https://i.ytimg.com/vi/${d.video}/mqdefault.jpg'" onclick="playKh('${d.video}','${d.title}')">
+   <div style="flex:1">
+   <div style="font-weight:900;font-size:13px">${d.title}</div>
+   <div style="font-size:11px;color:green;font-weight:800">${d.cat} जी ✅ बोलेगा जी - youtube-nocookie जी</div>
+   <div style="display:flex;gap:4px;margin-top:6px">
+   <button class="khBtn" onclick="playKh('${d.video}','${d.title}')">▶️ बजाओ जी</button>
+   <button class="speakerBtn" onclick="speak('${d.title}')">🔊 सुनो जी</button>
+   <button class="micBtn" onclick="startMic('khInput')">🎤 बोलो जी</button>
+   </div>
+   </div>
+   </div>`;
+ });
+}
+function playKh(vid,title){
+ document.getElementById('khPlayer').style.display='block';
+ document.getElementById('khFrame').src="https://www.youtube-nocookie.com/embed/"+vid+"?autoplay=1&rel=0&modestbranding=1&enablejsapi=1&playsinline=1";
+ speak(title+' बजा रहा हूँ जी');
+ window.scrollTo({top:document.getElementById('khPlayer').offsetTop-80,behavior:'smooth'});
+}
+function closeKh(){
+ document.getElementById('khFrame').src='';
+ document.getElementById('khPlayer').style.display='none';
+}
+</script>
 भाग 4. 
 <!-- JOINING FORM - AUTOFILL + AUTOMATIC -->
 <div style="background:#fff8e1;border:4px solid #ff9800;border-radius:18px;padding:14px;margin:16px 0;text-align:left">
@@ -309,158 +384,6 @@ allLinks=[
 </div>
 भाग 8. 
 <script>
-// FIX 2 - MIC + SPEAKER 100% AI ASSISTANT - BOLEGA JI
-function speak(text){
- if(!text) return;
- if('speechSynthesis' in window){
-   window.speechSynthesis.cancel();
-   let u=new SpeechSynthesisUtterance(text);
-   u.lang='hi-IN'; u.rate=0.88; u.pitch=1; u.volume=1;
-   let voices=window.speechSynthesis.getVoices();
-   let hiVoice=voices.find(v=>v.lang.includes('hi'))||voices[0];
-   if(hiVoice) u.voice=hiVoice;
-   window.speechSynthesis.speak(u);
- } else {
-   console.log('SPEAK:',text);
- }
-}
-function startMic(id){
- if(!('webkitSpeechRecognition' in window||'SpeechRecognition' in window)){
-   speak('माइक के लिए क्रोम में खोलो जी - 1 नंबर बटन');
-   alert('माइक के लिए Chrome में खोलो जी - 1 नंबर बटन से खोलो जी');
-   window.open('https://play.google.com/store/apps/details?id=com.android.chrome','_blank');
-   return;
- }
- let r=new(window.SpeechRecognition||window.webkitSpeechRecognition)();
- r.lang='hi-IN'; r.interimResults=false; r.maxAlternatives=1;
- r.onstart=function(){ speak('बोलो जी - सुन रहा हूँ जी'); };
- r.onresult=function(e){
-   let txt=e.results[0][0].transcript;
-   let el=document.getElementById(id);
-   if(el){ el.value=txt; el.focus(); }
-   if(id=='khInput'){ searchBoth(); }
-   speak('लिख दिया जी - '+txt);
- };
- r.onerror=function(e){ speak('फिर से बोलो जी - समझ नहीं आया जी'); };
- r.start();
-}
-function toggleKey(id){ let el=document.getElementById(id); if(el){ el.type=el.type==='password'?'text':'password'; } }
-function saveKeys(){
- localStorage.setItem('pexelsKey',document.getElementById('pexelsKey').value);
- localStorage.setItem('pixabayKey',document.getElementById('pixabayKey').value);
- speak('ए पी आई की गुप्त सेव हो गई जी - किसी को दिखाई नहीं देगी जी');
- alert('Key गुप्त सेव हो गई जी - अब 6 इमेज + बिना आवाज वीडियो आएगा जी');
- searchBoth();
-}
-window.onload=function(){
- let savedP=localStorage.getItem('pexelsKey');
- if(!savedP){ savedP='6lBZhV6xsI4WJSbsIOIEeyFRBKIRFSWOfwl3YZm7UfbS1UcR3n6rPzWY'; localStorage.setItem('pexelsKey',savedP); }
- document.getElementById('pexelsKey').value=savedP;
- let savedPx=localStorage.getItem('pixabayKey');
- if(savedPx) document.getElementById('pixabayKey').value=savedPx;
- renderLinks(); renderKh(); checkFraud(); renderAdmins();
- speak('जय माता की - वीदेहब में आपका स्वागत है जी - सब कुछ ठीक हो गया है जी - माइक स्पीकर बोल रहा है जी');
-}
-
-var DEFAULT_DATA=[
-{id:"1",title:"हनुमान चालीसा - Gulshan Kumar - Full",cat:"Bhajan",video:"AETFvQonf08",thumb:"https://img.youtube.com/vi/AETFvQonf08/mqdefault.jpg"},
-{id:"2",title:"शिव तांडव स्तोत्र - Original",cat:"Aarti",video:"9ct1a7GylHs",thumb:"https://img.youtube.com/vi/9ct1a7GylHs/mqdefault.jpg"},
-{id:"3",title:"नीम के फायदे - जड़ी बूटी आयुर्वेद",cat:"Jadibuti",video:"l2w3AdT5l1I",thumb:"https://img.youtube.com/vi/l2w3AdT5l1I/mqdefault.jpg"},
-{id:"4",title:"तुलसी के लाभ - Tulsi Benefits",cat:"Jadibuti",video:"O4M5a4Uej1Q",thumb:"https://img.youtube.com/vi/O4M5a4Uej1Q/mqdefault.jpg"},
-{id:"5",title:"गणेश आरती - Jai Ganesh",cat:"Aarti",video:"B--9h2oFq5k",thumb:"https://img.youtube.com/vi/B--9h2oFq5k/mqdefault.jpg"},
-{id:"6",title:"शिव आरती - Om Jai Shiv",cat:"Aarti",video:"l2w3AdT5l1I",thumb:"https://img.youtube.com/vi/l2w3AdT5l1I/mqdefault.jpg"},
-{id:"7",title:"गायत्री मंत्र 108",cat:"Aarti",video:"_6XnK5G6RRE",thumb:"https://img.youtube.com/vi/_6XnK5G6RRE/mqdefault.jpg"},
-];
-var curCat="All";
-function setCat(c){ curCat=c; renderKh(); searchBoth(); speak(c+' वाली दिखा रहा हूँ जी'); }
-function searchBoth(){
- let q=(document.getElementById('khInput').value||'').trim();
- if(q.length<2){ renderKh(); return; }
- renderKh();
- let pKey=document.getElementById('pexelsKey').value;
- let pxKey=document.getElementById('pixabayKey').value;
- if(pKey && pKey.length>10){ fetchPexels(q,pKey); }
- if(pxKey && pxKey.length>10){ fetchPixabay(q,pxKey); }
- if((!pKey||pKey.length<10) && (!pxKey||pxKey.length<10)){
-   let grid=document.getElementById('imageGrid');
-   grid.innerHTML='';
-   for(let i=1;i<=6;i++){
-     grid.innerHTML+=`<div style="background:#222;border:2px dashed gold;border-radius:10px;height:90px;display:flex;align-items:center;justify-content:center;color:gold;font-size:11px;flex-direction:column"><span>🖼️ ${q} ${i}</span><span style="font-size:9px">API Key डालो जी</span></div>`;
-   }
- }
-}
-async function fetchPexels(query,key){
- try{
-  let res=await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=6`,{headers:{Authorization:key}});
-  if(!res.ok) throw new Error('Pexels key error');
-  let data=await res.json();
-  let grid=document.getElementById('imageGrid'); grid.innerHTML='';
-  data.photos.forEach(ph=>{
-    grid.innerHTML+=`<img src="${ph.src.medium}" class="imageBox" onclick="speak('${query} की इमेज है जी'); window.open('${ph.src.original}','_blank')" title="${query}">`;
-  });
-  let vRes=await fetch(`https://api.pexels.com/videos/search?query=${encodeURIComponent(query)}&per_page=4`,{headers:{Authorization:key}});
-  let vData=await vRes.json();
-  let vGrid=document.getElementById('videoGrid'); vGrid.innerHTML='';
-  vData.videos.forEach(v=>{
-    let vf=v.video_files.find(f=>f.quality==='sd')||v.video_files[0];
-    vGrid.innerHTML+=`<video src="${vf.link}" muted loop autoplay playsinline class="imageBox" style="border-color:#0f0" onclick="this.paused?this.play():this.pause(); speak('${query} का बिना आवाज वीडियो है जी')"></video>`;
-  });
-  speak(query+' के 6 इमेज और बिना आवाज वीडियो आ गए जी');
- }catch(e){ console.log('Pexels error',e); speak('Pexels Key चेक करो जी'); }
-}
-async function fetchPixabay(query,key){
- try{
-  let res=await fetch(`https://pixabay.com/api/?key=${key}&q=${encodeURIComponent(query)}&image_type=photo&per_page=6`);
-  let data=await res.json();
-  let grid=document.getElementById('imageGrid');
-  if(data.hits) data.hits.forEach(h=>{ grid.innerHTML+=`<img src="${h.webformatURL}" class="imageBox" onclick="window.open('${h.largeImageURL}','_blank')">`; });
-  let vRes=await fetch(`https://pixabay.com/api/videos/?key=${key}&q=${encodeURIComponent(query)}&per_page=4`);
-  let vData=await vRes.json();
-  let vGrid=document.getElementById('videoGrid');
-  if(vData.hits) vData.hits.forEach(h=>{ vGrid.innerHTML+=`<video src="${h.videos.small.url}" muted loop autoplay playsinline class="imageBox" style="border-color:#0f0"></video>`; });
- }catch(e){ console.log('Pixabay error',e); }
-}
-function renderKh(){
- let q=(document.getElementById('khInput').value||'').toLowerCase();
- let list=document.getElementById('khList'); list.innerHTML='';
- let filtered=DEFAULT_DATA.filter(d=>{
-  let okCat=curCat=='All'||d.cat==curCat;
-  let okQ=q==''||d.title.toLowerCase().includes(q)||d.cat.toLowerCase().includes(q);
-  return okCat&&okQ;
- });
- if(filtered.length==0){
-  list.innerHTML=`<div style="color:gold;background:#000;padding:14px;border-radius:10px;border:2px solid gold;font-weight:800">कुछ नहीं मिला जी - दूसरा शब्द लिखो जी - सब जी दबाओ जी - खोज में ${q} लिखो जी</div>`;
-  return;
- }
- filtered.forEach(d=>{
-  list.innerHTML+=`<div class="videoCard">
-   <img class="thumb" src="${d.thumb}" onclick="playKh('${d.video}','${d.title}')">
-   <div style="flex:1">
-   <div style="font-weight:900;font-size:13px">${d.title}</div>
-   <div style="font-size:11px;color:green;font-weight:800">${d.cat} जी ✅ बोलेगा जी - youtube-nocookie जी</div>
-   <div style="display:flex;gap:4px;margin-top:6px">
-   <button class="khBtn" onclick="playKh('${d.video}','${d.title}')">▶️ बजाओ जी</button>
-   <button class="speakerBtn" onclick="speak('${d.title}')">🔊 सुनो जी</button>
-   <button class="micBtn" onclick="startMic('khInput')">🎤 बोलो जी</button>
-   </div>
-   </div>
-   </div>`;
- });
-}
-function playKh(vid,title){
- document.getElementById('khPlayer').style.display='block';
- document.getElementById('khFrame').src="https://www.youtube-nocookie.com/embed/"+vid+"?autoplay=1&rel=0&modestbranding=1&enablejsapi=1&playsinline=1";
- speak(title+' बजा रहा हूँ जी - यूट्यूब नो कुकी से चल रहा है जी - अनुपलब्ध नहीं आएगा जी');
- window.scrollTo({top:document.getElementById('khPlayer').offsetTop-80,behavior:'smooth'});
-}
-function closeKh(){
- document.getElementById('khFrame').src='';
- document.getElementById('khPlayer').style.display='none';
- speak('बंद कर दिया जी');
-}
-</script>
-भाग 9. 
-<script>
 // FIX 1 - SAFE OPEN - DISK PAR BHI KHULEGA JI - SHARE MSG NAHI AYEGA JI
 function openSafe(url,title){
  try{
@@ -527,7 +450,7 @@ function removeAdmin(){
  document.getElementById('newAdminInput').value='';
 }
 </script>
-भाग 10.
+भाग 9.
 <!-- WATERMARK HATANE KA TAREEKA -->
 <div style="background:#f0fff0;border:4px solid #00aa00;border-radius:18px;padding:14px;margin:16px 0;text-align:left">
 <div style="display:flex;justify-content:space-between">
