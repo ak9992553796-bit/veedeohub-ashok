@@ -1,46 +1,188 @@
 <!DOCTYPE html>
-<html lang="hi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Radio FULL FIXED - 5-16 KRAM - YOUTUBE OK</title>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Veedeohub Radio - 28 Links Complete - 5 to 16 Same</title>
 <style>
-body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:center}
-.box{max-width:480px;margin:auto;padding:10px}
-.top{border:4px solid gold;background:#000;padding:14px;border-radius:14px}
-.btnBlue{display:block;width:100%;background:#000;color:#FFD700;padding:14px 0;border-radius:12px;text-decoration:none;font-weight:900;margin:8px 0;border:2px solid #FFD700;text-align:center}
-.khBtn{padding:10px 14px;border-radius:10px;background:gold;color:#000;font-weight:900;border:2px solid #000;margin:4px;cursor:pointer}
-.videoCard{background:#fff;color:#000;border-radius:14px;margin:12px 0;padding:12px;border:2px solid gold;display:flex;gap:12px;text-align:left}
-.thumb{width:120px;height:80px;background:#000;border-radius:10px;object-fit:cover;cursor:pointer;border:2px solid gold}
-.khSearch{width:68%;padding:14px;border:3px solid gold;border-radius:12px;font-weight:800}
-.linkBox{background:#fff8dc;border:3px solid #ff9800;border-radius:18px;padding:14px;margin:16px 0}
-</style></head><body><div class="box">
-<div class="top"><h2 style="color:gold">📻 JAI MATA KI - अनन्त रेडियो जी</h2>
-<div style="color:#0f0;font-size:11px">YOUTUBE FIXED - अब बजेगा जी</div>
-<div style="margin:12px 0"><input id="khInput" class="khSearch" placeholder="भजन लिखो जी" oninput="renderKh()"></div>
-<div><button class="khBtn" onclick="setCat('All')">सब जी</button><button class="khBtn" onclick="setCat('Bhajan')">भजन जी</button><button class="khBtn" onclick="setCat('Aarti')">आरती जी</button><button class="khBtn" onclick="setCat('Mantra')">मंत्र जी</button></div>
-<div id="khList" style="margin-top:14px"></div>
-<div id="khPlayer" style="display:none;background:#fff;border-radius:14px;padding:10px;margin-top:14px;border:4px solid gold"><iframe id="khFrame" width="100%" height="250" frameborder="0" allowfullscreen></iframe><br><button onclick="closeKh()" style="background:red;color:#fff;padding:10px 16px;border-radius:10px;margin-top:10px;font-weight:900;border:none">बंद करो जी ❌</button></div>
+body{background:#0a1628;color:#f5e6a3;font-family:Arial,sans-serif;margin:0;text-align:center;padding:0}
+.box{max-width:520px;margin:auto;padding:10px}
+.khBtn{padding:12px 16px;border-radius:10px;background:gold;color:#000;font-weight:900;border:2px solid #000;margin:5px;cursor:pointer}
+.speakerBtn{background:#111;color:#0f0;border:2px solid #0f0;border-radius:10px;padding:10px 14px;font-weight:900;cursor:pointer}
+.micBtn{background:#000;color:gold;border:2px solid gold;border-radius:10px;padding:10px 14px;font-weight:900;cursor:pointer}
+.rowFlex{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;margin:8px 0}
+</style>
+</head>
+<body>
+<div class="box">
+<div style="background:#000;border:4px solid gold;border-radius:14px;padding:14px;margin:8px">
+<h2 style="color:gold">📻 अनन्त रेडियो स्टेशन - 28 बटन पूरे हैं जी</h2>
+<p style="color:#0f0;font-size:14px;font-weight:900;line-height:2.0">यहाँ 5 से 16 वाले बटन भी हैं जी - Meta AI, InShot, FotoPlay, Text to Audio, Vlog Maker, Canva, Pixabay, Pexels, Adobe Scan, Flowmusic सब हैं जी - और अनन्त प्लेलिस्ट जोड़ सकते हो जी - कबीर वाणी, कृष्ण आरती, आरती, चालीसा अलग-अलग जोड़ो जी</p>
+<a href="index.html" style="display:block;background:#fff;color:#000;padding:14px;border-radius:10px;text-decoration:none;font-weight:900;border:2px solid gold;margin:10px 0;font-size:14px">🏠 मुख्य पेज पर जाओ जी</a>
 </div>
-<div class="linkBox"><div style="font-weight:900;color:#000;margin-bottom:10px">🛒 सारे लिंक - क्रम वाइज जी - FULL - 5-16 - कोई गायब नहीं जी</div>
-<a class="btnBlue" href="https://www.flipkart.com/product/p/itme?pid=9789362494184" target="_blank">5. Flipkart Book जी - FULL</a>
-<a class="btnBlue" href="https://cx.ctml.in/mxGetyaYkab?teamLeaderId=TPL_CMO" target="_blank">6. CityMall जी - FULL</a>
-<a class="btnBlue" href="https://www.amazon.in" target="_blank">7. Amazon Main जी - FULL</a>
-<a class="btnBlue" href="https://www.flipkart.com" target="_blank">8. Flipkart Main जी - FULL</a>
-<a class="btnBlue" href="https://www.meesho.com" target="_blank">9. Meesho जी - FULL</a>
-<a class="btnBlue" href="https://www.blinkit.com" target="_blank">10. Blinkit जी - FULL</a>
-<a class="btnBlue" href="https://www.zeptonow.com" target="_blank">11. Zepto जी - FULL</a>
-<a class="btnBlue" href="https://www.swiggy.com" target="_blank">12. Swiggy जी - FULL</a>
-<a class="btnBlue" href="https://www.1mg.com" target="_blank">13. 1MG जी - FULL</a>
-<a class="btnBlue" href="https://textdoc.co" target="_blank">14. TextDoc जी - FULL</a>
-<a class="btnBlue" href="https://www.canva.com/" target="_blank">15. Canva FREE Video जी - FULL - नया जी</a>
-<a class="btnBlue" href="https://www.dreambookpublishing.com/" target="_blank">16. Dreambook जी - FULL</a>
+<div style="background:#111;border:3px solid gold;border-radius:14px;padding:14px;margin:10px 0;text-align:left">
+<b style="color:gold;font-size:14px">🔢 बटन नंबर खोज - कौनसे नंबर पर कौनसा भजन जी - खुल्ला खुल्ला जी</b>
+<div class="rowFlex">
+<input id="radioBtnSearch" type="number" placeholder="बटन नंबर जैसे 6" style="width:52%;padding:12px;border:2px solid gold;border-radius:10px;font-weight:900">
+<button class="khBtn" onclick="gotoRadioBtn()">OK जी ➡️</button>
+<button class="micBtn" onclick="startMic('radioBtnSearch')">🎤</button>
 </div>
-<a class="btnBlue" href="index.html" style="background:gold;color:#000">🏠 मुख्य पेज पर जाओ जी - 444 LINE वाला जी</a>
-<div style="border:2px solid gold;background:#000;color:gold;padding:10px;border-radius:10px;margin:10px 0;font-size:11px">JAI MATA KI - Radio - FIXED - YOUTUBE PLAY OK - 5-16 KRAM WISE</div>
+<input id="radioSearch" placeholder="भजन खोजो जी - जैसे कृष्ण आरती, कबीर वाणी जी" oninput="renderRadioLinks()" style="width:90%;padding:12px;border:2px solid #0f0;border-radius:8px;margin-top:8px;font-weight:800">
+<div id="radioBtnList" style="margin-top:10px;background:#fff;color:#000;border-radius:10px;padding:8px;max-height:320px;overflow-y:auto"></div>
+</div>
+<div id="radioContainer"></div>
+<div style="display:flex;justify-content:space-between;align-items:center;background:#000;border:3px solid gold;border-radius:12px;padding:12px;margin:12px 0">
+<button class="khBtn" onclick="changeRadioPage(-1)">⬅️ पीछे जाओ जी</button>
+<span id="radioPageInfo" style="color:gold;font-weight:900;background:#111;padding:10px 16px;border-radius:10px;border:2px solid gold">पेज 1</span>
+<button class="khBtn" onclick="changeRadioPage(1)">आगे बढ़ो जी ➡️</button>
+</div>
+
+<!-- ✅ 6 बक्से हटे - उनकी जगह ये अनन्त रेडियो सिस्टम लगा दिया जी -->
+<div style="background:#fff8dc;border:4px solid #00aa00;border-radius:18px;padding:16px;margin:12px 0;text-align:left">
+<b style="color:#000;font-size:16px">➕ अनन्त रेडियो प्लेलिस्ट जोड़ो जी - रेडियो पर कोई भी प्लेलिस्ट जोड़ो जी</b><br>
+<span style="font-size:13px;color:green;font-weight:900;line-height:2.0">जैसे: कबीर वाणी प्लेलिस्ट - https://youtube.com/playlist?list=... - सारे भजन डाल दो जी - आरती चालीसा अलग से बनाकर डाल दो जी</span>
+<input id="rTitle" placeholder="प्लेलिस्ट टाइटल जी" style="width:90%;padding:14px;border:2px solid gold;border-radius:8px;margin-top:8px;font-weight:800">
+<input id="rBtn" placeholder="बटन नाम जी" style="width:90%;padding:14px;border:2px solid gold;border-radius:8px;margin-top:6px;font-weight:800">
+<input id="rUrl" placeholder="YouTube प्लेलिस्ट URL जी - https://youtube.com/playlist?list=..." style="width:90%;padding:14px;border:2px solid #0f0;border-radius:8px;margin-top:6px;font-weight:800">
+<input id="rDesc" placeholder="🔍 परिचय जी" style="width:90%;padding:14px;border:2px solid gold;border-radius:8px;margin-top:6px">
+<input id="rBenefit" placeholder="💰 लाभ जी" style="width:90%;padding:14px;border:2px solid gold;border-radius:8px;margin-top:6px">
+<div class="rowFlex">
+<button onclick="addRadioLink()" style="background:#000;color:gold;padding:14px 22px;border-radius:10px;border:2px solid gold;font-weight:900;flex:1;font-size:14px">✅ रेडियो प्लेलिस्ट जोड़ो जी - अनन्त जी</button>
+<button class="micBtn" onclick="startMic('rTitle')">🎤</button>
+</div>
+<button onclick="showRadioDeleteConfirm()" style="background:#ff9800;color:#000;padding:12px 14px;border-radius:10px;font-weight:900;border:3px solid red;margin-top:10px;width:100%">⚠️ जोड़े हुए रेडियो लिंक हटाने के लिए दबाओ जी</button>
+<div id="radioDeleteBox" style="display:none;background:#ffe6e6;border:4px solid red;border-radius:14px;padding:14px;margin-top:12px;text-align:center">
+<b style="color:red;font-size:14px">⚠️ क्या आप वास्तव में जोड़े हुए रेडियो लिंक हटाना चाहते हो जी?</b><br><br>
+<div style="display:flex;justify-content:space-between;gap:12px">
+<div style="flex:1;text-align:left"><button onclick="confirmRadioDeleteYes()" style="background:red;color:#fff;padding:16px 22px;border-radius:12px;font-weight:900;border:3px solid #000;width:100%">✅ YES<br>बायें तरफ</button></div>
+<div style="width:100px;display:flex;align-items:center;justify-content:center"><span style="background:#000;color:gold;padding:10px 14px;border-radius:50%;border:3px solid gold;font-weight:900">100px<br>दूर जी</span></div>
+<div style="flex:1;text-align:right"><button onclick="confirmRadioDeleteNo()" style="background:green;color:#fff;padding:16px 22px;border-radius:12px;font-weight:900;border:3px solid #000;width:100%">❌ NO<br>दायें तरफ</button></div>
+</div>
+</div>
+<div id="radioMsg" style="font-size:13px;font-weight:900;color:green;margin-top:8px"></div>
+</div>
+<div id="radioPlayer" style="display:none;background:#fff;border-radius:14px;padding:10px;margin-top:14px;border:4px solid gold">
+<iframe id="radioFrame" width="100%" height="260" frameborder="0" allowfullscreen></iframe><br>
+<a id="radioDirect" href="#" target="_blank" style="display:none;background:#ff0000;color:#fff;padding:10px;border-radius:10px;text-decoration:none;font-weight:900;margin:8px 0;border:2px solid #000">▶️ YouTube पर सीधे खोलो जी</a>
+<button onclick="closeRadio()" style="background:red;color:#fff;padding:10px 16px;border-radius:10px;font-weight:900;border:none">बंद करो जी ❌</button>
+</div>
 </div>
 <script>
-var DEFAULT_DATA=[{id:"1",title:"हनुमान चालीसा - Gulshan Kumar",cat:"Bhajan",video:"AETFvQonf08",thumb:"https://img.youtube.com/vi/AETFvQonf08/mqdefault.jpg"},{id:"2",title:"शिव तांडव स्तोत्र",cat:"Aarti",video:"9ct1a7GylHs",thumb:"https://img.youtube.com/vi/9ct1a7GylHs/mqdefault.jpg"},{id:"3",title:"हनुमान आरती",cat:"Aarti",video:"B--9h2oFq5k",thumb:"https://img.youtube.com/vi/B--9h2oFq5k/mqdefault.jpg"},{id:"4",title:"गणेश आरती",cat:"Aarti",video:"O4M5a4Uej1Q",thumb:"https://img.youtube.com/vi/O4M5a4Uej1Q/mqdefault.jpg"},{id:"5",title:"शिव आरती",cat:"Aarti",video:"l2w3AdT5l1I",thumb:"https://img.youtube.com/vi/l2w3AdT5l1I/mqdefault.jpg"},{id:"6",title:"गायत्री मंत्र",cat:"Mantra",video:"_6XnK5G6RRE",thumb:"https://img.youtube.com/vi/_6XnK5G6RRE/mqdefault.jpg"}];
-var curCat="All";function setCat(c){curCat=c;renderKh();}
-function renderKh(){let q=(document.getElementById('khInput').value||'').toLowerCase();let list=document.getElementById('khList');list.innerHTML='';let f=DEFAULT_DATA.filter(d=>{let okCat=curCat=='All'||d.cat==curCat;let okQ=q==''||d.title.toLowerCase().includes(q);return okCat&&okQ;});if(f.length==0){list.innerHTML="<div style='color:gold;background:#000;padding:12px;border-radius:10px;border:2px solid gold'>कुछ नहीं मिला जी</div>";return}f.forEach(d=>{list.innerHTML+=`<div class="videoCard"><img class="thumb" src="${d.thumb}" onclick="playKh('${d.video}')"><div style="flex:1"><div style="font-weight:900;font-size:13px">${d.title}</div><button class="khBtn" onclick="playKh('${d.video}')">▶️ बजाओ जी</button></div></div>`;});}
-function playKh(v){document.getElementById('khPlayer').style.display='block';document.getElementById('khFrame').src="https://www.youtube.com/embed/"+v+"?autoplay=1&rel=0";window.scrollTo({top:document.getElementById('khPlayer').offsetTop-20,behavior:'smooth'});}
-function closeKh(){document.getElementById('khFrame').src='';document.getElementById('khPlayer').style.display='none'}
-renderKh();
-</script></body></html>
+function speak(t){if(!t)return;try{if(speechSynthesis.speaking)speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang='hi-IN';u.rate=0.88;speechSynthesis.speak(u);}catch(e){}}
+function startMic(id){try{let SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){alert('Mic Chrome me Allow karo');return;}let rec=new SR();rec.lang='hi-IN';rec.onresult=function(e){let t=e.results[0][0].transcript;let el=document.getElementById(id);if(el){el.value=t;if(id==='radioSearch')renderRadioLinks();if(id==='radioBtnSearch')gotoRadioBtn();}};rec.start();}catch(e){}}
+let radioPage=1; const radioPerPage=10;
+let radioBase=[
+{no:1,title:'Google Chrome App - सबसे पहले खोलें जी',btnText:'Chrome में खोलें जी',url:'https://play.google.com/store/apps/details?id=com.android.chrome',desc:'सबसे पहले Chrome में खोलो जी',work:'Chrome Browser',benefit:'फ्री ब्राउज़र',type:'free'},
+{no:2,title:'Flipkart Book - अशोक कुमार की किताब',btnText:'Flipkart Book खरीदो जी',url:'https://www.flipkart.com/product/p/itme?pid=9789362494184&affid=ashok54994',desc:'Flipkart Book - एफिलिएट affid ashok54994',work:'किताब पढ़ो जी',benefit:'एफिलिएट लाभ जी',type:'affiliate'},
+{no:3,title:'Amazon Book - Ayurvedic Jadi Bootiyan',btnText:'Amazon Book खरीदो जी',url:'https://www.amazon.in/dp/B0GZB61NNR?tag=ashok0499-21',desc:'Amazon Book - tag ashok0499-21',work:'Amazon से किताब खरीदो जी',benefit:'एफिलिएट लाभ जी',type:'affiliate'},
+{no:4,title:'Dreambook Product - रॉयल्टी वाली जी',btnText:'Dreambook Product खरीदो जी',url:'https://www.dreambookpublishing.com/product/ayurvedic-jadi-bootiyan-upyog-aur-labh?ref=ASHOK54994',desc:'Dreambook Product - ref ASHOK54994',work:'Dreambook से किताब खरीदो जी',benefit:'रॉयल्टी + एफिलिएट जी',type:'royalty'},
+{no:5,title:'Dreambook Publishing - किताब छापो जी',btnText:'Dreambook पर छापो जी',url:'https://www.dreambookpublishing.com/?ref=ASHOK54994',desc:'अपनी किताब छापो जी',work:'किताब पब्लिश',benefit:'किताब छापकर पैसा कमाओ जी',type:'referral'},
+{no:6,title:'Meta AI App - AI असिस्टेंट स्पीकर',btnText:'Meta AI - बोलो सुनो जी',url:'https://www.meta.ai/?ref=veedeohub-ashok-ASHOK54994',desc:'Meta AI से बोलकर पूछो जी',work:'AI असिस्टेंट',benefit:'फ्री AI - रेफरल लाभ जी',type:'referral'},
+{no:7,title:'InShot Video Editor - वॉटरमार्क हटाओ जी',btnText:'InShot से वीडियो बनाओ जी',url:'https://play.google.com/store/apps/details?id=com.camerasideas.instashot',desc:'InShot में वीडियो बनाओ जी',work:'वीडियो एडिटिंग',benefit:'बिना वॉटरमार्क फ्री वीडियो',type:'free'},
+{no:8,title:'FotoPlay Slideshow Maker - फोटो से वीडियो',btnText:'FotoPlay स्लाइडशो बनाओ जी',url:'https://play.google.com/store/apps/details?id=videoeditor.videomaker.slideshow.fotoplay',desc:'फोटो से भजन स्लाइडशो वीडियो बनाओ जी',work:'फोटो से वीडियो बनाना',benefit:'फ्री स्लाइडशो',type:'free'},
+{no:9,title:'Text to Audio App - लिखे को आवाज में बदलो जी',btnText:'Text to Audio - आवाज बनाओ जी',url:'https://play.google.com/store/apps/details?id=text.to.audio.app',desc:'जो लिखो वो बोलेगा जी',work:'टेक्स्ट को ऑडियो में बदलो',benefit:'बोलने में थकान कम',type:'free'},
+{no:10,title:'Vlog Maker - Vlog Video Editor',btnText:'Vlog Maker - Vlog बनाओ जी',url:'https://play.google.com/store/apps/details?id=com.frontrow.vlog',desc:'Vlog बनाओ जी',work:'Vlog एडिटिंग',benefit:'Vlog से पैसा कमाओ जी',type:'free'},
+{no:11,title:'Canva Editor - FREE Design',btnText:'Canva - FREE डिजाइन बनाओ जी',url:'https://play.google.com/store/apps/details?id=com.canva.editor',desc:'Canva से Thumbnail बनाओ जी',work:'डिजाइन बनाना',benefit:'फ्री डिजाइन',type:'free'},
+{no:12,title:'Pixabay App - बिना कॉपीराइट इमेज + वीडियो',btnText:'Pixabay - फ्री इमेज वीडियो जी',url:'https://play.google.com/store/apps/details?id=com.pixabay.pixabayapp',desc:'Pixabay पर बिना कॉपीराइट इमेज और वीडियो',work:'बिना कॉपीराइट इमेज',benefit:'100% No Copyright',type:'free'},
+{no:13,title:'Pexels App - HD इमेज + वीडियो',btnText:'Pexels - HD फ्री इमेज वीडियो जी',url:'https://play.google.com/store/apps/details?id=com.pexels.app',desc:'Pexels पर HD इमेज और वीडियो',work:'HD फ्री स्टॉक',benefit:'HD Quality',type:'free'},
+{no:14,title:'Adobe Scan - PDF Scanner',btnText:'Adobe Scan - PDF बनाओ जी',url:'https://play.google.com/store/apps/details?id=com.adobe.scan.android',desc:'Adobe Scan से कागज को PDF बनाओ जी',work:'PDF Scanner',benefit:'फ्री PDF',type:'free'},
+{no:15,title:'Flowmusic App - गाना बनाओ पैसे कमाओ जी',btnText:'Flowmusic App - गाना बनाओ जी',url:'https://www.flowmusic.app/Veedeohub?ref=ASHOK54994',desc:'Flowmusic पर AI से गाने भजन बनाओ जी',work:'AI से गाना भजन बनाना',benefit:'बिना कॉपीराइट गाना बनाकर कमाओ जी',type:'referral'},
+{no:16,title:'Flowmusic Playlist - ॐ नमः शिवाय भजन',btnText:'Flowmusic Playlist सुनो जी',url:'https://www.flowmusic.app/playlist/54799c5c-6fe7-4e88-97a7-0a1b82be13ae?ref=ASHOK54994',desc:'ॐ नमः शिवाय भजन प्लेलिस्ट - सारे भजन एक जगह जी',work:'Flowmusic प्लेलिस्ट',benefit:'प्लेलिस्ट से भजन सुनो जी',type:'referral'},
+{no:17,title:'My Tube Playlist - YouTube भजन प्लेलिस्ट',btnText:'My Tube Playlist - YouTube प्लेलिस्ट जी',url:'https://www.youtube.com/@veedeohub?sub_confirmation=1&ref=ASHOK54994',desc:'My Tube Playlist',work:'YouTube Playlist',benefit:'आपकी प्लेलिस्ट',type:'referral'},
+{no:18,title:'Facebook Profile - Ashok Kumar जी',btnText:'Facebook Profile जी',url:'https://facebook.com/veedeohub?ref=ASHOK54994',desc:'Facebook Profile',work:'Facebook पर जुड़ो जी',benefit:'Facebook से जुड़ो जी',type:'free'},
+{no:19,title:'Instagram - Veedeohub - Reels जी',btnText:'Instagram - Reels देखो जी',url:'https://www.instagram.com/veedeohub?ref=ASHOK54994',desc:'Instagram - Veedeohub',work:'Instagram Reels',benefit:'Instagram से जुड़ो जी',type:'referral'},
+{no:20,title:'Threads App - Veedeohub जी',btnText:'Threads App खोलो जी',url:'https://play.google.com/store/apps/details?id=com.instagram.barcelona&ref=ASHOK54994',desc:'Threads App',work:'Threads',benefit:'Threads से जुड़ो जी',type:'referral'},
+{no:21,title:'ChatGPT App - कुछ भी पूछो जी',btnText:'ChatGPT - पूछो स्क्रिप्ट बनवाओ जी',url:'https://play.google.com/store/apps/details?id=com.openai.chatgpt',desc:'ChatGPT से कुछ भी पूछो जी',work:'AI से सवाल पूछो',benefit:'फ्री AI',type:'free'},
+{no:22,title:'Google Gemini App - AI से पूछो जी',btnText:'Gemini App खोलो जी',url:'https://play.google.com/store/apps/details?id=com.google.android.apps.bard',desc:'Gemini AI से पूछो जी',work:'Gemini AI',benefit:'फ्री AI',type:'referral'},
+{no:23,title:'Facebook Page - Veedeohub - Official Page जी',btnText:'Facebook Page - Veedeohub खोलो जी',url:'https://facebook.com/veedeohub?ref=ASHOK54994',desc:'Facebook Page',work:'Facebook Page',benefit:'Facebook Page से जुड़ो जी',type:'referral'},
+{no:24,title:'Jio App - फोन रिचार्ज के लिए',btnText:'Jio App - रिचार्ज करो जी',url:'https://play.google.com/store/apps/details?id=com.【entity-jio¦canonical_name=Jio】.myjio',desc:'【entity-Jio¦canonical_name=Jio】 App - MyJio',work:'MyJio App',benefit:'खुद रिचार्ज - पैसा बचाओ जी',type:'free'},
+{no:25,title:'Google Ad - Ad से पैसा जी',btnText:'Google Ad - पैसा कमाओ जी',url:'https://www.google.com/adsense/?ref=ASHOK54994',desc:'Google Ad',work:'Google AdSense',benefit:'एड से ऑटो कमाई जी',type:'affiliate'},
+{no:26,title:'SUNO AI - गाना बनाओ जी',btnText:'SUNO AI - गाना बनाओ जी',url:'https://suno.com/@veedeohub?ref=ASHOK54994',desc:'SUNO AI',work:'SUNO AI',benefit:'SUNO से गाना बनाकर कमाओ जी',type:'referral'},
+{no:27,title:'Amazon Main Shopping - शॉपिंग से लाभ जी',btnText:'Amazon Shopping - खरीदो जी',url:'https://www.amazon.in/?tag=ashok0499-21',desc:'Amazon Shopping',work:'Amazon Shopping',benefit:'शॉपिंग से ऑटो लाभ जी',type:'affiliate'},
+{no:28,title:'Flipkart Main Shopping - शॉपिंग से लाभ जी',btnText:'Flipkart Shopping - खरीदो जी',url:'https://www.flipkart.com/?affid=ashok54994',desc:'Flipkart Shopping',work:'Flipkart Shopping',benefit:'शॉपिंग से ऑटो लाभ जी',type:'affiliate'}
+];
+let radioCustom = JSON.parse(localStorage.getItem('veedeo_radio_links')||'[]');
+let radioAll = radioBase.concat(radioCustom);
+function changeRadioPage(dir){ let total=Math.ceil(radioAll.length/10); let np=radioPage+dir; if(np<1||np>total) return; radioPage=np; renderRadioLinks(); }
+function gotoRadioBtn(){ let v=document.getElementById('radioBtnSearch').value.trim(); if(v===''){ alert('नंबर लिखो जी'); return; } let num=parseInt(v); let idx=radioAll.findIndex(l=>l.no===num); if(idx===-1){ alert('नंबर '+num+' नहीं मिला जी'); return; } radioPage=Math.ceil((idx+1)/10); renderRadioLinks(); }
+function renderRadioLinks(){
+ let q=(document.getElementById('radioSearch')?.value||'').toLowerCase();
+ let c=document.getElementById('radioContainer'); let listDiv=document.getElementById('radioBtnList');
+ if(!c) return; c.innerHTML=''; listDiv.innerHTML='';
+ let filtered = radioAll.filter(r=>{ if(q==='') return true; return r.title.toLowerCase().includes(q) || r.desc.toLowerCase().includes(q); });
+ let s=(radioPage-1)*10; let e=s+10;
+ let pageLinks=filtered.slice(s,e);
+ pageLinks.forEach(item=>{
+  let badge = item.type==='affiliate'?'💰 एफिलिएट':item.type==='referral'?'🔗 रेफरल':item.type==='royalty'?'👑 रॉयल्टी':'🆓 फ्री';
+  let isShareable = (item.type==='affiliate' || item.type==='referral' || item.type==='royalty');
+  let shareButtons = '';
+  if(isShareable){
+    shareButtons = `<div style="display:flex;gap:10px;margin-top:12px">
+   <button onclick="shareRadio('${item.url}','${item.title}')" style="background:#25D366;color:#fff;padding:10px 14px;border-radius:8px;font-weight:900;border:none">📲 WhatsApp शेयर जी</button>
+   <button onclick="shareRadioFb('${item.url}')" style="background:#1877F2;color:#fff;padding:10px 14px;border-radius:8px;font-weight:900;border:none">📘 Facebook शेयर जी</button>
+   </div>`;
+  }
+  let html=`<div style="background:#fff8dc;border:3px solid #ff9800;border-radius:16px;padding:16px;margin:16px 0;text-align:left;position:relative">
+   <div style="position:absolute;left:0;top:0;background:#000;color:gold;padding:8px 14px;border-radius:16px 0 10px 0;font-weight:900;font-size:13px">बटन ${item.no}. ${item.title} जी</div>
+   <div style="position:absolute;right:0;top:0;background:#00aa00;color:#fff;padding:6px 12px;border-radius:0 16px 0 10px;font-size:11px;font-weight:900">${badge}</div>
+   <div style="margin-top:44px">
+   <a href="${item.url}" target="_blank" style="display:block;background:#000;color:#FFD700;padding:18px;border-radius:12px;text-decoration:none;font-weight:900;border:3px solid gold;text-align:center;font-size:15px;line-height:2.0">${item.btnText} जी</a>
+   <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+   <button onclick="playRadio('${item.url}','${item.title}')" style="background:gold;color:#000;padding:10px 14px;border-radius:8px;font-weight:900;border:2px solid #000">▶️ बजाओ जी</button>
+   <button class="speakerBtn" onclick="speak('${item.title}')" style="padding:12px 18px">🔊 सुनो जी</button>
+   <button class="micBtn" onclick="startMic('radioSearch')" style="padding:12px 18px">🎤 बोलो जी</button>
+   <button class="khBtn" onclick="gotoRadioBtnNum(${item.no})" style="padding:10px 16px">🔢 ${item.no} जी</button>
+   </div>
+   ${shareButtons}
+   <div style="font-size:14px;color:#000;margin-top:12px;font-weight:900;background:#fff;padding:14px;border-radius:10px;line-height:2.0">🔍 परिचय: ${item.desc}<br>⚙️ काम: ${item.work}<br>💰 लाभ: ${item.benefit}<br>📌 बटन नंबर: ${item.no} पर है जी</div>
+   </div>
+   </div>`;
+  c.innerHTML+=html;
+  listDiv.innerHTML+=`<div style="border:2px solid gold;border-radius:10px;padding:10px;margin:6px 0;display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:900"><span><b>${item.no}. ${item.title}</b></span><button class="khBtn" onclick="gotoRadioBtnNum(${item.no})">➡️ ${item.no}</button></div>`;
+ });
+ document.getElementById('radioPageInfo').innerText=`पेज ${radioPage} / ${Math.ceil(filtered.length/10)} - कुल ${filtered.length} लिंक जी`;
+}
+function gotoRadioBtnNum(num){ document.getElementById('radioBtnSearch').value=num; gotoRadioBtn(); }
+function playRadio(url,title){
+ let player=document.getElementById('radioPlayer'); let frame=document.getElementById('radioFrame'); let direct=document.getElementById('radioDirect');
+ if(!player||!frame) return;
+ player.style.display='block';
+ if(url.includes('playlist?list=')){
+   let listId=url.split('list=')[1].split('&')[0];
+   frame.src="https://www.youtube.com/embed/videoseries?list="+listId+"&autoplay=1&rel=0";
+ }else if(url.includes('watch?v=')){
+   let vid=url.split('v=')[1].split('&')[0];
+   frame.src="https://www.youtube.com/embed/"+vid+"?autoplay=1&rel=0";
+ }else{
+   frame.src=url;
+ }
+ if(direct){ direct.href=url; direct.style.display='block'; }
+ window.scrollTo({top:player.offsetTop-80,behavior:'smooth'});
+}
+function closeRadio(){ let f=document.getElementById('radioFrame'); let p=document.getElementById('radioPlayer'); if(f)f.src=''; if(p)p.style.display='none'; }
+function shareRadio(url,title){ let wa=`https://wa.me/?text=${encodeURIComponent(title+' जी - '+url)}`; window.open(wa,'_blank'); }
+function shareRadioFb(url){ let fb=`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`; window.open(fb,'_blank'); }
+function addRadioLink(){
+ let t=document.getElementById('rTitle').value.trim();
+ let b=document.getElementById('rBtn').value.trim();
+ let u=document.getElementById('rUrl').value.trim();
+ let d=document.getElementById('rDesc').value.trim();
+ let ben=document.getElementById('rBenefit').value.trim();
+ let msg=document.getElementById('radioMsg');
+ if(t==''||u==''){ msg.innerText='टाइटल और URL भरना जरूरी है जी'; return; }
+ if(!u.startsWith('http')){ msg.innerText='URL https:// से शुरू होना चाहिए जी'; return; }
+ let newNo=radioBase.length + JSON.parse(localStorage.getItem('veedeo_radio_links')||'[]').length +1;
+ let newLink={no:newNo,title:t,btnText:b||'सुनो जी',url:u,desc:d||t,benefit:ben||'भक्ति लाभ जी',type:'bhajan'};
+ let stored=JSON.parse(localStorage.getItem('veedeo_radio_links')||'[]');stored.push(newLink);localStorage.setItem('veedeo_radio_links',JSON.stringify(stored));
+ radioAll.push(newLink);
+ msg.innerText='✅ '+t+' जोड़ दिया जी - कुल '+radioAll.length+' जी';
+ document.getElementById('rTitle').value='';document.getElementById('rBtn').value='';document.getElementById('rUrl').value='';document.getElementById('rDesc').value='';document.getElementById('rBenefit').value='';
+ radioPage=Math.ceil(radioAll.length/10);renderRadioLinks();
+}
+function showRadioDeleteConfirm(){ document.getElementById('radioDeleteBox').style.display='block'; }
+function confirmRadioDeleteNo(){ document.getElementById('radioDeleteBox').style.display='none'; }
+function confirmRadioDeleteYes(){ localStorage.removeItem('veedeo_radio_links'); document.getElementById('radioDeleteBox').style.display='none'; setTimeout(()=>location.reload(),800); }
+window.onload=function(){ renderRadioLinks(); }
+</script>
+</body>
+</html>
