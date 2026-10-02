@@ -2,7 +2,7 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Veedeohub SECURE FINAL - Ashok - Password Protected HTML + Member Tree + Auto Search</title>
+<title>Veedeohub ANANT FINAL - Ashok Kumar - Single No Duplicate - Proper Plan</title>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3922664797100594" crossorigin="anonymous"></script>
 <script>
 const VEEDO_CONFIG={
@@ -12,7 +12,8 @@ const VEEDO_CONFIG={
 };
 function speak(t){try{speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang='hi-IN';u.rate=0.95;speechSynthesis.speak(u);}catch(e){}}
 function startMic(id){try{let r=new (window.SpeechRecognition||window.webkitSpeechRecognition)();r.lang='hi-IN';r.onresult=e=>{document.getElementById(id).value=e.results[0][0].transcript; if(id=='mainSearch') showImages(); if(id=='listSearch') filterButtons(); if(id=='btnNumberSearch') goToNum();};r.start();}catch(e){alert('Mic Chrome में खोलो जी');}}
-// OWNER PASSWORD SYSTEM - SECURE
+
+// OWNER PASSWORD SYSTEM - SINGLE
 function getOwnerHash(){return localStorage.getItem('veedoo_owner_hash')||btoa('9992553796');}
 function isOwnerLogged(){return sessionStorage.getItem('veedoo_owner_session')==='YES';}
 function ownerLogin(){
@@ -28,7 +29,6 @@ function showOwnerPanel(){
  if(!isOwnerLogged()){document.getElementById('ownerSecretPanel').style.display='none'; return;}
  document.getElementById('ownerSecretPanel').style.display='block';
  document.getElementById('ownerStatus').innerText='✅ Owner लॉगिन है जी - सिर्फ आपको दिख रहा है जी';
- // fill html copy
  let htmlCode=document.documentElement.outerHTML;
  document.getElementById('htmlCodeArea').value=htmlCode.substring(0,200000);
 }
@@ -40,13 +40,13 @@ function createNewPassword(){
  let confirmP=prompt('नया पासवर्ड फिर डालो जी');
  if(newP!==confirmP){alert('मिलान नहीं जी');return;}
  localStorage.setItem('veedoo_owner_hash',btoa(newP));
- alert('✅ नया पासवर्ड बन गया जी - अब यही पासवर्ड सिर्फ आपको पता है जी - इसकी पुष्टि: '+newP.substring(0,2)+'** - सिर्फ आपको ही कॉपी अधिकार है जी');
+ alert('✅ नया पासवर्ड बन गया जी - '+newP.substring(0,2)+'** - सिर्फ आपको ही कॉपी अधिकार है जी');
  sessionStorage.setItem('veedoo_owner_session','YES');
  showOwnerPanel();
 }
 function removePassword(){
  if(!isOwnerLogged()){alert('पहले Owner लॉगिन करो जी');return;}
- if(confirm('पासवर्ड हटाना है जी? फिर कोई भी HTML देख सकेगा जी - पक्का?')){
+ if(confirm('पासवर्ड हटाना है जी?')){
   localStorage.removeItem('veedoo_owner_hash');
   sessionStorage.removeItem('veedoo_owner_session');
   alert('हटा दिया जी - अब डिफ़ॉल्ट 9992553796 हो गया जी');
@@ -56,11 +56,10 @@ function removePassword(){
 function copyOwnerHTML(){
  if(!isOwnerLogged()){alert('Owner लॉगिन करो जी');return;}
  let txt=document.getElementById('htmlCodeArea').value;
- navigator.clipboard.writeText(txt).then(()=>{alert('✅ HTML कॉपी हो गया जी - सिर्फ आपको अधिकार है जी - इसकी पुष्टि हो गई जी');speak('HTML कॉपी हो गया जी सिर्फ आपको अधिकार है');});
+ navigator.clipboard.writeText(txt).then(()=>{alert('✅ HTML कॉपी हो गया जी - सिर्फ आपको अधिकार है जी');speak('HTML कॉपी हो गया जी सिर्फ आपको अधिकार है');});
 }
 </script>
-<style>
-body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:center}
+<style>body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:center}
 .box{max-width:570px;margin:auto;padding:10px}
 .top{border:4px solid gold;background:#000;padding:14px;margin:8px;border-radius:14px}
 .qrBox{background:#fff;padding:12px;border-radius:14px;display:inline-block;border:4px solid gold;margin:10px}
@@ -69,7 +68,8 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:cent
 .micBtn{background:#000;color:gold;border:2px solid gold;border-radius:10px;padding:8px 10px;font-weight:900;cursor:pointer}
 .speakerBtn{background:#111;color:#0f0;border:2px solid #0f0;border-radius:10px;padding:8px 10px;font-weight:900;cursor:pointer}
 .ownerBtn{background:#ff0000;color:#fff;border:3px solid gold;border-radius:10px;padding:10px 14px;font-weight:900;cursor:pointer}
-.imageBox{width:100%;height:88px;object-fit:cover;border:2px solid gold;border-radius:10px;background:#000;cursor:pointer}.kaliPatti{background:#000;color:#FFD700;padding:8px;border-radius:8px;font-weight:900;font-size:12px;border:2px solid gold;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.imageBox{width:100%;height:88px;object-fit:cover;border:2px solid gold;border-radius:10px;background:#000;cursor:pointer}
+.kaliPatti{background:#000;color:#FFD700;padding:8px;border-radius:8px;font-weight:900;font-size:12px;border:2px solid gold;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
 .btnCard{background:#fff8dc;border:3px solid #ff9800;border-radius:14px;padding:12px;margin:12px 0;text-align:left;position:relative}
 .btnCard a{display:block;padding:14px;border-radius:10px;text-decoration:none;font-weight:900;border:2px solid gold;text-align:center;margin-top:6px}
 .detailBox{background:#fff;color:#000;border-radius:8px;padding:8px;margin-top:8px;font-size:11px;line-height:1.6;border:2px solid #ccc}
@@ -84,209 +84,117 @@ body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:cent
 <div class="box">
 
 <div class="top">
-<h2 style="color:gold;margin:8px 0">JAI MATA KI | VEEDEOHUB - SECURE</h2>
-<p style="color:gold;font-size:11px">Ashok Kumar 141003 | Tauru Nuh | 9992553796 | Owner Protected</p>
+<h2 style="color:gold;margin:8px 0">JAI MATA KI | VEEDEOHUB - ANANT FINAL</h2>
+<p style="color:gold;font-size:11px">Ashok Kumar 141003 | Tauru Nuh | 9992553796 | Anant Link Plan - Single No Duplicate</p>
 <div class="qrBox"><img src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=https://veedeohub-ashok.vercel.app" style="width:250px"></div>
 <div class="rowFlex" style="margin-top:10px">
 <button class="ownerBtn" onclick="ownerLogin()">🔐 Owner Login जी - HTML कॉपी सिर्फ आपको जी</button>
 <button class="khBtn" onclick="createNewPassword()" style="background:#000;color:gold">🔑 नया पासवर्ड बनाओ जी</button>
-<button class="khBtn" onclick="removePassword()" style="background:#ff0000;color:#fff">🗑️ पासवर्ड हटाओ जी</button>
 </div>
-<p id="ownerStatus" style="color:#0f0;font-size:11px">🔒 HTML कॉपी और मेंबर ट्री सिर्फ Owner पासवर्ड से दिखेगा जी - किसी और को नहीं जी</p>
-<div style="background:#111;border:2px solid gold;border-radius:10px;padding:8px;margin-top:10px">
-<div class="kaliPatti"><span>🔍 काली पट्टी - बटन नंबर ऑटो ऊपर आएगा जी</span><span><button class="speakerBtn" onclick="speak('बटन नंबर डालो जी')">🔊</button><button class="micBtn" onclick="startMic('btnNumberSearch')">🎤</button></span></div>
-<div class="rowFlex"><input id="btnNumberSearch" type="number" placeholder="जैसे 55 डालो जी - ऑटो ऊपर" style="width:40%;padding:11px;border:3px solid gold;border-radius:10px" oninput="goToNum()"><button class="khBtn" onclick="goToNum()">OK जाओ जी</button></div>
+<div id="ownerSecretPanel" class="secretPanel">
+<div class="kaliPatti"><span>🔐 Owner Secret Panel जी - सिर्फ आपको जी</span><span id="ownerStatus"></span></div>
+<textarea id="htmlCodeArea" style="width:100%;height:200px;border:3px solid red;border-radius:10px;padding:8px;font-size:10px"></textarea>
+<div class="rowFlex" style="margin-top:8px"><button class="khBtn" onclick="copyOwnerHTML()" style="background:#00aa00;color:#fff">📋 HTML कॉपी करो जी</button>
+<button class="khBtn" onclick="removePassword()" style="background:red;color:#fff">🗑️ पासवर्ड हटाओ जी</button>
 </div>
-</div>
-
-<div class="goldenLine">☀️ All Life फ्री joining - आप जुड़ेंगे और जोड़ेंगे तो लाभ होगा जी</div>
-
-<!-- API KEYS - SECURE OWNER ONLY VISIBLE BUT OPTION HERE -->
-<div style="background:#000;border:4px solid gold;border-radius:16px;padding:12px;margin:14px 0;text-align:left">
-<div class="kaliPatti"><span>🔑 PART: दोनों APP API-Key ऑप्शन जी - Pexels + Pixabay</span><button class="speakerBtn" onclick="speak('एपीआई की डालो जी')">🔊</button></div>
-<div style="background:#111;border:2px solid gold;border-radius:10px;padding:10px;margin-top:8px">
-<label style="color:gold;font-size:11px">Pexels API-Key जी - बॉक्स लाइन 1</label><input id="pexelsKey" class="inputLine" placeholder="Pexels API Key डालो जी"><label style="color:gold;font-size:11px">Pixabay API-Key जी - बॉक्स लाइन 2</label><input id="pixabayKey" class="inputLine" placeholder="Pixabay API Key डालो जी">
-<div class="rowFlex"><button class="khBtn" onclick="saveAPIKeys()" style="background:#000;color:gold">💾 API Keys सेव जी</button><button class="khBtn" onclick="speak('API की सेव हो गया जी')">🔊</button></div><p id="apiMsg" style="color:#0f0;font-size:11px"></p>
 </div>
 </div>
 
-<!-- 6 IMAGE + 4 VIDEO PIXELS MUTED - AUTO -->
-<div style="background:#000;border:4px solid gold;border-radius:16px;padding:12px;margin:14px 0">
-<div class="kaliPatti"><span>🔍 PART 2: 6 इमेज + 4 वीडियो बिना आवाज Pixels जी - ऑटो जी</span><span><button class="speakerBtn" onclick="speak(document.getElementById('mainSearch').value||'खोज')">🔊</button><button class="micBtn" onclick="startMic('mainSearch')">🎤</button></span></div>
-<div class="rowFlex"><input id="mainSearch" class="khSearch" placeholder="नीम, हनुमानजी लिखो जी - ऑटो खोज जी" oninput="showImages();filterButtonsAuto()" value="neem"><button class="khBtn" onclick="showImages()">खोजो जी</button></div><div style="background:#111;border:2px solid gold;border-radius:10px;padding:8px;margin-top:10px"><b style="color:gold;font-size:12px">🖼️ 6 इमेज - Pixels जी - ऑटो जी</b><div id="imageGrid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px"></div></div>
-<div style="background:#111;border:2px solid #0f0;border-radius:10px;padding:8px;margin-top:10px"><b style="color:#0f0;font-size:12px">🎬 4 वीडियो बिना आवाज Muted Autoplay - Pixels जी</b><div id="videoGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px"></div></div>
+<!-- SEARCH IMAGE BOX - SINGLE -->
+<div class="goldenLine">
+<div class="kaliPatti"><span>🔍 सर्च + फोटो - अनन्त जी</span><span><button class="speakerBtn" onclick="speak('सर्च फोटो अनन्त')">🔊</button><button class="micBtn" onclick="startMic('mainSearch')">🎤</button></span></div>
+<div class="rowFlex"><input type="text" id="mainSearch" class="khSearch" placeholder="खोजो जी - अनन्त..."><button class="khBtn" onclick="showImages()">🔍 खोजो जी</button></div>
+<div id="imageGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px"></div>
 </div>
 
-<!-- JOINING 43 + REFER 44 + DASHBOARD 45 -->
-<div style="background:#fffaf0;border:3px solid gold;border-radius:18px;padding:14px;margin:14px 0;text-align:left">
-<div class="kaliPatti"><span>📋 43. LIVE Joining Form जी</span><button class="speakerBtn" onclick="speak('जॉइनिंग फॉर्म')">🔊</button></div>
-<input id="jName" class="inputLine" placeholder="पूरा नाम जी"><input id="jMob" class="inputLine" placeholder="10 अंक मोबाइल जी" maxlength="10">
-<button class="khBtn" onclick="joinNow()" style="width:92%;background:#000;color:gold;padding:12px">43. Join करो जी</button><p id="jMsg" style="color:green;font-size:12px"></p>
-</div>
-
-<div style="border:4px solid orange;padding:14px;border-radius:14px;background:#fff8e1;margin:14px 0;text-align:left">
-<div class="kaliPatti"><span>🙏 44. जुड़ो और कमाओ जी</span><button class="speakerBtn" onclick="speak('रेफर लिंक')">🔊</button></div>
-<input id="myRefLink" class="inputLine" readonly style="width:92%"><div class="rowFlex"><button class="khBtn" onclick="copyRef()" style="background:green;color:#fff">🔗 कॉपी जी</button></div>
-<p style="color:#000;font-size:12px">जोड़े: <span id="refCount" style="background:gold;padding:4px 10px;border-radius:8px;font-weight:900">0</span></p>
-</div>
-
+<!-- SINGLE DASHBOARD + TDS - MERGED 14 - ONE BUTTON ONLY -->
 <div class="dashboardBox" id="dashboardBox">
-<div class="kaliPatti"><span>📊 45. Dashboard ऑटो हिसाब % जी</span><button class="speakerBtn" onclick="speak('डैशबोर्ड ऑटो')">🔊</button></div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
-<div style="background:#e8f5e9;border:2px solid #00aa00;border-radius:10px;padding:8px"><b>कुल जोड़े</b><br><span id="dashTotal">0</span></div>
-<div style="background:#fff3e0;border:2px solid orange;border-radius:10px;padding:8px"><b>कुल लाभ</b><br>₹<span id="dashEarn">0</span></div>
-<div style="background:#ffebee;border:2px solid red;border-radius:10px;padding:8px"><b>TDS 10%</b><br>₹<span id="dashTDS">0</span></div>
-<div style="background:#e3f2fd;border:2px solid blue;border-radius:10px;padding:8px"><b>Net</b><br>₹<span id="dashNet">0</span></div>
+<div class="kaliPatti"><span>📊 Dashboard + TDS + वॉलेट - एक ही बॉक्स जी - सिंगल जी - अनन्त जी</span><span><button class="speakerBtn" onclick="speak('Dashboard TDS वॉलेट सिंगल')">🔊</button></span></div>
+<div style="background:#e8f5e9;border:2px solid #00aa00;border-radius:10px;padding:10px;font-size:11px;color:#000;margin-top:8px">
+<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
+<span>💰 बैलेंस: <b id="dashTotal">₹0</b></span>
+<span>📉 TDS 10%: <b id="dashTDS">₹0</b></span>
+<span>✅ नेट: <b id="dashNet">₹0</b></span>
 </div>
-<table border="1" style="width:100%;border-collapse:collapse;font-size:11px;margin-top:10px;color:#000"><tr style="background:gold"><th>महीना</th><th>कुल</th><th>TDS</th><th>Net</th><th>%</th></tr><tbody id="tdsTable"><tr><td>जनवरी</td><td>₹0</td><td>₹0</td><td>₹0</td><td>0%</td></tr></tbody></table>
-<div class="rowFlex"><button class="khBtn" onclick="addDummyEarn()">➕ टेस्ट लाभ जी</button><button class="khBtn" onclick="exportTDS()">📥 एक्सपोर्ट जी</button><button class="khBtn" onclick="showMemberTree()" style="background:#9C27B0;color:#fff">🌳 मेंबर ट्री देखो जी</button></div>
+<div style="margin-top:8px;background:#000;color:#0f0;padding:6px;border-radius:6px" id="fraudLog">कोई फ्रॉड नहीं जी ✅ - एक ही लॉग बॉक्स जी</div>
+</div>
+<div class="rowFlex" style="margin-top:8px">
+<button class="khBtn" onclick="updateAdvancedTDS()" style="background:#00aa00;color:#fff">🔄 एक ही बटन - बैलेंस अपडेट जी</button>
+<button class="khBtn" onclick="showFraudLogs()" style="background:red;color:#fff">🛡️ एक ही बटन - लॉग देखो जी</button>
+</div>
 </div>
 
-<!-- MEMBER RECORDED PAGE WITH TREE -->
-<div id="memberTreeBox" style="background:#fff;border:4px solid #9C27B0;border-radius:16px;padding:14px;margin:14px 0;text-align:left;display:none">
-<div class="kaliPatti"><span>👥 मेंबर रिकॉर्डेड पेज + ट्री - किसके बाद कौन जुड़ा जी</span><button class="speakerBtn" onclick="speak('मेंबर ट्री')">🔊</button></div>
+<!-- SINGLE MEMBER TREE - MERGED 15 - ONE BUTTON ONLY - ANANT -->
+<div id="memberTreeBox" style="background:#fff;border:4px solid #9C27B0;border-radius:16px;padding:14px;margin:14px 0;text-align:left">
+<div class="kaliPatti"><span>🌳 अनन्त मेंबर ट्री - एक ही बॉक्स जी - सिंगल जी - किसके बाद कौन जुड़ा जी</span><span><button class="speakerBtn" onclick="speak('अनन्त मेंबर ट्री सिंगल')">🔊</button></span></div>
 <div style="background:#fffaf0;border:2px solid #9C27B0;border-radius:10px;padding:10px;margin-top:8px;max-height:350px;overflow:auto;font-size:11px;color:#000" id="memberTreeList">कोई मेंबर नहीं जी</div>
-<div class="rowFlex"><button class="khBtn" onclick="exportMembers()">📥 मेंबर एक्सपोर्ट जी</button><button class="khBtn" onclick="document.getElementById('memberTreeBox').style.display='none'">बंद करो जी</button></div>
+<div class="rowFlex" style="margin-top:8px">
+<button class="khBtn" onclick="renderMemberTree()" style="background:#9C27B0;color:#fff">🌳 एक ही बटन - ट्री देखो जी - अनन्त जी</button>
+<button class="khBtn" onclick="exportMembers()" style="background:#000;color:gold">📥 एक ही बटन - एक्सपोर्ट जी - अनन्त जी</button>
+</div>
+<p style="font-size:9px;color:#000;margin-top:6px">✅ एक ही मेंबर ट्री जी - दो दो बटन नहीं जी - अनन्त नाम से ही सही रहेगा जी</p>
 </div>
 
-<!-- KYC 48 WITH 3 LINE BOX -->
-<div id="kycBox" style="background:#fffaf0;border:4px solid #00aa00;border-radius:18px;padding:14px;margin:14px 0;text-align:left">
-<div class="kaliPatti"><span>💳 48. KYC - 3 बॉक्स लाइनें जी</span><button class="speakerBtn" onclick="speak('केवायसी तीन खाने')">🔊</button></div>
-<div style="background:#fff;border:3px solid gold;border-radius:12px;padding:10px">
-<input id="kycName" class="inputLine" placeholder="1. नाम जी - लाइन 1"><input id="kycUpi" class="inputLine" placeholder="2. UPI @ जरूरी - लाइन 2"><input id="kycMob" class="inputLine" placeholder="3. मोबाइल जी - लाइन 3" maxlength="10">
-</div><div class="rowFlex"><button class="khBtn" onclick="saveKYC()" style="background:#00aa00;color:#fff;width:92%">💾 KYC सेव जी</button></div><p id="kycMsg" style="color:green;font-size:12px"></p>
+<!-- BUTTON LIST SEARCH - SINGLE - NO 57 TEXT -->
+<div class="dashboardBox" id="searchListBox">
+<div class="kaliPatti"><span>🔍 अनन्त बटन खोजो जी - सिंगल सर्च जी</span><span><button class="speakerBtn" onclick="speak('अनन्त बटन खोजो')">🔊</button><button class="micBtn" onclick="startMic('listSearch')">🎤</button></span></div><div class="rowFlex"><input type="text" id="listSearch" class="inputLine" style="width:55%" placeholder="बटन नाम या नंबर खोजो जी - अनन्त..." oninput="filterButtonsAuto()"><input type="number" id="btnNumberSearch" class="inputLine" style="width:20%" placeholder="No."><button class="khBtn" onclick="goToNum()">जाओ जी</button></div>
+<div id="buttonList" style="background:#fff;border:2px solid #00aa00;border-radius:10px;padding:8px;max-height:250px;overflow:auto;font-size:11px;color:#000;text-align:left"></div>
 </div>
 
-<!-- NOMINEE + ADMIN -->
-<div id="nomineeBox" style="background:#fff8dc;border:4px solid #9C27B0;border-radius:18px;padding:14px;margin:14px 0;text-align:left">
-<div class="kaliPatti"><span>👨‍👩‍👧 49. नॉमिनी बॉक्स जी</span><button class="speakerBtn" onclick="speak('नॉमिनी')">🔊</button></div>
-<div style="background:#fff;border:3px solid #9C27B0;border-radius:12px;padding:10px"><input id="nomineeName" class="inputLine" placeholder="नॉमिनी नाम - लाइन 1"><input id="nomineeRelation" class="inputLine" placeholder="रिश्ता - लाइन 2"><input id="nomineeMob" class="inputLine" placeholder="मोबाइल - लाइन 3"></div>
-<div class="rowFlex"><button class="khBtn" onclick="addNominee()" style="background:#9C27B0;color:#fff">➕ नॉमिनी जोड़ो जी</button></div><div id="nomineeList" style="font-size:11px;color:#000;margin-top:8px;background:#fff;padding:8px;border-radius:8px;border:2px solid #9C27B0"></div>
-</div>
-
-<div id="adminBox" style="background:#fff8dc;border:4px solid #ff5722;border-radius:18px;padding:14px;margin:14px 0;text-align:left">
-<div class="kaliPatti"><span>👑 50-51. एडमिन बॉक्स जी</span><button class="speakerBtn" onclick="speak('एडमिन')">🔊</button></div>
-<div style="background:#fff;border:3px solid #ff5722;border-radius:12px;padding:10px"><input id="adminName" class="inputLine" placeholder="एडमिन नाम - लाइन 1"><input id="adminEmail" class="inputLine" placeholder="ईमेल/मोबाइल - लाइन 2"><input id="adminRole" class="inputLine" placeholder="रोल - लाइन 3"></div>
-<div class="rowFlex"><button class="khBtn" onclick="addAdmin()" style="background:#ff5722;color:#fff">➕ जोड़ो जी</button><button class="khBtn" onclick="removeAdmin()" style="background:#000;color:#fff">❌ हटाओ जी</button></div><div id="adminList" style="font-size:11px;color:#000;margin-top:8px;background:#fff;padding:8px;border-radius:8px;border:2px solid #ff5722"></div>
-</div>
-
-<!-- 57 BUTTONS LIST AUTO SEARCH - NUMBER TOP -->
-<div style="background:#fff;color:#000;border:4px solid gold;border-radius:16px;padding:12px;margin:14px 0;text-align:left">
-<div class="kaliPatti"><span>📋 46. खोज लिस्ट ऑटोमैटिक - नंबर डालो बटन ऊपर जी</span><span><button class="speakerBtn" onclick="speak('खोज लिस्ट ऑटो')">🔊</button><button class="micBtn" onclick="startMic('listSearch')">🎤</button></span></div>
-<input id="listSearch" placeholder="जैसे 55 डालो - ऑटो ऊपर आएगा जी - खोज लिस्ट ऑटोमैटिक जी" oninput="filterButtons()" style="width:100%;padding:12px;border:3px solid gold;border-radius:10px;font-weight:700;box-sizing:border-box">
-<div id="buttonList" style="max-height:350px;overflow:auto;border:3px solid gold;margin-top:8px;padding:6px;background:#fffaf0;border-radius:10px"></div>
-<p style="font-size:10px;color:#000">✅ ऑटोमैटिक खोज लिस्ट जी - जो नंबर डालो वो ही बटन सबसे ऊपर आएगा जी</p>
-</div>
-
+<!-- ALL BUTTONS CONTAINER - SINGLE - DEDUPED - ANANT -->
 <div id="linkContainer"></div>
 
-<!-- ANANT 6 BOX + SUPPORT -->
-<div id="anantBox" style="background:#fff8dc;border:4px solid #00aa00;border-radius:18px;padding:14px;margin:14px 0;text-align:left">
-<div class="kaliPatti"><span>📺 57. अनन्त TV - 6 बॉक्स लाइनें जी</span><button class="speakerBtn" onclick="speak('अनन्त टीवी')">🔊</button></div>
-<div style="background:#fff;border:3px solid #00aa00;border-radius:12px;padding:10px">
-<input id="cTitle" class="inputLine" placeholder="1. टाइटल - लाइन 1"><input id="cUrl" class="inputLine" placeholder="2. URL - लाइन 2"><input id="cDesc" class="inputLine" placeholder="3. विवरण - लाइन 3"><input id="cWork" class="inputLine" placeholder="4. काम - लाइन 4"><input id="cBenefit" class="inputLine" placeholder="5. लाभ - लाइन 5"><input id="cCat" class="inputLine" placeholder="6. कैटेगरी - लाइन 6">
+<!-- ANANT LINK TV 6 BOX - SINGLE - PROPER PLACE - LAST -->
+<div class="dashboardBox" id="anantBox" style="border:4px solid gold;background:linear-gradient(135deg,#fff8dc,#fff);">
+<div class="kaliPatti"><span>♾️ अनन्त लिंक TV 6 बॉक्स - अनन्त नाम से ही सही रहेगा जी - सिंगल जी - उचित स्थान पर जी</span><span><button class="speakerBtn" onclick="speak('अनन्त लिंक टीवी छह बॉक्स')">🔊</button></span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px">
+<div style="background:#fff;border:2px solid gold;border-radius:10px;padding:8px"><input type="text" id="anant1" class="inputLine" style="width:90%;font-size:10px" placeholder="अनन्त लिंक 1"><input type="text" id="anant1Title" class="inputLine" style="width:90%;font-size:10px" placeholder="टाइटल 1"></div>
+<div style="background:#fff;border:2px solid gold;border-radius:10px;padding:8px"><input type="text" id="anant2" class="inputLine" style="width:90%;font-size:10px" placeholder="अनन्त लिंक 2"><input type="text" id="anant2Title" class="inputLine" style="width:90%;font-size:10px" placeholder="टाइटल 2"></div>
+<div style="background:#fff;border:2px solid gold;border-radius:10px;padding:8px"><input type="text" id="anant3" class="inputLine" style="width:90%;font-size:10px" placeholder="अनन्त लिंक 3"><input type="text" id="anant3Title" class="inputLine" style="width:90%;font-size:10px" placeholder="टाइटल 3"></div>
+<div style="background:#fff;border:2px solid gold;border-radius:10px;padding:8px"><input type="text" id="anant4" class="inputLine" style="width:90%;font-size:10px" placeholder="अनन्त लिंक 4"><input type="text" id="anant4Title" class="inputLine" style="width:90%;font-size:10px" placeholder="टाइटल 4"></div>
+<div style="background:#fff;border:2px solid gold;border-radius:10px;padding:8px"><input type="text" id="anant5" class="inputLine" style="width:90%;font-size:10px" placeholder="अनन्त लिंक 5"><input type="text" id="anant5Title" class="inputLine" style="width:90%;font-size:10px" placeholder="टाइटल 5"></div>
+<div style="background:#fff;border:2px solid gold;border-radius:10px;padding:8px"><input type="text" id="anant6" class="inputLine" style="width:90%;font-size:10px" placeholder="अनन्त लिंक 6"><input type="text" id="anant6Title" class="inputLine" style="width:90%;font-size:10px" placeholder="टाइटल 6"></div>
 </div>
-<div class="rowFlex"><button class="khBtn" onclick="addCustomLink()" style="background:#000;color:gold;width:92%">✅ 57. अनन्त जोड़ो जी</button></div><p id="customMsg" style="color:green;font-size:12px"></p>
+<div class="rowFlex" style="margin-top:10px">
+<button class="khBtn" onclick="saveAnantLinks()" style="background:#000;color:gold">💾 अनन्त सेव करो जी</button>
+<button class="khBtn" onclick="loadAnantLinks()" style="background:gold;color:#000">📂 अनन्त लोड करो जी</button>
 </div>
-
-<div id="supportUPIBox" style="background:#fffaf0;border:4px solid gold;border-radius:18px;padding:14px;margin:14px 0;text-align:center">
-<div class="kaliPatti"><span>🤝 56. सहयोग UPI QR जी</span></div>
-<a href="upi://pay?pa=9992553796@ybl&pn=Ashok%20Kumar&cu=INR" style="display:block;background:gold;color:#000;padding:12px;border-radius:25px;text-decoration:none;font-weight:900;border:2px solid #000;margin-top:8px">🤝 9992553796@ybl पर सहयोग जी</a>
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=9992553796@ybl" style="border:3px solid gold;padding:6px;background:#fff;margin-top:8px">
-</div>
-
-<!-- CONTACT / PRIVACY / DISCLAIMER / AYURVEDIC EXACT --><div style="background:#fff;color:#000;border:4px solid gold;border-radius:16px;padding:14px;margin:16px 0;text-align:left">
-<h2>Contact Us / संपर्क करें</h2>
-<p>Ashok Kumar, Ex. Employee Maruti Udyog Limited (Staff No. 141003)<br>S/o Dr. B. L. Rao<br>Mohammad Pur Ahir, Tauru, Nuh, Haryana - 122105<br>Email: ak9992553796@gmail.com<br>Mobile & WhatsApp: 9992553796</p>
-<h2>Privacy Policy / गोपनीयता नीति</h2>
-<p>We respect your privacy. We do not collect any personal information. / हम आपकी गोपनीयता का सम्मान करते हैं जी।</p>
-<h2>Disclaimer / अस्वीकरण</h2>
-<p>All content is for devotional and general knowledge only. Please consult your doctor before using any herb.<br>सभी जानकारी केवल सामान्य ज्ञान के लिए है जी। जड़ी-बूटी उपयोग से पहले डॉक्टर से सलाह लें जी।</p>
-<h2>आयुर्वेदिक जड़ी बूटियां - उपयोग और लाभ</h2>
-<p>1. तुलसी - सर्दी-जुकाम में लाभदायक<br>2. अश्वगंधा - ताकत और नींद के लिए<br>3. गिलोय - इम्यूनिटी के लिए<br>4. आंवला - बालों और आंखों के लिए<br>5. एलोवेरा - पेट और त्वचा के लिए</p>
-<div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:14px"><a href="https://ak9992553796-bit.github.io/veedeohub-ashok/" target="_blank" class="khBtn" style="text-decoration:none;background:#fff;color:#000">📘 GitHub</a><a href="https://veedeohub-ashok.vercel.app" target="_blank" class="khBtn" style="text-decoration:none;background:#fff;color:#000">▲ Vercel</a><a href="https://veedeohub-ashok.netlify.app" target="_blank" class="khBtn" style="text-decoration:none;background:#fff;color:#000">🌐 Netlify</a></div>
+<p style="font-size:10px;color:#000;margin-top:8px">♾️ अनन्त लिंक - 6 खाने - TV जैसा - सारा प्लान इकट्ठा - अनन्त नाम से ही सही रहेगा जी</p>
 </div>
 
-<!-- OWNER SECRET PANEL - ONLY OWNER CAN SEE - HTML COPY PROTECTED -->
-<div id="ownerSecretPanel" class="secretPanel">
-<div class="kaliPatti" style="background:red;color:#fff"><span>🔐 OWNER SECRET PANEL - सिर्फ आपको दिख रहा है जी - किसी और को नहीं जी</span><span id="ownerStatus">✅ Owner</span></div>
-<h3 style="color:red">✅ पुष्टि: ये HTML कॉपी सिर्फ आपको ही अधिकार है जी - किसी और को नहीं जी</h3>
-<p style="font-size:11px">Owner Mobile: 9992553796 | Staff: 141003 | इस पैनल में HTML कोड, मेंबर ट्री, पासवर्ड मैनेजमेंट है जी - ये किसी और के सामने खुलेगा ही नहीं जी - सिर्फ Owner Login से जी</p>
-<div style="background:#000;border:3px solid red;border-radius:10px;padding:10px;margin-top:8px">
-<label style="color:gold;font-size:12px;font-weight:900">📋 Live HTML Code - सिर्फ आपकी कॉपी जी - कोई और कॉपी नहीं कर सकता जी</label>
-<textarea id="htmlCodeArea" style="width:100%;height:200px;border:3px solid gold;border-radius:8px;padding:8px;font-size:10px;box-sizing:border-box" readonly></textarea>
-<div class="rowFlex" style="margin-top:8px"><button class="khBtn" onclick="copyOwnerHTML()" style="background:red;color:#fff;width:92%;padding:12px">📋 HTML कॉपी करो जी - सिर्फ आपका अधिकार जी - पुष्टि जी</button></div>
-<p style="color:#0f0;font-size:11px">✅ पुष्टि: आपने कॉपी किया तो ये आपके पास सुरक्षित है जी - किसी और के पास नहीं जाएगा जी - Owner Hash: <span id="hashShow"></span></p>
-</div>
-<div style="background:#fffaf0;border:3px solid gold;border-radius:10px;padding:10px;margin-top:10px">
-<h4>👥 मेंबर रिकॉर्डेड पेज - Owner Only जी</h4><div id="ownerMemberList" style="max-height:300px;overflow:auto;font-size:11px;border:2px solid #ccc;padding:8px;background:#fff"></div>
-</div>
+<!-- KYC + NOMINEE + ADMIN - SINGLE BOXES - PROPER PLACE -->
+<div class="dashboardBox" id="kycBox" style="border:4px solid #ff9800"><div class="kaliPatti"><span>💳 KYC - एक ही बॉक्स जी - अनन्त जी</span></div>
+<input type="text" id="kycName" class="inputLine" placeholder="नाम जी"><input type="text" id="kycUPI" class="inputLine" placeholder="UPI ID जी"><button class="khBtn" onclick="saveKYC()">💾 KYC सेव जी</button>
 </div>
 
+<div class="dashboardBox" id="nomineeBox" style="border:4px solid #00aa00">
+<div class="kaliPatti"><span>👨‍👩‍👧 नॉमिनी - एक ही बॉक्स जी - अनन्त जी</span></div>
+<input type="text" id="nomineeName" class="inputLine" placeholder="नॉमिनी नाम जी"><input type="text" id="nomineeRelation" class="inputLine" placeholder="रिश्ता जी"><button class="khBtn" onclick="saveNominee()">💾 नॉमिनी सेव जी</button>
+<div id="nomineeList" style="background:#fff;border:2px solid #00aa00;border-radius:10px;padding:8px;margin-top:8px;font-size:11px;color:#000;max-height:150px;overflow:auto"></div>
 </div>
+
+<div class="dashboardBox" id="adminBox" style="border:4px solid #9C27B0">
+<div class="kaliPatti"><span>👑 एडमिन - एक ही बॉक्स जी - अनन्त जी</span></div>
+<input type="text" id="adminName" class="inputLine" placeholder="एडमिन नाम जी"><input type="text" id="adminMobile" class="inputLine" placeholder="मोबाइल जी"><div class="rowFlex"><button class="khBtn" onclick="addAdmin()" style="background:#9C27B0;color:#fff">➕ एडमिन जोड़ो जी - एक ही बटन जी</button><button class="khBtn" onclick="removeAdmin()" style="background:red;color:#fff">➖ एडमिन हटाओ जी - एक ही बटन जी</button></div>
+<div id="adminList" style="background:#fff;border:2px solid #9C27B0;border-radius:10px;padding:8px;margin-top:8px;font-size:11px;color:#000;max-height:150px;overflow:auto"></div>
+</div>
+
+<!-- CUSTOM LINK ADD - SINGLE -->
+<div class="dashboardBox" id="customBox">
+<div class="kaliPatti"><span>➕ अनन्त कस्टम लिंक जोड़ो जी - एक ही बॉक्स जी</span></div>
+<input type="text" id="cTitle" class="inputLine" placeholder="टाइटल जी"><input type="text" id="cUrl" class="inputLine" placeholder="URL जी"><input type="text" id="cDesc" class="inputLine" placeholder="विवरण जी"><input type="text" id="cWork" class="inputLine" placeholder="काम जी"><input type="text" id="cBenefit" class="inputLine" placeholder="लाभ जी"><button class="khBtn" onclick="addCustomLink()" style="background:#000;color:gold">➕ एक ही बटन - जोड़ो जी - अनन्त जी</button><span id="customMsg" style="font-size:11px;color:#000;margin-left:8px"></span>
+</div>
+
+</div><!-- box end - proper place -->
 
 <script>
-function saveAPIKeys(){let px=document.getElementById('pexelsKey').value.trim(),pb=document.getElementById('pixabayKey').value.trim();if(px) localStorage.setItem('VEEDO_PEXELS_KEY',px);if(pb) localStorage.setItem('VEEDO_PIXABAY_KEY',pb);document.getElementById('apiMsg').innerText='✅ API Keys सेव हो गए जी - अब 6 इमेज + 4 वीडियो Pixels से आएंगे जी';speak('API की सेव जी');}
-function joinNow(){
- let n=document.getElementById('jName').value.trim(),m=document.getElementById('jMob').value.trim();
- if(n==''||m==''||m.length!=10){alert('नाम और 10 अंक मोबाइल भरो जी');return;}
- let chain=JSON.parse(localStorage.getItem('veedeohub_seniority_chain')||'[]');
- // check duplicate mobile
- if(chain.some(x=>x.mobile===m)){alert('इस मोबाइल से पहले जुड़ चुके हैं जी - रिकॉर्ड में है जी');return;}
- let refBy=new URLSearchParams(location.search).get('ref')||'DIRECT';
- let entry={name:n,mobile:m,date:new Date().toLocaleString(),refBy:refBy,id:chain.length+1};
- chain.push(entry);
- localStorage.setItem('veedeohub_seniority_chain',JSON.stringify(chain));
- document.getElementById('jMsg').innerText='✅ Join हो गया जी - ID '+entry.id+' - '+n;
- updateDashboard();renderMemberTree();speak(n+' जी जुड़ गए हैं जी');
-}
-function copyRef(){let v=document.getElementById('myRefLink').value;navigator.clipboard.writeText(v).then(()=>alert('कॉपी जी'));}function saveKYC(){let n=document.getElementById('kycName').value,u=document.getElementById('kycUpi').value,m=document.getElementById('kycMob').value;if(!u.includes('@')){alert('UPI में @ जरूरी जी');return;}if(n==''||u==''||m==''){alert('3 खाने भरो जी');return;}localStorage.setItem('veedeohub_kyc',JSON.stringify({name:n,upi:u,mobile:m}));document.getElementById('kycMsg').innerText='✅ KYC सेव जी';speak('केवायसी सेव जी');}
-function addNominee(){let n=document.getElementById('nomineeName').value,r=document.getElementById('nomineeRelation').value,mo=document.getElementById('nomineeMob').value;if(n==''){alert('नाम लिखो जी');return;}let list=JSON.parse(localStorage.getItem('veedeohub_nominees')||'[]');list.push({name:n,relation:r,mobile:mo});localStorage.setItem('veedeohub_nominees',JSON.stringify(list));renderNominees();speak(n+' नॉमिनी जी');}
-function renderNominees(){let list=JSON.parse(localStorage.getItem('veedeohub_nominees')||'[]');let div=document.getElementById('nomineeList');div.innerHTML=list.length==0?'कोई नहीं':list.map((x,i)=>`${i+1}. ${x.name}-${x.relation}-${x.mobile}`).join('<br>');}
-function addAdmin(){let n=document.getElementById('adminName').value,e=document.getElementById('adminEmail').value,ro=document.getElementById('adminRole').value;if(n==''){alert('नाम लिखो जी');return;}let list=JSON.parse(localStorage.getItem('veedeohub_admins')||'[]');list.push({name:n,email:e,role:ro});localStorage.setItem('veedeohub_admins',JSON.stringify(list));renderAdmins();}
-function removeAdmin(){let e=document.getElementById('adminEmail').value;let list=JSON.parse(localStorage.getItem('veedeohub_admins')||'[]');let f=list.filter(x=>x.email!=e);localStorage.setItem('veedeohub_admins',JSON.stringify(f));renderAdmins();}
-function renderAdmins(){let list=JSON.parse(localStorage.getItem('veedeohub_admins')||'[]');let div=document.getElementById('adminList');div.innerHTML=list.length==0?'कोई नहीं':list.map((x,i)=>`${i+1}. ${x.name}-${x.email}-${x.role}`).join('<br>');}
-function updateDashboard(){let chain=JSON.parse(localStorage.getItem('veedeohub_seniority_chain')||'[]');let earnings=JSON.parse(localStorage.getItem('veedeohub_earnings')||'[]');let total=chain.length;let sum=earnings.reduce((a,b)=>a+(b.amount||0),0);let tds=Math.floor(sum*0.1);let net=sum-tds;document.getElementById('dashTotal').innerText=total;document.getElementById('refCount').innerText=total;document.getElementById('dashEarn').innerText=sum;document.getElementById('dashTDS').innerText=tds;document.getElementById('dashNet').innerText=net;}
-function addDummyEarn(){let e=JSON.parse(localStorage.getItem('veedeohub_earnings')||'[]');e.push({amount:100,month:new Date().toLocaleDateString()});localStorage.setItem('veedeohub_earnings',JSON.stringify(e));updateDashboard();renderTDS();}
-function renderTDS(){let earnings=JSON.parse(localStorage.getItem('veedeohub_earnings')||'[]');let tb=document.getElementById('tdsTable');if(earnings.length==0){tb.innerHTML='<tr><td>जनवरी</td><td>₹0</td><td>₹0</td><td>₹0</td><td>0%</td></tr>';return;}tb.innerHTML=earnings.map(x=>`<tr><td>${x.month}</td><td>₹${x.amount}</td><td>₹${Math.floor(x.amount*0.1)}</td><td>₹${x.amount-Math.floor(x.amount*0.1)}</td><td>10%</td></tr>`).join('');}
-function exportTDS(){let d=localStorage.getItem('veedeohub_earnings')||'[]';let b=new Blob([d],{type:'application/json'});let u=URL.createObjectURL(b);let a=document.createElement('a');a.href=u;a.download='tds.json';a.click();}
-function exportMembers(){let d=localStorage.getItem('veedeohub_seniority_chain')||'[]';let b=new Blob([d],{type:'application/json'});let u=URL.createObjectURL(b);let a=document.createElement('a');a.href=u;a.download='members.json';a.click();}
-function showMemberTree(){document.getElementById('memberTreeBox').style.display='block';renderMemberTree();}
-function renderMemberTree(){
- let chain=JSON.parse(localStorage.getItem('veedeohub_seniority_chain')||'[]');
- let div=document.getElementById('memberTreeList');
- let ownerDiv=document.getElementById('ownerMemberList');
- let html='';
- if(chain.length==0){html='कोई मेंबर नहीं जी - अभी तक 0 मेंबर जी';}
- else{
-  html=`<b>कुल मेंबर: ${chain.length} जी</b><br><br>`;
-  chain.forEach((m,i)=>{
-   let indent=''.padStart(i%5,'—');
-   html+=`${indent} ${m.id}. ${m.name} - ${m.mobile} - ${m.date} - Ref: ${m.refBy}<br>`;
-  });
-  // tree view
-  html+=`<br><b>🌳 ट्री - कौन किसके बाद जुड़ा जी:</b><br>`;
-  chain.forEach((m,i)=>{
-   html+=`${i==0?'🌳 ROOT':('&nbsp;&nbsp;'.repeat(Math.min(i,4))+'└─')} ${m.name} (${m.mobile}) - ${m.date}<br>`;
-  });
- }
- if(div) div.innerHTML=html;
- if(ownerDiv) ownerDiv.innerHTML=html;
- document.getElementById('hashShow').innerText=getOwnerHash().substring(0,12)+'... - सिर्फ Owner को पता जी';
-}
-function showImages(){ let grid=document.getElementById('imageGrid');
- let vgrid=document.getElementById('videoGrid');
- // 6 images from Pexels static with API key note
- grid.innerHTML=`<img src="https://images.pexels.com/photos/7728087/pexels-photo-7728087.jpeg?w=300" class="imageBox" onclick="speak('हनुमान जी')" title="API: ${VEEDO_CONFIG.PEXELS_API_KEY.substring(0,8)}"><img src="https://images.pexels.com/photos/10853719/pexels-photo-10853719.jpeg?w=300" class="imageBox"><img src="https://images.pexels.com/photos/6716292/pexels-photo-6716292.jpeg?w=300" class="imageBox"><img src="https://images.pexels.com/photos/4050316/pexels-photo-4050316.jpeg?w=300" class="imageBox"><img src="https://images.pexels.com/photos/1638280/pexels-photo-1638280.jpeg?w=300" class="imageBox"><img src="https://images.pexels.com/photos/1846422/pexels-photo-1846422.jpeg?w=300" class="imageBox">`;
- vgrid.innerHTML=`<video src="https://videos.pexels.com/video-files/18069234/18069234-uhd_1440_1440_24fps.mp4" muted loop autoplay playsinline class="imageBox" title="Muted बिना आवाज जी"></video><video src="https://videos.pexels.com/video-files/855282/855282-hd_1920_1080_25fps.mp4" muted loop autoplay playsinline class="imageBox"></video><video src="https://videos.pexels.com/video-files/1409899/1409899-uhd_2560_1440_30fps.mp4" muted loop autoplay playsinline class="imageBox"></video><video src="https://videos.pexels.com/video-files/3202634/3202634-hd_1920_1080_25fps.mp4" muted loop autoplay playsinline class="imageBox"></video>`;
-}
+// ALL LINKS - DEDUPED - SINGLE - ANANT - NO 57 TEXT IN SPEECH
 let allLinks=[
 {no:1,title:'Google Chrome App',btnText:'Chrome में खोलें',url:'https://play.google.com/store/apps/details?id=com.android.chrome',desc:'Chrome - सबसे पहले',work:'Browser',benefit:'फ्री तेज'},
-{no:2,title:'Flipkart Book',btnText:'Flipkart Book',url:'https://www.flipkart.com/product/p/itme?pid=9789362494184',desc:'किताब Flipkart',work:'खरीदो',benefit:'ज्ञान'},
-{no:3,title:'Amazon Book',btnText:'Amazon Book',url:'https://www.amazon.in/dp/B0GZB61NNR',desc:'किताब Amazon',work:'खरीदो',benefit:'ज्ञान'},
+{no:2,title:'【entity-Flipkart¦canonical_name=Flipkart】 Book',btnText:'【entity-Flipkart¦canonical_name=Flipkart】 Book',url:'https://www.flipkart.com/product/p/itme?pid=9789362494184',desc:'किताब 【entity-Flipkart¦canonical_name=Flipkart】',work:'खरीदो',benefit:'ज्ञान'},
+{no:3,title:'【entity-Amazon¦canonical_name=Amazon】 Book',btnText:'【entity-Amazon¦canonical_name=Amazon】 Book',url:'https://www.amazon.in/dp/B0GZB61NNR',desc:'किताब 【entity-Amazon¦canonical_name=Amazon】',work:'खरीदो',benefit:'ज्ञान'},
 {no:4,title:'Dreambook Product',btnText:'Dreambook Product',url:'https://www.dreambookpublishing.com/product/ayurvedic-jadi-bootiyan-upyog-aur-labh',desc:'Product',work:'देखो',benefit:'रॉयल्टी'},
-{no:5,title:'Dreambook Publishing',btnText:'Dreambook Publishing',url:'https://www.dreambookpublishing.com/',desc:'Publishing',work:'छापो',benefit:'लेखक'},
-{no:6,title:'Meta AI App',btnText:'Meta AI App',url:'https://play.google.com/store/apps/details?id=com.facebook.stella',desc:'Meta AI',work:'AI पूछो',benefit:'फ्री'},
+{no:5,title:'Dreambook Publishing',btnText:'Dreambook Publishing',url:'https://www.dreambookpublishing.com/',desc:'Publishing',work:'छापो',benefit:'लेखक'},{no:6,title:'Meta AI App',btnText:'Meta AI App',url:'https://play.google.com/store/apps/details?id=com.facebook.stella',desc:'Meta AI',work:'AI पूछो',benefit:'फ्री'},
 {no:7,title:'InShot Video Editor',btnText:'InShot',url:'https://play.google.com/store/apps/details?id=com.camerasideas.instashot',desc:'InShot',work:'एडिट',benefit:'वॉटरमार्क नहीं'},
 {no:8,title:'FotoPlay Slideshow',btnText:'FotoPlay',url:'https://play.google.com/store/apps/details?id=videoeditor.videomaker.slideshow.fotoplay',desc:'FotoPlay',work:'स्लाइडशो',benefit:'भजन'},
 {no:9,title:'Text to Audio',btnText:'Text to Audio',url:'https://play.google.com/store/apps/details?id=text.to.audio.app',desc:'Text to Audio',work:'सुनो',benefit:'ऑडियो'},
@@ -299,14 +207,14 @@ let allLinks=[
 {no:16,title:'Flowmusic Playlist ॐ नमः शिवाय',btnText:'Flowmusic Playlist',url:'https://www.flowmusic.app/playlist/54799c5c-6fe7-4e88-97a7-0a1b82be13ae',desc:'ॐ नमः शिवाय',work:'भजन सुनो',benefit:'शिव भक्ति'},
 {no:17,title:'My Tube Playlist',btnText:'My Tube',url:'https://youtube.com/playlist?list=PLF1nrtSu2Dd8IjpcDmTsr68e-nWic_Qd1',desc:'My Tube',work:'प्लेलिस्ट',benefit:'भक्ति'},
 {no:18,title:'Facebook Profile',btnText:'Facebook Profile',url:'https://facebook.com/veedeohub.in',desc:'FB Profile',work:'जुड़ो',benefit:'फॉलो'},
-{no:19,title:'Instagram',btnText:'Instagram',url:'https://instagram.com/veedeohub',desc:'Insta',work:'Reels',benefit:'जुड़ो'},{no:20,title:'Threads App',btnText:'Threads',url:'https://threads.net/@veedeohub',desc:'Threads',work:'जुड़ो',benefit:'नया'},
+{no:19,title:'Instagram',btnText:'Instagram',url:'https://instagram.com/veedeohub',desc:'Insta',work:'Reels',benefit:'जुड़ो'},
+{no:20,title:'Threads App',btnText:'Threads',url:'https://threads.net/@veedeohub',desc:'Threads',work:'जुड़ो',benefit:'नया'},
 {no:21,title:'ChatGPT App',btnText:'ChatGPT',url:'https://play.google.com/store/apps/details?id=com.openai.chatgpt',desc:'ChatGPT',work:'लिखवाओ',benefit:'AI'},
 {no:22,title:'Google Gemini App',btnText:'Gemini',url:'https://play.google.com/store/apps/details?id=com.google.android.apps.bard',desc:'Gemini',work:'मदद',benefit:'गूगल AI'},
 {no:23,title:'Facebook Page',btnText:'FB Page',url:'https://facebook.com/veedeohub',desc:'FB Page',work:'लाइक',benefit:'All Life'},
 {no:24,title:'Jio App',btnText:'Jio App',url:'https://play.google.com/store/apps/details?id=com.jio.myjio',desc:'Jio',work:'रिचार्ज',benefit:'बचाओ'},
 {no:25,title:'Google Ad',btnText:'Ad System',url:'https://www.google.com/search?q=ca-pub-ASHOK54994',desc:'Ad System',work:'विज्ञापन',benefit:'AdSense'},
-{no:26,title:'YouTube भजन रेफरल',btnText:'YouTube रेफरल',url:'https://www.youtube.com/@veedeohub?sub_confirmation=1&ref=ASHOK54994',desc:'YouTube रेफरल',work:'सब्सक्राइब',benefit:'लाभ'},
-{no:27,title:'SUNO App',btnText:'SUNO',url:'https://suno.com/@veedeohub?ref=ASHOK54994',desc:'SUNO AI गाना',work:'गाना बनाओ',benefit:'रेफरल'},
+{no:26,title:'YouTube भजन रेफरल',btnText:'YouTube रेफरल',url:'https://www.youtube.com/@veedeohub?sub_confirmation=1&ref=ASHOK54994',desc:'YouTube रेफरल',work:'सब्सक्राइब',benefit:'लाभ'},{no:27,title:'SUNO App',btnText:'SUNO',url:'https://suno.com/@veedeohub?ref=ASHOK54994',desc:'SUNO AI गाना',work:'गाना बनाओ',benefit:'रेफरल'},
 {no:28,title:'FlowMusic Labs',btnText:'FlowMusic Labs',url:'https://labs.google/fx/tools/flow?ref=veedeohub-ashok',desc:'FlowMusic Labs',work:'AI म्यूजिक',benefit:'फ्री'},
 {no:29,title:'Amazon Affiliate',btnText:'Amazon टैग',url:'https://www.amazon.in/?tag=ashok0499-21',desc:'Amazon टैग ashok0499-21',work:'खरीदो',benefit:'Affiliate'},
 {no:30,title:'Flipkart Affiliate',btnText:'Flipkart ID',url:'https://www.flipkart.com/?affid=ashok54994',desc:'Flipkart ID ashok54994',work:'खरीदो',benefit:'Affiliate'},
@@ -325,17 +233,14 @@ let allLinks=[
 {no:43,title:'LIVE Joining Form',btnText:'LIVE Joining 43',url:'#',desc:'LIVE Joining All Life फ्री',work:'Form भरो',benefit:'All Life'},
 {no:44,title:'Refer & Earn',btnText:'Refer & Earn 44',url:'#',desc:'Refer Earn',work:'रेफर',benefit:'% बढ़ेगा'},
 {no:45,title:'लाभ Dashboard TDS',btnText:'Dashboard 45',url:'#',desc:'Dashboard TDS 10%',work:'Dashboard देखो',benefit:'हिसाब ऑटो'},
-{no:46,title:'सभी बटन लिस्ट 57',btnText:'बटन लिस्ट 46',url:'#',desc:'57 बटन लिस्ट',work:'खोजो',benefit:'आसान'},
+{no:46,title:'सभी बटन लिस्ट अनन्त',btnText:'बटन लिस्ट अनन्त',url:'#',desc:'अनन्त बटन लिस्ट',work:'खोजो',benefit:'आसान'},
 {no:47,title:'कानूनन सेफ',btnText:'कानूनन सेफ 47',url:'#',desc:'कानूनन सेफ',work:'कानून पढ़ो',benefit:'सुरक्षित'},
 {no:48,title:'UPI KYC 3 खाने',btnText:'KYC 48',url:'#kycBox',desc:'KYC 3 खाने',work:'KYC भरो',benefit:'UPI में पैसा'},
 {no:49,title:'नॉमिनी जोड़ो',btnText:'नॉमिनी 49',url:'#nomineeBox',desc:'नॉमिनी सुरक्षा',work:'जोड़ो',benefit:'सुरक्षा'},
-{no:50,title:'एडमिन जोड़ो',btnText:'एडमिन जोड़ो 50',url:'#adminBox',desc:'एडमिन जोड़ो',work:'जोड़ो',benefit:'Admin'},
-{no:51,title:'एडमिन हटाओ',btnText:'एडमिन हटाओ 51',url:'#adminBox',desc:'एडमिन हटाओ',work:'हटाओ',benefit:'मैनेज'},
-{no:52,title:'Google Drive Store',btnText:'Drive 52',url:'https://drive.google.com',desc:'Drive pdf mp3 mp4',work:'Store',benefit:'Drive'},{no:53,title:'Veedeohub - Shiv Bhakti Dhara',btnText:'Veedeohub - Shiv Bhakti Dhara',url:'https://youtube.com/playlist?list=PLV3dghURhnHY',desc:'Shiv Bhakti Dhara YouTube लाल',work:'शिव भक्ति सुनो',benefit:'भक्ति'},
-{no:54,title:'Veedeohub',btnText:'Veedeohub',url:'https://youtube.com/playlist?list=PLF1nrtSu2Dd8IjpcDmTsr68e-nWic_Qd1',desc:'Veedeohub YouTube लाल',work:'भजन सुनो',benefit:'भक्ति'},
-{no:55,title:'【entity-Invideo AI App¦canonical_name=Invideo AI】',btnText:'Invideo AI 55',url:'https://play.google.com/store/apps/details?id=io.invideo.ai',desc:'Invideo Script to Auto Video',work:'AI Video Maker',benefit:'ऑटो वीडियो'},
-{no:56,title:'साइट सहयोग UPI QR',btnText:'सहयोग 56',url:'#supportUPIBox',desc:'सहयोग UPI QR 9992553796@ybl',work:'Support',benefit:'सहयोग'},
-{no:57,title:'अनन्त लिंक TV 6 बॉक्स',btnText:'अनन्त लिंक 57',url:'#anantBox',desc:'अनन्त लिंक 6 बॉक्स TV',work:'6 खाने भरो',benefit:'अनन्त'}
+{no:50,title:'एडमिन जोड़ो',btnText:'एडमिन जोड़ो 50',url:'#adminBox',desc:'एडमिन जोड़ो',work:'जोड़ो',benefit:'Admin'},{no:51,title:'Google Drive Store',btnText:'Drive 52',url:'https://drive.google.com',desc:'Drive pdf mp3 mp4',work:'Store',benefit:'Drive'},
+{no:52,title:'Invideo AI App',btnText:'Invideo AI 55',url:'https://play.google.com/store/apps/details?id=io.invideo.ai',desc:'Invideo Script to Auto Video',work:'AI Video Maker',benefit:'ऑटो वीडियो'},
+{no:53,title:'साइट सहयोग UPI QR',btnText:'सहयोग 56',url:'#supportUPIBox',desc:'सहयोग UPI QR 9992553796@ybl',work:'Support',benefit:'सहयोग'},
+{no:54,title:'अनन्त लिंक TV 6 बॉक्स',btnText:'अनन्त लिंक 57',url:'#anantBox',desc:'अनन्त लिंक 6 बॉक्स TV',work:'6 खाने भरो',benefit:'अनन्त'}
 ];
 
 function renderButtons(list){
@@ -363,228 +268,494 @@ function goToNum(){
  let v=document.getElementById('btnNumberSearch').value||document.getElementById('listSearch').value;
  if(!v){alert('नंबर डालो जी');return;}
  let num=parseInt(v);
- let el=document.getElementById('btn-'+num);
- if(el){el.scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('listSearch').value=num;filterButtons();speak('बटन नंबर '+num+' ऊपर आ गया जी');}
+ let el=document.getElementById('btn-'+num); if(el){el.scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('listSearch').value=num;filterButtons();speak('बटन नंबर '+num+' ऊपर आ गया जी');}
  else alert('बटन '+num+' नहीं मिला जी');
 }
 function addCustomLink(){let t=document.getElementById('cTitle').value.trim(),u=document.getElementById('cUrl').value.trim(),d=document.getElementById('cDesc').value.trim(),w=document.getElementById('cWork').value.trim(),b=document.getElementById('cBenefit').value.trim();if(t==''||u==''){alert('टाइटल URL भरो जी');return;}let newNo=allLinks.length+1;let newLink={no:newNo,title:t,btnText:t,url:u,desc:d||t,work:w||'Custom',benefit:b||'अनन्त लाभ'};let stored=JSON.parse(localStorage.getItem('veedeo_custom_links')||'[]');stored.push(newLink);localStorage.setItem('veedeo_custom_links',JSON.stringify(stored));allLinks.push(newLink);document.getElementById('customMsg').innerText='✅ जोड़ा जी '+newNo;renderButtons(allLinks);speak(t+' जोड़ दिया जी');}
 
-window.onload=function(){
- showImages(); let custom=JSON.parse(localStorage.getItem('veedeo_custom_links')||'[]');allLinks=allLinks.concat(custom);
- renderButtons(allLinks);
- filterButtons();
- document.getElementById('myRefLink').value="https://veedeohub-ashok.vercel.app?ref=ASHOK"+Math.floor(Math.random()*90000+10000);
- let px=localStorage.getItem('VEEDO_PEXELS_KEY')||'';let pb=localStorage.getItem('VEEDO_PIXABAY_KEY')||'';
- document.getElementById('pexelsKey').value=px;document.getElementById('pixabayKey').value=pb;
- renderNominees();renderAdmins();updateDashboard();renderTDS();renderMemberTree();
- if(isOwnerLogged()) showOwnerPanel();
+// SINGLE VERSION FUNCTIONS - 14,15,16 MERGED - NO DUPLICATE - ANANT
+function updateAdvancedTDS(){
+ let bal=parseInt(localStorage.getItem('veedoo_wallet_balance')||'0');
+ let tds=Math.floor(bal*0.10);
+ let net=bal-tds;
+ let elBal=document.getElementById('dashTotal'); if(elBal) elBal.innerText='₹'+bal;
+ let elTDS=document.getElementById('dashTDS'); if(elTDS) elTDS.innerText='₹'+tds;
+ let elNet=document.getElementById('dashNet'); if(elNet) elNet.innerText='₹'+net;
 }
-</script>
-</body>
-</html><!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Veedeohub SECURE FINAL - Ashok - Password Protected HTML + Member Tree + Auto Search</title>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3922664797100594" crossorigin="anonymous"></script>
-<script>
-const VEEDO_CONFIG={
- PEXELS_API_KEY: localStorage.getItem('VEEDO_PEXELS_KEY')||'YOUR_PEXELS_KEY',
- PIXABAY_API_KEY: localStorage.getItem('VEEDO_PIXABAY_KEY')||'YOUR_PIXABAY_KEY',
- API_KEY: localStorage.getItem('VEEDO_API_KEY')||'YOUR_SECRET_KEY_ASHOK54994'
-};
-function speak(t){try{speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang='hi-IN';u.rate=0.95;speechSynthesis.speak(u);}catch(e){}}
-function startMic(id){try{let r=new (window.SpeechRecognition||window.webkitSpeechRecognition)();r.lang='hi-IN';r.onresult=e=>{document.getElementById(id).value=e.results[0][0].transcript; if(id=='mainSearch') showImages(); if(id=='listSearch') filterButtons(); if(id=='btnNumberSearch') goToNum();};r.start();}catch(e){alert('Mic Chrome में खोलो जी');}}
-// OWNER PASSWORD SYSTEM - SECURE
-function getOwnerHash(){return localStorage.getItem('veedoo_owner_hash')||btoa('9992553796');}
-function isOwnerLogged(){return sessionStorage.getItem('veedoo_owner_session')==='YES';}
-function ownerLogin(){
- let p=prompt('Owner पासवर्ड डालो जी - सिर्फ आपको ही HTML कॉपी दिखेगा जी');
- if(!p) return;
- if(btoa(p)===getOwnerHash()){
-  sessionStorage.setItem('veedoo_owner_session','YES');
-  alert('✅ Owner लॉगिन हो गया जी - अब आपको ही HTML कॉपी और मेंबर ट्री दिखेगा जी');
-  showOwnerPanel();
- }else alert('❌ गलत पासवर्ड जी');
+function renderMemberTree(){
+ let chain=JSON.parse(localStorage.getItem('veedeohub_seniority_chain')||'[]');
+ let refMap=JSON.parse(localStorage.getItem('veedoo_ref_map')||'{}');
+ let html=chain.map((m,i)=>{
+   let ref=refMap[m.mobile]||m.myRef||'ASHOK...';
+   return `<div style="padding:7px;border-bottom:1px solid #ddd;display:flex;justify-content:space-between"><span><b>${i+1}</b>. ${m.name||'नाम'} - ${m.mobile||''}</span><span style="background:gold;padding:2px 6px;border-radius:6px;font-weight:900">${ref}</span></div>`;
+ }).join('');
+ if(!html) html='कोई मेंबर नहीं जी - अभी JOIN नहीं हुआ जी - अनन्त जी';
+ let el=document.getElementById('memberTreeList'); if(el) el.innerHTML=html;
+ let box=document.getElementById('memberTreeBox'); if(box) box.style.display='block';
 }
-function showOwnerPanel(){
- if(!isOwnerLogged()){document.getElementById('ownerSecretPanel').style.display='none'; return;}
- document.getElementById('ownerSecretPanel').style.display='block';
- document.getElementById('ownerStatus').innerText='✅ Owner लॉगिन है जी - सिर्फ आपको दिख रहा है जी';
- let htmlCode=document.documentElement.outerHTML;
- document.getElementById('htmlCodeArea').value=htmlCode.substring(0,200000);
+function exportMembers(){
+ let chain=JSON.parse(localStorage.getItem('veedeohub_seniority_chain')||'[]');
+ let txt=JSON.stringify(chain,null,2);
+ let blob=new Blob([txt],{type:'application/json'});
+ let a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='Veedeohub_Anant_Member_Tree_Single.json'; a.click();
 }
-function createNewPassword(){
- let oldP=prompt('पुराना पासवर्ड डालो जी (पहली बार 9992553796)');
- if(btoa(oldP||'')!==getOwnerHash() && localStorage.getItem('veedoo_owner_hash')){alert('पुराना गलत जी');return;}
- let newP=prompt('नया पासवर्ड बनाओ जी - याद रखना जी');
- if(!newP||newP.length<4){alert('कम से कम 4 अक्षर जी');return;}
- let confirmP=prompt('नया पासवर्ड फिर डालो जी');
- if(newP!==confirmP){alert('मिलान नहीं जी');return;}
- localStorage.setItem('veedoo_owner_hash',btoa(newP));
- alert('✅ नया पासवर्ड बन गया जी');
- sessionStorage.setItem('veedoo_owner_session','YES');
- showOwnerPanel();
+function showFraudLogs(){
+ let logs=JSON.parse(localStorage.getItem('veedoo_sms_logs')||'[]');
+ let fraud=JSON.parse(localStorage.getItem('veedoo_fraud_logs')||'[]');
+ let all=logs.concat(fraud).slice(-20).reverse();
+ let el=document.getElementById('fraudLog'); if(!el) return;
+ if(all.length==0){el.innerHTML='कोई फ्रॉड नहीं जी ✅ - एक ही लॉग बॉक्स जी - अनन्त जी'; return;}
+ el.innerHTML=all.map(l=>`<div style="padding:4px;border-bottom:1px solid #333">${l.time||''} - ${l.mobile||''} - ${l.referral||''}</div>`).join('');
 }
-function removePassword(){
- if(!isOwnerLogged()){alert('पहले Owner लॉगिन करो जी');return;}
- if(confirm('पासवर्ड हटाना है जी?')){
-  localStorage.removeItem('veedoo_owner_hash');
-  sessionStorage.removeItem('veedoo_owner_session');
-  alert('हटा दिया जी');
-  document.getElementById('ownerSecretPanel').style.display='none';
- }
+function saveAnantLinks(){
+ for(let i=1;i<=6;i++){localStorage.setItem('anant_link_'+i,document.getElementById('anant'+i).value);localStorage.setItem('anant_title_'+i,document.getElementById('anant'+i+'Title').value);}
+ alert('✅ अनन्त लिंक सेव हो गए जी - 6 खाने जी');
 }
-function copyOwnerHTML(){
- if(!isOwnerLogged()){alert('Owner लॉगिन करो जी');return;}
- let txt=document.getElementById('htmlCodeArea').value;
- navigator.clipboard.writeText(txt).then(()=>{alert('✅ HTML कॉपी हो गया जी');});
+function loadAnantLinks(){ for(let i=1;i<=6;i++){document.getElementById('anant'+i).value=localStorage.getItem('anant_link_'+i)||'';document.getElementById('anant'+i+'Title').value=localStorage.getItem('anant_title_'+i)||'';}
+ alert('✅ अनन्त लिंक लोड हो गए जी');
 }
-</script>
-<style>
-body{background:#0a1628;color:#f5e6a3;font-family:Arial;margin:0;text-align:center}
-.box{max-width:570px;margin:auto;padding:10px}
-.top{border:4px solid gold;background:#000;padding:14px;margin:8px;border-radius:14px}
-.qrBox{background:#fff;padding:12px;border-radius:14px;display:inline-block;border:4px solid gold;margin:10px}
-.khSearch{width:55%;padding:12px;border:3px solid gold;border-radius:12px;font-weight:800}
-.khBtn{padding:9px 13px;border-radius:10px;background:gold;color:#000;font-weight:900;border:2px solid #000;margin:3px;cursor:pointer;font-size:12px}
-.micBtn{background:#000;color:gold;border:2px solid gold;border-radius:10px;padding:8px 10px;font-weight:900;cursor:pointer}
-.speakerBtn{background:#111;color:#0f0;border:2px solid #0f0;border-radius:10px;padding:8px 10px;font-weight:900;cursor:pointer}
-.ownerBtn{background:#ff0000;color:#fff;border:3px solid gold;border-radius:10px;padding:10px 14px;font-weight:900;cursor:pointer}
-.imageBox{width:100%;height:88px;object-fit:cover;border:2px solid gold;border-radius:10px;background:#000;cursor:pointer}
-.kaliPatti{background:#000;color:#FFD700;padding:8px;border-radius:8px;font-weight:900;font-size:12px;border:2px solid gold;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-.btnCard{background:#fff8dc;border:3px solid #ff9800;border-radius:14px;padding:12px;margin:12px 0;text-align:left;position:relative}
-.btnCard a{display:block;padding:14px;border-radius:10px;text-decoration:none;font-weight:900;border:2px solid gold;text-align:center;margin-top:6px}
-.detailBox{background:#fff;color:#000;border-radius:8px;padding:8px;margin-top:8px;font-size:11px;line-height:1.6;border:2px solid #ccc}
-.dashboardBox{background:#fff;color:#000;border:4px solid #00aa00;border-radius:16px;padding:14px;margin:16px 0;text-align:left}
-.inputLine{width:90%;padding:11px;border:3px solid gold;border-radius:10px;margin:6px 0;font-weight:700;font-size:13px}
-.rowFlex{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;align-items:center}
-.goldenLine{background:linear-gradient(90deg,#000,#332200,#000);border:4px solid gold;border-radius:16px;padding:12px;margin:12px 0;color:#FFD700;font-weight:900;font-size:13px}
-.secretPanel{display:none;background:#fff;color:#000;border:5px solid red;border-radius:16px;padding:14px;margin:14px 0;text-align:left}
-</style>
-</head>
-<body>
-<div class="box">
-
-<div class="top">
-<h2 style="color:gold;margin:8px 0">JAI MATA KI | VEEDEOHUB - SECURE</h2>
-<p style="color:gold;font-size:11px">Ashok Kumar 141003 | Tauru Nuh | 9992553796 | Owner Protected</p>
-<div class="qrBox"><img src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=https://veedeohub-ashok.vercel.app" style="width:250px"></div>
-<div class="rowFlex" style="margin-top:10px">
-<button class="ownerBtn" onclick="ownerLogin()">🔐 Owner Login जी</button>
-<button class="khBtn" onclick="createNewPassword()" style="background:#000;color:gold">🔑 नया पासवर्ड बनाओ जी</button>
-<button class="khBtn" onclick="removePassword()" style="background:red;color:#fff">🗑️ पासवर्ड हटाओ जी</button>
-</div>
-<p id="ownerStatus" style="color:#0f0;font-size:11px"></p>
-<div id="ownerSecretPanel" class="secretPanel">
-<h4>🔐 Owner Secret Panel - सिर्फ आपको जी</h4>
-<textarea id="htmlCodeArea" style="width:95%;height:200px"></textarea>
-<div class="rowFlex"><button class="khBtn" onclick="copyOwnerHTML()">📋 HTML कॉपी करो जी - सिर्फ आपको अधिकार जी</button></div>
-</div>
-</div><div class="goldenLine">
-🔍 Auto Search Images + Auto Search Buttons + Auto Number Go जी - बोलकर भी खोजो जी
-<div class="rowFlex" style="margin-top:8px">
-<input id="mainSearch" class="khSearch" placeholder="इमेज खोजो जी - जैसे Shiv, Ayurveda" oninput="showImages()">
-<button class="micBtn" onclick="startMic('mainSearch')">🎤 बोलो जी</button>
-<button class="speakerBtn" onclick="speak(document.getElementById('mainSearch').value)">🔊 सुनो जी</button>
-</div>
-<div id="imageGrid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:10px"></div>
-<div class="rowFlex" style="margin-top:10px">
-<input id="listSearch" class="khSearch" placeholder="बटन खोजो जी - जैसे Shiv, UPI, KYC" oninput="filterButtonsAuto()">
-<button class="micBtn" onclick="startMic('listSearch')">🎤</button>
-<button class="speakerBtn" onclick="speak(document.getElementById('listSearch').value)">🔊</button>
-</div>
-<div class="rowFlex" style="margin-top:6px">
-<input id="btnNumberSearch" type="number" class="khSearch" style="width:30%" placeholder="नंबर डालो जी 1-57" oninput="goToNum()">
-<button class="khBtn" onclick="goToNum()">🔢 नंबर पर जाओ जी</button>
-<button class="speakerBtn" onclick="speak('बटन नंबर '+document.getElementById('btnNumberSearch').value)">🔊</button>
-</div>
-<div id="buttonList" style="background:#fff;color:#000;border-radius:10px;padding:8px;margin-top:8px;max-height:200px;overflow:auto;text-align:left;font-size:11px"></div>
-</div>
-
-<div style="background:#fff;border:4px solid gold;border-radius:16px;padding:12px;margin:12px 0;text-align:left">
-<h4 style="color:#000;margin:0">➕ Custom Link जोड़ो जी - अपना बटन बनाओ जी</h4>
-<input id="cTitle" class="inputLine" placeholder="टाइटल डालो जी">
-<input id="cUrl" class="inputLine" placeholder="URL डालो जी https://">
-<input id="cDesc" class="inputLine" placeholder="विवरण डालो जी">
-<input id="cWork" class="inputLine" placeholder="काम डालो जी">
-<input id="cBenefit" class="inputLine" placeholder="लाभ डालो जी">
-<div class="rowFlex"><button class="khBtn" onclick="addCustomLink()">➕ जोड़ो जी</button><span id="customMsg" style="color:green;font-size:11px"></span></div>
-</div>
-
-<div id="linkContainer"></div>
-
-<div style="background:#fff;border:4px solid gold;border-radius:16px;padding:12px;margin:14px 0;text-align:left">
-<h4 style="color:#000">🔗 मेरी रेफरल लिंक जी - शेयर करो जी</h4>
-<input id="myRefLink" class="inputLine" readonly>
-<div class="rowFlex">
-<button class="khBtn" onclick="navigator.clipboard.writeText(document.getElementById('myRefLink').value).then(()=>alert('कॉपी हो गया जी'))">📋 कॉपी करो जी</button>
-<button class="khBtn" onclick="window.open('https://wa.me/?text='+encodeURIComponent(document.getElementById('myRefLink').value),'_blank')" style="background:#25D366;color:#fff">💬 WhatsApp शेयर जी</button>
-</div>
-</div><div style="background:#000;border:3px solid gold;border-radius:12px;padding:10px;margin:12px 0">
-<h4 style="color:gold;margin:0">⚙️ Pexels + Pixabay API Key सेट करो जी</h4>
-<input id="pexelsKey" class="inputLine" placeholder="Pexels API Key डालो जी">
-<input id="pixabayKey" class="inputLine" placeholder="Pixabay API Key डालो जी">
-<div class="rowFlex">
-<button class="khBtn" onclick="localStorage.setItem('VEEDO_PEXELS_KEY',document.getElementById('pexelsKey').value);localStorage.setItem('VEEDO_PIXABAY_KEY',document.getElementById('pixabayKey').value);alert('सेव हो गया जी')">💾 सेव करो जी</button>
-</div>
-</div>
-
-<!-- बाकी Dashboard, TDS, Member Tree, KYC, Support सब इसी फाइल में है जी - पूरा कोड ऊपर वाली फाइल में है जी -->
-
-<script>
-let allLinks=[
-{no:1,title:'Durga Stuti',btnText:'Durga Stuti',url:'https://youtube.com/playlist?list=PLxyz',desc:'Durga Bhakti',work:'भजन सुनो',benefit:'भक्ति'},
-{no:42,title:'मेरी अपनी साइट रेफरल',btnText:'अपनी साइट रेफरल',url:'https://veedeohub-ashok.vercel.app?ref=ASHOK54994',desc:'अपनी साइट रेफरल ऑटो %',work:'शेयर',benefit:'ऑटो %'},
-{no:43,title:'LIVE Joining Form',btnText:'LIVE Joining 43',url:'#',desc:'LIVE Joining All Life फ्री',work:'Form भरो',benefit:'All Life'},
-{no:44,title:'Refer & Earn',btnText:'Refer & Earn 44',url:'#',desc:'Refer Earn',work:'रेफर',benefit:'% बढ़ेगा'},
-{no:56,title:'साइट सहयोग UPI QR',btnText:'सहयोग 56',url:'#supportUPIBox',desc:'सहयोग UPI QR 9992553796@ybl',work:'Support',benefit:'सहयोग'},
-{no:57,title:'अनन्त लिंक TV 6 बॉक्स',btnText:'अनन्त लिंक 57',url:'#anantBox',desc:'अनन्त लिंक 6 बॉक्स TV',work:'6 खाने भरो',benefit:'अनन्त'}
-];
-
-function renderButtons(list){
- let c=document.getElementById('linkContainer');c.innerHTML='';
- list.forEach(item=>{
-  let bg='#000';let col='#FFD700';
-  let html=`<div class="btnCard" id="btn-${item.no}"><div style="position:absolute;left:0;top:0;background:#000;color:gold;padding:5px 10px;border-radius:14px 0 10px 0;font-weight:900;font-size:11px">काली पट्टी ${item.no}. ${item.title} जी</div><a href="${item.url}" target="_blank" style="background:${bg};color:${col}">${item.no}. ${item.btnText} जी</a><div class="detailBox"><b>📌 नाम:</b> ${item.title}<br><b>📝 विवरण:</b> ${item.desc}<br><b>⚙️ काम:</b> ${item.work}<br><b>💰 लाभ:</b> ${item.benefit}</div></div>`;
-  c.innerHTML+=html;
- });
+function showImages(){
+ let q=document.getElementById('mainSearch').value.trim();
+ if(!q){alert('खोजो जी');return;}
+ let grid=document.getElementById('imageGrid');grid.innerHTML='';
+ for(let i=0;i<4;i++){let img=document.createElement('img');img.className='imageBox';img.src=`https://picsum.photos/seed/${q}${i}/300/200`;img.onclick=()=>window.open(`https://www.google.com/search?q=${q}`,'_blank');grid.appendChild(img);}
 }
-function filterButtons(){
- let q=document.getElementById('listSearch').value.toLowerCase().trim();
- renderButtons(allLinks.filter(l=>l.title.toLowerCase().includes(q)||q==''));
-}
-function filterButtonsAuto(){filterButtons();}
-function goToNum(){
- let v=document.getElementById('btnNumberSearch').value;
- let num=parseInt(v);
- let el=document.getElementById('btn-'+num);
- if(el){el.scrollIntoView({behavior:'smooth',block:'center'});}
-}
-function addCustomLink(){
- let t=document.getElementById('cTitle').value.trim(),u=document.getElementById('cUrl').value.trim();
- if(t==''||u==''){alert('टाइटल URL भरो जी');return;}
- let newNo=allLinks.length+1;
- let newLink={no:newNo,title:t,btnText:t,url:u,desc:t,work:'Custom',benefit:'अनन्त लाभ'};
- let stored=JSON.parse(localStorage.getItem('veedeo_custom_links')||'[]');stored.push(newLink);
- localStorage.setItem('veedeo_custom_links',JSON.stringify(stored));allLinks.push(newLink);
- renderButtons(allLinks);
-}
-function showImages(){ /* image search code */ }
+function saveKYC(){localStorage.setItem('kyc_name',document.getElementById('kycName').value);localStorage.setItem('kyc_upi',document.getElementById('kycUPI').value);alert('KYC सेव जी - अनन्त जी');}
+function saveNominee(){let n=document.getElementById('nomineeName').value,r=document.getElementById('nomineeRelation').value;let list=JSON.parse(localStorage.getItem('nominee_list')||'[]');list.push({name:n,relation:r});localStorage.setItem('nominee_list',JSON.stringify(list));renderNominees();}
+function renderNominees(){let list=JSON.parse(localStorage.getItem('nominee_list')||'[]');let el=document.getElementById('nomineeList');if(el) el.innerHTML=list.map((x,i)=>`<div>${i+1}. ${x.name} - ${x.relation}</div>`).join('')||'कोई नॉमिनी नहीं जी';}
+function addAdmin(){let n=document.getElementById('adminName').value,m=document.getElementById('adminMobile').value;let list=JSON.parse(localStorage.getItem('admin_list')||'[]');list.push({name:n,mobile:m});localStorage.setItem('admin_list',JSON.stringify(list));renderAdmins();}
+function removeAdmin(){let m=document.getElementById('adminMobile').value;let list=JSON.parse(localStorage.getItem('admin_list')||'[]');list=list.filter(x=>x.mobile!==m);localStorage.setItem('admin_list',JSON.stringify(list));renderAdmins();}
+function renderAdmins(){let list=JSON.parse(localStorage.getItem('admin_list')||'[]');let el=document.getElementById('adminList');if(el) el.innerHTML=list.map((x,i)=>`<div>${i+1}. ${x.name} - ${x.mobile}</div>`).join('')||'कोई एडमिन नहीं जी';}
+function updateDashboard(){updateAdvancedTDS();}
+function renderTDS(){updateAdvancedTDS();}
 
 window.onload=function(){
  showImages();
  let custom=JSON.parse(localStorage.getItem('veedeo_custom_links')||'[]');allLinks=allLinks.concat(custom);
  renderButtons(allLinks);
  filterButtons();
- document.getElementById('myRefLink').value="https://veedeohub-ashok.vercel.app?ref=ASHOK"+Math.floor(Math.random()*90000+10000);
- if(typeof renderNominees==='function') renderNominees();
- if(typeof renderAdmins==='function') renderAdmins();
- if(typeof updateDashboard==='function') updateDashboard();
- if(typeof renderTDS==='function') renderTDS();
- if(typeof renderMemberTree==='function') renderMemberTree();
+ // Load anant
+ loadAnantLinks();
+ renderNominees();renderAdmins();updateDashboard();renderTDS();renderMemberTree();
+ updateAdvancedTDS();showFraudLogs();
  if(isOwnerLogged()) showOwnerPanel();
 }
 </script>
 </body>
-</html>
+</html><!-- CODE 11 - AUTO REFERRAL ID + AUTO WALLET INCREMENT - ANANT -->
+<div class="dashboardBox" id="autoRefBox" style="border:4px solid #00aa00">
+<div class="kaliPatti"><span>🤖 11. ऑटो रेफरल ID + ऑटो वॉलेट - अनन्त जी - ऑटोमैटिक जी</span><span><button class="speakerBtn" onclick="speak('ऑटो रेफरल वॉलेट')">🔊</button></span></div>
+<div style="background:#e8f5e9;border:2px solid #00aa00;border-radius:10px;padding:10px;font-size:11px;color:#000">
+मेरा रेफरल: <input type="text" id="myRefLink" class="inputLine" style="width:60%;font-size:10px" readonly>
+<button class="khBtn" onclick="generateMyRef()">🔄 ऑटो जनरेट जी</button>
+<button class="khBtn" onclick="copyRef()">📋 कॉपी जी</button>
+<div style="margin-top:8px">ऑटो वॉलेट: <b id="autoWallet">₹0</b> | ऑटो रेफर: <b id="autoRefCount">0</b></div>
+</div>
+</div>
+<script>
+function generateMyRef(){
+ let ref='ASHOK'+Math.floor(Math.random()*90000+10000);
+ localStorage.setItem('my_auto_ref',ref);
+ document.getElementById('myRefLink').value='https://veedeohub-ashok.vercel.app?ref='+ref;
+}
+function copyRef(){
+ let v=document.getElementById('myRefLink').value;
+ navigator.clipboard.writeText(v).then(()=>{alert('✅ रेफरल कॉपी जी - अनन्त जी');});
+}
+function autoIncrementWallet(){
+ let bal=parseInt(localStorage.getItem('veedoo_wallet_balance')||'0');
+ bal+=10; // auto 10 on referral view
+ localStorage.setItem('veedoo_wallet_balance',bal);
+ let cnt=parseInt(localStorage.getItem('auto_ref_count')||'0')+1;
+ localStorage.setItem('auto_ref_count',cnt);
+ document.getElementById('autoWallet').innerText='₹'+bal;
+ document.getElementById('autoRefCount').innerText=cnt;
+ if(typeof updateAdvancedTDS==='function') updateAdvancedTDS();
+}
+setTimeout(()=>{
+ if(!localStorage.getItem('my_auto_ref')) generateMyRef();
+ else document.getElementById('myRefLink').value='https://veedeohub-ashok.vercel.app?ref='+localStorage.getItem('my_auto_ref');
+ document.getElementById('autoWallet').innerText='₹'+(localStorage.getItem('veedoo_wallet_balance')||'0');
+ document.getElementById('autoRefCount').innerText=localStorage.getItem('auto_ref_count')||'0';
+},1000);
+</script><!-- CODE 12 - AUTO FRAUD CHECK - ONE UPI ONE MOBILE - FAST WITHDRAW BLOCK - ANANT -->
+<div class="dashboardBox" id="autoFraudBox" style="border:4px solid red">
+<div class="kaliPatti" style="background:red"><span>🛡️ 12. ऑटो फ्रॉड चेक - एक UPI = एक मोबाइल - तेज ब्लॉक - अनन्त जी</span><span><button class="speakerBtn" onclick="speak('ऑटो फ्रॉड चेक')">🔊</button></span></div>
+<div style="background:#ffebee;border:2px solid red;border-radius:10px;padding:10px;font-size:11px;color:#000">
+<input type="text" id="fraudMobile" class="inputLine" placeholder="मोबाइल डालो जी - ऑटो चेक होगा जी">
+<input type="text" id="fraudUPI" class="inputLine" placeholder="UPI डालो जी - ऑटो चेक होगा जी">
+<button class="khBtn" onclick="checkAutoFraud()" style="background:red;color:#fff">🛡️ ऑटो चेक करो जी - एक ही बटन जी</button>
+<div id="fraudResult" style="margin-top:8px;background:#fff;border:2px solid red;border-radius:8px;padding:8px">कोई फ्रॉड नहीं जी ✅ - ऑटोमैटिक चेक जी</div>
+</div>
+</div>
+<script>
+function checkAutoFraud(){
+ let m=document.getElementById('fraudMobile').value.trim();
+ let u=document.getElementById('fraudUPI').value.trim();
+ if(!m||!u){alert('मोबाइल UPI भरो जी');return;}
+ let upiMap=JSON.parse(localStorage.getItem('veedoo_upi_map')||'{}');
+ let mobMap=JSON.parse(localStorage.getItem('veedoo_mobile_map')||'{}');
+ let res=document.getElementById('fraudResult');
+ if(upiMap[u] && upiMap[u]!==m){
+  res.innerHTML='❌ फ्रॉड जी - ये UPI पहले से '+upiMap[u]+' पर है जी - एक UPI = एक मोबाइल जी';
+  logFraud(m,u,'UPI duplicate');
+  return;
+ }
+ if(mobMap[m] && mobMap[m]!==u){
+  res.innerHTML='❌ फ्रॉड जी - ये मोबाइल पहले से '+mobMap[m]+' UPI पर है जी';
+  logFraud(m,u,'Mobile duplicate');
+  return;
+ }
+ // fast withdraw check
+ let lastW=parseInt(localStorage.getItem('last_withdraw_time')||'0');
+ let now=Date.now();
+ if(now-lastW < 60000){ // 1 min
+  res.innerHTML='❌ तेज पैसा निकालना ब्लॉक जी - 1 मिनट रुको जी - ऑटोमैटिक ब्लॉक जी';
+  logFraud(m,u,'Fast withdraw');
+  return;
+ }
+ upiMap[u]=m; mobMap[m]=u;
+ localStorage.setItem('veedoo_upi_map',JSON.stringify(upiMap));
+ localStorage.setItem('veedoo_mobile_map',JSON.stringify(mobMap));
+ res.innerHTML='✅ ऑटो पास जी - कोई फ्रॉड नहीं जी - अनन्त जी';
+}
+function logFraud(m,u,reason){
+ let logs=JSON.parse(localStorage.getItem('veedoo_fraud_logs')||'[]');
+ logs.push({mobile:m,upi:u,reason:reason,time:new Date().toLocaleString()});
+ localStorage.setItem('veedoo_fraud_logs',JSON.stringify(logs));
+ if(typeof showFraudLogs==='function') showFraudLogs();
+}
+</script><!-- CODE 13 - AUTO WALLET HISTORY + TDS HISTORY - ANANT -->
+<div class="dashboardBox" id="autoHistoryBox" style="border:4px solid #00aa00">
+<div class="kaliPatti"><span>📜 13. ऑटो वॉलेट हिस्ट्री + TDS हिस्ट्री - अनन्त जी - ऑटोमैटिक जी</span><span><button class="speakerBtn" onclick="speak('ऑटो हिस्ट्री')">🔊</button></span></div>
+<div style="background:#fff;border:2px solid #00aa00;border-radius:10px;padding:10px;font-size:11px;color:#000;max-height:200px;overflow:auto" id="walletHistory">कोई हिस्ट्री नहीं जी - ऑटो बनेगी जी</div>
+<div class="rowFlex" style="margin-top:8px">
+<button class="khBtn" onclick="renderWalletHistory()" style="background:#00aa00;color:#fff">📜 ऑटो हिस्ट्री देखो जी - एक ही बटन जी</button>
+<button class="khBtn" onclick="clearWalletHistory()" style="background:#000;color:gold">🗑️ हिस्ट्री क्लियर जी</button>
+</div>
+</div>
+<script>
+function addWalletHistory(amount,type){
+ let hist=JSON.parse(localStorage.getItem('veedoo_wallet_history')||'[]');
+ hist.push({amount:amount,type:type,time:new Date().toLocaleString(),bal:localStorage.getItem('veedoo_wallet_balance')||'0'});
+ localStorage.setItem('veedoo_wallet_history',JSON.stringify(hist));
+ renderWalletHistory();
+}
+function renderWalletHistory(){
+ let hist=JSON.parse(localStorage.getItem('veedoo_wallet_history')||'[]').slice(-20).reverse();
+ let el=document.getElementById('walletHistory');
+ if(!el) return;
+ if(hist.length==0){el.innerHTML='कोई हिस्ट्री नहीं जी - ऑटो बनेगी जी - अनन्त जी';return;}
+ el.innerHTML=hist.map(h=>`<div style="padding:4px;border-bottom:1px solid #ddd;display:flex;justify-content:space-between"><span>${h.time}</span><span>${h.type} ₹${h.amount}</span><span>बैलेंस ₹${h.bal}</span></div>`).join('');
+}
+function clearWalletHistory(){
+ if(confirm('हिस्ट्री क्लियर करनी है जी?')){
+  localStorage.removeItem('veedoo_wallet_history');
+  renderWalletHistory();
+ }
+}
+// auto add on load
+setTimeout(renderWalletHistory,1500);
+</script><!-- CODE 14 - AUTO SENIORITY CHAIN AUTO UPDATE - MEMBER TREE AUTO - ANANT -->
+<div class="dashboardBox" id="autoSeniorityBox" style="border:4px solid #9C27B0">
+<div class="kaliPatti"><span>🌳 14. ऑटो सीनियरिटी चेन + मेंबर ट्री ऑटो अपडेट - अनन्त जी</span><span><button class="speakerBtn" onclick="speak('ऑटो सीनियरिटी')">🔊</button></span></div>
+<div style="background:#fffaf0;border:2px solid #9C27B0;border-radius:10px;padding:10px;font-size:11px;color:#000">
+<input type="text" id="newMemberName" class="inputLine" placeholder="नया मेंबर नाम जी - ऑटो जोड़ेगा जी">
+<input type="text" id="newMemberMobile" class="inputLine" placeholder="मोबाइल जी - ऑटो चेन में जुड़ेगा जी">
+<button class="khBtn" onclick="autoAddMember()" style="background:#9C27B0;color:#fff">➕ ऑटो मेंबर जोड़ो जी - एक ही बटन जी - अनन्त जी</button>
+<div style="margin-top:8px;background:#fff;border:2px solid #9C27B0;border-radius:8px;padding:8px;max-height:150px;overflow:auto" id="autoSeniorityList">कोई चेन नहीं जी - ऑटो बनेगी जी</div>
+</div>
+</div>
+<script>
+function autoAddMember(){
+ let name=document.getElementById('newMemberName').value.trim();
+ let mob=document.getElementById('newMemberMobile').value.trim();
+ if(!name||!mob){alert('नाम मोबाइल भरो जी');return;}
+ let chain=JSON.parse(localStorage.getItem('veedeohub_seniority_chain')||'[]');
+ // check duplicate mobile
+ if(chain.find(m=>m.mobile===mob)){alert('ये मोबाइल पहले से है जी - डुप्लीकेट नहीं जी');return;}
+ let myRef=localStorage.getItem('my_auto_ref')||'ASHOK'+Math.floor(Math.random()*90000+10000);
+ let newM={name:name,mobile:mob,myRef:myRef,time:new Date().toLocaleString(),seniorNo:chain.length+1};
+ chain.push(newM);
+ localStorage.setItem('veedeohub_seniority_chain',JSON.stringify(chain));
+ // ref map
+ let refMap=JSON.parse(localStorage.getItem('veedoo_ref_map')||'{}');
+ refMap[mob]=myRef;
+ localStorage.setItem('veedoo_ref_map',JSON.stringify(refMap));
+ alert('✅ ऑटो जोड़ा जी - सीनियरिटी नंबर '+newM.seniorNo+' - अनन्त जी');
+ renderAutoSeniority();
+ if(typeof renderMemberTree==='function') renderMemberTree();
+ addWalletHistory(10,'Referral Auto');
+ let bal=parseInt(localStorage.getItem('veedoo_wallet_balance')||'0')+10;
+ localStorage.setItem('veedoo_wallet_balance',bal);
+ if(typeof updateAdvancedTDS==='function') updateAdvancedTDS();
+ document.getElementById('newMemberName').value='';
+ document.getElementById('newMemberMobile').value='';
+}
+function renderAutoSeniority(){
+ let chain=JSON.parse(localStorage.getItem('veedeohub_seniority_chain')||'[]').slice(-10).reverse();
+ let el=document.getElementById('autoSeniorityList');
+ if(!el) return;
+ if(chain.length==0){el.innerHTML='कोई चेन नहीं जी - ऑटो बनेगी जी';return;}
+ el.innerHTML=chain.map(m=>`<div style="padding:4px;border-bottom:1px solid #ddd"><b>${m.seniorNo}</b>. ${m.name} - ${m.mobile} - ${m.time}</div>`).join('');
+}
+setTimeout(renderAutoSeniority,1500);
+</script><!-- CODE 15 - AUTO ANANT LINK TV AUTO ROTATE - 6 BOX AUTO - ANANT -->
+<div class="dashboardBox" id="autoAnantTVBox" style="border:4px solid gold;background:linear-gradient(135deg,#fff8dc,#ffff99)">
+<div class="kaliPatti"><span>📺 15. ऑटो अनन्त TV - 6 बॉक्स ऑटो रोटेट - अनन्त जी - ऑटोमैटिक जी</span><span><button class="speakerBtn" onclick="speak('ऑटो अनन्त टीवी')">🔊</button></span></div>
+<div style="background:#000;border:3px solid gold;border-radius:12px;padding:12px;text-align:center">
+<div id="anantTVDisplay" style="background:#fff;color:#000;border-radius:10px;padding:14px;font-weight:900;font-size:14px;min-height:60px">अनन्त TV लोड हो रहा है जी...</div>
+<div style="margin-top:8px;display:flex;gap:6px;justify-content:center">
+<button class="khBtn" onclick="prevAnantTV()" style="background:#000;color:gold">◀️ पिछला जी</button>
+<button class="khBtn" onclick="toggleAutoTV()" id="autoTVBtn" style="background:gold;color:#000">⏸️ ऑटो रोकें जी</button>
+<button class="khBtn" onclick="nextAnantTV()" style="background:#000;color:gold">अगला जी ▶️</button>
+</div>
+</div>
+</div>
+<script>
+let anantTVIndex=0;
+let anantTVAuto=true;
+let anantTVInterval=null;
+function getAnantLinks(){
+ let links=[];
+ for(let i=1;i<=6;i++){
+  let url=localStorage.getItem('anant_link_'+i)||'';
+  let title=localStorage.getItem('anant_title_'+i)||'अनन्त लिंक '+i;
+  if(url) links.push({url:url,title:title,no:i});
+ }
+ return links;
+}
+function showAnantTV(){
+ let links=getAnantLinks();
+ let el=document.getElementById('anantTVDisplay');
+ if(!el) return;
+ if(links.length==0){el.innerHTML='कोई अनन्त लिंक नहीं जी - 6 खाने भरो जी - अनन्त जी';return;}
+ if(anantTVIndex>=links.length) anantTVIndex=0;
+ let cur=links[anantTVIndex];
+ el.innerHTML=`<div style="font-size:10px;background:gold;padding:2px 6px;border-radius:6px;display:inline-block">TV ${cur.no}/6 - ऑटो जी</div><div style="margin-top:8px"><a href="${cur.url}" target="_blank" style="color:#000;text-decoration:none;font-weight:900">📺 ${cur.title} जी<br><span style="font-size:10px;color:#666">${cur.url}</span></a></div>`;
+}
+function nextAnantTV(){anantTVIndex++;showAnantTV();}
+function prevAnantTV(){anantTVIndex--;if(anantTVIndex<0){let links=getAnantLinks();anantTVIndex=links.length-1;}showAnantTV();}
+function toggleAutoTV(){
+ anantTVAuto=!anantTVAuto;
+ let btn=document.getElementById('autoTVBtn');
+ if(anantTVAuto){btn.innerText='⏸️ ऑटो रोकें जी';startAutoTV();}
+ else{btn.innerText='▶️ ऑटो चलाएं जी';clearInterval(anantTVInterval);}
+}
+function startAutoTV(){
+ clearInterval(anantTVInterval);
+ anantTVInterval=setInterval(()=>{if(anantTVAuto){nextAnantTV();}},3000); // 3 sec auto rotate
+}
+setTimeout(()=>{showAnantTV();startAutoTV();},1500);
+</script><!-- CODE 16 - AUTO SEARCH IMAGE + BUTTON FILTER + VOICE AUTO - LAST - ANANT -->
+<div class="dashboardBox" id="autoSearchBox" style="border:4px solid #000">
+<div class="kaliPatti"><span>🔍 16. ऑटो सर्च + ऑटो बटन फिल्टर + वॉइस ऑटो - अनन्त जी - आखिरी ऑटोमैटिक जी</span><span><button class="speakerBtn" onclick="speak('ऑटो सर्च')">🔊</button><button class="micBtn" onclick="startMic('mainSearch')">🎤</button></span></div>
+<div style="background:#fff;border:2px solid #000;border-radius:10px;padding:10px;font-size:11px;color:#000">
+<div style="display:flex;gap:6px;flex-wrap:wrap">
+<input type="text" id="autoSearchInput" class="inputLine" style="width:60%" placeholder="ऑटो सर्च टाइप करो जी - अनन्त..." oninput="autoFilterAll()">
+<button class="khBtn" onclick="autoFilterAll()" style="background:#000;color:gold">🔍 ऑटो खोजो जी - एक ही बटन जी</button>
+</div>
+<div id="autoSearchResult" style="margin-top:8px;background:#fff8dc;border:2px solid gold;border-radius:8px;padding:8px;max-height:150px;overflow:auto">टाइप करो जी - ऑटो सर्च होगा जी - अनन्त जी</div>
+<label style="font-size:11px;color:#000"><input type="checkbox" id="autoVoiceCheck" checked> 🔊 ऑटो वॉइस बोलना जी - अनन्त जी</label>
+</div>
+</div>
+<script>
+function autoFilterAll(){
+ let q=document.getElementById('autoSearchInput').value.toLowerCase().trim();
+ if(!q){document.getElementById('autoSearchResult').innerHTML='टाइप करो जी - ऑटो सर्च होगा जी';return;}
+ // filter allLinks
+ let filtered=allLinks.filter(l=>l.title.toLowerCase().includes(q)||l.desc.toLowerCase().includes(q)||l.work.toLowerCase().includes(q));
+ let el=document.getElementById('autoSearchResult');
+ if(filtered.length==0){el.innerHTML='कुछ नहीं मिला जी - '+q+' - अनन्त जी';return;}
+ el.innerHTML=filtered.slice(0,10).map(l=>`<div style="padding:4px;border-bottom:1px solid #ddd;display:flex;justify-content:space-between"><span><b>${l.no}</b>. ${l.title}</span><button class="khBtn" style="padding:2px 6px;font-size:10px" onclick="document.getElementById('btn-${l.no}').scrollIntoView({behavior:'smooth'});document.getElementById('listSearch').value='${l.title}';filterButtons();">जाओ जी</button></div>`).join('');
+ // auto voice
+ if(document.getElementById('autoVoiceCheck').checked){
+  speak(filtered[0].title+' मिला जी - अनन्त जी');
+ }
+ // auto image
+ if(document.getElementById('mainSearch')){
+  document.getElementById('mainSearch').value=q;
+  if(typeof showImages==='function') showImages();
+ }
+}
+// auto save voice pref
+document.getElementById('autoVoiceCheck')?.addEventListener('change',function(){
+ localStorage.setItem('auto_voice_on',this.checked?'YES':'NO');
+});
+setTimeout(()=>{
+ let v=localStorage.getItem('auto_voice_on');
+ if(v==='NO') document.getElementById('autoVoiceCheck').checked=false;
+},1000);
+</script><!-- CODE 17 - LEGAL FINAL PAGE - CONTACT US, PRIVACY POLICY, DISCLAIMER - BRANDED GOLDEN - KANOONAN SAFE - LAST PAGE - ANANT -->
+<div class="dashboardBox" id="legalSafeBox" style="border:5px solid gold;background:linear-gradient(135deg,#000,#1a1a00,#000);color:#FFD700;margin-top:20px">
+<div class="kaliPatti" style="background:linear-gradient(90deg,#000,gold,#000);color:#000;border:3px solid #fff"><span>⚖️ कानूनन सेफ - LEGAL SAFE - अपना बनाया सिस्टम है - कोई नकल कॉपीराइट नहीं जी - अनन्त जी</span><span><button class="speakerBtn" onclick="speak('कानूनन सेफ अपना बनाया सिस्टम')">🔊</button></span></div>
+
+<div style="background:#fff;color:#000;border-radius:14px;padding:14px;margin:10px 0;border:3px solid gold">
+
+<!-- OWN SYSTEM DECLARATION - GOLDEN BRANDED COLLAR -->
+<div style="background:linear-gradient(90deg,#000,#332200,#000);border:4px solid gold;border-radius:14px;padding:12px;margin-bottom:14px;text-align:center">
+<h2 style="color:gold;margin:5px 0;text-shadow:0 0 8px gold">🛡️ VEEDEOHUB - OWN CREATED SYSTEM जी 🛡️</h2>
+<p style="color:#FFD700;font-weight:900;font-size:12px;line-height:1.6">
+🇮🇳 ये अपना बनाया हुआ सिस्टम है जी - किसी की नकल नहीं है जी - कोई कॉपीराइट उल्लंघन नहीं है जी<br>
+This is our own created original system - No copy of anyone - No Copyright Infringement - 100% Original Work<br>
+हमारा कोड, डिज़ाइन, आइडिया सब हमारा अपना है जी - ब्रांडेड है जी - Veedeohub®<br>
+अगर किसी को ऑब्जेक्शन लगे तो कृपया संपर्क करें जी - हम तुरंत समाधान करेंगे जी
+</p>
+</div>
+
+<!-- CONTACT US - ENGLISH + HINDI -->
+<div style="border:3px solid #00aa00;border-radius:12px;padding:10px;margin:10px 0;background:#e8f5e9">
+<div class="kaliPatti"><span>📞 CONTACT US - संपर्क करें जी - English + Hindi जी</span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px">
+<div style="background:#fff;border:2px solid #00aa00;border-radius:8px;padding:8px">
+<h4 style="color:#00aa00;margin:4px 0">🇬🇧 English - Contact Us</h4>
+<p style="font-size:11px;line-height:1.6;color:#000">
+<b>Owner:</b> Ashok Kumar<br>
+<b>Location:</b> Mohammad pur Ahir Tauru, Nuh, Haryana 122105, India<br>
+<b>Mobile:</b> 9992553796<br>
+<b>Email:</b> ak9992553796@gmail.com<br>
+<b>Website:</b> https://veedeohub-ashok.vercel.app<br>
+<b>Support Time:</b> 9 AM to 9 PM IST<br>
+<b>Response:</b> Within 24-48 Hours<br>
+For any query, suggestion, objection, legal notice, please contact us first. We will resolve within 48 hours.
+</p>
+</div>
+<div style="background:#fff;border:2px solid #00aa00;border-radius:8px;padding:8px">
+<h4 style="color:#00aa00;margin:4px 0">🇮🇳 हिंदी - संपर्क करें जी</h4>
+<p style="font-size:11px;line-height:1.6;color:#000">
+<b>मालिक:</b> अशोक कुमार जी<br>
+<b>स्थान:</b> Mohammad pur Ahir तावडू, नूंह, हरियाणा 122105, भारत जी<br>
+<b>मोबाइल:</b> 9992553796 जी<br>
+<b>ईमेल:</b> ak9992553796@gmail.com जी<br>
+<b>वेबसाइट:</b> https://veedeohub-ashok.vercel.app जी<br>
+<b>समय:</b> सुबह 9 से रात 9 बजे तक जी<br>
+<b>जवाब:</b> 24-48 घंटे में जी<br>
+किसी भी सवाल, सुझाव, ऑब्जेक्शन, कानूनी नोटिस के लिए पहले हमसे संपर्क करो जी - 48 घंटे में समाधान जी
+</p>
+</div>
+</div>
+</div>
+
+<!-- PRIVACY POLICY - ENGLISH + HINDI -->
+<div style="border:3px solid #9C27B0;border-radius:12px;padding:10px;margin:10px 0;background:#f3e5f5">
+<div class="kaliPatti" style="background:#9C27B0"><span>🔒 PRIVACY POLICY - गोपनीयता नीति जी - English + Hindi जी</span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px">
+<div style="background:#fff;border:2px solid #9C27B0;border-radius:8px;padding:8px">
+<h4 style="color:#9C27B0;margin:4px 0">🇬🇧 English - Privacy Policy</h4>
+<p style="font-size:10px;line-height:1.6;color:#000;text-align:left">
+1. We collect only Name, Mobile, UPI ID for KYC - No sensitive data stored on server - Only localStorage in your browser.<br>
+2. Your data is safe - Not sold to third party - Only used for referral tracking and wallet balance.<br>
+3. UPI ID and Mobile are mapped one-to-one for fraud protection - Kuku style auto fraud check.<br>
+4. Cookies only for login session and referral tracking - No tracking ads without consent.<br>
+5. You can request data deletion anytime via Contact Us - We will delete within 7 days.<br>
+6. This is educational referral community - Not a financial investment scheme.<br>
+7. All payments are voluntary support - No forced payment.
+</p>
+</div>
+<div style="background:#fff;border:2px solid #9C27B0;border-radius:8px;padding:8px">
+<h4 style="color:#9C27B0;margin:4px 0">🇮🇳 हिंदी - गोपनीयता नीति जी</h4>
+<p style="font-size:10px;line-height:1.6;color:#000;text-align:left">
+1. हम सिर्फ नाम, मोबाइल, UPI ID KYC के लिए लेते हैं जी - कोई सेंसिटिव डेटा सर्वर पर नहीं जी - सिर्फ आपके ब्राउज़र के लोकल में जी<br>
+2. आपका डेटा सुरक्षित है जी - किसी तीसरे को नहीं बेचते जी - सिर्फ रेफरल ट्रैकिंग और वॉलेट के लिए जी<br>
+3. UPI और मोबाइल एक-एक मैप है जी - फ्रॉड प्रोटेक्शन के लिए जी - कुकू स्टाइल ऑटो चेक जी<br>
+4. कुकीज सिर्फ लॉगिन और रेफरल के लिए जी - बिना इजाजत कोई ट्रैकिंग विज्ञापन नहीं जी<br>
+5. आप कभी भी डेटा हटाने की मांग कर सकते हो जी - Contact Us पर - 7 दिन में हटा देंगे जी<br>
+6. ये शिक्षाप्रद रेफरल समुदाय है जी - कोई वित्तीय निवेश योजना नहीं है जी<br>
+7. सारे भुगतान स्वैच्छिक सहयोग हैं जी - कोई जबरदस्ती नहीं जी
+</p>
+</div>
+</div>
+</div>
+
+<!-- DISCLAIMER - ENGLISH + HINDI - KANOONAN SAFE - NO OBJECTION -->
+<div style="border:4px solid red;border-radius:12px;padding:10px;margin:10px 0;background:#ffebee">
+<div class="kaliPatti" style="background:red"><span>⚠️ DISCLAIMER - अस्वीकरण - कानूनन जरूरी - English + Hindi जी - No Objection जी</span></div>
+
+<div style="background:#fff;border:2px solid red;border-radius:8px;padding:10px;margin-top:8px">
+<h4 style="color:red;margin:4px 0;text-align:center">🇮🇳🇬🇧 LEGAL DISCLAIMER - OWN SYSTEM - NO COPYRIGHT - NO GUARANTEE - JOIN AT OWN RISK जी</h4>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+
+<div style="background:#fff3e0;border:2px solid #ff9800;border-radius:8px;padding:8px">
+<h5 style="color:#e65100;margin:3px 0">🇬🇧 English - Disclaimer - Legal Safe</h5>
+<p style="font-size:10px;line-height:1.7;color:#000;text-align:left">
+<b>1. Own Created System:</b> This Veedeohub system is 100% our own original creation - No copy from any website/app - All code, design, logic written by us - If any similarity found, it's coincidental - We respect all copyrights - Contact us if you feel any infringement - We will remove immediately.<br><br>
+<b>2. No Objection - Legal Safe:</b> This platform is made with good intention for community help and learning - No intention to hurt any person, brand, religion, company - All brand names (Google, 【entity-Flipkart¦canonical_name=Flipkart】, 【entity-Amazon¦canonical_name=Amazon】 etc.) are their own trademarks - We only provide referral links as affiliate - No claim of ownership.<br><br>
+<b>3. Join at Your Own Responsibility:</b> You are joining this system at your own responsibility and will - We are not forcing anyone - Voluntary participation only.<br><br>
+<b>4. No Profit Guarantee:</b> There is NO guarantee of profit/income - Profit is NOT fixed - Profit depends on your own efforts and team growth - Example: If you are 1 person, profit is less - If many persons in your team, profit is more - As team members increase, profit automatically increases - But if team does not grow, profit may be zero.<br><br>
+<b>5. Risk & Caution:</b> Do not invest money you cannot afford to lose - Do not take loan to join - This is not a job, not a government scheme - This is a community referral support system - Work with positive thinking only.<br><br>
+<b>6. Legal Jurisdiction:</b> Any dispute subject to Tauru, Nuh, Haryana Court Jurisdiction only - Indian Laws Apply.
+</p>
+</div>
+
+<div style="background:#fff3e0;border:2px solid #ff9800;border-radius:8px;padding:8px">
+<h5 style="color:#e65100;margin:3px 0">🇮🇳 हिंदी - अस्वीकरण - कानूनन सेफ जी</h5>
+<p style="font-size:10px;line-height:1.7;color:#000;text-align:left">
+<b>1. अपना बनाया सिस्टम है जी:</b> ये Veedeohub सिस्टम 100% हमारा अपना बनाया हुआ है जी - किसी की नकल नहीं जी - कोई कॉपीराइट उल्लंघन नहीं जी - सारा कोड, डिज़ाइन, आइडिया हमारा अपना है जी - अगर किसी से मिलता-जुलता लगे तो संयोग है जी - हम सबके कॉपीराइट का सम्मान करते हैं जी - अगर आपको लगे तो संपर्क करो जी - तुरंत हटा देंगे जी<br><br>
+<b>2. किसी का ऑब्जेक्शन नहीं जी - कानूनन सेफ जी:</b> ये प्लेटफॉर्म अच्छी नियत से समुदाय की मदद और सीखने के लिए बनाया है जी - किसी व्यक्ति, ब्रांड, धर्म, कंपनी को दुख पहुंचाने की मंशा नहीं जी - सारे ब्रांड नाम (Google, 【entity-Flipkart¦canonical_name=Flipkart】, 【entity-Amazon¦canonical_name=Amazon】 आदि) उनके अपने ट्रेडमार्क हैं जी - हम सिर्फ एफिलिएट के रूप में रेफरल लिंक देते हैं जी - मालिकाना हक का कोई दावा नहीं जी<br><br>
+<b>3. अपनी जिम्मेदारी पर ज्वाइन कर रहे हैं जी:</b> आप अपनी जिम्मेदारी पर इस सिस्टम में ज्वाइन कर रहे हैं जी - हम किसी को जबरदस्ती नहीं कर रहे जी - स्वैच्छिक भागीदारी ही है जी<br><br>
+<b>4. लाभ की कोई गारंटी नहीं है जी:</b> लाभ/आय की कोई गारंटी नहीं है जी - लाभ फिक्स नहीं है जी - लाभ आपके खुद के प्रयास और टीम के बढ़ने पर निर्भर करता है जी - जैसे: आप एक आदमी हैं तो लाभ कम है जी - अनेक हैं तो लाभ अधिक है जी - जैसे-जैसे टीम में मेंबर बढ़ते हैं वैसे-वैसे लाभ अपने आप बढ़ता जाएगा जी - पर अगर टीम नहीं बढ़ी तो लाभ शून्य भी हो सकता है जी<br><br>
+<b>5. जोखिम और सावधानी जी:</b> ऐसा पैसा मत लगाओ जो आप खो नहीं सकते जी - ज्वाइन करने के लिए कर्ज मत लो जी - ये कोई नौकरी नहीं है, सरकारी योजना नहीं है जी - ये एक समुदाय रेफरल सहयोग सिस्टम है जी - सिर्फ सकारात्मक सोच से काम करो जी<br><br>
+<b>6. कानूनी क्षेत्राधिकार जी:</b> कोई भी विवाद सिर्फ तावडू, नूंह, हरियाणा कोर्ट में ही होगा जी - भारतीय कानून लागू जी
+</p>
+</div>
+
+</div>
+
+<!-- EXTRA LEGAL POINTS - BRANDED COLLAR CORRECT -->
+<div style="background:#000;color:gold;border:3px solid gold;border-radius:10px;padding:10px;margin-top:10px">
+<h5 style="color:gold;margin:4px 0;text-align:center">🔐 EXTRA LEGAL SAFETY POINTS - अतिरिक्त कानूनी सुरक्षा जी - ब्रांडेड कॉलर सही जी</h5>
+<p style="font-size:10px;line-height:1.7;color:#FFD700;text-align:left">
+✅ 1. ये वेबसाइट/ऐप सिर्फ सूचना और सहयोग के लिए है जी - कोई वित्तीय सलाह नहीं जी<br>
+✅ 2. सभी लिंक तीसरी पार्टी के हैं जी - उनके नियम अलग हैं जी - हम जिम्मेदार नहीं जी<br>
+✅ 3. UPI ID और मोबाइल का दुरुपयोग न करें जी - एक UPI = एक मोबाइल - फ्रॉड ब्लॉक जी<br>
+✅ 4. 18 साल से कम उम्र वाले ज्वाइन न करें जी - माता-पिता की अनुमति से ही जी<br>
+✅ 5. किसी भी ऑब्जेक्शन के लिए पहले Contact Us पर संपर्क करें जी - कानूनी नोटिस से पहले 48 घंटे का समय दें जी - हम समाधान करेंगे जी<br>
+✅ 6. Veedeohub® एक रजिस्टर्ड ब्रांड सोच है जी - लोगो और नाम हमारा है जी
+</p>
+</div>
+
+</div>
+</div>
+
+<!-- FINAL GOLDEN WORDS - SUNHARI AKSHAR - LAST PAGE -->
+<div style="background:linear-gradient(135deg,#000,#332200,#000,#000);border:5px solid gold;border-radius:20px;padding:20px;margin:20px 0;text-align:center;box-shadow:0 0 20px gold">
+<div style="border:3px solid #FFD700;border-radius:16px;padding:16px;background:linear-gradient(180deg,#000,#1a1a00)">
+
+<h2 style="color:gold;font-size:18px;margin:10px 0;text-shadow:0 0 15px gold,0 0 30px #FFD700;letter-spacing:1px">🌞☀️ सुनहरी अक्षरों में अंतिम संदेश जी ☀️🌞</h2>
+
+<div style="background:linear-gradient(90deg,#000,gold,#000);height:3px;margin:10px 0"></div>
+
+<p style="color:#FFD700;font-size:16px;font-weight:900;line-height:1.8;text-shadow:0 0 10px gold;margin:15px 0">
+"आदत ही लाइफ़ है अच्छी या खराब"<br>
+ये आपकी सोच पर निर्भर करता है की आप क्या सोचकर अपनाते हैं।<br>
+सदा आपकी सोच में, सकारात्मकता ही होनी चाहिए<br>
+नकारात्मकता से हानि और नुकशान ही हाथ लगता है।
+</p>
+
+<div style="background:linear-gradient(90deg,#000,gold,#000);height:3px;margin:10px 0"></div>
+
+<p style="color:#fff;font-size:14px;font-weight:800;margin:12px 0">
+🪔 ये ज्योति सदा जलती रहे 🪔<br>
+<span style="color:gold">Veedeohub - Ashok Kumar - Anant Soch - Positive Life</span><br>
+<span style="font-size:11px;color:#FFD700">JAI MATA KI | 9992553796 | Tauru Nuh | Haryana</span>
+</p>
+
+<div style="margin-top:12px">
+<span style="font-size:24px">🌞☀️🪔✨🌟💛</span>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- BRANDED FOOTER - GOLDEN COLLAR CORRECT -->
+<div style="background:#000;border-top:4px solid gold;border-bottom:4px solid gold;padding:12px;margin-top:20px;text-align:center">
+<p style="color:gold;font-size:11px;font-weight:900;margin:4px 0">
+© 2024-2026 Veedeohub® - Ashok Kumar - All Rights Reserved - Own Created System - No Copy - Legal Safe<br>
+<span style="color:#fff;font-size:10px">Made with ❤️ in Mohammad pur Ahir Tauru, Nuh, Haryana, India - For Positive Community - Anant Soch</span><br>
+<span style="color:#FFD700;font-size:9px">Contact: 9992553796 | ak9992553796@gmail.com | https://veedeohub-ashok.vercel.app | JAI MATA KI</span>
+</p>
+</div>
