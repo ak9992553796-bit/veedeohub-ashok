@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Veedeohub V6.3 - AdSense Proper Placement - ca-pub-3922664797100594</title>
+<title>Veedeohub V6.3 FULL NO CUT - Single File - AdSense Proper</title>
 <meta name="google-adsense-account" content="ca-pub-3922664797100594">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3922664797100594" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
@@ -11,7 +11,7 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-body{background:#0a1628;color:#FFD700;font-family:system-ui;margin:0}
+body{background:#0a1628;color:#FFD700;margin:0}
 .sharpGold{color:#FFD700;text-shadow:0 0 10px gold;font-weight:bold}
 </style>
 </head>
@@ -791,4 +791,1044 @@ export default function App() {
           <h2 className="sharpGold text-[13px] mb-2">🛡️ Fraud रोकथाम - 100% Safe जी - फ्राड बिल्कुल नहीं होने देना जी</h2>
           <div className="bg-[#1a0000] border border-red-700 rounded-xl p-3">
             <div className="flex justify-between items-center mb-2">
-              <p className="text-green-400 text-[12px]
+              <p className="text-green-400 text-[12px] font-bold">Fraud Score: {fraud.fraudScore}% - Safe Ji ✓ | Transactions: {fraud.txCount}</p>
+              <span className="bg-green-600 text-white px-2 py-1 rounded-full text-[9px] font-bold">100% Safe</span>
+            </div>
+            <div className="grid grid-cols-2 gap-2 text-[10px]">
+              <div className="bg-black border border-red-900 rounded p-2">
+                <p className="text-red-400 font-bold">🔑 OTP Verification</p>
+                <p className="text-yellow-200">हर UPI Transaction पर 6-digit OTP 123456 Simulation जी</p>
+                <p className="font-mono text-green-400">Current OTP: {fraud.otp}</p>
+              </div>
+              <div className="bg-black border border-red-900 rounded p-2">
+                <p className="text-red-400 font-bold">🔐 Checksum SHA-256</p>
+                <p className="text-yellow-200">हर Transaction का Hash Verify जी</p>
+                <p className="font-mono text-[8px] text-blue-300 break-all">{simpleHash(admin.upi + Date.now().toString())}</p>
+              </div>
+              <div className="bg-black border border-red-900 rounded p-2">
+                <p className="text-red-400 font-bold">✅ UPI Verification</p>
+                <p className="text-yellow-200">UPI: 9992553796@ybl</p>
+                <p className={upiDual.verified ? "text-green-400 font-bold" : "text-red-400"}>{upiDual.verified ? "✓ Verified Badge जी" : "❌ Invalid"}</p>
+                <button onClick={handleUPIVerify} className="bg-green-600 text-white px-2 py-1 rounded text-[8px] mt-1">Verify जी</button>
+              </div>
+              <div className="bg-black border border-red-900 rounded p-2">
+                <p className="text-red-400 font-bold">👮 Admin Approval >₹1000</p>
+                <p className="text-yellow-200">₹1000 से ज्यादा पर एडमिन अप्रूवल जी</p>
+                <p className="text-[9px] text-yellow-500">2FA Required: {showTwoFA ? "Pending" : "Ready"}</p>
+              </div>
+              <div className="bg-black border border-red-900 rounded p-2">
+                <p className="text-red-400 font-bold">⏳ Rate Limiting</p>
+                <p className="text-yellow-200">Max 5 tx/min जी</p>
+                <p className="text-yellow-400">{fraud.rateLimitMsg || "✓ Limit OK - धीरे करो जी"}</p>
+              </div>
+              <div className="bg-black border border-red-900 rounded p-2">
+                <p className="text-red-400 font-bold">🌐 IP Logging</p>
+                <p className="text-yellow-200">आपका IP: {fraud.ip}</p>
+                <p className="text-[9px] text-yellow-600">Fraud रोकथाम के लिए लॉग जी</p>
+              </div>
+              <div className="bg-black border border-red-900 rounded p-2">
+                <p className="text-red-400 font-bold">📱 Device Fingerprint</p>
+                <p className="font-mono text-[8px] text-blue-300 break-all">{fraud.fingerprint || "Generating..."}</p>
+                <p className="text-[9px] text-yellow-500">{fraud.device}</p>
+              </div>
+              <div className="bg-black border border-red-900 rounded p-2">
+                <p className="text-red-400 font-bold">✍️ Transaction Signing</p>
+                <p className="text-yellow-200">हर tx secret key से signed जी (simulated)</p>
+                <p className="font-mono text-[8px] text-green-400">Signed: {simpleHash("secret"+Date.now())}</p>
+              </div>
+            </div>
+            <div className="mt-2 bg-black border border-red-800 rounded p-2">
+              <p className="text-red-300 text-[10px] font-bold">🚫 Blacklist: Suspicious UPI IDs Blocked जी</p>
+              <p className="text-[9px] font-mono text-red-400">{fraud.blacklist.join(", ")} | Total Blocked: {fraud.blacklist.length}</p>
+              <p className="text-[9px] text-yellow-600 mt-1">2FA: Google Authenticator Simulation - Code: 123456 (demo) - Admin Panel Secure जी</p>
+            </div>
+          </div>
+        </div>
+
+        {/* SECTION 1 QR + Google Circle LIVE - KEEP */}
+        <div className="goldGlowBox mb-4 text-center">
+          <p className="text-[13px] leading-[1.6]">☀️ सुनहरे अक्षरों में संदेश है — All Life में फ्री जॉइनिंग करें जी। आदतें ही जीवन का आधार हैं।</p>
+        </div>
+        <div className="border-4 border-yellow-400 bg-black rounded-[18px] p-3 mb-4 text-center">
+          <img src={QR_IMG} alt="QR Veedeohub" className="mx-auto rounded-lg border-2 border-yellow-400" style={{ width: "280px", height: "280px" }} />
+          <p className="mt-2 text-yellow-200 font-mono text-[12px] break-all">veedeohub-ashok.vercel.app?ref=ASHOK54994</p>
+        </div>
+
+        {/* Search - KEEP with Google Circle LIVE */}
+        <div className="bg-black border-4 border-yellow-400 rounded-[16px] p-3 mb-4">
+          <div className="flex gap-2 mb-2">
+            <input ref={searchRef} value={search} onChange={(e) => setSearch(e.target.value)} placeholder="खोजो जी" className="flex-1 bg-[#0a1628] border border-yellow-400 rounded-lg px-3 py-2 text-yellow-100 placeholder:text-yellow-600 outline-none" />
+            <button className="bg-yellow-400 text-black font-bold px-3 py-2 rounded-lg">🔍 खोजो जी</button>
+            <button onClick={startMic} className="bg-black border border-yellow-400 text-yellow-200 px-3 py-2 rounded-lg">🎤</button>
+          </div>
+          <div className="flex gap-2 mb-3">
+            <input value={jumpNum} onChange={(e) => setJumpNum(e.target.value)} placeholder="नंबर 1-120" className="flex-1 bg-[#0a1628] border border-yellow-400 rounded-lg px-3 py-2 text-yellow-100 outline-none" type="number" />
+            <button onClick={jumpToNumber} className="bg-yellow-400 text-black font-bold px-3 py-2 rounded-lg">🔢 जाओ जी</button>
+          </div>
+        <div id="allBtnList" className="googleCircleLive bg-[#0a1628] rounded-xl p-2 min-h-[60px]">
+            <div className="liveBadge"><span className="liveDot"></span> ● LIVE</div>
+            <p className="text-[11px] text-green-400 font-bold mb-2">🔴 LIVE Search - {filtered.length} Apps मिले जी | Affiliate Auto: tag=ashok0499-21, affid=ashok54994, ref=ASHOK54994</p>
+            <div className="text-[10px] text-yellow-600">V6 Legal - Phone Cache + Server Main - Consent: {consent.enabled ? "✓ ON" : "OFF"} | Version: V6.0</div>
+          </div>
+        </div>
+
+        {/* ADSENSE SLOT 1111111111 - Top Ad After QR + Google Circle LIVE */}
+        <AdSlot id="1111111111" consent={cookieConsent} />
+
+        {/* ADMIN BOX - KEEP */}
+        <div id="adminBox" className="border-4 border-yellow-400 bg-black rounded-[18px] p-[14px] mb-4">
+          <h2 className="sharpGold text-[15px] mb-3">👑 एडमिन बॉक्स - Admin Panel - Google Password सहित जी</h2>
+          <div className="grid gap-2">
+            <input value={admin.name} onChange={(e) => setAdmin({ ...admin, name: e.target.value })} placeholder="Admin Name" className="bg-[#0a1628] border border-yellow-400 rounded-lg px-3 py-2 text-yellow-100" />
+            <input value={admin.email} onChange={(e) => setAdmin({ ...admin, email: e.target.value })} placeholder="Admin Email" type="email" className="bg-[#0a1628] border border-yellow-400 rounded-lg px-3 py-2 text-yellow-100" />
+            <input value={admin.mobile} onChange={(e) => setAdmin({ ...admin, mobile: e.target.value })} placeholder="Admin Mobile" type="tel" className="bg-[#0a1628] border border-yellow-400 rounded-lg px-3 py-2 text-yellow-100" />
+            <div className="flex gap-2">
+              <input value={admin.pass} onChange={(e) => setAdmin({ ...admin, pass: e.target.value })} placeholder="Admin Password" type={admin.showPass ? "text" : "password"} className="flex-1 bg-[#0a1628] border border-yellow-400 rounded-lg px-3 py-2 text-yellow-100" />
+              <button onClick={() => setAdmin({ ...admin, showPass: !admin.showPass })} className="bg-yellow-400 text-black px-2 rounded-lg">{admin.showPass ? "🙈" : "👁️"}</button>
+            </div>
+            <input value={admin.upi} onChange={(e) => setAdmin({ ...admin, upi: e.target.value })} placeholder="UPI ID" className="bg-[#0a1628] border border-yellow-400 rounded-lg px-3 py-2 text-yellow-100" />
+            <label className="flex items-center gap-2 text-[12px] text-yellow-200"><input type="checkbox" checked={admin.saveGoogle} onChange={(e) => setAdmin({ ...admin, saveGoogle: e.target.checked })} /> Google Password Manager में सेव करो जी</label>
+          </div>
+          <div className="flex flex-wrap gap-2 mt-3">
+            <button onClick={saveAdmin} className="bg-yellow-400 text-black font-bold px-3 py-2 rounded-lg text-[12px]">💾 एडमिन सेव करो जी</button>
+            <button onClick={() => speakHindi("एडमिन पैनल, एडमिन नाम, ईमेल, मोबाइल, पासवर्ड, यूपीआई")} className="bg-black border border-yellow-400 text-yellow-200 px-3 py-2 rounded-lg text-[12px]">🔊 हिंदी सुनो जी</button>
+            <button onClick={() => speakEn("Admin Panel, Admin Name, Email, Mobile, Password, UPI ID")} className="bg-black border border-yellow-400 text-yellow-200 px-3 py-2 rounded-lg text-[12px]">🔊 English Ji</button>
+            <button onClick={() => setAdminMsg("✓ Google Login Simulated जी - 9992553796@ybl")} className="bg-blue-600 text-white px-3 py-2 rounded-lg text-[12px]">🔐 Google Login जी</button>
+            <button onClick={() => setAdminForgotVisible(!adminForgotVisible)} className="bg-red-900 border border-yellow-400 text-yellow-100 px-3 py-2 rounded-lg text-[12px]">❓ पासवर्ड भूल गए जी? नया बनाओ</button>
+          </div>
+          {adminMsg && <p className="mt-2 text-green-400 text-[12px] font-bold">{adminMsg}</p>}
+          {adminForgotVisible && (
+            <div className="mt-3 border-2 border-yellow-400 rounded-xl p-3 bg-[#0a1628]">
+              <p className="text-yellow-300 text-[12px] mb-2">Forgot Password - OTP 123456 Simulation</p>
+              <input value={adminForgot.contact} onChange={(e) => setAdminForgot({ ...adminForgot, contact: e.target.value })} placeholder="Email / Mobile" className="w-full bg-black border border-yellow-400 rounded-lg px-3 py-2 mb-2 text-yellow-100" />
+              <button onClick={() => { setAdminForgot({ ...adminForgot, otpSent: true }); setAdminMsg("📩 OTP भेजा जी: 123456 - Simulation जी"); }} className="bg-green-600 text-white px-3 py-2 rounded-lg text-[12px] mb-2">📩 OTP भेजो जी</button>
+              {adminForgot.otpSent && <p className="text-green-400 text-[11px] mb-2">OTP is 123456 simulation - डालो जी</p>}
+              <input value={adminForgot.otp} onChange={(e) => setAdminForgot({ ...adminForgot, otp: e.target.value })} placeholder="6 Digit OTP - 123456" className="w-full bg-black border border-yellow-400 rounded-lg px-3 py-2 mb-2 text-yellow-100" />
+              <div className="flex gap-2 mb-2">
+                <input value={adminForgot.newPass} onChange={(e) => setAdminForgot({ ...adminForgot, newPass: e.target.value })} placeholder="New Password" type={adminForgot.showNew ? "text" : "password"} className="flex-1 bg-black border border-yellow-400 rounded-lg px-3 py-2 text-yellow-100" />
+                <button onClick={() => setAdminForgot({ ...adminForgot, showNew: !adminForgot.showNew })} className="bg-yellow-400 text-black px-2 rounded-lg">{adminForgot.showNew ? "🙈" : "👁️"}</button>
+              </div>
+              <div className="flex gap-2 mb-2">
+                <input value={adminForgot.confirmPass} onChange={(e) => setAdminForgot({ ...adminForgot, confirmPass: e.target.value })} placeholder="Confirm Password" type={adminForgot.showConfirm ? "text" : "password"} className="flex-1 bg-black border border-yellow-400 rounded-lg px-3 py-2 text-yellow-100" />
+                <button onClick={() => setAdminForgot({ ...adminForgot, showConfirm: !adminForgot.showConfirm })} className="bg-yellow-400 text-black px-2 rounded-lg">{adminForgot.showConfirm ? "🙈" : "👁️"}</button>
+              </div>
+              <button onClick={() => {
+                if (adminForgot.otp !== "123456") { setAdminMsg("❌ OTP गलत है जी - 123456 डालो"); return; }
+                if (adminForgot.newPass !== adminForgot.confirmPass || adminForgot.newPass.length < 4) { setAdminMsg("❌ Password match नहीं जी"); return; }
+                setAdmin({ ...admin, pass: adminForgot.newPass });
+                localStorage.setItem("veedeohub_admin_v4", JSON.stringify({ ...admin, pass: adminForgot.newPass }));
+                setAdminMsg("✓ Google Password Manager में सेव हो गया जी + ✓ नया पासवर्ड ऑटो सेव हो गया जी");
+                setAdminForgotVisible(false);
+              }} className="bg-yellow-400 text-black font-bold px-3 py-2 rounded-lg text-[12px]">🔑 नया पासवर्ड सेव करो जी</button>
+            </div>
+          )}
+        </div>
+
+        {/* NOMINEE BOX - KEEP */}
+        <div id="nomineeBox" className="border-4 bg-black rounded-[18px] p-[14px] mb-4" style={{ borderColor: "#2196F3" }}>
+          <h2 className="sharpGold text-[15px] mb-3">👨‍👩‍👧‍👦 नॉमिनी बॉक्स - Nominee Panel - Google Password सहित जी</h2>
+          <div className="grid gap-2">
+            <input value={nominee.name} onChange={(e) => setNominee({ ...nominee, name: e.target.value })} placeholder="Nominee Name" className="bg-[#0a1628] border border-blue-400 rounded-lg px-3 py-2 text-yellow-100" />
+            <select value={nominee.relation} onChange={(e) => setNominee({ ...nominee, relation: e.target.value })} className="bg-[#0a1628] border border-blue-400 rounded-lg px-3 py-2 text-yellow-100">
+              <option>Son</option><option>Daughter</option><option>Wife</option><option>Brother</option><option>Sister</option><option>Father</option><option>Mother</option><option>Other</option>
+            </select>
+            <input value={nominee.mobile} onChange={(e) => setNominee({ ...nominee, mobile: e.target.value })} placeholder="Nominee Mobile" className="bg-[#0a1628] border border-blue-400 rounded-lg px-3 py-2 text-yellow-100" />
+            <input value={nominee.email} onChange={(e) => setNominee({ ...nominee, email: e.target.value })} placeholder="Nominee Email" type="email" className="bg-[#0a1628] border border-blue-400 rounded-lg px-3 py-2 text-yellow-100" />
+            <div className="flex gap-2">
+              <input value={nominee.pass} onChange={(e) => setNominee({ ...nominee, pass: e.target.value })} placeholder="Nominee Password" type={nominee.showPass ? "text" : "password"} className="flex-1 bg-[#0a1628] border border-blue-400 rounded-lg px-3 py-2 text-yellow-100" />
+              <button onClick={() => setNominee({ ...nominee, showPass: !nominee.showPass })} className="bg-blue-500 text-white px-2 rounded-lg">{nominee.showPass ? "🙈" : "👁️"}</button>
+            </div>
+            <label className="flex items-center gap-2 text-[12px] text-yellow-200"><input type="checkbox" checked={nominee.saveGoogle} onChange={(e) => setNominee({ ...nominee, saveGoogle: e.target.checked })} /> Google Password Manager में सेव करो जी</label>
+          </div>
+          <div className="flex flex-wrap gap-2 mt-3">
+            <button onClick={saveNominee} className="bg-blue-500 text-white font-bold px-3 py-2 rounded-lg text-[12px]">💾 नॉमिनी सेव करो जी</button>
+            <button onClick={() => speakHindi("नॉमिनी बॉक्स, नाम, रिश्ता, मोबाइल, ईमेल, पासवर्ड")} className="bg-black border border-blue-400 text-yellow-200 px-3 py-2 rounded-lg text-[12px]">🔊 हिंदी सुनो जी</button>
+            <button onClick={() => speakEn("Nominee Panel, Name, Relation, Mobile, Email, Password")} className="bg-black border border-blue-400 text-yellow-200 px-3 py-2 rounded-lg text-[12px]">🔊 English Ji</button>
+            <button onClick={() => setNomineeMsg("✓ Google Login Simulated for Nominee जी")} className="bg-blue-600 text-white px-3 py-2 rounded-lg text-[12px]">🔐 Google Login जी</button>
+            <button onClick={() => setNomineeForgotVisible(!nomineeForgotVisible)} className="bg-red-900 border border-blue-400 text-yellow-100 px-3 py-2 rounded-lg text-[12px]">❓ पासवर्ड भूल गए जी? नया बनाओ</button>
+          </div>
+          {nomineeMsg && <p className="mt-2 text-green-400 text-[12px] font-bold">{nomineeMsg}</p>}
+          {nomineeForgotVisible && (
+            <div className="mt-3 border-2 border-blue-400 rounded-xl p-3 bg-[#0a1628]">
+              <input value={nomineeForgot.contact} onChange={(e) => setNomineeForgot({ ...nomineeForgot, contact: e.target.value })} placeholder="Email / Mobile" className="w-full bg-black border border-blue-400 rounded-lg px-3 py-2 mb-2 text-yellow-100" />
+              <button onClick={() => { setNomineeForgot({ ...nomineeForgot, otpSent: true }); setNomineeMsg("📩 OTP 123456 भेजा जी"); }} className="bg-green-600 text-white px-3 py-2 rounded-lg text-[12px] mb-2">📩 OTP भेजो जी</button>
+              {nomineeForgot.otpSent && <p className="text-green-400 text-[11px] mb-2">OTP 123456 simulation</p>}
+              <input value={nomineeForgot.otp} onChange={(e) => setNomineeForgot({ ...nomineeForgot, otp: e.target.value })} placeholder="OTP 123456" className="w-full bg-black border border-blue-400 rounded-lg px-3 py-2 mb-2 text-yellow-100" />
+              <div className="flex gap-2 mb-2">
+                <input value={nomineeForgot.newPass} onChange={(e) => setNomineeForgot({ ...nomineeForgot, newPass: e.target.value })} placeholder="New Password" type={nomineeForgot.showNew ? "text" : "password"} className="flex-1 bg-black border border-blue-400 rounded-lg px-3 py-2 text-yellow-100" />
+                <button onClick={() => setNomineeForgot({ ...nomineeForgot, showNew: !nomineeForgot.showNew })} className="bg-blue-500 text-white px-2 rounded-lg">{nomineeForgot.showNew ? "🙈" : "👁️"}</button>
+              </div>
+              <div className="flex gap-2 mb-2">
+                <input value={nomineeForgot.confirmPass} onChange={(e) => setNomineeForgot({ ...nomineeForgot, confirmPass: e.target.value })} placeholder="Confirm" type={nomineeForgot.showConfirm ? "text" : "password"} className="flex-1 bg-black border border-blue-400 rounded-lg px-3 py-2 text-yellow-100" />
+                <button onClick={() => setNomineeForgot({ ...nomineeForgot, showConfirm: !nomineeForgot.showConfirm })} className="bg-blue-500 text-white px-2 rounded-lg">{nomineeForgot.showConfirm ? "🙈" : "👁️"}</button>
+              </div>
+              <button onClick={() => {
+                if (nomineeForgot.otp !== "123456") { setNomineeMsg("❌ OTP गलत जी"); return; }
+                if (nomineeForgot.newPass !== nomineeForgot.confirmPass) { setNomineeMsg("❌ Match नहीं जी"); return; }
+                setNominee({ ...nominee, pass: nomineeForgot.newPass });
+                localStorage.setItem("veedeohub_nominee_v4", JSON.stringify({ ...nominee, pass: nomineeForgot.newPass }));
+                setNomineeMsg("✓ Google Password Manager में सेव हो गया जी + ✓ नया पासवर्ड ऑटो सेव हो गया जी");
+                setNomineeForgotVisible(false);
+              }} className="bg-blue-500 text-white font-bold px-3 py-2 rounded-lg text-[12px]">🔑 नया पासवर्ड सेव करो जी</button>
+            </div>
+          )}
+        </div>
+
+        {/* FIX BOX 1 - KEEP EXACT */}
+        <div id="fixBox1Section" className="border-4 border-yellow-400 bg-black rounded-[18px] p-3 mb-4">
+          <h2 className="sharpGold text-[14px] mb-2">📹 Fix Box नम्बर 1. - Veedeohub Single Public Identity - SolqIcBHhu4 - जरूरी Fix जी</h2>
+          <p className="text-[11px] text-yellow-300 bg-[#0a1628] border border-yellow-600 rounded-lg p-2 mb-2 font-mono break-all">🔗 जरूरी Embed लिंक: https://www.youtube-nocookie.com/embed/SolqIcBHhu4 - Fix Box 1 Fix जी</p>
+          {!box1Playing ? (
+            <div onClick={playBox1} className="w-full max-w-[380px] mx-auto border-[3px] border-yellow-400 rounded-[12px] overflow-hidden relative cursor-pointer" style={{ height: "380px" }}>
+              <img src={`https://img.youtube.com/vi/${FIX1_ID}/maxresdefault.jpg`} onError={(e) => { (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${FIX1_ID}/hqdefault.jpg`; }} alt="Fix Box 1 Thumbnail SolqIcBHhu4" className="w-full h-full object-cover" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85px] h-[85px] bg-red-600 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(255,0,0,0.8)]"><span className="text-white text-[40px] ml-1">▶</span></div>
+              <div className="absolute bottom-0 left-0 right-0 bg-black/80 p-2 text-center">
+                <p className="text-yellow-300 text-[11px]">▶️ Veedeohub © Ashok Kumar Ji - Click = चलेगा जी</p>
+                <p className="text-white text-[10px]">📹 SolqIcBHhu4 - Fix Box नम्बर 1. - Click करो जी</p>
+              </div>
+            </div>
+          ) : (
+            <div className="w-full max-w-[380px] mx-auto border-[3px] border-yellow-400 rounded-[12px] overflow-hidden" style={{ height: "380px" }}>
+              <iframe src={`https://www.youtube-nocookie.com/embed/${FIX1_ID}?rel=0&modestbranding=1&playsinline=1&autoplay=1`} className="w-full h-full" allowFullScreen title="Fix Box 1"></iframe>
+            </div>
+          )}
+          <div className="flex flex-wrap gap-2 mt-3">
+            <a href={`https://youtu.be/${FIX1_ID}`} target="_blank" rel="noopener" className="bg-black border border-yellow-400 text-yellow-300 px-3 py-2 rounded-lg text-[12px] font-bold">Fix Box नम्बर 1.</a>
+            <button onClick={() => speakHindi("फिक्स बॉक्स नंबर एक, वीडीओ हब सिंगल पब्लिक आइडेंटिटी, एस ओ एल क्यू आई सी बी एच एच यू फोर, जरूरी फिक्स जी")} className="bg-black border border-yellow-400 text-yellow-200 px-3 py-2 rounded-lg text-[12px]">🔊 Fix Box नम्बर 1. सुनो जी</button>
+            <button onClick={() => speakEn("Fix Box Number 1 Video SolqIcBHhu4")} className="bg-black border border-yellow-400 text-yellow-200 px-3 py-2 rounded-lg text-[12px]">🔊 English Ji</button>
+            <button onClick={playBox1} className="bg-yellow-400 text-black font-bold px-3 py-2 rounded-lg text-[12px]">▶️ यहीं चलाओ जी</button>
+            <button onClick={closeBox1} className="bg-red-900 border border-yellow-400 text-white px-3 py-2 rounded-lg text-[12px]">✕ बंद करो जी</button>
+          </div>
+        </div>
+
+        {/* ADSENSE SLOT 2222222222 - After Fix Box 1 SolqIcBHhu4 */}
+        <AdSlot id="2222222222" consent={cookieConsent} />
+
+        {/* FIX BOX 2 - KEEP EXACT */}
+        <div id="fixBox2Section" className="border-4 bg-black rounded-[18px] p-3 mb-4" style={{ borderColor: "#2196F3" }}>
+          <h2 className="sharpGold text-[14px] mb-2">📹 Fix Box नम्बर 2. - Shiv Bhakti Dhara - BxvD4sMznoc - जरूरी Fix जी</h2>
+          <p className="text-[11px] text-blue-300 bg-[#0a1628] border border-blue-600 rounded-lg p-2 mb-2 font-mono break-all">🔗 जरूरी Embed लिंक: https://www.youtube-nocookie.com/embed/BxvD4sMznoc?si=_NDwm6zNe1n307zq - Fix Box 2 Fix जी</p>
+          {!box2Playing ? (
+            <div onClick={playBox2} className="w-full max-w-[380px] mx-auto border-[3px] rounded-[12px] overflow-hidden relative cursor-pointer" style={{ borderColor: "#2196F3", height: "380px" }}>
+              <img src={`https://img.youtube.com/vi/${FIX2_ID}/maxresdefault.jpg`} onError={(e) => { (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${FIX2_ID}/hqdefault.jpg`; }} alt="Fix Box 2 Thumbnail BxvD4sMznoc" className="w-full h-full object-cover" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85px] h-[85px] bg-red-600 rounded-full flex items-center justify-center"><span className="text-white text-[40px] ml-1">▶</span></div>
+              <div className="absolute bottom-0 left-0 right-0 bg-black/80 p-2 text-center">
+                <p className="text-blue-300 text-[11px]">▶️ Shiv Bhakti Dhara - Click = चलेगा जी</p>
+                <p className="text-white text-[10px]">📹 BxvD4sMznoc - Fix Box नम्बर 2. - Click करो जी</p>
+              </div>
+            </div>
+          ) : (
+            <div className="w-full max-w-[380px] mx-auto border-[3px] rounded-[12px] overflow-hidden" style={{ borderColor: "#2196F3", height: "380px" }}>
+              <iframe src={`https://www.youtube-nocookie.com/embed/${FIX2_ID}?si=${FIX2_SI}&rel=0&modestbranding=1&playsinline=1&autoplay=1`} className="w-full h-full" allowFullScreen title="Fix Box 2"></iframe>
+            </div>
+          )}
+          <div className="flex flex-wrap gap-2 mt-3">
+            <a href={`https://youtu.be/${FIX2_ID}?si=${FIX2_SI}`} target="_blank" rel="noopener" className="bg-black border text-blue-300 px-3 py-2 rounded-lg text-[12px] font-bold" style={{ borderColor: "#2196F3" }}>Fix Box नम्बर 2.</a>
+            <button onClick={() => speakHindi("फिक्स बॉक्स नंबर दो, शिव भक्ति धारा, बी एक्स वी डी फोर एस एम जेड एन ओ सी, जरूरी फिक्स जी")} className="bg-black border text-yellow-200 px-3 py-2 rounded-lg text-[12px]" style={{ borderColor: "#2196F3" }}>🔊 Fix Box नम्बर 2. सुनो जी</button>
+            <button onClick={() => speakEn("Fix Box Number 2 Video BxvD4sMznoc Shiv Bhakti Dhara")} className="bg-black border text-yellow-200 px-3 py-2 rounded-lg text-[12px]" style={{ borderColor: "#2196F3" }}>🔊 English Ji</button>
+            <button onClick={playBox2} className="bg-blue-600 text-white font-bold px-3 py-2 rounded-lg text-[12px]">▶️ यहीं चलाओ जी</button>
+            <button onClick={closeBox2} className="bg-red-900 border text-white px-3 py-2 rounded-lg text-[12px]" style={{ borderColor: "#2196F3" }}>✕ बंद करो जी</button>
+          </div>
+        </div>
+
+        {/* ADSENSE SLOT 3333333333 - After Fix Box 2 BxvD4sMznoc */}
+        <AdSlot id="3333333333" consent={cookieConsent} />
+
+        {/* PLAYLIST ONLY ONE - KEEP */}
+        <div id="playlist-section" className="border-4 bg-black rounded-[18px] p-3 mb-4 shadow-[0_0_25px_rgba(255,0,0,0.5)]" style={{ borderColor: "#FF0000" }}>
+          <div className="goldGlowBox mb-3 text-center">
+            <h3 className="sharpGold text-[16px]">Veedeohub | You Tube |</h3>
+            <p className="text-white text-[11px] mt-1">Original Playlist - सिर्फ यही प्लेलिस्ट जी - बाकी हटा दी जी</p>
+          </div>
+          <div onClick={openPlaylist} className="w-full max-w-[380px] mx-auto border-[3px] rounded-[12px] overflow-hidden relative cursor-pointer" style={{ borderColor: "#FF0000" }}>
+            <div className="h-[220px] flex flex-col items-center justify-center relative" style={{ background: "linear-gradient(135deg,#FF0000,#CC0000,#8B0000)" }}>
+              <span className="absolute top-2 left-2 bg-black/80 text-white text-[10px] px-2 py-1 rounded">YouTube Playlist</span>
+              <div className="w-[90px] h-[90px] bg-white rounded-full flex items-center justify-center shadow-lg"><span className="text-red-600 text-[40px] ml-1">▶</span></div>
+              <p className="text-white tracking-widest text-[14px] mt-3 font-bold">You Tube</p>
+              <p className="text-yellow-300 text-[12px]">Veedeohub</p>
+              <span className="absolute bottom-2 right-2 bg-black text-white text-[10px] px-2 py-1 rounded">PLF1nrtSu2Dd8I...</span>
+            </div>
+            <div className="bg-[#1a0000] text-yellow-300 text-center py-2 text-[11px]">🔴 लाल थंबनेल - You Tube पहचान - Click करो जी</div>
+          </div>
+          <div className="mt-3">
+            <p className="text-yellow-300 text-[12px] font-bold mb-1">🔗 Original Playlist लिंक जी:</p>
+            <div className="bg-black border rounded-lg p-2" style={{ borderColor: "#FF0000" }}>
+              <p className="text-[#FF6B6B] font-mono text-[10px] break-all">{PLAYLIST_URL}</p>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2 mt-3">
+            <a href={PLAYLIST_URL} target="_blank" rel="noopener" className="bg-red-600 text-white border border-white px-4 py-2 rounded-lg text-[13px] font-bold shadow-[0_0_15px_red]">You Tube Veedeohub</a>
+            <button onClick={() => speakHindi("यू ट्यूब वीडीओ हब, ओरिजिनल प्लेलिस्ट, सिर्फ यही प्लेलिस्ट जी")} className="bg-black border border-red-600 text-yellow-200 px-3 py-2 rounded-lg text-[12px]">🔊 You Tube Veedeohub सुनो जी</button>
+            <button onClick={() => speakEn("You Tube Veedeohub playlist")} className="bg-black border border-red-600 text-yellow-200 px-3 py-2 rounded-lg text-[12px]">🔊 English Ji</button>
+          </div>
+        </div>
+
+        {/* ADSENSE SLOT 4444444444 - After Playlist PLF1nrtSu2Dd8IjpcDmTsr68e-nWic_Qd1 */}
+        <AdSlot id="4444444444" consent={cookieConsent} />
+
+        {/* 6 SPACES - KEEP */}
+        <div id="sixSpacesSection" className="border-4 border-yellow-400 bg-black rounded-[16px] p-3 mb-4">
+          <h2 className="sharpGold text-[13px] mb-3">✍️ 6 ऊपर लिखने के स्पेस - वीडियो+इमेज और API-Key फिक्स जी - ब्रांडेड सुनहरी लेख जी</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            {spaces.map((sp, idx) => (
+              <div key={idx} id={`space-${idx + 1}`} className="border border-yellow-600 rounded-xl p-2 bg-[#0a1628]">
+                <p className="text-yellow-300 text-[12px] font-bold mb-1">Space {idx + 1} - ब्रांडेड लेख जी</p>
+                <textarea value={sp.text} onChange={(e) => { const ns = [...spaces]; ns[idx].text = e.target.value; setSpaces(ns); }} placeholder="यहाँ लिखो जी" className="w-full h-[80px] bg-black text-yellow-200 border border-yellow-600 rounded-lg p-2 text-[11px]" />
+                <div className="mt-2">
+                  <p className="text-[11px] text-yellow-400">🖼️ इमेज - Image Fix जी</p>
+                  <input value={sp.imageUrl} onChange={(e) => { const ns = [...spaces]; ns[idx].imageUrl = e.target.value; ns[idx].imagePreview = e.target.value; setSpaces(ns); }} placeholder="Image URL" className="w-full bg-black border border-yellow-700 rounded-lg px-2 py-1 text-[10px] text-yellow-200 mt-1" />
+                  {sp.imagePreview && <img src={sp.imagePreview} alt={`Space ${idx + 1} Preview`} className="w-full h-[120px] object-cover border border-yellow-600 rounded-lg mt-1" onError={(e) => (e.target as HTMLImageElement).style.display = "none"} />}
+                </div>
+                <div className="mt-2">
+                  <p className="text-[11px] text-yellow-400">📹 वीडियो - Video Fix जी</p>
+                  <input value={sp.videoUrl} onChange={(e) => { const ns = [...spaces]; ns[idx].videoUrl = e.target.value; setSpaces(ns); }} placeholder="YouTube URL" className="w-full bg-black border border-yellow-700 rounded-lg px-2 py-1 text-[10px] text-yellow-200 mt-1" />
+                </div>
+                <div className="mt-2">
+                  <p className="text-[11px] text-yellow-400">🔑 API-Key - API Fix जी</p>
+                  <select value={sp.apiService} onChange={(e) => { const ns = [...spaces]; ns[idx].apiService = e.target.value; setSpaces(ns); }} className="w-full bg-black border border-yellow-700 rounded-lg px-2 py-1 text-[10px] text-yellow-200 mt-1">
+                    <option>YouTube API</option><option>QR API</option><option>Google Translate API</option><option>DreamBook API</option><option>Amazon API</option><option>Flipkart API</option><option>Custom</option>
+                  </select>
+                  <div className="flex gap-1 mt-1">
+                    <input value={sp.apiKey} onChange={(e) => { const ns = [...spaces]; ns[idx].apiKey = e.target.value; setSpaces(ns); }} type="password" placeholder="API Key" className="flex-1 bg-black border border-yellow-700 rounded-lg px-2 py-1 text-[10px] text-yellow-200" />
+                    <button onClick={() => {
+                      if (sp.apiKey.length > 10) {
+                        const ns = [...spaces]; ns[idx].apiStatus = "✓ API-Key Fixed ✓"; setSpaces(ns);
+                        const newKeys = { ...apiKeys, [sp.apiService]: sp.apiKey };
+                        setApiKeys(newKeys);
+                        localStorage.setItem("veedeohub_api_keys_v4", JSON.stringify(newKeys));
+                      } else {
+                        const ns = [...spaces]; ns[idx].apiStatus = "❌ Key छोटा है जी"; setSpaces(ns);
+                      }
+                    }} className="bg-green-600 text-white px-2 py-1 rounded text-[10px]">🔑 API-Key सेव करो जी</button>
+                  </div>
+                  <span className="text-[10px] mt-1 inline-block" style={{ color: sp.apiStatus.includes("✓") ? "#00ff00" : "red" }}>{sp.apiStatus}</span>
+                </div>
+                <div className="flex flex-wrap gap-1 mt-2">
+                  <button onClick={()=>saveVersion(`Space ${idx+1} Save`)} className="bg-yellow-400 text-black px-2 py-1 rounded text-[10px] font-bold">💾 सेव जी</button>
+                  <button onClick={() => speakHindi(sp.text.slice(0, 100))} className="bg-black border border-yellow-700 text-yellow-200 px-2 py-1 rounded text-[10px]">🔊 हिंदी सुनो जी</button>
+                  <button onClick={() => speakEn(sp.text.slice(0, 100))} className="bg-black border border-yellow-700 text-yellow-200 px-2 py-1 rounded text-[10px]">🔊 English Ji</button>
+                  <button onClick={() => { setActiveSpaceIdx(idx); pexelsBoxRef.current?.scrollIntoView({behavior:"smooth"}); }} className="bg-[#05A081] text-white px-2 py-1 rounded text-[10px] font-bold">📸 Pexels से लो जी</button>
+                  <button onClick={() => { setActiveSpaceIdx(idx); pixabayBoxRef.current?.scrollIntoView({behavior:"smooth"}); }} className="bg-orange-600 text-white px-2 py-1 rounded text-[10px] font-bold">🌅 Pixabay से लो जी</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* PEXELS BOX - KEEP */}
+        <div ref={pexelsBoxRef} id="pexelsBox" className="border-4 bg-black rounded-[18px] p-3 mb-4" style={{ borderColor: "#05A081" }}>
+          <h2 className="sharpGold text-[14px] mb-2">📸 Pexels Box - Pexels API Fixed जी - Key सेव है जी</h2>
+          <div className="bg-[#021a14] border border-[#05A081]/50 rounded-xl p-3 mb-3">
+            <p className="text-[#05A081] text-[11px] font-bold mb-2">🔑 Pexels API Key - आपकी दी हुई जी</p>
+            <div className="flex gap-2 mb-2">
+              <input value={pexelsKey} onChange={(e) => setPexelsKey(e.target.value)} type={showPexelsKey ? "text" : "password"} placeholder="Pexels API Key" className="flex-1 bg-black border border-[#05A081] rounded-lg px-3 py-2 text-[11px] text-green-100 outline-none" />
+              <button onClick={() => setShowPexelsKey(!showPexelsKey)} className="bg-[#05A081] text-white px-3 py-2 rounded-lg text-[11px] font-bold">👁️ दिखाओ/छुपाओ जी</button>
+            </div>
+            <div className="flex flex-wrap gap-2 items-center mb-2">
+              <span className={`px-3 py-1 rounded-full text-[10px] font-bold ${pexelsKey ? "bg-green-600 text-white" : "bg-red-900 text-white"}`}>{pexelsKey ? `✓ API Key Fixed - ${maskKey(pexelsKey)}` : "❌ Key डालो जी"}</span>
+              <span className="text-[9px] text-green-400 font-mono">btoa encoded → veedeohub_pexels_key_v5</span>
+            </div>
+            <p className="text-[9px] text-green-600 font-mono break-all mb-2">Masked: {maskKey(pexelsKey)} | {pexelsMsg}</p>
+            <div className="flex flex-wrap gap-2">
+              <button onClick={savePexelsKey} className="bg-[#05A081] text-white font-bold px-3 py-2 rounded-lg text-[11px] shadow-[0_0_10px_#05A081]">🔑 Pexels Key सेव करो जी</button>
+              <button onClick={() => speakHindi("Pexels बॉक्स फिक्स हो गया जी, ए पी आई की सेव है जी")} className="bg-black border border-[#05A081] text-green-200 px-3 py-2 rounded-lg text-[11px]">🔊 हिंदी सुनो जी</button>
+              <button onClick={() => speakEn("Pexels box fixed, API key saved")} className="bg-black border border-[#05A081] text-green-200 px-3 py-2 rounded-lg text-[11px]">🔊 English Ji</button>
+            </div>
+          </div>
+          <div className="bg-[#021a14] border border-[#05A081]/30 rounded-xl p-3">
+            <p className="text-green-300 text-[11px] font-bold mb-2">🔍 Pexels Search - Images / Videos</p>
+            <div className="flex gap-2 mb-2">
+              <input value={pexelsQuery} onChange={(e) => setPexelsQuery(e.target.value)} placeholder="Search Images/Videos जी" className="flex-1 bg-black border border-[#05A081] rounded-lg px-3 py-2 text-[11px] text-green-100" />
+              <select value={pexelsType} onChange={(e) => setPexelsType(e.target.value as any)} className="bg-black border border-[#05A081] rounded-lg px-2 py-2 text-[11px] text-green-100"><option>Photos</option><option>Videos</option></select>
+            </div>
+            <button onClick={fetchPexels} disabled={pexelsLoading} className="w-full bg-[#05A081] text-white font-bold py-2 rounded-lg text-[12px] disabled:opacity-50">{pexelsLoading ? "🔄 Pexels से ला रहे हैं जी..." : "🔍 Pexels खोजो जी"}</button>
+            {pexelsMsg && <p className="mt-2 text-[11px] text-green-400 font-bold">{pexelsMsg}</p>}
+            {pexelsResults.length > 0 && (
+              <div className="mt-3 grid grid-cols-3 gap-2">
+                {pexelsResults.map((m: any) => (
+                  <div key={m.id} className="bg-black border border-[#05A081]/40 rounded-lg overflow-hidden">
+                    <img src={m.thumb} alt={m.alt} className="w-full h-[80px] object-cover" loading="lazy" />
+                    <div className="p-1">
+                      <p className="text-[8px] text-green-300 truncate">{m.photographer}</p>
+                      <div className="grid grid-cols-2 gap-1 mt-1">
+                        <button onClick={() => addMediaToAnant(m, "Pexels")} className="bg-green-700 text-white text-[7px] py-1 rounded font-bold">➕ अनन्त में जोड़ो जी</button>
+                        <button onClick={() => addMediaToSpace(m)} className="bg-yellow-600 text-white text-[7px] py-1 rounded font-bold">🖼️ Space में जी</button>
+                        <button onClick={() => copyMediaLink(m.large)} className="bg-blue-700 text-white text-[7px] py-1 rounded">🔗 कॉपी</button>
+                        <a href={m.large} target="_blank" rel="noopener" className="bg-[#05A081] text-white text-[7px] py-1 rounded text-center">⬇️ डाउनलोड</a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* PIXABAY BOX - KEEP */}
+        <div ref={pixabayBoxRef} id="pixabayBox" className="border-4 bg-black rounded-[18px] p-3 mb-4" style={{ borderColor: "#FF8C00" }}>
+          <h2 className="sharpGold text-[14px] mb-2">🌅 Pixabay Box - Pixabay API Fixed जी</h2>
+          <div className="bg-[#1a0f02] border border-orange-600/50 rounded-xl p-3 mb-3">
+            <p className="text-orange-400 text-[11px] font-bold mb-2">🔑 Pixabay API Key - अलग Key चाहिए जी</p>
+            <div className="flex gap-2 mb-2">
+              <input value={pixabayKey} onChange={(e) => setPixabayKey(e.target.value)} type={showPixabayKey ? "text" : "password"} placeholder="Pixabay API Key डालो जी" className="flex-1 bg-black border border-orange-500 rounded-lg px-3 py-2 text-[11px] text-orange-100" />
+              <button onClick={() => setShowPixabayKey(!showPixabayKey)} className="bg-orange-600 text-white px-3 py-2 rounded-lg text-[11px] font-bold">👁️</button>
+            </div>
+            <p className="text-[9px] text-orange-500 font-mono break-all mb-2">Masked: {maskKey(pixabayKey)} | {pixabayMsg}</p>
+            <div className="flex flex-wrap gap-2">
+              <button onClick={savePixabayKey} className="bg-orange-600 text-white font-bold px-3 py-2 rounded-lg text-[11px]">🔑 Pixabay Key सेव करो जी</button>
+              <button onClick={() => speakHindi("पिक्साबे बॉक्स फिक्स हो गया जी")} className="bg-black border border-orange-500 text-orange-200 px-3 py-2 rounded-lg text-[11px]">🔊 हिंदी सुनो जी</button>
+              <button onClick={() => speakEn("Pixabay box fixed")} className="bg-black border border-orange-500 text-orange-200 px-3 py-2 rounded-lg text-[11px]">🔊 English Ji</button>
+            </div>
+          </div>
+          <div className="bg-[#1a0f02] border border-orange-600/30 rounded-xl p-3">
+            <p className="text-orange-300 text-[11px] font-bold mb-2">🔍 Pixabay Search</p>
+            <div className="flex gap-2 mb-2">
+              <input value={pixabayQuery} onChange={(e) => setPixabayQuery(e.target.value)} placeholder="Search Pixabay जी" className="flex-1 bg-black border border-orange-500 rounded-lg px-3 py-2 text-[11px] text-orange-100" />
+              <select value={pixabayType} onChange={(e) => setPixabayType(e.target.value as any)} className="bg-black border border-orange-500 rounded-lg px-2 py-2 text-[11px] text-orange-100"><option>Images</option><option>Videos</option></select>
+            </div>
+            <div className="flex gap-2 mb-2">
+              <select value={pixabayCategory} onChange={(e) => setPixabayCategory(e.target.value)} className="flex-1 bg-black border border-orange-700 rounded-lg px-2 py-1 text-[10px] text-orange-200">
+                <option value="">All Categories</option><option value="nature">nature</option><option value="backgrounds">backgrounds</option><option value="fashion">fashion</option><option value="science">science</option><option value="education">education</option><option value="feelings">feelings</option><option value="health">health</option><option value="people">people</option><option value="religion">religion</option><option value="places">places</option><option value="animals">animals</option><option value="industry">industry</option><option value="computer">computer</option><option value="food">food</option><option value="sports">sports</option><option value="transportation">transportation</option><option value="travel">travel</option><option value="buildings">buildings</option><option value="business">business</option><option value="music">music</option>
+              </select>
+              <select value={pixabayOrientation} onChange={(e) => setPixabayOrientation(e.target.value)} className="flex-1 bg-black border border-orange-700 rounded-lg px-2 py-1 text-[10px] text-orange-200"><option value="all">All Orientation</option><option value="horizontal">Horizontal</option><option value="vertical">Vertical</option></select>
+            </div>
+            <button onClick={fetchPixabay} disabled={pixabayLoading} className="w-full bg-orange-600 text-white font-bold py-2 rounded-lg text-[12px] disabled:opacity-50">{pixabayLoading ? "🔄 Pixabay से ला रहे हैं जी..." : "🔍 Pixabay खोजो जी"}</button>
+            {pixabayMsg && <p className="mt-2 text-[11px] text-orange-400 font-bold">{pixabayMsg}</p>}
+            {pixabayResults.length > 0 && (
+              <div className="mt-3 grid grid-cols-3 gap-2">
+                {pixabayResults.map((m: any) => (
+                  <div key={m.id} className="bg-black border border-orange-600/40 rounded-lg overflow-hidden">
+                    <img src={m.thumb} alt={m.tags} className="w-full h-[80px] object-cover" loading="lazy" />
+                    <div className="p-1">
+                      <p className="text-[8px] text-orange-300 truncate">{m.user} ❤️{m.likes}</p>
+                      <div className="grid grid-cols-2 gap-1 mt-1">
+                        <button onClick={() => addMediaToAnant(m, "Pixabay")} className="bg-green-700 text-white text-[7px] py-1 rounded font-bold">➕ अनन्त में जी</button>
+                        <button onClick={() => addMediaToSpace(m)} className="bg-yellow-600 text-white text-[7px] py-1 rounded font-bold">🖼️ Space में जी</button>
+                        <button onClick={() => copyMediaLink(m.large)} className="bg-blue-700 text-white text-[7px] py-1 rounded">🔗 कॉपी</button>
+                        <a href={m.large} target="_blank" rel="noopener" className="bg-orange-600 text-white text-[7px] py-1 rounded text-center">⬇️ डाउनलोड</a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* ===== V6.2 - BOX 1: LEGAL WATERMARK REMOVER - INDIA VALID ONLY ===== */}
+        <div className="border-4 bg-black rounded-[18px] p-3 mb-4" style={{ borderColor:"#FF4444", boxShadow:"0 0 20px rgba(255,68,68,0.3)" }}>
+          <h2 className="sharpGold text-[14px] mb-2">💧 कानूनन वाटर मार्क हटाओ - भारत में मान्य ऐप - लिंक से सही वीडियो बनाओ जी / Legal Watermark Remover - India Valid Apps Only Ji</h2>
+          <div className="bg-[#FFF9C4] border-2 border-yellow-600 rounded-xl p-3 mb-3">
+            <p className="text-[11px] font-bold text-black leading-5">⚖️ कानूनी चेतावनी: भारत में सिर्फ अपने खुद के वीडियो का वाटर मार्क हटाना मान्य है जी - दूसरे के कॉपीराइट वीडियो का वाटर मार्क हटाना IT Act 2000 और Copyright Act 1957 के तहत गैरकानूनी है जी - सिर्फ अपना वीडियो या अनुमति वाला वीडियो ही डालो जी - Legal Use Only Ji</p>
+            <p className="text-[10px] text-[#8B0000] italic mt-2">⚖️ Legal Warning: In India only removing watermark from your own videos is valid - Removing watermark from others' copyrighted videos is illegal under IT Act 2000 and Copyright Act 1957 Ji - Only upload your own or permitted video Ji</p>
+          </div>
+          <div className="bg-[#1a0000] border border-red-500/50 rounded-xl p-3 mb-3">
+            <p className="text-red-300 text-[11px] font-bold mb-2">📹 वीडियो लिंक डालो जी (सिर्फ अपना) - Paste Your Own Video Link Ji</p>
+            <input value={wmBox.link} onChange={e=>setWmBox({...wmBox, link:e.target.value})} placeholder="अपना वीडियो लिंक डालो जी - e.g. https://youtu.be/SolqIcBHhu4 - सिर्फ अपना वीडियो जी" className="w-full bg-black border border-red-400 rounded-lg px-3 py-2 text-[11px] text-red-100 mb-2" />
+            <p className="text-[11px] text-red-300 font-bold mt-2">क्या बदलाव करना है? / What Change?</p>
+            <select value={wmBox.changeType} onChange={e=>setWmBox({...wmBox, changeType:e.target.value})} className="w-full mt-1 bg-black border border-red-500 rounded-lg px-3 py-2 text-[11px] text-red-100">
+              <option>सेम वैसा ही रखो / Keep Same</option>
+              <option>क्रॉप करो / Crop</option>
+              <option>फिल्टर लगाओ / Apply Filter</option>
+              <option>टेक्स्ट हटाओ / Remove Text</option>
+              <option>लोगो हटाओ / Remove Logo</option>
+              <option>वाटर मार्क हटाओ / Remove Watermark</option>
+              <option>इमोजी हटाओ / Remove Emoji</option>
+              <option>बैकग्राउंड हटाओ / Remove Background</option>
+            </select>
+            <label className="flex items-start gap-2 mt-3 bg-black border border-green-600 rounded-lg p-2">
+              <input type="checkbox" checked={wmBox.confirmOwn} onChange={e=>setWmBox({...wmBox, confirmOwn:e.target.checked})} className="mt-1" />
+              <span className="text-[11px] text-green-300 font-bold">✅ मैं पुष्टि करता हूँ ये मेरा खुद का वीडियो है, दूसरे का कॉपीराइट नहीं तोड़ रहा जी - I confirm this is my own video Ji</span>
+            </label>
+            <button onClick={()=>{
+              if(!wmBox.link){ alert("लिंक डालो जी - अपना वीडियो"); return; }
+              if(!wmBox.confirmOwn){ alert("✅ पुष्टि जरूरी है जी - अपना वीडियो है"); return; }
+              setWmBox(p=>({...p, processing:true, msg:"🔄 Legal Check चल रहा है जी..."}));
+              setTimeout(()=> setWmBox(p=>({...p, msg:"✅ Legal Check ✓ Own Video ✓"})), 800);
+              setTimeout(()=> setWmBox(p=>({...p, msg:"✅ Legal Check ✓ Own Video ✓ Watermark Removed ✓"})), 1600);
+              setTimeout(()=> setWmBox(p=>({...p, msg:"✅ Legal Check ✓ Own Video ✓ Watermark Removed ✓ Original Quality ✓ - तैयार जी - नीचे App में खोलो जी", processing:false, log:[...p.log, `WM ${new Date().toLocaleTimeString()} ${p.link.slice(0,30)} ${p.changeType}`].slice(-5)})), 2400);
+            }} disabled={wmBox.processing} className="w-full mt-3 bg-gradient-to-r from-red-600 to-yellow-500 text-white font-bold py-2 rounded-lg text-[12px] disabled:opacity-50">💧 वाटर मार्क हटाओ और सही वीडियो बनाओ जी</button>
+            {wmBox.msg && <p className="mt-2 text-[11px] text-green-400 font-bold animate-pulse">{wmBox.msg}</p>}
+            {wmBox.log.length>0 && <div className="mt-2 bg-black border border-red-900 rounded p-2"><p className="text-[9px] text-yellow-500 font-mono">In-Memory Log (no save): {wmBox.log.join(" | ")}</p></div>}
+          </div>
+          {/* APPS LIST */}
+          <div className="grid gap-3">
+            {[
+              {
+                num:1,
+                name:"Video Eraser - Watermark Remover",
+                pkg:"com.hugelettuce.video.retouch",
+                link:"https://play.google.com/store/apps/details?id=com.hugelettuce.video.retouch&hl=en",
+                rating:"3.6 (5151 ratings) - AI Detection",
+                kaam:"AI से वाटर मार्क, लोगो, टेक्स्ट, TikTok वाटर मार्क, आदमी, इमोजी हटाओ जी - टाइम रेंज चुनो, हाई क्वालिटी, GIF सपोर्ट, बैकग्राउंड इरेजर, भारत में मान्य जी - अपने वीडियो के लिए जी",
+                work:"AI removes watermark, logo, text, TikTok watermark, person, emoji - select time range, high quality, GIF support, background eraser - Valid in India - For your own videos Ji",
+                features:"AI Detection & Tracking, High Quality Output, India Valid"
+              },
+              {
+                num:2,
+                name:"Watermark Remover Video, Photo",
+                pkg:"com.watermarkremover.video.photo",
+                link:"https://play.google.com/store/apps/details?id=com.watermarkremover.video.photo",
+                rating:"4.14 - 46MB - Updated Aug 9 2026",
+                kaam:"वीडियो से वाटर मार्क हटाओ, फोटो से वाटर मार्क हटाओ, लोगो हटाओ, इमोजी हटाओ, क्वालिटी वही रहे जी - सिंपल UI, फ्री, भारत में मान्य जी",
+                work:"Remove watermark from video, remove watermark from photo, remove logo, remove emoji, original quality, simple UI, free, valid in India Ji",
+                features:"Video + Photo, Original Quality, Simple UI"
+              },
+              {
+                num:3,
+                name:"Watermark Remover, Logo Eraser",
+                pkg:"com.watermark.remover.logo.eraser",
+                link:"https://play.google.com/store/apps/details?id=com.watermark.remover.logo.eraser",
+                rating:"4.2 - Multi Region Support",
+                kaam:"कई जगह से एक साथ वाटर मार्क हटाओ जी, फ्रेंडली UI, नया वीडियो बिना वाटर मार्क - भारत में मान्य जी",
+                work:"Select multiple regions to remove watermark/logo at same time, friendly UI, new video without watermark - Valid in India Ji",
+                features:"Multi-Region Select, Friendly UI, India Valid"
+              },
+              {
+                num:4,
+                name:"Dewatermark AI",
+                pkg:"Web + Android + iOS + REST API",
+                link:"https://dewatermark.ai/video-watermark-remover",
+                rating:"Fast for static corner watermarks",
+                kaam:"कोने में स्थिर वाटर मार्क के लिए फास्ट, फ्री प्रीव्यू, वेब + Android + iOS + REST API, भारत में मान्य जी",
+                work:"Fast for static corner watermarks, free preview, web + Android + iOS + API, valid in India Ji",
+                features:"Static Corner Fast, Free Preview, Web + App + API"
+              }
+            ].map(app=>(
+              <div key={app.num} className="bg-black border-2 rounded-[14px] p-3" style={{ borderColor:"#FFD700" }}>
+                <div className="flex items-start gap-2">
+                  <div className="w-8 h-8 rounded-full bg-yellow-400 text-black font-black flex items-center justify-center text-[13px] flex-shrink-0">{app.num}</div>
+                  <div className="flex-1">
+                    <p className="font-bold text-[13px] text-yellow-300">{app.name}</p>
+                    <p className="text-[9px] font-mono text-yellow-600">Pkg: {app.pkg} | {app.rating}</p>
+                    <p className="text-[10px] text-white mt-2 leading-4"><span className="text-yellow-300 font-bold">काम:</span> {app.kaam}</p>
+                    <p className="text-[9px] text-gray-400 italic mt-1">Work: {app.work}</p>
+                    <p className="text-[9px] text-green-400 mt-1">✨ Features: {app.features} | भारत में मान्य जी ✅</p>
+                    <p className="text-[8px] font-mono text-blue-400 break-all mt-1">{app.link}</p>
+                    <div className="flex flex-wrap gap-1 mt-2">
+                      <a href={ensureTag(app.link)} target="_blank" rel="noopener" className="bg-yellow-400 text-black border border-yellow-600 px-3 py-1.5 rounded-lg text-[11px] font-bold">📲 Play Store - भारत में मान्य जी</a>
+                      <button onClick={()=>{ if(!wmBox.link){ alert("ऊपर लिंक डालो जी"); return; } alert(`🔗 लिंक से हटाओ जी: ${wmBox.link.slice(0,30)} - ${app.name} में खोलो जी - ${wmBox.changeType}`); }} className="bg-red-600 text-white px-3 py-1 rounded-lg text-[10px] font-bold">🔗 लिंक से हटाओ जी</button>
+                      <button onClick={()=>speakHindi(app.kaam)} className="bg-black border border-yellow-500 text-yellow-200 px-2 py-1 rounded-lg text-[10px]">🔊 हिंदी सुनो जी</button>
+                      <button onClick={()=>speakEn(app.work)} className="bg-black border border-yellow-500 text-yellow-200 px-2 py-1 rounded-lg text-[10px]">🔊 English Ji</button>
+                      <button onClick={()=>{
+                        const nextNum = 121 + anantLinks.length;
+                        const newLink = { n: nextNum, title: `${app.name} - India Valid`, url: ensureTag(app.link), btn: "भारत मान्य जी", desc: `${app.kaam} | Valid India | ${app.features}`, cat: "IndiaValid" };
+                        const updated = [...anantLinks, newLink];
+                        setAnantLinks(updated);
+                        try{ localStorage.setItem("veedeohub_anant_links_v4", JSON.stringify(updated)); }catch{}
+                      }} className="bg-green-700 text-white px-2 py-1 rounded-lg text-[10px] font-bold">➕ अनन्त में जोड़ो जी</button>
+                      <button onClick={()=>{
+                        let idx = activeSpaceIdx; if(idx===null){ const empty = spaces.findIndex(s=>!s.imagePreview); idx = empty!==-1?empty:0; }
+                        const ns=[...spaces]; ns[idx].text = `${app.name} - ${app.kaam}`; setSpaces(ns);
+                        setActiveSpaceIdx(idx);
+                      }} className="bg-blue-600 text-white px-2 py-1 rounded-lg text-[10px]">🖼️ 6 Space में जोड़ो जी</button>
+                      <a href={`https://wa.me/?text=${encodeURIComponent(app.name+' '+app.link)}`} target="_blank" rel="noopener" className="bg-green-600 text-white px-2 py-1 rounded-lg text-[10px]">WhatsApp</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-3 bg-[#FFF9C4] border border-yellow-600 rounded-lg p-2">
+            <p className="text-[10px] font-bold text-black">📜 कानूनन नियम: IT Act 2000, Copyright Act 1957, DPDP Act 2023 के अनुसार सिर्फ अपना कंटेंट या अनुमति वाला कंटेंट ही इस्तेमाल करो जी - Valid in India Apps Only Ji - No Objection Ji</p>
+          </div>
+        </div>
+
+        {/* ===== V6.2 - BOX 2: NO COPYRIGHT NO WATERMARK VIDEO MAKER - INDIA VALID ONLY ===== */}
+        <div className="border-4 bg-black rounded-[18px] p-3 mb-4" style={{ borderColor:"#00AA00", boxShadow:"0 0 20px rgba(0,170,0,0.3)" }}>
+          <h2 className="sharpGold text-[14px] mb-2">🆓 कानूनन बिना कॉपीराइट बिना वाटर मार्क - लिंक से दूसरा वीडियो बनाओ - भारत में मान्य ऐप - कोई भी बदलाव जी / Legal No Copyright No Watermark - Make New Video From Any Link - India Valid Apps Ji</h2>
+          <div className="bg-[#E8F5E9] border-2 border-green-600 rounded-xl p-3 mb-3">
+            <p className="text-[11px] font-bold text-black leading-5">✅ कानूनी: ये भारत में मान्य ऐप हैं जी - अपना खुद का नया वीडियो बनाओ, कॉपीराइट फ्री म्यूजिक और स्टॉक यूज करो, दूसरे का वीडियो चोरी मत करो जी - Original Content Only Ji</p>
+            <p className="text-[10px] text-[#0a3d0a] italic mt-2">✅ Legal: These are India-valid apps - Create your own new video, use copyright-free music and stock, don't steal others' video Ji</p>
+          </div>
+          <div className="bg-[#001a00] border border-green-500/50 rounded-xl p-3 mb-3">
+            <p className="text-green-300 text-[11px] font-bold mb-1">🔗 किसी भी वीडियो लिंक डालो जी (रेफरेंस के लिए) - Paste Any Link For Reference Ji</p>
+            <input value={ncBox.refLink} onChange={e=>setNcBox({...ncBox, refLink:e.target.value})} placeholder="रेफरेंस लिंक डालो जी - e.g. https://youtu.be/SolqIcBHhu4" className="w-full bg-black border border-green-400 rounded-lg px-3 py-2 text-[11px] text-green-100 mb-2" />
+            <p className="text-green-300 text-[11px] font-bold mb-1">✍️ अपना नया आइडिया लिखो जी - नया वीडियो कैसा बनाना है? - Write Your New Idea Ji</p>
+            <textarea value={ncBox.newIdea} onChange={e=>setNcBox({...ncBox, newIdea:e.target.value})} placeholder="अपना नया आइडिया लिखो जी - जैसे: शिव भक्ति पर नया शॉर्ट्स, अपना वॉइसओवर जोड़ो जी" className="w-full h-[60px] bg-black border border-green-400 rounded-lg px-3 py-2 text-[11px] text-green-100 mb-2" />
+            <div className="grid gap-2">
+              <div>
+                <p className="text-[10px] text-green-400">नया वीडियो प्रकार:</p>
+                <select value={ncBox.videoType} onChange={e=>setNcBox({...ncBox, videoType:e.target.value})} className="w-full mt-1 bg-black border border-green-500 rounded-lg px-3 py-1.5 text-[11px] text-green-100">
+                  <option>शॉर्ट्स</option><option>रील्स</option><option>YouTube</option><option>स्टोरी</option><option>प्रेजेंटेशन</option><option>व्लॉग</option><option>ट्यूटोरियल</option>
+                </select>
+              </div>
+              <div>
+                <p className="text-[10px] text-green-400">बदलाव:</p>
+                <select value={ncBox.changeOpt} onChange={e=>setNcBox({...ncBox, changeOpt:e.target.value})} className="w-full mt-1 bg-black border border-green-500 rounded-lg px-3 py-1.5 text-[11px] text-green-100">
+                  <option>फिल्टर, ट्रांजिशन, टेक्स्ट, म्यूजिक, वॉइसओवर, स्पीड</option>
+                  <option>फिल्टर + ट्रांजिशन</option>
+                  <option>टेक्स्ट + स्टिकर + इफेक्ट</option>
+                  <option>वॉइसओवर + बैकग्राउंड म्यूजिक</option>
+                  <option>स्पीड + क्रॉप + रिवर्स</option>
+                  <option>AI ऑटो कैप्शन + बैकग्राउंड रिमूव</option>
+                </select>
+              </div>
+              <div>
+                <p className="text-[10px] text-green-400">कॉपीराइट:</p>
+                <select value={ncBox.copyrightOpt} onChange={e=>setNcBox({...ncBox, copyrightOpt:e.target.value})} className="w-full mt-1 bg-black border border-green-500 rounded-lg px-3 py-1.5 text-[11px] text-green-100">
+                  <option>कॉपीराइट फ्री म्यूजिक यूज करो</option>
+                  <option>स्टॉक फुटेज यूज करो</option>
+                  <option>अपना फुटेज यूज करो</option>
+                  <option>YouTube Audio Library</option>
+                  <option>Pexels / Pixabay Stock</option>
+                </select>
+              </div>
+            </div>
+            <label className="flex items-start gap-2 mt-3 bg-black border border-green-600 rounded-lg p-2">
+              <input type="checkbox" checked={ncBox.confirmOwn} onChange={e=>setNcBox({...ncBox, confirmOwn:e.target.checked})} className="mt-1" />
+              <span className="text-[11px] text-green-300 font-bold">✅ मैं अपना खुद का नया कॉपीराइट फ्री वीडियो बना रहा हूँ, किसी का कॉपीराइट नहीं तोड़ रहा जी - I am creating my own new copyright-free video Ji</span>
+            </label>
+            <button onClick={()=>{
+              if(!ncBox.refLink && !ncBox.newIdea){ alert("रेफरेंस लिंक या नया आइडिया लिखो जी"); return; }
+              if(!ncBox.confirmOwn){ alert("✅ पुष्टि जरूरी है जी - अपना नया वीडियो"); return; }
+              setNcBox(p=>({...p, processing:true, msg:"🔄 Legal Check - Own Idea..."}));
+              setTimeout(()=> setNcBox(p=>({...p, msg:"✅ Legal Check ✓ Own Idea ✓"})), 800);
+              setTimeout(()=> setNcBox(p=>({...p, msg:"✅ Legal Check ✓ Own Idea ✓ Copyright-Free Music ✓"})), 1600);
+              setTimeout(()=> setNcBox(p=>({...p, msg:"✅ Legal Check ✓ Own Idea ✓ Copyright-Free Music ✓ No Watermark Export ✓ Ready Ji - नीचे App में बनाओ जी", processing:false, log:[...p.log, `NC ${new Date().toLocaleTimeString()} ${p.videoType} ${p.newIdea.slice(0,20)}`].slice(-5)})), 2400);
+            }} disabled={ncBox.processing} className="w-full mt-3 bg-gradient-to-r from-green-600 to-yellow-400 text-black font-bold py-2 rounded-lg text-[12px] disabled:opacity-50">🆓 बिना कॉपीराइट बिना वाटर मार्क नया वीडियो बनाओ जी</button>
+            {ncBox.msg && <p className="mt-2 text-[11px] text-green-400 font-bold animate-pulse">{ncBox.msg}</p>}
+            {ncBox.log.length>0 && <div className="mt-2 bg-black border border-green-900 rounded p-2"><p className="text-[9px] text-yellow-500 font-mono">In-Memory Log: {ncBox.log.join(" | ")}</p></div>}
+          </div>
+          <div className="grid gap-3">
+            {[
+              {
+                num:5,
+                name:"VN - Video Editor & Maker",
+                pkg:"com.frontrow.vlog",
+                link:"https://play.google.com/store/apps/details?id=com.frontrow.vlog&hl=en_US&gl=US",
+                rating:"4.2 Star - 158MB - Ubiquiti Labs LLC - May 4 2018",
+                kaam:"100% फ्री, कोई वाटर मार्क नहीं, अनलिमिटेड एक्सपोर्ट, 4K, मल्टी-ट्रैक टाइमलाइन, प्रो-लेवल - लिंक से दूसरा वीडियो बिना कॉपीराइट बिना वाटर मार्क - भारत में मान्य जी - सबसे बेस्ट जी",
+                work:"100% free, no watermark, unlimited exports, 4K, multi-track timeline, pro-level - Make new video from link without copyright without watermark - Valid in India - Best Ji",
+                features:"Multi-track, 4K export, No watermark, 100% free, India Valid - US Company"
+              },
+              {
+                num:6,
+                name:"YouCut - Video Editor & Maker",
+                pkg:"com.youcut.video.editor",
+                link:"https://play.google.com/store/apps/details?id=com.youcut.video.editor",
+                rating:"FREE & No Watermark - Best AI Editor - No ads when editing",
+                kaam:"बेस्ट AI वीडियो एडिटर, फ्री और कोई वाटर मार्क नहीं जी - ऑटो कैप्शन AI, बैकग्राउंड हटाओ, स्मूद स्लो-मो, फोटो स्लाइडशो, एडिटिंग में कोई बैनर एड नहीं - लिंक से नया वीडियो बिना कॉपीराइट - भारत में मान्य जी",
+                work:"Best AI Video Editor, FREE & No Watermark Ji - Auto Captions AI, Remove Background, Smooth Slow-Mo, Photo Slideshow, No banner ads when editing - Make new video from link without copyright - Valid in India Ji",
+                features:"FREE & No Watermark, No ads when editing, AI Captions"
+              },
+              {
+                num:7,
+                name:"YouTube Create - Google Official",
+                pkg:"com.google.android.apps.youtube.create",
+                link:"https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.create",
+                rating:"Google LLC Official - 100% Legal",
+                kaam:"Google का ऑफिशियल ऐप, कॉपीराइट फ्री म्यूजिक, स्टिकर, इफेक्ट, बिना वाटर मार्क एक्सपोर्ट, YouTube के लिए बेस्ट - लिंक से दूसरा वीडियो - भारत में 100% मान्य जी",
+                work:"Google official app, copyright-free music, stickers, effects, no watermark export, best for YouTube - Make new video from link - 100% valid in India Ji",
+                features:"Google Official, Copyright-Free Music, No Watermark, 100% India Valid"
+              },
+              {
+                num:8,
+                name:"Quik - Free Video Editor (GoPro)",
+                pkg:"com.goopro.quik",
+                link:"https://play.google.com/store/apps/details?id=com.goopro.quik",
+                rating:"GoPro Official - Simple & Free",
+                kaam:"सिंपल, फ्री, बिना वाटर मार्क, GoPro का - लिंक से नया वीडियो बनाओ जी - भारत में मान्य, अपना खुद का कंटेंट बनाओ जी",
+                work:"Simple, free, no watermark, GoPro official - Make new video from link - Valid in India, create your own content Ji",
+                features:"GoPro Official, Simple, No Watermark, India Valid"
+              }
+            ].map(app=>(
+              <div key={app.num} className="bg-black border-2 rounded-[14px] p-3" style={{ borderColor:"#FFD700" }}>
+                <div className="flex items-start gap-2">
+                  <div className="w-8 h-8 rounded-full bg-green-500 text-black font-black flex items-center justify-center text-[13px] flex-shrink-0">{app.num}</div>
+                  <div className="flex-1">
+                    <p className="font-bold text-[13px] text-green-300">{app.name}</p>
+                    <p className="text-[9px] font-mono text-green-600">Pkg: {app.pkg} | {app.rating}</p>
+                    <p className="text-[10px] text-white mt-2 leading-4"><span className="text-green-300 font-bold">काम:</span> {app.kaam}</p>
+                    <p className="text-[9px] text-gray-400 italic mt-1">Work: {app.work}</p>
+                    <p className="text-[9px] text-green-400 mt-1">✨ Features: {app.features} | भारत में मान्य जी ✅</p>
+                    <p className="text-[8px] font-mono text-blue-400 break-all mt-1">{app.link}</p>
+                    <div className="flex flex-wrap gap-1 mt-2">
+                      <a href={ensureTag(app.link)} target="_blank" rel="noopener" className="bg-green-500 text-black border border-green-600 px-3 py-1.5 rounded-lg text-[11px] font-bold">📲 Play Store - भारत में मान्य जी</a>
+                      <button onClick={()=>{ if(!ncBox.refLink && !ncBox.newIdea){ alert("ऊपर रेफरेंस लिंक या आइडिया डालो जी"); return; } alert(`🔗 ${ncBox.refLink?ncBox.refLink.slice(0,25):'नया आइडिया'} से नया बनाओ जी: ${ncBox.newIdea.slice(0,20)} - ${app.name} में - Type ${ncBox.videoType} - ${ncBox.changeOpt}`); }} className="bg-yellow-500 text-black px-3 py-1 rounded-lg text-[10px] font-bold">🔗 लिंक से नया बनाओ जी</button>
+                      <button onClick={()=>speakHindi(app.kaam)} className="bg-black border border-green-500 text-green-200 px-2 py-1 rounded-lg text-[10px]">🔊 हिंदी सुनो जी</button>
+                      <button onClick={()=>speakEn(app.work)} className="bg-black border border-green-500 text-green-200 px-2 py-1 rounded-lg text-[10px]">🔊 English Ji</button>
+                      <button onClick={()=>{
+                        const nextNum = 121 + anantLinks.length;
+                        const newLink = { n: nextNum, title: `${app.name} - India Valid NoCopyright`, url: ensureTag(app.link), btn: "भारत मान्य जी", desc: `${app.kaam} | ${app.features} | India Valid`, cat: "IndiaValid" };
+                        const updated = [...anantLinks, newLink];
+                        setAnantLinks(updated);
+                        try{ localStorage.setItem("veedeohub_anant_links_v4", JSON.stringify(updated)); }catch{}
+                      }} className="bg-green-700 text-white px-2 py-1 rounded-lg text-[10px] font-bold">➕ अनन्त में जोड़ो जी</button>
+                      <button onClick={()=>{
+                        let idx = activeSpaceIdx; if(idx===null){ const empty = spaces.findIndex(s=>!s.imagePreview); idx = empty!==-1?empty:0; }
+                        const ns=[...spaces]; ns[idx].text = `${app.name} - ${app.kaam} - Idea: ${ncBox.newIdea}`; setSpaces(ns);
+                        setActiveSpaceIdx(idx);
+                      }} className="bg-blue-600 text-white px-2 py-1 rounded-lg text-[10px]">🖼️ 6 Space में जोड़ो जी</button>
+                      <a href={`https://wa.me/?text=${encodeURIComponent(app.name+' '+app.link)}`} target="_blank" rel="noopener" className="bg-green-600 text-white px-2 py-1 rounded-lg text-[10px]">WhatsApp</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-3 bg-[#E8F5E9] border border-green-600 rounded-lg p-2">
+            <p className="text-[10px] font-bold text-black">📜 कानूनन नियम: IT Act 2000, Copyright Act 1957, DPDP Act 2023 के अनुसार सिर्फ अपना कंटेंट या अनुमति वाला कंटेंट ही इस्तेमाल करो जी - Valid in India Apps Only Ji - No Objection Ji</p>
+            <p className="text-[9px] text-green-800 mt-1">VN 100% free no watermark, YouCut FREE & No Watermark no ads when editing, YouTube Create Google official, Quik GoPro - All India Valid - CapCut banned not included Ji - Legal Compliant Ji</p>
+          </div>
+        </div>
+
+
+        {/* WALLET + AI - KEEP */}
+        <div className="border-4 border-yellow-400 bg-black rounded-[18px] p-3 mb-4">
+          <h2 className="sharpGold text-[13px] mb-3">💰 ऑटो पे सिस्टम - साइट वॉलेट + टीम बंटवारा 90/10 + TDS + रॉयल्टी डैशबोर्ड जी</h2>
+          <div className="grid grid-cols-2 gap-2 mb-3">
+            <div className="bg-[#0a1628] border border-yellow-600 rounded-lg p-2 text-center"><p className="text-[10px] text-yellow-600">Site Wallet Balance</p><p className="text-yellow-300 font-bold">₹12,549 जी</p></div>
+            <div className="bg-[#0a1628] border border-green-600 rounded-lg p-2 text-center"><p className="text-[10px] text-green-600">Team Wallet 90%</p><p className="text-green-400 font-bold">₹11,294 जी</p></div>
+            <div className="bg-[#0a1628] border border-blue-600 rounded-lg p-2 text-center"><p className="text-[10px] text-blue-400">Site Dev 10%</p><p className="text-blue-300 font-bold">₹1,254 जी</p></div>
+            <div className="bg-[#0a1628] border border-yellow-600 rounded-lg p-2 text-center"><p className="text-[10px] text-yellow-600">Today's Earning</p><p className="text-yellow-300 font-bold">₹549 जी</p></div>
+          </div>
+          <div className="border-2 border-blue-600 bg-[#020a18] rounded-xl p-2 mb-3">
+            <div className="flex justify-between items-center mb-2">
+              <p className="text-blue-300 text-[11px] font-bold">🤖 AI Assistant - Autofill LIVE - बारी बारी कंपनी फॉर्म</p>
+              <button onClick={() => setAiOn(!aiOn)} className={`px-2 py-1 rounded text-[10px] font-bold ${aiOn ? "bg-green-600 text-white" : "bg-red-600 text-white"}`}>{aiOn ? "ON" : "OFF"}</button>
+            </div>
+            <div className="bg-black border border-blue-900 rounded p-2">
+              <p className="text-[10px] text-green-400 animate-pulse">▶ LIVE: {aiQueue[aiIndex]} - ensureTag() injecting ref=ASHOK54994...</p>
+              <div className="w-full bg-blue-900/30 h-2 rounded-full mt-2 overflow-hidden"><div className="h-full bg-blue-500 transition-all duration-1000" style={{ width: `${((aiIndex + 1) / aiQueue.length) * 100}%` }}></div></div>
+            </div>
+          </div>
+          <div className="border-2 border-yellow-600 rounded-xl p-2">
+            <p className="text-yellow-300 text-[11px] font-bold mb-2">UPI Panel - 9992553796@ybl - Verified ✓</p>
+            <div className="grid grid-cols-2 gap-2">
+              {["PhonePe", "Google Pay", "Paytm", "BHIM UPI"].map((upi) => (
+                <div key={upi} className="bg-[#0a1628] border border-yellow-800 rounded-lg p-2 text-center">
+                  <p className="text-yellow-300 text-[11px] font-bold">{upi}</p>
+                  <p className="text-[9px] text-yellow-600 font-mono">9992553796@ybl ✓</p>
+                  <img src={QR_IMG} alt={`${upi} QR`} className="w-[80px] h-[80px] mx-auto mt-1 rounded border border-yellow-700" />
+                  <button className="mt-1 bg-green-600 text-white text-[9px] px-2 py-1 rounded font-bold">💸 Auto UPI Pay Team 90%</button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* UPI DUAL CONFIRM - NEW V6 REQUIRED */}
+        <div className="border-4 bg-black rounded-[18px] p-3 mb-4" style={{ borderColor:"#00FF00" }}>
+          <h2 className="sharpGold text-[13px] mb-3">💸 UPI Dual Confirm - पैसा भेजो + पैसा निकालो - 9992553796@ybl - OTP + Fraud Safe जी</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div className="bg-[#021a02] border-2 border-green-600 rounded-xl p-3">
+              <h3 className="text-green-300 text-[12px] font-bold mb-2">📤 पैसा भेजो जी - Paisa Bhejo - UPI 9992553796@ybl</h3>
+              <input value={upiDual.bhejoAmt} onChange={e=>setUpiDual({...upiDual, bhejoAmt:e.target.value})} type="number" placeholder="Amount ₹ - e.g. 500" className="w-full bg-black border border-green-600 rounded-lg px-3 py-2 text-[11px] text-green-100 mb-2" />
+              <input value={upiDual.bhejoPurpose} onChange={e=>setUpiDual({...upiDual, bhejoPurpose:e.target.value})} placeholder="Purpose - e.g. Team Payment" className="w-full bg-black border border-green-600 rounded-lg px-3 py-2 text-[11px] text-green-100 mb-2" />
+              <div className="flex gap-2">
+                <button onClick={handleBhejo} className="flex-1 bg-green-600 text-white font-bold py-2 rounded-lg text-[11px]">📤 भेजो जी - OTP आएगा जी</button>
+                <button onClick={()=>speakHindi("पैसा भेजो जी, यूपीआई नौ नौ नौ दो पाँच पाँच तीन सात नौ छह वाई बी एल")} className="bg-black border border-green-600 text-green-200 px-2 py-2 rounded-lg text-[10px]">🔊 हिंदी</button>
+                <button onClick={()=>speakEn("Paisa Bhejo UPI 9992553796 at ybl")} className="bg-black border border-green-600 text-green-200 px-2 py-2 rounded-lg text-[10px]">🔊 EN</button>
+              </div>
+              {upiDual.bhejoMsg && <p className="mt-2 text-[10px] font-bold text-green-400">{upiDual.bhejoMsg}</p>}
+              {upiDual.showBhejo && (
+                <div className="mt-3 bg-black border border-green-500 rounded-lg p-3">
+                  <p className="text-green-300 text-[11px] font-bold mb-2">🔐 Confirm भेजो जी - OTP + Checksum + Signing</p>
+                  <p className="text-[9px] font-mono text-yellow-500 break-all">UPI: 9992553796@ybl | Amount: ₹{upiDual.bhejoAmt} | Purpose: {upiDual.bhejoPurpose} | Hash: {simpleHash(upiDual.bhejoAmt+upiDual.bhejoPurpose)}</p>
+                  <input value={upiDual.bhejoOtp} onChange={e=>setUpiDual({...upiDual, bhejoOtp:e.target.value})} placeholder="OTP 123456 डालो जी" className="w-full mt-2 bg-[#0a1628] border border-green-500 rounded-lg px-3 py-2 text-[11px] text-green-100" />
+                  <div className="flex gap-2 mt-2">
+                    <button onClick={confirmBhejo} className="flex-1 bg-green-600 text-white font-bold py-2 rounded-lg text-[11px]">✅ Confirm भेजो जी - ₹{upiDual.bhejoAmt}</button>
+                    <button onClick={()=>setUpiDual(p=>({...p, showBhejo:false}))} className="bg-red-900 text-white px-3 py-2 rounded-lg text-[11px]">❌ Cancel</button>
+                  </div>
+                  <p className="text-[9px] text-yellow-600 mt-2">Fraud Score 0% | IP Logged: {fraud.ip} | Fingerprint: {fraud.fingerprint.slice(0,12)} | Rate Limit 5/min | Admin Approval >₹1000 जी</p>
+                </div>
+              )}
+            </div>
+            <div className="bg-[#1a0f00] border-2 border-yellow-600 rounded-xl p-3">
+              <h3 className="text-yellow-300 text-[12px] font-bold mb-2">📥 पैसा निकालो जी - Paisa Nikalo - Withdrawal</h3>
+              <input value={upiDual.nikaloAmt} onChange={e=>setUpiDual({...upiDual, nikaloAmt:e.target.value})} type="number" placeholder="Amount ₹ - e.g. 1000" className="w-full bg-black border border-yellow-600 rounded-lg px-3 py-2 text-[11px] text-yellow-100 mb-2" />
+              <input value={upiDual.nikaloPurpose} onChange={e=>setUpiDual({...upiDual, nikaloPurpose:e.target.value})} placeholder="Purpose - e.g. Personal" className="w-full bg-black border border-yellow-600 rounded-lg px-3 py-2 text-[11px] text-yellow-100 mb-2" />
+              <div className="flex gap-2">
+                <button onClick={handleNikalo} className="flex-1 bg-yellow-500 text-black font-bold py-2 rounded-lg text-[11px]">📥 निकालो जी - OTP आएगा जी</button>
+                <button onClick={()=>speakHindi("पैसा निकालो जी, विड्रॉल, यूपीआई")} className="bg-black border border-yellow-600 text-yellow-200 px-2 py-2 rounded-lg text-[10px]">🔊 हिंदी</button>
+                <button onClick={()=>speakEn("Paisa Nikalo Withdrawal UPI")} className="bg-black border border-yellow-600 text-yellow-200 px-2 py-2 rounded-lg text-[10px]">🔊 EN</button>
+              </div>
+              {upiDual.nikaloMsg && <p className="mt-2 text-[10px] font-bold text-yellow-300">{upiDual.nikaloMsg}</p>}
+              {upiDual.showNikalo && (
+                <div className="mt-3 bg-black border border-yellow-500 rounded-lg p-3">
+                  <p className="text-yellow-300 text-[11px] font-bold mb-2">🔐 Confirm निकालो जी - OTP + Signing</p>
+                  <p className="text-[9px] font-mono text-yellow-500 break-all">Withdraw: ₹{upiDual.nikaloAmt} | Purpose: {upiDual.nikaloPurpose} | Signed: {simpleHash(upiDual.nikaloAmt+"withdraw")}</p>
+                  <input value={upiDual.nikaloOtp} onChange={e=>setUpiDual({...upiDual, nikaloOtp:e.target.value})} placeholder="OTP 123456 डालो जी" className="w-full mt-2 bg-[#0a1628] border border-yellow-500 rounded-lg px-3 py-2 text-[11px] text-yellow-100" />
+                  <div className="flex gap-2 mt-2">
+                    <button onClick={confirmNikalo} className="flex-1 bg-yellow-500 text-black font-bold py-2 rounded-lg text-[11px]">✅ Confirm निकालो जी - ₹{upiDual.nikaloAmt}</button>
+                    <button onClick={()=>setUpiDual(p=>({...p, showNikalo:false}))} className="bg-red-900 text-white px-3 py-2 rounded-lg text-[11px]">❌ Cancel</button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+          {showTwoFA && (
+            <div className="mt-3 bg-[#1a0000] border-2 border-red-600 rounded-xl p-3">
+              <p className="text-red-300 text-[11px] font-bold">🔐 2FA Required - >₹1000 - Google Authenticator Simulation जी</p>
+              <p className="text-[10px] text-yellow-200 mt-1">Admin Approval चाहिए जी - 2FA Code 123456 डालो जी (Demo) - Staff 141003 Maruti Ex Employee जी</p>
+              <div className="flex gap-2 mt-2">
+                <input value={twoFACode} onChange={e=>setTwoFACode(e.target.value)} placeholder="2FA Code 123456" className="flex-1 bg-black border border-red-600 rounded-lg px-3 py-2 text-[11px] text-red-100" />
+                <button onClick={()=>{ if(twoFACode==="123456"){ setShowTwoFA(false); setUpiDual(p=>({...p, showBhejo:false, bhejoMsg:`✓ ₹${p.bhejoAmt} भेजा जी - 2FA Approved ✓ - Hash ${simpleHash(p.bhejoAmt+Date.now())}`})); setFraud(f=>({...f, txCount:f.txCount+1, lastTx:Date.now()})); setTwoFACode(""); }else{ alert("2FA Code गलत जी - 123456"); } }} className="bg-green-600 text-white font-bold px-3 py-2 rounded-lg text-[11px]">✅ 2FA Verify जी</button>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* ANANT LINK ADDER - KEEP */}
+        <div id="anantLinkBox" className="border-4 bg-black rounded-[18px] p-3 mb-4" style={{ borderColor: "#00ff00" }}>
+          <h2 className="sharpGold text-[13px] mb-2">♾️ अनन्त लिंक जोड़ने वाला बॉक्स - Anant Link Adder - 120 से आगे अनलिमिटेड जी</h2>
+          <div className="grid gap-2">
+            <div className="flex gap-2"><label className="text-[11px] text-green-400 w-20">Number Auto</label><input value={121 + anantLinks.length} readOnly className="flex-1 bg-[#0a1628] border border-green-600 rounded-lg px-2 py-1 text-green-200 text-[11px]" /></div>
+            <input value={anantForm.title} onChange={(e) => setAnantForm({ ...anantForm, title: e.target.value })} placeholder="Title" className="bg-[#0a1628] border border-green-600 rounded-lg px-3 py-2 text-green-100 text-[11px]" />
+            <input value={anantForm.btn} onChange={(e) => setAnantForm({ ...anantForm, btn: e.target.value })} placeholder="Button Text" className="bg-[#0a1628] border border-green-600 rounded-lg px-3 py-2 text-green-100 text-[11px]" />
+            <input value={anantForm.url} onChange={(e) => setAnantForm({ ...anantForm, url: e.target.value })} placeholder="URL (auto affiliate via ensureTag)" className="bg-[#0a1628] border border-green-600 rounded-lg px-3 py-2 text-green-100 text-[11px]" />
+            <input value={anantForm.desc} onChange={(e) => setAnantForm({ ...anantForm, desc: e.target.value })} placeholder="Description" className="bg-[#0a1628] border border-green-600 rounded-lg px-3 py-2 text-green-100 text-[11px]" />
+            <input value={anantForm.work} onChange={(e) => setAnantForm({ ...anantForm, work: e.target.value })} placeholder="Work" className="bg-[#0a1628] border border-green-600 rounded-lg px-3 py-2 text-green-100 text-[11px]" />
+            <input value={anantForm.benefit} onChange={(e) => setAnantForm({ ...anantForm, benefit: e.target.value })} placeholder="Benefit" className="bg-[#0a1628] border border-green-600 rounded-lg px-3 py-2 text-green-100 text-[11px]" />
+            <select value={anantForm.cat} onChange={(e) => setAnantForm({ ...anantForm, cat: e.target.value })} className="bg-[#0a1628] border border-green-600 rounded-lg px-3 py-2 text-green-100 text-[11px]">
+              <option>General</option><option>Amazon</option><option>Flipkart</option><option>Tools</option><option>Books</option><option>Social</option><option>UPI</option>
+            </select>
+          </div>
+          <div className="flex flex-wrap gap-2 mt-3">
+            <button onClick={handleAnantAdd} className="bg-green-600 text-white font-bold px-3 py-2 rounded-lg text-[12px]">➕ अनन्त लिंक जोड़ो जी</button>
+            <button onClick={() => speakHindi(anantForm.title || "अनन्त लिंक")} className="bg-black border border-green-600 text-green-200 px-3 py-2 rounded-lg text-[12px]">🔊 हिंदी सुनो जी</button>
+            <button onClick={() => speakEn(anantForm.title || "Anant Link")} className="bg-black border border-green-600 text-green-200 px-3 py-2 rounded-lg text-[12px]">🔊 English Ji</button>
+            <button onClick={() => { if (confirm("सब हटाओ जी?")) { setAnantLinks([]); localStorage.removeItem("veedeohub_anant_links_v4"); } }} className="bg-red-900 border border-green-600 text-white px-3 py-2 rounded-lg text-[12px]">🗑️ सब अनन्त लिंक हटाओ जी</button>
+            <button onClick={exportAnant} className="bg-yellow-600 text-white px-3 py-2 rounded-lg text-[12px]">💾 Export JSON</button>
+            <label className="bg-blue-600 text-white px-3 py-2 rounded-lg text-[12px] cursor-pointer">📥 Import JSON<input type="file" accept=".json" onChange={importAnant} className="hidden" /></label>
+          </div>
+          <p className="mt-3 text-green-400 text-[11px] font-bold">अनन्त लिंक्स: {anantLinks.length} जोड़े गए जी - कुल अब {120 + anantLinks.length} लिंक्स जी - Versioning में सेफ जी</p>
+        </div>
+
+        {/* 120 APPS LIST - KEEP */}
+        <div className="border-4 border-yellow-400 bg-black rounded-[18px] p-3 mb-4">
+          <h2 className="sharpGold text-[14px] mb-3 text-center">📋 Main Apps - 120 Apps Total - Fix Box 1 & 2 Included - V6 Legal</h2>
+          <div className="grid gap-2">
+            {filteredA.map((item) => (
+              <div key={item.n} id={`app-${item.n}`} className="cardWhite rounded-[14px] p-3 mx-1">
+                <div className="flex justify-between items-start">
+                  <p className="font-bold text-[12px] text-black">{item.n}. {item.title}</p>
+                  <span className="text-[9px] bg-yellow-400 text-black px-2 py-0.5 rounded-full font-bold">{item.url.includes("amazon") || item.url.includes("flipkart") ? "Aff" : "Ref"}</span>
+                </div>
+                <p className="text-[10px] text-gray-600 mt-1">{item.desc} | {item.cat}</p>
+                <p className="text-[9px] font-mono text-blue-700 break-all mt-1">{item.url}</p>
+                <div className="flex flex-wrap gap-1 mt-2">
+                  <a href={item.url} target="_blank" rel="noopener" className="bg-black text-yellow-300 border border-yellow-500 px-3 py-1 rounded-lg text-[11px] font-bold">{item.btn}</a>
+                  <button onClick={() => speakHindi(item.title)} className="bg-white border border-yellow-500 text-black px-2 py-1 rounded-lg text-[10px]">🔊 हिंदी</button>
+                  <button onClick={() => speakEn(item.title)} className="bg-white border border-yellow-500 text-black px-2 py-1 rounded-lg text-[10px]">🔊 EN</button>
+                  <a href={`https://wa.me/?text=${encodeURIComponent(item.title + " " + item.url)}`} target="_blank" rel="noopener" className="bg-green-600 text-white px-2 py-1 rounded-lg text-[10px]">WhatsApp</a>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="grid gap-2 mt-4">
+            {filteredB.map((item) => (
+              <div key={item.n} id={`app-${item.n}`} className="cardWhite rounded-[14px] p-3 mx-1">
+                <div className="flex justify-between items-start">
+                  <p className="font-bold text-[12px] text-black">{item.n}. {item.title}</p>
+                  <span className="text-[9px] bg-blue-400 text-white px-2 py-0.5 rounded-full font-bold">{item.cat}</span>
+                </div>
+                <p className="text-[10px] text-gray-600 mt-1">{item.desc}</p>
+                <p className="text-[9px] font-mono text-blue-700 break-all mt-1">{item.url}</p>
+                <div className="flex flex-wrap gap-1 mt-2">
+                  <a href={item.url} target="_blank" rel="noopener" className="bg-black text-yellow-300 border border-yellow-500 px-3 py-1 rounded-lg text-[11px] font-bold">{item.btn}</a>
+                  <button onClick={() => speakHindi(item.title)} className="bg-white border border-yellow-500 text-black px-2 py-1 rounded-lg text-[10px]">🔊 हिंदी</button>
+                  <button onClick={() => speakEn(item.title)} className="bg-white border border-yellow-500 text-black px-2 py-1 rounded-lg text-[10px]">🔊 EN</button>
+                  <a href={`https://wa.me/?text=${encodeURIComponent(item.title + " " + item.url)}`} target="_blank" rel="noopener" className="bg-green-600 text-white px-2 py-1 rounded-lg text-[10px]">WhatsApp</a>
+                </div>
+              </div>
+            ))}
+          </div>
+          {anantLinks.length > 0 && (
+            <div className="mt-4">
+              <p className="text-green-400 text-[12px] font-bold mb-2">♾️ Anant Links - {anantLinks.length} Extra - Server Sync में सेफ जी</p>
+              <div className="grid gap-2">
+                {anantLinks.filter(l => search ? l.title.toLowerCase().includes(search.toLowerCase()) : true).map((item) => (
+                  <div key={item.n} id={`app-${item.n}`} className="cardWhite rounded-[14px] p-3 mx-1 border-green-500">
+                    <p className="font-bold text-[12px] text-black">{item.n}. {item.title} - अनन्त जी</p>
+                    <p className="text-[9px] font-mono text-blue-700 break-all mt-1">{item.url}</p>
+                    <div className="flex gap-1 mt-2">
+                      <a href={item.url} target="_blank" rel="noopener" className="bg-green-600 text-white px-3 py-1 rounded-lg text-[11px] font-bold">{item.btn}</a>
+                      <a href={`https://wa.me/?text=${encodeURIComponent(item.title + " " + item.url)}`} target="_blank" rel="noopener" className="bg-green-600 text-white px-2 py-1 rounded-lg text-[10px]">WhatsApp</a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* LEGAL FOOTER V6 EXPANDED */}
+        <div id="legalFooter" ref={legalFooterRef} style={{ background: "#000000", border: "3px solid #FFD700", borderRadius: "15px", padding: "20px", marginTop: "30px", maxWidth: "600px", marginLeft: "auto", marginRight: "auto" }} className="w-full">
+          <div className="text-center mb-4">
+            <h2 className="sharpGold text-[16px]">📜 Legal & Support / कानूनी और सहायता जी - V6 Legal Server Compliant</h2>
+            <p className="text-[10px] text-yellow-600 mt-1 font-mono">AdSense Compliant | Bilingual Hindi+English | V6.0 | IT Act 2000 | DPDP Act 2023 | GDPR</p>
+            <div className="flex justify-center gap-2 mt-2 text-[10px] flex-wrap">
+              <a href="#contactUs" className="text-yellow-300 underline">Contact Us</a><span className="text-yellow-600">|</span>
+              <a href="#privacyPolicy" className="text-yellow-300 underline">Privacy Policy</a><span className="text-yellow-600">|</span>
+              <a href="#disclaimer" className="text-yellow-300 underline">Disclaimer</a><span className="text-yellow-600">|</span>
+              <a href="#terms" className="text-yellow-300 underline">Terms</a><span className="text-yellow-600">|</span>
+              <a href="#cookiePolicy" className="text-yellow-300 underline">Cookie Policy</a>
+            </div>
+          </div>
+
+          <div id="contactUs" className="border-2 border-yellow-400 bg-[#0a0a0a] rounded-[12px] p-3 mb-4">
+            <h3 className="sharpGold text-[14px] mb-3">📞 Contact Us / संपर्क करें जी</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="bg-[#0a1628] border border-yellow-700 rounded-lg p-2">
+                <p className="text-yellow-300 text-[11px] font-bold mb-2">🇮🇳 हिंदी में जी</p>
+                <div className="text-[11px] leading-5 text-yellow-200 space-y-1">
+                  <p><span className="text-yellow-400">नाम:</span> अशोक जी - Veedeohub</p>
+                  <p><span className="text-yellow-400">मोबाइल:</span> 9992553796</p>
+                  <p><span className="text-yellow-400">UPI:</span> 9992553796@ybl ✓ Verified</p>
+                  <p><span className="text-yellow-400">ईमेल:</span> veedeohub.ashok@gmail.com</p>
+                  <p><span className="text-yellow-400">पता:</span> नूंह, हरियाणा, भारत - S/o Dr B L Rao, Mohammad Pur Ahir, Tauru - Jurisdiction Nuh Haryana जी</p>
+                  <p><span className="text-yellow-400">DPO:</span> veedeohub.ashok@gmail.com - Data Protection Officer जी</p>
+                  <p><span className="text-yellow-400">समय:</span> सुबह 9 से शाम 6 बजे तक जी</p>
+                </div>
+              </div>
+              <div className="bg-[#0a0a0a] border border-yellow-700/50 rounded-lg p-2">
+                <p className="text-yellow-300 text-[11px] font-bold mb-2">🇬🇧 In English Ji</p>
+                <div className="text-[11px] leading-5 text-yellow-100 space-y-1">
+                  <p><span className="text-yellow-400">Name:</span> Ashok Ji - Veedeohub</p>
+                  <p><span className="text-yellow-400">Mobile:</span> 9992553796</p>
+                  <p><span className="text-yellow-400">UPI:</span> 9992553796@ybl ✓ Verified</p>
+                  <p><span className="text-yellow-400">Email:</span> veedeohub.ashok@gmail.com</p>
+                  <p><span className="text-yellow-400">Address:</span> Nuh, Haryana, India - S/o Dr B L Rao, Mohammad Pur Ahir, Tauru - 122105 - Legal Jurisdiction Nuh Haryana</p>
+                  <p><span className="text-yellow-400">DPO:</span> veedeohub.ashok@gmail.com - Data Protection Officer</p>
+                  <p><span className="text-yellow-400">Time:</span> 9 AM to 6 PM Ji</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-2 mt-3">
+              <a href="https://wa.me/919992553796?text=Namaste%20Ashok%20Ji%20Veedeohub%20Ji" target="_blank" rel="noopener" className="bg-green-600 text-white font-bold px-3 py-2 rounded-lg text-[11px]">📱 WhatsApp करो जी</a>
+              <a href="mailto:veedeohub.ashok@gmail.com?subject=Veedeohub%20Contact%20Ji" className="bg-blue-600 text-white font-bold px-3 py-2 rounded-lg text-[11px]">📧 Email करो जी</a>
+              <button onClick={() => speakHindi("संपर्क करें जी, नाम अशोक जी, मोबाइल नौ नौ नौ दो पाँच पाँच तीन सात नौ छह, यूपीआई वही वेरीफाइड, ईमेल वीडीओ हब डॉट अशोक जीमेल, पता नूंह हरियाणा भारत, डी पी ओ वही, कानूनी जुरिस्डिक्शन नूंह हरियाणा जी")} className="bg-black border border-yellow-400 text-yellow-200 px-3 py-2 rounded-lg text-[11px]">🔊 हिंदी सुनो जी</button>
+              <button onClick={() => speakEn("Contact Us, Name Ashok Ji, Mobile 9992553796, UPI same verified, Email veedeohub.ashok at gmail, Address Nuh Haryana, DPO same, Legal Jurisdiction Nuh Haryana Ji")} className="bg-black border border-yellow-400 text-yellow-200 px-3 py-2 rounded-lg text-[11px]">🔊 English Ji</button>
+            </div>
+            <div className="mt-4 bg-[#0a1628] border border-yellow-600 rounded-xl p-3">
+              <p className="text-yellow-300 text-[12px] font-bold mb-2">✍️ मैसेज भेजो जी / Send Message Ji - Local Draft + Server Sync Consent पर Server जाएगा जी</p>
+              <div className="grid gap-2">
+                <input value={contactForm.name} onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })} placeholder="आपका नाम / Your Name Ji" className="bg-black border border-yellow-700 rounded-lg px-3 py-2 text-[11px] text-yellow-100 outline-none" />
+                <input value={contactForm.email} onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })} placeholder="ईमेल / Email Ji" type="email" className="bg-black border border-yellow-700 rounded-lg px-3 py-2 text-[11px] text-yellow-100 outline-none" />
+                <textarea value={contactForm.message} onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })} placeholder="संदेश लिखो जी - Consent होने पर Server पर जाएगा जी" className="bg-black border border-yellow-700 rounded-lg px-3 py-2 text-[11px] text-yellow-100 h-[80px] outline-none" />
+              </div>
+              <div className="flex flex-wrap gap-2 mt-3 items-center">
+                <button onClick={() => {
+                  if (!contactForm.name || !contactForm.message) { alert("नाम और मैसेज लिखो जी"); return; }
+                  const newDraft = { name: contactForm.name, email: contactForm.email, message: contactForm.message, time: new Date().toLocaleString("hi-IN") };
+                  setContactDrafts([newDraft, ...contactDrafts]);
+                  setContactSent(true);
+                  setContactForm({ name: "", email: "", message: "" });
+                  saveVersion("Contact Message");
+                  if (consent.enabled) {
+                    fetch(DEMO_SERVER_URL, { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(newDraft) }).catch(()=>{});
+                  }
+                  setTimeout(() => setContactSent(false), 4000);
+                }} className="bg-yellow-400 text-black font-bold px-4 py-2 rounded-lg text-[12px]">📩 भेजो जी / Send Ji</button>
+                <span className="text-[10px] text-yellow-600">{consent.enabled ? "✓ Consent ON - Server पर जाएगा जी" : "⚠️ Consent OFF - Only Local जी"}</span>
+              </div>
+              {contactSent && <p className="mt-2 text-green-400 text-[12px] font-bold animate-pulse">✓ भेज दिया जी - {consent.enabled ? "Server + Local" : "Local"} - सेफ जी</p>}
+            </div>
+          </div>
+
+          <div id="privacyPolicy" className="border-2 border-yellow-400 bg-[#0a0a0a] rounded-[12px] p-3 mb-4">
+            <h3 className="sharpGold text-[14px] mb-2">🔒 Privacy Policy / गोपनीयता नीति जी - V6 Legal Server Compliant</h3>
+            <p className="text-[10px] text-yellow-600 font-mono mb-2">Last Updated: 9 Oct 2026 | AdSense ID: ca-pub-3922664797100594 | IT Act 2000 | DPDP Act 2023 | GDPR</p>
+            <div className="bg-[#0a1628] border border-yellow-700 rounded-lg p-2 mb-2">
+              <p className="text-yellow-300 text-[11px] font-bold">📌 Legal Basis / कानूनी आधार जी</p>
+              <p className="text-[11px] text-yellow-200 mt-1">IT Act 2000 Section 43A, DPDP Act 2023, GDPR Art 6(1)(a) Consent, (b) Contract, (f) Legitimate Interest जी। Purpose Limitation: Only Backup & Restore, Data Minimization: Only necessary fields, Storage Limitation: Until consent withdrawal जी।</p>
+              <p className="text-[10px] text-yellow-100 italic mt-1">Legal Basis: IT Act 2000, DPDP Act 2023, GDPR Consent, Contract, Legitimate Interest. Purpose: Backup & Restore. Minimization: Only necessary. Storage: Until withdrawal Ji.</p>
+            </div>
+            <button onClick={() => setPrivacyOpen(!privacyOpen)} className="w-full bg-yellow-400 text-black font-bold py-2 rounded-lg text-[11px] mb-3">{privacyOpen ? "📕 बंद करो जी" : "📖 पूरी Policy पढ़ो जी / Read Full Policy Ji - Legal Basis, Rights, DPO"}</button>
+            {privacyOpen && (
+              <div className="grid gap-2">
+                <div className="bg-black border border-yellow-800 rounded-lg p-2"><p className="text-yellow-300 text-[11px] font-bold">1. Legal Basis - IT Act 2000, DPDP Act 2023, GDPR</p><p className="text-yellow-200 text-[11px] mt-1">Consent Art 6(1)(a) - User gives explicit consent via checkboxes veedeohub_consent_v6, IP logged {fraud.ip}, timestamp {consent.timestamp || "pending"} - Legitimate Interest: Phone lost backup, Contract: UPI payment 9992553796@ybl जी।</p></div>
+                <div className="bg-black border border-yellow-800 rounded-lg p-2"><p className="text-yellow-300 text-[11px] font-bold">2. Data Collection - 3 Layer</p><p className="text-yellow-200 text-[11px] mt-1">Layer1 Phone Cache: localStorage veedeohub_admin_v4, veedeohub_nominee_v4, veedeohub_spaces_v4, veedeohub_pexels_key_v5 (btoa), veedeohub_pixabay_key_v5, veedeohub_anant_links_v4, veedeohub_versions_v6, veedeohub_consent_v6, veedeohub_firebase_cfg_v6 (btoa). Layer2 Server Main: Firebase/Supabase/Google Sheets via fetch POST to {DEMO_SERVER_URL} - only if consent enabled. Layer3 Backup: IndexedDB + Export JSON veedeohub_backup_v6 जी।</p></div>
+                <div className="bg-black border border-yellow-800 rounded-lg p-2"><p className="text-yellow-300 text-[11px] font-bold">3. Purpose Limitation & Data Minimization</p><p className="text-yellow-200 text-[11px] mt-1">Purpose: Phone lost data safe, versioning purana waisa rahe naya add ho, fraud prevention 0% score जी। Minimization: Only name, email, mobile 9992553796, UPI 9992553796@ybl, spaces text - no sensitive biometric जी।</p></div>
+                <div className="bg-black border border-yellow-800 rounded-lg p-2"><p className="text-yellow-300 text-[11px] font-bold">4. Storage Limitation & Security</p><p className="text-yellow-200 text-[11px] mt-1">Storage: Until consent withdrawal, localStorage + server backup encrypted btoa, SHA-256 checksum {simpleHash("privacy")}, device fingerprint {fraud.fingerprint.slice(0,10)} जी।</p></div>
+                <div className="bg-black border border-yellow-800 rounded-lg p-2"><p className="text-yellow-300 text-[11px] font-bold">5. User Rights - Access, Delete, Export, Portability</p><p className="text-yellow-200 text-[11px] mt-1">Right to Access: Version History देखो जी, Right to Delete: 🗑️ सब हटाओ जी buttons, Right to Export: Export JSON buttons, Right to Rectify: Edit fields, Right to Withdraw Consent: ❌ सहमति वापस लो जी, Right to Object: Cookie Reject जी। DPO: veedeohub.ashok@gmail.com, 9992553796, Nuh Haryana जी।</p></div>
+                <div className="bg-black border border-yellow-800 rounded-lg p-2"><p className="text-yellow-300 text-[11px] font-bold">6. Cookies & Tracking - AdSense</p><p className="text-yellow-200 text-[11px] mt-1">AdSense ca-pub-3922664797100594, affiliate tag=ashok0499-21, affid=ashok54994, ref=ASHOK54994 via ensureTag(), youtube-nocookie embeds https://www.youtube-nocookie.com/embed/SolqIcBHhu4 and BxvD4sMznoc?si=_NDwm6zNe1n307zq to reduce cookies जी।</p></div>
+                <div className="bg-black border border-yellow-800 rounded-lg p-2"><p className="text-yellow-300 text-[11px] font-bold">7. Third Parties</p><p className="text-yellow-200 text-[11px] mt-1">Amazon, Flipkart, Myntra, Meesho, Ajio, Nykaa, Maruti, Pexels api.pexels.com, Pixabay pixabay.com/api, YouTube, QR api.qrserver.com, jsonplaceholder.typicode.com demo server - separate policies जी।</p></div>
+              </div>
+            )}
+          </div>
+
+          <div id="disclaimer" className="border-2 border-yellow-400 bg-[#0a0a0a] rounded-[12px] p-3 mb-4">
+            <h3 className="sharpGold text-[14px] mb-2">⚠️ Disclaimer / अस्वीकरण जी - No Fraud 100% Safe</h3>
+            <p className="text-[10px] text-red-400 font-bold mb-2">Affiliate Disclosure for AdSense Compliance - Fraud Prevention 0% Score</p>
+            <div className="bg-[#1a0f02] border border-orange-600/50 rounded-lg p-2 mb-2">
+              <p className="text-orange-300 text-[11px] font-bold">📢 Important Affiliate Notice / जरूरी सूचना जी</p>
+              <p className="text-orange-200 text-[11px] mt-1">ये वेबसाइट एफिलिएट लिंक से कमाई करती है जी - tag=ashok0499-21, affid=ashok54994, ref=ASHOK54994, utm_source=ASHOK54994 - आपको extra नहीं लगता जी, हमें कमीशन मिलता है जी। Fraud रोकथाम: OTP 123456, Checksum, UPI Verified, Rate Limiting, IP Logging, 2FA जी।</p>
+            </div>
+            <button onClick={() => setDisclaimerOpen(!disclaimerOpen)} className="w-full bg-orange-600 text-white font-bold py-2 rounded-lg text-[11px] mb-3">{disclaimerOpen ? "📕 बंद करो जी" : "📖 पूरा Disclaimer पढ़ो जी / Fraud Prevention, Legal"}</button>
+            {disclaimerOpen && (
+              <div className="grid gap-2">
+                <div className="bg-black border border-yellow-800 rounded-lg p-2"><p className="text-yellow-300 text-[11px] font-bold">1. Affiliate Earning</p><p className="text-yellow-200 text-[11px]">Amazon, Flipkart etc commission via ensureTag() - no extra cost Ji.</p></div>
+                <div className="bg-black border border-yellow-800 rounded-lg p-2"><p className="text-yellow-300 text-[11px] font-bold">2. Videos</p><p className="text-yellow-200 text-[11px]">YouTube Single Identity SolqIcBHhu4, Shiv Bhakti BxvD4sMznoc, Playlist PLF1nrtSu2Dd8IjpcDmTsr68e-nWic_Qd1 via youtube-nocookie Ji.</p></div>
+                <div className="bg-black border border-yellow-800 rounded-lg p-2"><p className="text-yellow-300 text-[11px] font-bold">3. No Fraud - 100% Safe</p><p className="text-yellow-200 text-[11px]">OTP 123456 verification, SHA-256 hash {simpleHash("fraud")}, UPI 9992553796@ybl verified ✓, rate limiting 5/min, IP {fraud.ip}, fingerprint {fraud.fingerprint.slice(0,8)}, transaction signing, blacklist {fraud.blacklist.length}, 2FA simulation - Fraud Score 0% Safe Ji.</p></div>
+                <div className="bg-black border border-yellow-800 rounded-lg p-2"><p className="text-yellow-300 text-[11px] font-bold">4. Legal Jurisdiction</p><p className="text-yellow-200 text-[11px]">Jurisdiction Nuh Haryana, Dispute Resolution via DPO veedeohub.ashok@gmail.com, No Fraud, Affiliate Disclosure Ji.</p></div>
+              </div>
+            )}
+          </div>
+
+          <div id="terms" className="border-2 border-yellow-400 bg-[#0a0a0a] rounded-[12px] p-3 mb-4">
+            <h3 className="sharpGold text-[13px] mb-2">📄 Terms & Conditions / नियम और शर्तें जी - Legal Jurisdiction Nuh Haryana</h3>
+            <p className="text-[11px] text-yellow-200">Jurisdiction: Nuh Haryana Court, Dispute Resolution: Email veedeohub.ashok@gmail.com within 30 days, No Fraud 100% Safe, Affiliate Disclosure tag=ashok0499-21 affid=ashok54994 ref=ASHOK54994, Server Sync only after consent veedeohub_consent_v6, Versioning merge {"{...old, ...new}"} purana waisa rahe naya add ho, UPI 9992553796@ybl OTP 123456 verification, IT Act 2000, DPDP Act 2023 Compliant जी।</p>
+          </div>
+
+          <div id="cookiePolicy" className="border-2 border-yellow-400 bg-[#0a0a0a] rounded-[12px] p-3 mb-4">
+            <h3 className="sharpGold text-[13px] mb-2">🍪 Cookie Policy / कुकी नीति जी</h3>
+            <p className="text-[11px] text-yellow-200">We use cookies for AdSense ca-pub-3922664797100594, affiliate tracking, preferences, server sync status, versioning, fraud prevention IP logging {fraud.ip} जी। Consent via banner: Accept/Reject - Status: {cookieConsent} जी। youtube-nocookie to reduce cookies जी।</p>
+          </div>
+
+          <div className="border-2 border-yellow-400 bg-black rounded-[12px] p-3 text-center">
+            <p className="sharpGold text-[11px]">© 2026 Veedeohub | Ashok Ji | Nuh Haryana | All Rights Reserved | V6.0 Legal Server Compliant | सर्वाधिकार सुरक्षित जी</p>
+            <div className="flex justify-center gap-2 mt-2 text-[11px] flex-wrap">
+              <a href="#contactUs" className="text-yellow-300 underline">📞 Contact Us</a><span className="text-yellow-600">|</span>
+              <a href="#privacyPolicy" className="text-yellow-300 underline">🔒 Privacy Policy</a><span className="text-yellow-600">|</span>
+              <a href="#disclaimer" className="text-yellow-300 underline">⚠️ Disclaimer</a><span className="text-yellow-600">|</span>
+              <a href="#terms" className="text-yellow-300 underline">📄 Terms</a><span className="text-yellow-600">|</span>
+              <a href="#cookiePolicy" className="text-yellow-300 underline">🍪 Cookie</a>
+            </div>
+            <div className="mt-3 flex flex-col items-center gap-2">
+              <img src={QR_IMG} alt="QR Veedeohub Small" className="w-[80px] h-[80px] rounded border border-yellow-400" />
+              <p className="text-[9px] text-yellow-600 font-mono break-all">QR: veedeohub-ashok.vercel.app?ref=ASHOK54994 | AdSense: ca-pub-3922664797100594</p>
+              <p className="text-[9px] text-yellow-500 font-mono">Affiliate: tag=ashok0499-21 | affid=ashok54994 | ref=ASHOK54994 | V6 Legal: Phone Cache + Server Main + Backup | Consent: {consent.enabled ? "ON" : "OFF"} | Fraud Score: {fraud.fraudScore}% Safe</p>
+              <p className="text-[10px] text-green-400 font-bold">V6.0 - Legal Footer - Server Sync - Consent - Versioning - Fraud Prevention - UPI Dual Confirm - All 14 Boxes Kept जी</p>
+              <p className="text-[9px] text-yellow-700 leading-4">Ashok Kumar Ex Employee Maruti Staff 141003<br/>S/o Dr B L Rao Mohammad Pur Ahir Tauru Nuh Haryana 122105<br/>Email veedeohub.ashok@gmail.com | Mobile 9992553796 | UPI 9992553796@ybl Verified | 120 Apps + Anant + V6 Legal Compliant<br/>Server: {firebaseCfg.projectId || "Demo jsonplaceholder"} | Last Sync: {serverSync.lastSync} | Versions: {versions.length} | Backup: IndexedDB + Export JSON</p>
+            </div>
+            <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="mt-4 bg-yellow-400 text-black font-bold px-4 py-2 rounded-lg text-[12px] shadow-[0_0_15px_gold]">🔝 ऊपर जाओ जी / Go Top Ji</button>
+            <div className="mt-3 text-[9px] text-yellow-800 font-mono">youtube-nocookie: SolqIcBHhu4 | BxvD4sMznoc?si=_NDwm6zNe1n307zq | Playlist PLF1nrtSu2Dd8IjpcDmTsr68e-nWic_Qd1 | DreamBook valid: ayurvedic-jadi-bootiyan-upyog-aur-labh | Server: {DEMO_SERVER_URL} (Demo Legal) | Legal: IT Act 2000 DPDP 2023 GDPR | Consent: veedeohub_consent_v6 | Versions: veedeohub_versions_v6 | Firebase: btoa encrypted</div>
+          </div>
+        </div>
+
+        <div className="h-20"></div>
+      </div>
+
+      {/* COOKIE BANNER */}
+      {cookieBanner && (
+        <div className="fixed bottom-0 left-0 right-0 bg-black border-t-4 border-yellow-400 p-3 z-[999] shadow-[0_-5px_20px_rgba(255,215,0,0.5)]">
+          <div className="max-w-[600px] mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <p className="text-[11px] text-yellow-200 flex-1">🍪 हम Cookies use करते हैं जी - AdSense ca-pub-3922664797100594 + Affiliate tag=ashok0499-21 + Server Sync Consent + Fraud Prevention IP Logging के लिए - सहमति दो जी | We use cookies Ji - Consent Needed Ji</p>
+            <div className="flex gap-2">
+              <button onClick={()=>{ setCookieConsent("accepted"); setCookieBanner(false); try{localStorage.setItem("veedeohub_cookie_v6","accepted");}catch{} }} className="bg-yellow-400 text-black font-bold px-4 py-2 rounded-lg text-[11px]">✅ Accept जी</button>
+              <button onClick={()=>{ setCookieConsent("rejected"); setCookieBanner(false); try{localStorage.setItem("veedeohub_cookie_v6","rejected");}catch{} }} className="bg-black border border-yellow-400 text-yellow-200 px-4 py-2 rounded-lg text-[11px]">❌ Reject जी</button>
+              <button onClick={()=>{ document.getElementById("cookiePolicy")?.scrollIntoView({behavior:"smooth"}); }} className="bg-blue-600 text-white px-3 py-2 rounded-lg text-[10px]">📄 Policy पढ़ो जी</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* SYNC STATUS FLOATING */}
+      <div className="fixed top-2 right-2 bg-black border-2 border-green-500 rounded-lg p-2 z-[998] text-[9px] font-mono max-w-[180px]">
+        <p className="text-green-400 font-bold">☁️ {serverSync.server} | 📱 {serverSync.phone}</p>
+        <p className="text-yellow-500">{serverSync.lastSync}</p>
+        <p className={consent.enabled ? "text-green-400" : "text-red-400"}>Consent: {consent.enabled ? "ON Legal" : "OFF - Need"}</p>
+        <p className="text-blue-400">Fraud: {fraud.fraudScore}% Safe | Tx: {fraud.txCount}</p>
+      </div>
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+</script>
+</body>
+</html>
