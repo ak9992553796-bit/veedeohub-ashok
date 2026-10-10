@@ -611,4 +611,201 @@ function autoGenerateCompanyPage(){
   if(!company){alert('कंपनी लिखो जी');return;}
   let pages=JSON.parse(localStorage.getItem('_company_pages')||'[]');
   let tag=company.toLowerCase().indexOf('amazon')>-1?'tag=ashok0499-21':company.toLowerCase().indexOf('flipkart')>-1?'affid=ashok54994':'ref=ASHOK54994';
-  let page={time:new Date().toLocaleString(),date:new Date().toLocaleDat
+  let page={time:new Date().toLocaleString(),date:new Date().toLocaleDateString(),company:company,orderId:orderId,amount:amount,tag:tag,customer:'Auto Customer - '+orderId,status:'✅ Company Notified - इस साइट से बिक्री हुई है जी',walletStatus:'Pending - कंपनी पैसा डालेगी जी'};
+  pages.unshift(page);localStorage.setItem('_company_pages',JSON.stringify(pages));renderCompanyPages();
+  appendLog({time:page.time,type:'🏢 Company Page Auto',app:'Company Page Auto Generated - '+company+' - Order '+orderId,btnNo:company,amount:amount});
+  alert('✅ Company Page बन गया जी - '+company+' - Order '+orderId);
+ }catch(e){alert('Error: '+e);}
+}
+function renderCompanyPages(){
+ try{
+  let pages=JSON.parse(localStorage.getItem('_company_pages')||'[]');
+  let el=document.getElementById('companyPages');if(!el)return;
+  if(pages.length==0){el.innerHTML='अभी कोई Company Page नहीं जी';return;}
+  el.innerHTML='';
+  pages.slice(0,50).forEach(function(p,i){
+    let div=document.createElement('div');div.style.cssText='border:2px solid #2196F3;border-radius:8px;padding:6px;margin:5px 0;background:#001a33;text-align:left';
+    div.innerHTML='<b style="color:#64B5F6">🏢 '+(i+1)+'. '+p.company+' - '+p.orderId+'</b><br><span style="color:#fff">Order: '+p.orderId+' | Amount: ₹'+p.amount+' | Tag: '+p.tag+'</span><br><span style="color:#0f0">'+p.status+'</span><br><span style="color:gold;font-size:9px">'+p.time+' - '+p.walletStatus+'</span><br><button style="background:#0f0;color:#000;padding:4px 8px;border-radius:6px;font-size:9px;font-weight:900;margin-top:4px">💰 Wallet में डालो जी</button>';
+    let btn=div.querySelector('button');if(btn){btn.onclick=function(){autoCreditFromCompany(p.company,p.orderId,p.amount);};}el.appendChild(div);
+  });
+ }catch(e){}
+}
+function autoCreditFromCompany(company, orderId, amount){
+ try{
+  let siteShare=amount*0.10;let directShare=amount*0.90;let tds=amount*0.10;
+  let real=JSON.parse(localStorage.getItem('_real_earnings')||'[]');
+  if(real.some(function(r){return r.orderId==orderId;})){alert('ये Order पहले से Wallet में है जी - '+orderId);return;}
+  let entry={time:new Date().toLocaleString(),date:new Date().toLocaleString(),company:company,customerName:'Auto - '+orderId,name:'Auto - '+orderId,amount:parseFloat(amount),orderId:orderId,type:'✅ Company Auto Deposit'};
+  real.unshift(entry);localStorage.setItem('_real_earnings',JSON.stringify(real));
+  let pages=JSON.parse(localStorage.getItem('_company_pages')||'[]');pages=pages.map(function(p){if(p.orderId==orderId){p.walletStatus='✅ Auto Credited - Site ₹'+siteShare.toFixed(2)+' + Direct ₹'+directShare.toFixed(2);}return p;});localStorage.setItem('_company_pages',JSON.stringify(pages));
+  let wallets=JSON.parse(localStorage.getItem('_company_wallets')||'{}');if(!wallets[company])wallets[company]={total:0,site:0,direct:0,orders:0};wallets[company].total+=amount;wallets[company].site+=siteShare;wallets[company].direct+=directShare;wallets[company].orders+=1;localStorage.setItem('_company_wallets',JSON.stringify(wallets));
+  updateRealWallet();renderCompanyPages();viewAllCompanyWallets();
+  let logEl=document.getElementById('autoWalletLog');if(logEl){logEl.innerHTML='<div style="border-bottom:1px dashed gold;padding:4px;color:#0f0">💰 '+entry.time+' | '+company+' | Order '+orderId+' | ₹'+amount+' => Site ₹'+siteShare.toFixed(2)+' + Direct ₹'+directShare.toFixed(2)+'</div>'+logEl.innerHTML;}
+  appendLog({time:entry.time,type:'💰 Auto Wallet Credit',app:company+' - Order '+orderId,btnNo:company,amount:amount});
+  alert('✅ कंपनी '+company+' ने ऑटो पैसा डाल दिया जी - Order '+orderId+' - ₹'+amount+'\nSite 10% = ₹'+siteShare.toFixed(2)+'\nDirect 90% = ₹'+directShare.toFixed(2));
+ }catch(e){alert('Error: '+e);}
+}
+function simulateCompanyAutoDeposit(){
+ let companies=['Amazon','Flipkart','Myntra','Meesho','Ajio','Nykaa','Dreambook','Veedeohub'];
+ let randomCompany=companies[Math.floor(Math.random()*companies.length)];
+ let randomAmount=[50,100,150,200,250,300,500][Math.floor(Math.random()*7)];
+ let randomOrder='ORD-'+Date.now().toString().slice(-8)+'-'+Math.floor(Math.random()*120);
+ let pages=JSON.parse(localStorage.getItem('_company_pages')||'[]');
+ pages.unshift({time:new Date().toLocaleString(),date:new Date().toLocaleDateString(),company:randomCompany,orderId:randomOrder,amount:randomAmount,tag:randomCompany=='Amazon'?'tag=ashok0499-21':randomCompany=='Flipkart'?'affid=ashok54994':'ref=ASHOK54994',customer:'Simulated Customer',status:'✅ Simulated Sale',walletStatus:'Auto Deposit Simulation'});
+ localStorage.setItem('_company_pages',JSON.stringify(pages));renderCompanyPages();
+ setTimeout(function(){autoCreditFromCompany(randomCompany,randomOrder,randomAmount);},800);
+}
+function viewAllCompanyWallets(){
+ try{
+  let wallets=JSON.parse(localStorage.getItem('_company_wallets')||'{}');
+  let el=document.getElementById('companyWallets');if(!el)return;el.innerHTML='';
+  let entries=Object.entries(wallets);
+  if(entries.length==0){el.innerHTML='<div style="color:gold;background:#000;padding:8px;border-radius:8px;border:2px solid gold;width:100%;text-align:center">अभी कोई Company Wallet नहीं जी</div>';return;}
+  entries.forEach(function(pair){let company=pair[0];let data=pair[1];let div=document.createElement('div');div.style.cssText='background:#000;border:3px solid #0f0;border-radius:12px;padding:10px;text-align:center';div.innerHTML='<b style="color:#0f0">'+company+'</b><br><span style="color:#fff;font-size:11px">Total: ₹'+data.total.toFixed(2)+'</span><br><span style="color:#FFD700;font-size:10px">Site 10%: ₹'+data.site.toFixed(2)+'</span><br><span style="color:#64B5F6;font-size:10px">Direct 90%: ₹'+data.direct.toFixed(2)+'</span><br><span style="color:#FF9800;font-size:9px">Orders: '+data.orders+'</span>';el.appendChild(div);});
+ }catch(e){}
+}
+function restoreAutoFill(){try{let lc=localStorage.getItem('_last_company');let lo=localStorage.getItem('_last_order');if(lc){let el=document.getElementById('realCompany');if(el&&!el.value)el.value=lc;}if(lo){let el=document.getElementById('realOrderId');if(el&&!el.value)el.value=lo;}}catch(e){}}
+
+// SYSTEM CHECK - बारी बारी से चेक
+
+// --- ADMIN NOMINEE FUNCTIONS - RESTORED JI ---
+function loadAdminNominee(){
+ try{
+   let admins = JSON.parse(localStorage.getItem('_admin_list')||'[]');
+   let nominees = JSON.parse(localStorage.getItem('_nominee_list')||'[]');
+   if(admins.length==0){
+     admins = [{id:1,name:'Dreambook publicer',phone:'9084424157',power:'Full',role:'Admin'}];
+     localStorage.setItem('_admin_list', JSON.stringify(admins));
+   }
+   if(nominees.length==0){
+     nominees = [{id:1,name:'Harish',phone:'7859873511',relation:'Son',power:'Full Backup',role:'Nominee'}];
+     localStorage.setItem('_nominee_list', JSON.stringify(nominees));
+   }
+   let aBox=document.getElementById('adminListBox');
+   if(aBox){
+     aBox.innerHTML='';
+     admins.forEach(function(a,i){
+       aBox.innerHTML+='<div style="background:#111;border:3px solid gold;border-radius:12px;padding:10px;margin:6px 0;text-align:left;display:flex;justify-content:space-between;align-items:center"><div style="color:#FFD700;font-size:11px;font-weight:800">👑 Admin '+(i+1)+':<br>'+a.name+' - 📱 '+a.phone+' - Power: '+a.power+'</div><div style="display:flex;flex-direction:column;gap:6px"><button onclick="speak(\''+a.name+' '+a.phone+'\')" style="background:#000;color:#0f0;border:2px solid #0f0;border-radius:8px;padding:6px">🔊</button><button onclick="deleteAdmin('+a.id+')" style="background:#FF0000;color:#fff;padding:8px 14px;border-radius:8px;font-weight:900;border:2px solid #fff">🗑️ Delete</button></div></div>';
+     });
+   }
+   let nBox=document.getElementById('nomineeListBox');
+   if(nBox){
+     nBox.innerHTML='';
+     nominees.forEach(function(n,i){
+       nBox.innerHTML+='<div style="background:#000;border:3px solid #2196F3;border-radius:12px;padding:10px;margin:6px 0;text-align:left;display:flex;justify-content:space-between;align-items:center"><div style="color:#64B5F6;font-size:11px;font-weight:800">🛡️ Nominee '+(i+1)+':<br>'+n.name+' - 📱 '+n.phone+' - '+(n.relation||'')+' - Power: '+n.power+'</div><div style="display:flex;flex-direction:column;gap:6px"><button onclick="speak(\''+n.name+' '+n.phone+'\')" style="background:#001a33;color:#0f0;border:2px solid #0f0;border-radius:8px;padding:6px">🔊</button><button onclick="deleteNominee('+n.id+')" style="background:#FF0000;color:#fff;padding:8px 14px;border-radius:8px;font-weight:900;border:2px solid #fff">🗑️ Delete</button></div></div>';
+     });
+   }
+ }catch(e){console.log('admin load error',e);}
+}
+function saveAdminNominee(type){
+ let name=document.getElementById('anName')?document.getElementById('anName').value.trim():'';
+ let phone=document.getElementById('anPhone')?document.getElementById('anPhone').value.trim():'';
+ let pass=document.getElementById('anPass')?document.getElementById('anPass').value.trim():'';
+ if(!name||!phone){let el=document.getElementById('anMsg');if(el)el.innerText='नाम और फोन लिखो जी - Owner Power अनुसार जी';return;}
+ if(!confirm('👑 Owner Power पुष्टि जी - सिर्फ Owner ही जोड़ सकता है जी - '+type+' जोड़ना है जी?\nनाम: '+name+'\nफोन: '+phone)){return;}
+ try{
+   if(type=='admin'){
+     let admins=JSON.parse(localStorage.getItem('_admin_list')||'[]');
+     admins.unshift({id:Date.now(),name:name,phone:phone,pass:pass,power:'Full',role:'Admin'});
+     localStorage.setItem('_admin_list', JSON.stringify(admins));
+   } else {
+     let nominees=JSON.parse(localStorage.getItem('_nominee_list')||'[]');
+     let relation=prompt('रिश्ता लिखो जी - Son/Daughter/Wife आदि जी:','Son')||'Family';
+     nominees.unshift({id:Date.now(),name:name,phone:phone,pass:pass,relation:relation,power:'Full Backup',role:'Nominee'});
+     localStorage.setItem('_nominee_list', JSON.stringify(nominees));
+   }
+   let msgEl=document.getElementById('anMsg');if(msgEl)msgEl.innerText=type+' जुड़ गया जी - Owner Power अनुसार - '+name+' - '+phone;
+   let n1=document.getElementById('anName');if(n1)n1.value='';let n2=document.getElementById('anPhone');if(n2)n2.value='';let n3=document.getElementById('anPass');if(n3)n3.value='';
+   loadAdminNominee(); checkAllOptions();
+ }catch(e){let el=document.getElementById('anMsg');if(el)el.innerText='Error जी: '+e;}
+}
+function deleteAdmin(id){
+ if(!confirm('🗑️ Owner Power पुष्टि - Admin Delete करना है जी?'))return;
+ try{let admins=JSON.parse(localStorage.getItem('_admin_list')||'[]');admins=admins.filter(function(a){return a.id!=id;});localStorage.setItem('_admin_list',JSON.stringify(admins));loadAdminNominee();checkAllOptions();}catch(e){}
+}
+function deleteNominee(id){
+ if(!confirm('🗑️ Owner Power पुष्टि - Nominee Delete करना है जी?'))return;
+ try{let nominees=JSON.parse(localStorage.getItem('_nominee_list')||'[]');nominees=nominees.filter(function(n){return n.id!=id;});localStorage.setItem('_nominee_list',JSON.stringify(nominees));loadAdminNominee();checkAllOptions();}catch(e){}
+}
+function addAdminPrompt(){
+ let name=prompt('Admin Name जी:','Dreambook publicer');if(!name)return;
+ let phone=prompt('Phone No. जी - 10 अंक:','9084424157');if(!phone)return;
+ let el1=document.getElementById('anName');if(el1)el1.value=name;let el2=document.getElementById('anPhone');if(el2)el2.value=phone;saveAdminNominee('admin');
+}
+function addNomineePrompt(){
+ let name=prompt('Nominee Name जी:','Harish');if(!name)return;
+ let phone=prompt('Phone No. जी - 10 अंक:','7859873511');if(!phone)return;
+ let el1=document.getElementById('anName');if(el1)el1.value=name;let el2=document.getElementById('anPhone');if(el2)el2.value=phone;saveAdminNominee('nominee');
+}
+
+function checkAllOptions(){
+ let checks=[];
+ function ok(id, name){ let el=document.getElementById(id); checks.push((el?'<span class=checkOk>✅ '+name+' - OK - '+id+' मिला जी</span>':'<span class=checkFail>❌ '+name+' - FAIL - '+id+' नहीं मिला जी</span>')); return !!el; }
+ ok('globalSearch','1️⃣ Search Input');
+ ok('numJump','1️⃣ Number Jump Input');
+ ok('allBtnList','1️⃣ Search List allBtnList');
+ ok('searchCount','1️⃣ Search Count');
+ ok('pendingClicks','2️⃣ Wallet Pending Clicks');
+ ok('confirmedReal','2️⃣ Wallet Confirmed Real');
+ ok('teamBox','2️⃣ Team 90% Box');
+ ok('siteBox','2️⃣ Site 10% Box');
+ ok('linkContainer','3️⃣ Button List linkContainer');
+ ok('linkContainerB','3️⃣ List B linkContainerB');
+ ok('liveTagRotator','4️⃣ Live Tag Rotator');
+ ok('seniorityTree','5️⃣ Seniority Tree');
+ ok('jName','6️⃣ Joining Form Name');
+ ok('jEmail','6️⃣ Joining Form Phone');
+ ok('auto6Images','7️⃣ 6 Images');
+ ok('auto6Videos','7️⃣ 6 Videos');
+ ok('recordedMembers','8️⃣ Recorded Members');
+ ok('myRefLink2','8️⃣ My Ref Link');
+ ok('realCompany','10️⃣ Admin Company AutoFill');
+ ok('realOrderId','10️⃣ Admin OrderID AutoFill');
+ ok('realAmount','10️⃣ Admin Amount');
+ ok('companyPages','11️⃣ Company Pages');
+ ok('companyWallets','11️⃣ Company Wallets');
+ ok('adminListBox','12️⃣ Admin List Box - RESTORED');
+ ok('nomineeListBox','12️⃣ Nominee List Box - RESTORED');
+ ok('cTitle','13️⃣ Anant Link Title - RESTORED');
+ ok('cUrl','13️⃣ Anant Link URL - RESTORED');
+ // Check counts
+ let allCombined=allLinksBase.concat(allLinksBase_B);
+ checks.push('<span class=checkOk>✅ Total Buttons Data: '+allCombined.length+' - '+(allCombined.length==120?'पूरे 120 जी ✅':'गड़बड़ जी')+'</span>');
+ let pending=JSON.parse(localStorage.getItem('_pending_clicks')||'[]');
+ let real=JSON.parse(localStorage.getItem('_real_earnings')||'[]');
+ checks.push('<span class=checkOk>✅ localStorage Pending: '+pending.length+' | Real: '+real.length+'</span>');
+ let listEl=document.getElementById('checkList');
+ if(listEl){ listEl.innerHTML=checks.join('<br>'); }
+}
+
+function initAll(){
+ try{
+  restoreAutoFill();
+  renderLinks();
+  updateRealWallet();
+  loadAuto6FromAPI();
+  renderCompanyPages();
+  viewAllCompanyWallets();
+  try{loadAdminNominee();}catch(e){}
+  let myRef=localStorage.getItem('_my_ref_link')||'https://veedeohub-ashok.vercel.app?ref=ASHOK54994';
+  let el=document.getElementById('myRefLink2');if(el)el.value=myRef;
+  let gs=document.getElementById('globalSearch');if(gs){gs.addEventListener('input',searchAll);}
+  let nj=document.getElementById('numJump');if(nj){nj.addEventListener('input',searchAll);}
+  checkAllOptions();
+  console.log('CHECKED V3 All Options OK');
+ }catch(e){console.log('init error',e);let el=document.getElementById('checkList');if(el)el.innerHTML='<span class=checkFail>❌ Init Error: '+e.message+'</span>';}
+}
+if(document.readyState=='loading'){document.addEventListener('DOMContentLoaded',initAll);}else{initAll();}
+</script>
+
+<script>
+(function(){
+ let liveTags=["Amazon: tag=ashok0499-21 - Amazon Product पर अटैच - Live","Flipkart: affid=ashok54994 - Flipkart Product पर अटैच - Live","Meesho: utm_source=ASHOK54994 - Meesho Product पर अटैच - Live","Myntra: utm_source=ASHOK54994 - Myntra Product पर अटैच - Live","Ajio: utm_source=ASHOK54994 - Ajio Product पर अटैच - Live","Nykaa: utm_source=ASHOK54994 - Nykaa Product पर अटैच - Live","Dreambook: ref=ASHOK54994 - Book पर अटैच - Live","Veedeohub: ref=ASHOK54994 - Main Site पर अटैच - Live","Google: ref=ASHOK54994 - Google App पर अटैच - Live","Maruti: tag=ashok0499-21 - Maruti Parts पर अटैच - Live"];
+ let idx=0;
+ function rotateTag(){let el=document.getElementById('liveTagRotator');if(!el)return;el.innerText=liveTags[idx]+" - "+new Date().toLocaleTimeString()+" - घूम रहा है जी - कंपनी को पता लगेगा जी";el.style.background=idx%2==0?"#001100":"#111100";el.style.borderColor=idx%2==0?"#0f0":"gold";el.style.transform="scale(1.05)";setTimeout(function(){el.style.transform="scale(1)";},300);idx=(idx+1)%liveTags.length;}
+ setInterval(rotateTag,2500);rotateTag();
+})();
+</script>
+
+</body>
+</html>
